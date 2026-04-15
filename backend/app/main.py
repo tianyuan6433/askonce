@@ -12,13 +12,35 @@ from app.db.database import init_db
 
 
 def seed_database_if_needed():
-    """Copy seed.db to the database path if no database exists yet."""
-    # Extract the file path from the database URL (sqlite+aiosqlite:///./data/askonce.db)
+    """Copy seed.db to the database path if no database exists or database is empty."""
+    import sqlite3
     db_path = settings.database_url.split("///")[-1]
     seed_path = Path(__file__).parent.parent / "data" / "seed.db"
 
-    if not os.path.exists(db_path) and seed_path.exists():
-        os.makedirs(os.path.dirname(db_path), exist_ok=True)
+    if not seed_path.exists():
+        print("[seed] No seed.db found, skipping")
+        return
+
+    should_seed = False
+    if not os.path.exists(db_path):
+        should_seed = True
+        print(f"[seed] No database at {db_path}, will seed")
+    else:
+        # Check if existing db is empty (no knowledge entries)
+        try:
+            conn = sqlite3.connect(db_path)
+            cursor = conn.execute("SELECT COUNT(*) FROM knowledge_entries")
+            count = cursor.fetchone()[0]
+            conn.close()
+            if count == 0:
+                should_seed = True
+                print(f"[seed] Database is empty (0 entries), will re-seed")
+        except Exception as e:
+            should_seed = True
+            print(f"[seed] Cannot read database ({e}), will re-seed")
+
+    if should_seed:
+        os.makedirs(os.path.dirname(db_path) or ".", exist_ok=True)
         shutil.copy2(str(seed_path), db_path)
         print(f"[seed] Copied seed database to {db_path}")
 
