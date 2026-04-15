@@ -1,0 +1,68 @@
+USER GUIDE
+BYTELLO HUGO
+USER
+CENTER
+Update: 2025 AUG
+THIS USER GUIDE IS NOT FOR END USERS.
+TABLE OF CONTENT
+1. INTRODUCTION
+1.1 What does the User Center can do?
+User Center is a user & product authority management platform built for product managers and intermediaries. The main functions include authorization, licenses renewal, and sub-account management.
+1.2 What license Quantity to input when creating?
+Licenses quantity depends on how many devices are in this organization and how many years they want to manage.
+1 Bytello Hugo DMS license allows one enrolled device to use 365 days(1 year)
+Example:
+Five devices to use for one year; the organization needs ﬁve licenses.
+Ten devices to use for two years; the organization needs 20 licenses.
+Twenty devices to use for three years; the organization needs 60 licenses.
+1.3 How have Bytello Hugo DMS licenses been consumed?
+Licenses will convert to credits after being assigned to an organization.
+1 Bytello Hugo DMS license =  365 credits
+One enrolled device consumes one credit one day.
+2. ADD SUB-ACCOUNT
+How to add a sub-account?
+2.1 SEND INVITATION
+2.1.1 Enter email
+Click the button [+Sub-account], enter the E-mail, and send an invitation email with a unique registration link.
+2.1.2 Register for a Sub-account
+The Sub-account will receive an E-mail, he/she needs to click the button [Register] , fill the registration form and submit.
+2.2 Approval
+2.2.1 Notification of new application
+Once your sub-account submits the registration form, you will receive a notification email.
+2.2.2 Approve application
+Click the button [Agree] to approve the application.
+Once approved, this user becomes your sub-account and appears in the list.
+After approval, the sub-account will receive an email. Click the blue button to enter uc.bytello.com to manage licenses.
+GRANT 'DISTRIBUTION RIGHT'
+3.1 Authorize sub-account
+Step:  Manager -> License management -> [License distribution] -> [Authorize]
+After authorization for your sub-account, your sub-account can invite others to become their sub-account.
+3.2 Distribute sub-account
+Step: Manager -> License management -> [License distribution] -> [Distribute]
+After distribution, your sub-account will have some licenses from you. They can then create an organization for their sub-account and add a license to their sub-account's organization. Alternatively, they can distribute a license to their sub-account."
+If you leave licenses as '0' (Zero) when granting 'Distribution right', it means the user can not create an organization because they do not have enough licenses.
+SUB-ACCOUNT MANAGE
+4.1 CHECK LICENSES
+Parent-accounts need to assign Bytello Hugo DMS licenses when creating an organization. Make sure you have enough.
+4.1.1 Check your available licenses
+If you do not have enough licenses, approach your parent-account for more.
+Check your parent-account
+4.2 CREATE A ORGANIZATION
+Step 1: Locate user -> Click [Create organization]
+If you can't find the user email, you should invite a new user to become their sub-account. See chapter 2
+Step 2: Input licenses quantity
+After the license distribution is completed, the user will receive an email. Click the blue button to activate the organization to enter hugo.bytello.com for device management.
+4.3 ADD LICENSES TO AN EXISTING ORGANIZATION
+Step 1: Locate user -> Bytello Hugo product -> [Add licenses]
+Step 2: Input license quantity
+Example:
+1 device * 1year = 1 licenses have been added to the organization, converted to 1* 365 = 365 credits
+Existing 1095 credits + 365 credits = 1460 credits
+
+[Table]
+Users have sub-accounts; they can:
+*Invite a new user to become their sub-account. See chapter 2
+*Create a Bytello Hugo DMS organization and distribute rights. See chapter 4.2
+*Add licenses to an existing organization. See chapter 4.3
+*Grant 'Distribution right' to allow them to self-manage. See chapter 3
+[/Table]

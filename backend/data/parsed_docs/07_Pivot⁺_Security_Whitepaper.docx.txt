@@ -1,0 +1,331 @@
+Pivot⁺ Security White Paper
+
+# Foreword
+
+MAXHUB Pivot⁺ (hereinafter referred to as "Pivot⁺") is a cloud-based device management platform for cross-industry customers. Through core functions such as centralized management and control, remote operation and maintenance, and CMS services (canvas resource creation, visual schedule management), it covers the full lifecycle management of MAXHUB ecosystem devices from enrollment, configuration delivery, firmware upgrade and troubleshooting. It helps education, enterprise, retail and other industries improve device management efficiency and business continuity.
+Security is the cornerstone of the design and operation of the Pivot⁺ platform. This white paper systematically elaborates on Pivot⁺'s practical solutions in security architecture, technical protection, compliance management, etc. It focuses on the three core dimensions of the SOC2 framework: Security, Availability, and Confidentiality. Meanwhile, it fully aligns with the NIS2 Directive (EU Directive on Measures for a High Common Level of Cybersecurity Across the Union), ISO27001 Information Security Management System, and GDPR (General Data Protection Regulation). It comprehensively presents the platform's security control and compliance capabilities, providing a transparent and reliable security reference for customers, audit institutions, and partners.
+This white paper will be updated irregularly according to product iterations and compliance requirements. The latest version can be accessed on the MAXHUB official website. If you have any questions about the content or need further details on security compliance, please contact us through the information provided at the end of this document.
+
+# Security Team and Organizational Structure
+
+MAXHUB has appointed a Data Protection Officer (DPO), established a Cybersecurity Department and an Information Security and Data Compliance Team to ensure the company's information security and compliance development. A three-level security management and control system of "Decision-Making - Execution - Audit" has been established, clarifying the responsibilities and collaboration mechanisms at each level:
+
+## Decision-Making Level
+
+The Data Protection Officer overall plans security and compliance work, leads the formulation of security strategies, the implementation of security compliance systems and plans, and the approval of major security matters.
+
+## Execution Level
+
+Information Security Engineers are responsible for the implementation of technical protection measures; Regional Operation and Maintenance Managers take charge of regional security operation and maintenance; Compliance Officers handle regulatory interpretation, training, and incident reporting to ensure the simultaneous implementation of security measures and compliance obligations.
+
+## Audit Level
+
+Independent audit positions are set up to verify the fulfillment of security compliance inspections and operational behavior audits, avoiding potential risks in security compliance and information security.
+
+# Compliance and Certifications
+
+Pivot⁺ attaches great importance to security compliance development, actively aligns with international mainstream security standards and regulations, and builds a comprehensive compliance system. Currently, Pivot⁺ is applying for multiple certifications, including SOC2 Type 1, GDPR, NIS2, and ISO/IEC 27001:2022.
+Meanwhile, MAXHUB invites independent third-party professional security testing institutions to conduct regular vulnerability scanning and penetration testing on Pivot⁺. Through continuous vulnerability detection and repair, the security protection system of the entire platform has been significantly strengthened.
+
+## SOC2 Framework
+
+The Service Organization Control (SOC) 2 report, developed by the American Institute of Certified Public Accountants (AICPA), is an independent assessment of the design adequacy and operating effectiveness of a service organization's controls related to security, availability, processing integrity, confidentiality, or privacy.
+MAXHUB's SOC2 report provides independent verification of the design effectiveness of controls related to the managed cloud service (Pivot⁺) and device management platform (MAXHUB OS). These controls cover security, confidentiality, availability, and privacy protection.
+
+## NIS2 Directive
+
+The NIS2 Directive (Network and Information Security Directive 2) is a legislation adopted by the EU in 2022, aiming to establish unified cybersecurity standards across the EU. Its core objectives include standardizing cybersecurity practices, promoting a consistent approach to protecting digital infrastructure, and strengthening overall network defense through requirements such as risk assessment, incident reporting, and supply chain management.
+MAXHUB fully implements the key obligations of the Directive, including cybersecurity risk management, 24-hour incident reporting, and supply chain security control. It has established a docking mechanism with the EU Cybersecurity Crisis Liaison Organization Network (EU-CyCLONe) to ensure compliance with the requirements of EU member states.
+
+## GDPR
+
+The General Data Protection Regulation (GDPR) is recognized as the world's strictest privacy and security regulation. Although drafted and adopted by the EU, any organization that targets EU citizens or collects data related to EU citizens must comply with its obligations, regardless of location.
+MAXHUB strictly adheres to current EU data protection regulations and has completed an independent GDPR compliance assessment.
+
+## ISO/IEC 27001:2022
+
+The International Organization for Standardization 27001 standard (ISO27001) is the world's most well-known implementation standard for Information Security Management Systems (ISMS). It specifies best practices for managing, monitoring, reviewing, and continuously optimizing an organization's information security management system. This certification is issued by independent third-party audit institutions, proving that relevant security control measures have been deployed and are operating effectively. MAXHUB obtained this certificate in 2019.
+
+## Third-Party Testing
+
+MAXHUB's internal and external testing teams regularly conduct static and dynamic vulnerability scanning and penetration testing in production environments and internal corporate networks. The company maintains cooperation with IOActive, Inc., a world-leading security penetration testing institution, to conduct regular security penetration testing on its various products.
+
+# Security Development Lifecycle
+
+The product development and iteration of Pivot⁺ strictly follow the Security Development Lifecycle (SDL) process, embedding SOC2 requirements and NIS2 Directive obligations into all stages of design, development, testing, launch, and maintenance to ensure that the product has security protection and compliance capabilities from the source.
+
+## Requirements and Design Phase
+
+Based on industry security certification standards, comprehensively assess operational security and user privacy impacts to avoid major design risks, ensuring that product design complies with product privacy policies and data processing security requirements.
+Pre-assess network attack risks for core device management functions (such as remote desktop control and firmware upgrade).
+
+## Development Phase
+
+Use IDE security plug-ins for code development to detect security vulnerabilities and code defects in real time, realizing automatic scanning after code submission, with a focus on verifying the code compliance of event logging and risk detection.
+Implement a strict code review process. Code can only be merged after approval by designated reviewers, and the submitter and reviewer cannot be the same person to ensure code security and compliance quality.
+
+## Testing and Verification Phase
+
+Test engineers obtain the code package of the to-be-released version from the image repository and conduct functional testing through test cases in the test environment. In addition, they discover vulnerabilities in applications through manual penetration testing.
+Regularly conduct product vulnerability reviews and training to establish a security knowledge base.
+Test engineers feed back test results to the R&D center and product department through the Jira system. If defects are found during testing, developers will be notified to fix them in a timely manner; if no defects are found, the product manager will perform user acceptance testing and submit the test results and deployment suggestions to the testing department and product department.
+After passing the test, test engineers initiate a deployment request, which must include a clear change rollback plan, and finally be approved by the project director.
+
+## Launch Assessment Phase
+
+Each version must undergo a strict assessment process before release to ensure compliance with environmental, application, and network security requirements.
+Conduct a dual-dimensional assessment of "Security + Compliance" before official launch to verify whether system configurations meet security baseline requirements.
+Develop a launch plan and rollback plan, clarifying the emergency response process in case of abnormal related functions.
+Monitor system status in real time during launch. If security or compliance issues occur, trigger the rollback mechanism immediately.
+
+## Maintenance Phase
+
+After deployment, regularly perform security scanning and patch updates on the production environment. In the formal environment, operation and maintenance personnel establish a vulnerability repair time limit standard of 72 hours for high-risk vulnerabilities and 7 days for medium-risk vulnerabilities through the "vulnerability repair obligation" mechanism.
+MAXHUB has established a standardized change management process to ensure that all Pivot⁺ changes complete documentation, testing verification, security assessment, change impact analysis, and approval processes before being put into the production environment.
+Each version change requires a personal information impact assessment, and affected customers will be included in the scope of change notification when necessary.
+
+# Privacy Data Processing
+
+
+## Privacy Policy
+
+MAXHUB has established an information security management system, clearly stating its commitment to collecting and processing personal information in accordance with the law, and providing clear information explanations to data subjects.
+Personal information processing strictly follows the consent of data subjects and established agreements. The compliance team is responsible for supervising and reviewing personal information processing processes, and regularly updating and publishing the privacy policy.
+MAXHUB has formulated a privacy protection plan covering the full-process management of privacy risk identification, data compliance management, system measure assessment, system security assessment, information governance, and supervision and investigation.
+MAXHUB has formulated a privacy policy that clearly specifies the collection scenarios, collection methods, information categories, and purposes of use of personal information, as well as matters such as access, update, storage, processing, transmission, and disclosure of personal information.
+In the privacy policy, MAXHUB clarifies the feedback channels for customers to complain about personal information or privacy issues. MAXHUB's compliance team will conduct timely investigations to determine whether there are unfair or illegal acts.
+MAXHUB has formed a compliance team composed of legal, audit, and product-related personnel to specifically supervise the implementation of the company's privacy policies and processes. The team is mainly responsible for evaluating customer privacy issues and complaints, determining whether emergency reporting or remedial measures are needed, and directly communicating with customers to resolve their privacy concerns by providing solutions.
+The Data Protection Officer reviews relevant privacy laws and regulations every year, updates compliance policies, and ensures that the definition of "sensitive" personal information is accurate and communicated in place. At the same time, legal counsel reviews the privacy policy published by MAXHUB at least once a year to ensure consistency with internal policies and applicable laws and regulations.
+If there is any change to the privacy policy, MAXHUB will notify customers via email, and customers must confirm the updated privacy policy before continuing to use the service. Customers can access the latest privacy policy and trace historical versions on the website.
+To ensure that the collection of user information requires the explicit consent of relevant customers, customers must agree to and confirm acceptance of the "MAXHUB Service Agreement" and "Privacy Policy" when logging in to the MAXHUB platform for the first time.
+
+# Privacy Compliance Assessment
+
+In terms of business compliance, MAXHUB has established a regular assessment mechanism for privacy data compliance and provides employees with the latest training covering the definition of personal data and the criteria for defining sensitive information.
+MAXHUB has established data classification and grading standards for maintaining customer data, including classification based on confidentiality and sensitivity.
+The compliance team reviews the effectiveness of personal information security control measures every year to ensure the legality and compliance of collected data. For newly added personal information collection, the compliance team holds meetings to discuss the effectiveness of the privacy policy. Through these control measures, MAXHUB ensures that the collection, storage, and use processes of personal information comply with privacy protection requirements.
+The actual controller of Pivot⁺ user data is the customer, not MAXHUB. MAXHUB processes user data in accordance with the law only to provide relevant functions and data display for actual customers, and does not obtain any personal sensitive information.
+Data transmitted by terminal devices contains key device information required for device operation and maintenance management, and does not include any personal or sensitive information. Whether to connect to Pivot⁺ and transmit this data is completely determined by the terminal user.
+
+# Data Security
+
+
+## Data Transmission Security
+
+All data transmission between devices and the cloud, as well as between various cloud modules, is encrypted using the TLS 1.2 protocol. The key exchange adopts the ECDHE algorithm, and ECDHE-RSA-AES256-GCM-SHA384 is used to ensure the integrity and confidentiality of data during transmission.
+
+## Data Storage Security
+
+Sensitive configurations (such as administrator accounts and passwords, and unlock passwords) are encrypted and stored locally on the client to ensure key security.
+Data is strictly isolated by organization ID, with zero cross-organization data access permissions.
+
+## Data Access Control
+
+Build a hierarchical access system based on the "principle of least privilege". Only administrators and authorized personnel of the affiliated organization can access the corresponding data.
+For sensitive operations (such as submitting incident reports and viewing risk assessment data), additional two-factor authentication is required.
+Establish a data access audit mechanism to record all data query, export, and modification operations to ensure traceability of access behavior.
+
+## Data Desensitization and Minimal Collection
+
+Only collect data necessary for device management, and do not collect customer business data or personal sensitive information. The scope of data collection is clearly informed to customers in the service agreement and authorized.
+
+## Data Isolation
+
+Data access between different tenant accounts is mutually isolated. Data between enterprises is mutually isolated and inaccessible.
+Pivot⁺ assigns a unique identifier to each enterprise's data to identify the data owner. This identifier is stored in a token, which enterprises can obtain by successfully logging in to Pivot⁺. When an enterprise sends a data access request to Pivot⁺, it must carry this token. Pivot⁺ can verify the validity of the token, read the unique identifier in it, and then return the corresponding enterprise data.
+Data between various channels and enterprises is also mutually isolated and cannot be interconnected.
+Channels can create enterprise accounts. However, without obtaining enterprise permissions, the channel cannot access the enterprise platform and enterprise data. Only when the enterprise grants the channel permission to manage devices can the channel log in to the enterprise's Pivot⁺ and obtain full permissions to manage devices.
+
+## Data Deletion
+
+Support customer data deletion requests. Upon receiving a legitimate deletion application, complete the thorough deletion of full-platform data (including local storage and remote backup) within 30 days and issue a deletion confirmation report.
+For NIS2 incident report data, retain it for at least 1 year in accordance with the requirements of the Directive, and destroy it in accordance with compliance processes after the retention period expires.
+
+# Device and Cloud Connection Security
+
+
+### Device Identity Security
+
+Multi-dimensional identity verification: Adopt a combined authentication scheme of "SN code + MAC address array + system random ID" to build a dual protection network of "primary identifier + secondary identifier". When the SN is duplicated or empty, automatically trigger cross-verification of secondary identifiers, controlling the conflict rate below 0.01%.
+Non-blocking alarm design: In case of abnormal identity verification, do not block the normal registration and use of devices, only trigger hierarchical alarms (duplicate SN as a severe alarm, empty SN as a normal alarm), and the system automatically records abnormal information for operation and maintenance personnel to follow up later.
+Hardware change self-healing: When hardware information changes due to device maintenance or factory reset, automatically associate historical identity files through "hardware information fragment matching + registered organization information tracing" to restore management and control configurations, ensuring the continuity of device management.
+
+## Device Connection Control
+
+Device access requires active deployment and authorization by enterprise administrators; otherwise, devices will not actively report data to the cloud, avoiding network risks caused by unauthorized device access.
+Users can manually configure to allow/prohibit connection to Pivot⁺ through the device interface or manager, and can also set permissions separately for high-risk functions (such as remote desktop and packet capture analysis).
+
+## Availability Assurance
+
+When the connection between the device and the cloud is interrupted, automatically start gradient retry (10 seconds → 30 seconds → 5 minutes), with a reconnection success rate of 99.8%.
+In case of network fluctuations during remote control, support operation breakpoint resumes to avoid business interruption.
+Data transmission during reconnection adopts additional encryption verification.
+
+# Portal Website and Access Security
+
+
+## Identity Authentication Mechanism
+
+The operation and maintenance platform integrates enterprise SSO single sign-on, and two-factor authentication (password + Google verification/enterprise SMS) is enabled for key systems (database management, NIS2 incident reporting module).
+Passwords must meet the requirements of "length ≥ 8 characters, containing a combination of at least 3 types of uppercase and lowercase letters, numbers, and special characters".
+
+## Separation of Duties Principle
+
+Strictly divide the permissions of development, testing, and production positions. Operation and maintenance personnel are not allowed to participate in code development, and development personnel have no access permissions to the production environment.
+NIS2 compliance work is separated from daily operation and maintenance work. Compliance officers independently conduct verification of Directive requirements to ensure that compliance processes are not interfered with.
+
+## Access Security Protection
+
+Anti-brute force cracking: When the number of failed login attempts exceeds the limit, the account is automatically locked, and graphic verification is triggered in some scenarios to block malicious login attempts.
+Anti-attack mechanism: Built-in protection measures against SQL injection and XSS script attacks, resisting attacks through multi-layer mechanisms such as input verification and output encoding, with a focus on protecting the security of interfaces.
+Session timeout control: Support setting session expiration time (default 30 minutes). After timeout, users need to log in again to prevent unauthorized access.
+Network access restriction: Core operation and maintenance systems and NIS2 compliance modules prohibit direct public network access, only allowing access from designated authorized terminals.
+
+## Permission Access Control
+
+Hierarchical permission system: Based on the "principle of least privilege", grant access permissions according to positions and responsibilities. For example, functions such as incident reporting and risk assessment are only open to compliance officers and designated operation and maintenance personnel.
+Permission lifecycle management: When employees join the company, grant permissions according to the minimum permissions of their positions (requiring dual approval by the direct supervisor and NIS2 compliance officer); immediately recover original permissions when positions change, and re-apply for new permissions; freeze accounts and recover all permissions within 24 hours after departure to avoid permission abuse.
+Privileged account control: Establish separate ledgers for privileged accounts such as database administrators, system root users, and NIS2 incident report administrators, recording users, purposes, and validity periods. Login requires two-factor authentication and registration of operation reasons, and usage logs are reviewed every two weeks.
+
+## Network Security Risk Management
+
+Risk assessment and protection: Conduct a compliance risk assessment once a year to identify core threats such as "device access risks", "CMS service interruption risks", and "supply chain risks". For the supply chain, conduct NIS2 compliance qualification audits on cloud service providers (such as Azure) and hardware suppliers, giving priority to partners that have passed SOC2 and ISO27001 certifications, and clarifying data security, incident notification obligations, and responsibility division in cooperation agreements.
+Security baseline and monitoring: Built-in "security baseline inspection tool" in the Pivot⁺ platform to regularly scan device configurations (such as encryption status and authentication mechanisms) and system settings (such as vulnerability repair progress and event log integrity) to ensure compliance with security and compliance requirements.
+Through Azure cloud-native monitoring tools and self-developed operation and maintenance platforms, monitor the operating status of core services and network traffic in real time. When risks such as DDoS attacks and abnormal device disconnection are detected, trigger an alarm within 15 minutes.
+
+# Incident Reporting and Emergency Response
+
+
+## Incident Classification and Mandatory Reporting
+
+Pivot⁺ cybersecurity incidents are divided into "Severe Incidents" and "General Incidents":
+
+### Severe Incidents
+
+Service interruption in the EU region exceeding 4 hours, data leakage affecting more than 1,000 EU users, large-scale device disconnection (≥50 devices). The platform automatically generates a standardized report, supporting reporting to the competent authorities of EU member states via email within 24 hours. The report includes incident time, scope of impact, and emergency measures.
+
+### General Incidents
+
+Single customer device failure, partial function abnormality. Records are retained and summarized annually. Mandatory reporting is not required, but response and handling must be completed within 24 hours.
+
+## Emergency Response Process
+
+The "Emergency Response Plan" has been formulated, clarifying the five-step process of "Incident Confirmation → Containment → Eradication → Recovery → Review":
+
+### Incident Confirmation
+
+The security team verifies the incident type and scope of impact through the monitoring platform and notifies affected customers simultaneously.
+
+### Containment Measures
+
+Initiate network isolation for affected devices/services, close abnormal ports to prevent risk spread.
+
+### Eradication and Repair
+
+Analyze the root cause of the incident (such as vulnerability exploitation or configuration error) and complete repairs in accordance with the required time limit standards.
+
+### Business Recovery
+
+Restore affected services through disaster recovery node switching or data recovery, and update progress to competent authorities simultaneously.
+
+### Review and Optimization
+
+Output a review report within 7 days after incident handling, updating the emergency response plan and protection strategies.
+
+## Emergency Drills
+
+Conduct one emergency drill every year (such as simulating DDoS attacks on devices in the EU region and CMS data leakage). After the drill, conduct a review to evaluate the compliance of the response process and optimize incident reporting and handling efficiency.
+
+# High Availability and Disaster Recovery Backup
+
+
+## High Availability Architecture Design
+
+
+### Multi-node deployment
+
+Core services adopt multi-instance cluster deployment, supporting elastic scaling to cope with concurrent scenarios where more than 10,000 devices are online at the same time, with core service availability reaching 99.9%.
+
+### Cross-regional disaster recovery
+
+Deploy redundant nodes and disaster recovery data centers in Asia-Pacific, Europe, and the Americas, adopting a "local backup + remote synchronization" strategy, with RTO (Recovery Time Objective) ≤ 4 hours and RPO (Recovery Point Objective) ≤ 1 hour, ensuring the continuity of key services in response to regional failures or natural disasters.
+
+# Operation and Maintenance Assurance System
+
+Hierarchical alarm response: Establish a three-level alarm system of P0 (global failure), P1 (regional failure), and P2 (single customer failure). For P0 failures (such as service interruption), activate the emergency team within 15 minutes; respond to P1 failures within 1 hour; handle P2 failures within 4 hours.
+Batch operation and maintenance capabilities: Support batch firmware upgrades and batch configuration delivery for devices, reducing compliance risks caused by manual intervention.
+Dynamic capacity management: Monitor server CPU, memory, bandwidth, and other resource usage rates in real time. Trigger an expansion alarm when storage usage reaches 85%, and complete elastic adjustment of cloud resources within 24 hours to avoid system freezes caused by resource bottlenecks.
+
+# Business Continuity Plan
+
+Conduct a business continuity assessment once a year, including business interruption, disaster recovery switching, and failure recovery drills. Focus on identifying risks such as network attacks and data center failures, formulate the "Business Continuity Emergency Response Plan", clarifying the emergency organizational structure, response processes, and resource guarantee measures.
+
+# Vulnerability Management and Security Incident Response
+
+
+## Vulnerability Management Mechanism
+
+
+### Vulnerability collection
+
+Collect vulnerability information through multiple channels such as internal security scanning, customer feedback, and third-party vulnerability platforms (including the EU official vulnerability database), establish a unified vulnerability ledger, and mark whether vulnerabilities involve key services.
+
+### Hierarchical handling
+
+Classify vulnerabilities according to CVSS scores. High-risk vulnerabilities are fixed within 72 hours, medium-risk vulnerabilities within 7 days, and low-risk vulnerabilities are included in the iteration optimization plan.
+
+### Patch release
+
+After the repair is completed, notify users through platform announcements and emails, provide patch download and upgrade guides, and report the repair status of high-risk vulnerabilities to EU competent authorities simultaneously.
+
+## Security Incident Response Process
+
+Security emergency response is divided into four stages to ensure rapid incident handling:
+
+### Problem Collection
+
+The security team is responsible for tracking and verifying security incidents and feedback, focusing on recording incident details (such as occurrence time, scope of impact, and whether it is a "Severe Incident").
+
+### Vulnerability Analysis
+
+Prioritize assessing vulnerability risks and scope of impact. For severe incidents, immediately activate the emergency team and provide temporary solutions (such as switching services to disaster recovery nodes) to prevent the problem from expanding.
+
+### Vulnerability Repair
+
+Develop a repair plan based on the root cause analysis results. After completing the repair, conduct comprehensive testing to ensure that functions such as incident reporting and risk management are not affected.
+Tracking and Disclosure: Investigate similar issues and optimize protection measures, disclose incident handling results to EU competent authorities and affected customers as required, and release security recommendations through official channels.
+
+## Security Incident Management System
+
+Establish the "Information Security Incident Management Procedure", clarifying incident classification standards, escalation paths, and mandatory reporting time limits; standardize event logging requirements (including operator, time, IP, and incident type) to ensure that logs are retained for at least 1 year to meet audit and traceability needs; realize closed-loop management of security incidents, covering the full lifecycle of "occurrence - handling - traceability - recovery".
+
+# Supplier Security Management
+
+
+## Supplier Qualification Audit
+
+Conduct strict security and compliance qualification audits on third-party partners such as cloud service providers (such as Azure) and hardware suppliers, giving priority to suppliers that have passed SOC2 and ISO27001 certifications and meet the requirements of the NIS2 Directive; verify whether the data centers of cloud service providers meet local storage and security protection requirements to avoid introducing compliance risks into the supply chain.
+
+## Cooperation Agreement Constraints
+
+Clearly specify data security, confidentiality obligations, and compliance responsibility division in cooperation agreements, agreeing on obligations that suppliers need to fulfill in cooperation with Pivot⁺ (such as vulnerability repair notifications and incident information sharing); clarify that suppliers must comply with the cybersecurity laws and regulations of EU member states, as well as Pivot⁺'s audit rights over suppliers' security practices.
+
+## Continuous Compliance Assessment
+
+Assess the security compliance of suppliers every year, focusing on verifying the fulfillment of security obligations (such as vulnerability repair time limits and data protection measures); if security or compliance risks are found in suppliers, require rectification in a timely manner. If rectification fails to meet expectations, launch alternative solutions to ensure that third-party services do not affect the compliance of Pivot⁺.
+
+# Disclaimer
+
+This white paper is only used to illustrate the security capabilities of the Pivot⁺ platform and compliance practices such as SOC2, NIS2, GDPR, and ISO27001, and does not constitute any form of service commitment. Although Pivot⁺ has established a sound security management and compliance system, it does not rule out the possibility of security risks caused by unforeseeable factors such as force majeure (such as interruption of EU disaster recovery nodes due to natural disasters), escalation of network attacks (such as new types of DDoS attacks), and third-party service failures. MAXHUB shall not be liable for losses caused by non-self reasons.
+The copyright of this white paper belongs to MAXHUB. No unauthorized reproduction, distribution, or modification is allowed.
+
+# Contact Information
+
+If you have any questions about the content of this white paper or need further details on Pivot⁺ security compliance (such as NIS2 compliance reports and SOC2 certification progress), you can contact us through the following methods:
+Email: support@maxhub.com
+
+### Version Information
+
+Version: V1.0
+Release Date: December 2025
+Update Cycle: Updated once a year. Revisions will be made within one month following amendments to regulatory directives or major security upgrades.

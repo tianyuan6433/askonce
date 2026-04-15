@@ -1,0 +1,157 @@
+MAXHUB Pivot⁺
+Pioneer Program
+Update by January 25, 2026
+Table of Contents
+Pivot⁺, the powerful upgrade to Pivot, is launching soon—designed to supercharge your device management efficiency!
+We’re inviting loyal Pivot users to join our Pioneer Experience Officer program and collaborate directly with our R&D team to shape the final product.
+Key Pivot⁺ Upgrades
+Sleeker interface
+30% fewer clicks for faster, lower training costs, better daily management efficiency.
+Ultra-simple bulk enrollment
+No manual device-by-device setup—cuts initial enrollment time.
+Intelligent O&M
+Real-time dashboard alerts for equipment/network issues (remote early detection & resolution)
+Visual content distribution
+Intuitive canvas mixing, custom playlists, drag-and-drop scheduled one-click release.(coming soon)
+Pioneer Experience Officer Program
+Eligibility
+Active existing Pivot users
+Eager to co-create and improve Pivot⁺ with our team
+Timeline
+Application Period: February 1, 2026 – June 30, 2026
+Review: 3 business days; you’ll be notified via email once a decision is made.
+How to Apply
+We use a targeted invitation & sales liaison model:
+Reach out to your dedicated sales consultant or via maxhub.com (top-right blue Contact Us button).
+Provide organization details (Admin Account, Organization Code, Device Types/Models) to complete registration.
+Upon approval, we’ll activate your access, send a detailed migration guide, and assist with migration.
+4. Exclusive Pioneer Benefits
+A. Free Professional Access: 60 months of complimentary Pivot⁺ Professional usage (valid from activation date).
+B. Direct R&D Collaboration: Share feedback directly with product managers and technical leads—your input drives version optimizations.
+Migration Risks
+To ensure a smooth transition, please review these key points before migrating:
+Device Compatibility
+Pivot⁺ doesn’t support all legacy Pivot devices. Check the Pivot⁺ Compatibility List first—if not listed, delay migration.
+Data Migration Limitations
+Some Pivot features/data cannot be migrated. Prepare backups or adjustments in advance (see details below).
+Coexistence Conflict
+Pivot and Pivot⁺ can coexist temporarily but risk command conflicts. We recommend disabling Pivot permissions after migration.
+Migration Duration
+The full migration process typically takes 5 business days. Please plan accordingly.
+On-Site Support Required
+While the migration is performed online, some local user support is necessary.
+Switch Back Option
+After using Pivot⁺, if you’re not satisfied with it, you can switch back to the original Pivot at any time.
+However, you’ll lose all Pioneer Experience Officer benefits, and operations performed on your devices during the Pivot⁺ migration cannot be transferred back—you’ll need to reconfigure settings manually. Please be advised.
+MAXHUB Pivot⁺
+
+[Table]
+Attachment: Migration Checklist | Attachment: Migration Checklist | Attachment: Migration Checklist
+Pivot Core Feature | Migratable to Pivot⁺? | Required User Action | Required User Action
+Organization Information | Yes |  | 
+Roles & Permissions | Yes |  | 
+Device Enrollment | Yes | Keep devices powered on | Keep devices powered on
+Device Group Relationships | Yes |  | 
+Profile Content | Yes |  | 
+Associated devices of Profile | No | Manually re-associate devices in Pivot⁺ | Manually re-associate devices in Pivot⁺
+Enable/Disable Status | Yes |  | 
+Account | No |  | 
+Incident | Yes |  | 
+Resource Groups & Content | Yes |  | 
+Program / Published Program | No | Recreate program in Pivot⁺ | Recreate program in Pivot⁺
+Command Logs /Action Logs | No |  | 
+Pending Commands | No | Recreate pending commands in Pivot⁺ | Recreate pending commands in Pivot⁺
+Admin / Unlock Passwords | Yes |  | 
+Personal Account Settings
+ Username, Multiple logins,
+2-Factor Authentication | Yes |  | 
+Device usage Data | No |  | 
+[/Table]
+
+
+[Table]
+Attachment: Feature Differences Between Pivot and Pivot⁺
+[/Table]
+
+
+[Table]
+ |  | Pivot | Pivot | Pivot Plus | Pivot Plus | Pivot Plus
+Moudle | Features | Free | Premium | Premium | Basic | Pro
+Types | Android IFP (U Series) | ✓ | ✓ | ✓ | ✓ | ✓
+Types | MH OS IFP (V series) | ✓ | ✓ | ✓ | ✓ | ✓
+Types | MTR-Android |  |  |  | ✓ | ✓
+Types | MTR-Windows | ✓ | ✓ | ✓ | ✓ | ✓
+Types | Digital Signage (CMA, CMB) |  |  |  | ✓ | ✓
+Types | All-In-One LED | ✓ | ✓ | ✓ | ✓ | ✓
+Enrollment | Manual Enrollment | ✓ | ✓ | ✓ | ✓ | ✓
+Enrollment | Enroll via USB | ✓ | ✓ | ✓ | ✓ | ✓
+Enrollment | Pre-import SN & MAC enrollment |  | ✓ | ✓ |  | ✓
+Enrollment | Same-Network Enrollment |  |  |  |  | ✓
+Management | 8-level & Auto-allocation Device Groups |  | ✓5-level | ✓5-level | ✓ | ✓
+Management | Peripheral Parameter Configuration | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Control Commands 
+Power On/Off, Reboot, Screen Lock, Bells,
+Screen Off, Clear Cache, Factory Reset | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Setting Commands 
+Brightness/Volume, Wallpaper,
+Image/Sound Mode, Input Switch, 
+Booting Logo | ✓ | ✓ | ✓ | ✓ | ✓
+Management | App File Upload & Installation | ✓ | ✓ | ✓ | ✓ | ✓
+Management | App Store Link Installation & Auto-Update | ✓without Auto-Update | ✓without Auto-Update | ✓without Auto-Update | ✓ | ✓
+Management | App Enable / Disable / Install / Uninstall | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Manual Upload Firmware To Update |  |  |  |  | ✓
+Management | Keep Firmware Up To Date |  | ✓ | ✓ |  | ✓
+Management | Bulk Update Main Device Firmware | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Bulk Update Peripheral Firmware |  |  |  |  | ✓
+Management | Command in schedule & Re-Edit | ✓ | ✓ | ✓ | ✓ | ✓
+profile | System Configuration
+Date & Time, Powering Saving, Wake-Up
+Settings, Display & Sound | ✓ | ✓ | ✓ | ✓ | ✓
+profile | Wi-Fi Configuration
+Wi-Fi Settings & Allow List | ✓ | ✓ | ✓ | ✓ | ✓
+profile | App Configuration
+Default Required App & Certificate List | ✓ | ✓ | ✓ | ✓ | ✓
+profile | Lock Configuration
+Device / Setting / Factory Menu Lock | ✓ | ✓ | ✓ | ✓ | ✓
+profile | Other Personalized Configuration
+BYOD, OOBE, URL Block List, 
+Plugin for MTR, Hotspot Settings,
+Peripheral Parameter... |  | ✓
+without OOBE, Peripheral | ✓
+without OOBE, Peripheral |  | ✓
+Operations
+& Data | Multi-Devices Remote Screen Control |  |  |  |  | ✓
+Operations
+& Data | Hierarchical Incident Management |  |  |  |  | ✓
+Operations
+& Data | Anomaly Incident Detection & Alert |  |  |  |  | ✓
+Operations
+& Data | Remote Fix for Anomaly Incidents |  |  |  |  | ✓
+Operations
+& Data | Dashboard | ✓ basic data | ✓ basic data | ✓ basic data | ✓ basic data | ✓
+Operations
+& Data | Usage Data | ✓ | ✓ | ✓ | ✓ | ✓
+Operations
+& Data | App Operation Data | ✓ | ✓ | ✓ | ✓ | ✓
+Operations
+& Data | Top 10 Most Visited URLs |  |  |  |  | ✓
+CMS | Resources | 20GB | 50GB | 50GB | 20GB | 50GB
+CMS | Create Canvas |  |  |  |  | ✓
+CMS | Playlist |  | ✓ | ✓ |  | ✓
+CMS | Content Published In Schedule |  |  |  |  | ✓
+CMS | Send Image / Video | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Send URL / Live Channel | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | File Publish | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Send Text | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Emergency Alert with 4 Default Templates | ✓without templates | ✓without templates | ✓without templates | ✓ | ✓
+Organization | Default Roles
+admin, sub-admin, viewer | ✓ 2 users | ✓ | ✓ | ✓ | ✓
+Organization | Bulk users adding |  | ✓ | ✓ | ✓ | ✓
+Organization | Custom Roles |  | ✓ | ✓ |  | ✓
+Organization | Bulk Client Update | ✓ | ✓ | ✓ | ✓ | ✓
+Organization | WOL Service Update & Device Power-On Detection | ✓update only | ✓update only | ✓update only | ✓ | ✓
+Logs | Command Execution Logs | ✓ | ✓ | ✓ | ✓ | ✓
+Logs | Action Logs | ✓download only | ✓download only | ✓download only | ✓ | ✓
+Logs | Client Execution Logs |  |  |  |  | ✓
+Logs | Bulk Export of XBug Logs | ✓without bulk export | ✓without bulk export | ✓without bulk export | ✓ | ✓
+[/Table]

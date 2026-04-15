@@ -1,0 +1,174 @@
+--- Page 1 ---
+USER GUIDEBYTELLO DEVICE MANAGEMENT SYSTEM DMS 
+Update:2023 Sep
+
+--- Page 2 ---
+Table of contents 1. Introduction  51.1 account Register  61.2 Device enroll.  72. Devices  82.0 Dashboard  82.1 Device Manage  92.1.1 List view  92.1.2 Grid view  92.1.3 Table manage  92.2 Device details  102.2.1 Basic  102.2.2 Commands  102.2.3 Data  102.2.4 Application  102.2.5 Optimize the device details page  112.2.6 Export and download the device Xbug ﬁle to the local  112.3 Device Group  112.3.1 group list  112.3.2 NEW Group: Auto-allocation  112.3.3 New Group: Manual selection  122.3.4 Group and Command  132.3.4 Group and proﬁle  133. Send  a command  143.1 Select & send  143.2 Command time mode  153.2.1 Execute now  153.2.2 Timed mode  153.2.3 Recurring mode  153.3 Oﬄine mode  163.3.1 Oﬄine mode  163.3.2 Commands with oﬄine mode  163.3.3 Cancel a Recurring oﬄine command  164. Manage  174.1 Device control  174.1.1 Power on  174.1.2 Power oﬀ  174.1.3 Reboot  174.1.4 Bells  174.1.5 Screen lock  174.2 Message  194.2.1 Text  194.2.2 Multimedia  194.2.3 File publish  194.2.4 Alert  204.2.5 Live channel  214.3 Device settings  224.4 Screen control  23
+
+--- Page 3 ---
+4.4.1 Real-time display  234.4.2 Screen control  244.5 CAMERAs & Speakers  254.6 Device location  265. Advanced manage  275.1 Applications  275.1.1 App install  275.1.2 App Manage  275.2 Android only - Input Switch  295.3 Firmware update  305.4 DMS client update  305.5 Window Only: Popups Block  315.6 Clear cache  325.6 Factory reset  326. Proﬁle  336.1 Sections in proﬁle  336.1.1 Time  336.1.2 Power saving  336.1.3 App Manage  356.1.4 Device Lock  356.1.5 Wi-Fi  356.1.6 Clone proﬁle  356.1.7 SCREEN LOCK  356.1.6 Wi-Fi Allow list  366.1.7 Display & Sound  366.1.8 URL restriction  366.1.9 Certiﬁcate  366.1.10 Device settings  366.2 Associate devices  387. Records  397.1 Command history  397.2 History details  397.3 Command in schedule  408. Resources  418.1 Images  418.2 Videos  418.3 Audios  418.4 Apps  418.5 Certiﬁcates  418.6 others  419. Users  429.1 Add a user  429.1.1 Input email address  429.1.2 Choose role & device groups  429.1.3 Optimized the operation process for changing user’s role  429.2 Custom role - Premium only  439.3 Change Role  4310. System  4410.1 Organization  4410.2 Password  45Bytello DMS Admin LOCK  45
+
+--- Page 4 ---
+Screen LOCK  4510.2 Personal settings  45Change admin email  4511. WOL service  4611.1 Setup Bytello WOL Service  4611.2 WOL Server on web  4711.3 WOL Service optimization 47
+
+--- Page 5 ---
+1. INTRODUCTION  Bytello DMS is a web-based software that simpliﬁes the management of your equipment.  With the DMS software, you can enjoy cluster management functionality for your interactive ﬂat panels. Options include status monitoring, panel grouping, time and channel switching, volume control, and information bulletins. Everything you need is available in the same uniﬁed space. Update records update time：2023/09/18 Update content：Versions 1.22.0 to 1.25.0
+
+--- Page 6 ---
+1.1 ACCOUNT REGISTER Step one: Check the mail inbox, and ﬁnd the account registration invitation Step two: Fill out the registration form. Step three: Wait for the approval email Step four: Check the mailbox for account approval and log in dms.bytello.com. Step ﬁve: Activate organization by ﬁll basic information
+
+--- Page 7 ---
+1.2 DEVICE ENROLL. Login to dms.bytello.com, Click [Enroll] on the top bar to see enroll method. Download DMS Client here: http://www.bytello.com/dms Method 1: Fill in the information on the client Input ‘Organization code’ and  ‘Admin account’ on the Client to enroll this device in the organization.  
+Method 2: Plug USB onto a panel Preset and download enroll ﬁle from the web console. Put enroll ﬁle into a USB. Plug the USB into a panel. Conﬁrm the information and enroll Method 3: Zero touch enroll (Premium only) Zero touch enroll helps organizations automatically enroll devices with command installed in bulk without having to manually set up each device.Zero touch enroll with just a few steps:Enter the product management platform from Bytello User CenterSelect the organization, click Zero touch enrollDownload the template ﬁle, enter the serial number of the device to bebound and upload it to complete the deploymentZero touch enroll is deployed, the devices will automatically enroll to the organization after being powered on and connected to the network
+Tips:Enter the device name in the column behind the serial number in the uploaded template document, the device can be automatically named when enrolling.
+
+--- Page 8 ---
+2. DEVICES  2.0 DASHBOARD Organization info Basic info includes Organization name, Organization code, and admin account. Credits are the total credit one organization has. Enrolled devices are the number of enrolled devices; 1 enrolled device costs one credit one day. The days remaining is the time length that this account has to access the product. Online devices are the number of devices currently online at the moment. Online trend To check devices’ online & oﬄine status for the past 7 and 30 days. Oﬄine device A list of devices that have been oﬄine for the past seven days.
+
+--- Page 9 ---
+2.1 DEVICE MANAGE 2.1.1 LIST VIEW All devices enrolled in Organization will be displayed in Manage -> All Devices. 
+Status Online means the device is currently connected with DMS.  Status Oﬄine implies the device is not connected with DMS. 2.1.2 GRID VIEW Grid view showcases device screenshots.  
+2.1.3 TABLE MANAGE The custom column allows the user to change the default information displayed in the table. Users can export the device list.
+
+--- Page 10 ---
+2.2 DEVICE DETAILS 2.2.1 BASIC Check and change the device name and device tags;  Set device notiﬁcation display method; Display device information; View screen or start a screen control session; Change device output volume, screen brightness, lock remote and physical button; Lock input switch; 
+Rename devices in bulk (Premium only)Now support rename device in bulk, you need to do the following operations:Select the device to be renamed, and click Actions > Rename devices at the top right of the device tableDownload the renaming template ﬁleFill in the new nameUpload the ﬁle in Actions > Rename devices2.2.2 COMMANDS Find out scheduled, unexecuted commands for this device. 2.2.3 DATA Find out device usage (used time, online times, and online duration) for today, yesterday, last seven days, and last 30 days. 2.2.4 APPLICATION Find out applications installed on the device. Enable, disable or uninstall applications.
+
+--- Page 11 ---
+2.2.5 OPTIMIZE THE DEVICE DETAILS PAGE We've improved the layout to make navigating and ﬁnding information on the device details page easier for you. The optimization content mainly includes the following: -Add headings for each type of information card. -Split Screen control, Realtime screen and some device settings into three cards. Operate in the corresponding card. 2.2.6 EXPORT AND DOWNLOAD THE DEVICE XBUG FILE TO THE LOCAL You can export and the download device Xbug ﬁle to help troubleshoot device problems. You can export the Xbug ﬁle on the device details page. Report device Xbug logs via Feedback Select reporting device Xbug logs via Feedback on web console to help troubleshoot device problems more quickly. 
+2.3 DEVICE GROUP 2.3.1 GROUP LIST  2.3.2 NEW GROUP: AUTO-ALLOCATION Use ‘and’ ‘or’ conditions to select devices into groups. Devices that meet the conditions will automatically enter the group. Devices that no longer meet the conditions will automatically be removed from the group.
+
+--- Page 12 ---
+2.3.3 NEW GROUP: MANUAL SELECTION Manually select devices and create a device group
+
+--- Page 13 ---
+2.3.4 GROUP AND COMMAND On the group list or group details page, a device group can be associated with a command. New devices that enter the group then automatically execute the command. 
+2.3.4 GROUP AND PROFILE On the proﬁle page, a device group can be associated with a proﬁle.  New devices that enter the group then automatically associate with the proﬁle.
+
+--- Page 14 ---
+3. SEND  A COMMAND  3.1 SELECT & SEND Step one: select the device 
+Step two: select a command； Step three: edit and send out command; Editing option: Set as schedule 
+Time alignment: according to the selected device, the device located in the time zone (UTC max) display For example, three devices in diﬀerent time zones are selected(UTC-4 UTC-6 UTC-8). The timezone will be displayed according to the time of UTC-4.
+
+--- Page 15 ---
+3.2 COMMAND TIME MODE 3.2.1 EXECUTE NOW Click ‘Send’ directly to execute the command immediately. 3.2.2 TIMED MODE Open Set as schedule, Select (future) year-month-day-time to send a command. 3.2.3 RECURRING MODE Once Set as schedule opened, select Recurring.
+
+--- Page 16 ---
+3.3 OFFLINE MODE 3.3.1 OFFLINE MODE 
+Oﬄine mode means the commands will be saved locally after the device receives them for the ﬁrst time. - Commands in Oﬄine mode will continue to execute when the device is disconnected from the DMS server. - Commands in Oﬄine mode will continue to execute when the device is unenrolled. 3.3.2 COMMANDS WITH OFFLINE MODE Power oﬀ - Recurring Once the oﬄine mode is chosen from Power oﬀ, the device can still perform the power oﬀ successfully according to the set time even if the device is disconnected from the server. Power on - Recurring Once the oﬄine mode is chosen from Power on, the device can still perform the power on successfully according to the set time even if the device is disconnected from the server. Screen Lock - All-time mode Oﬄine mode is the default option for Screen Lock. The device can still execute Screen Lock at the set time when it is not connected to the server. 3.3.3 CANCEL A RECURRING OFFLINE COMMAND If you need to stop or delete a recurring oﬄine command, edit in Records->In schedule. The target device must connect to the server to receive the cancel command.
+
+--- Page 17 ---
+4. MANAGE  4.1 DEVICE CONTROL 4.1.1 POWER ON There are two ways to wake up a device: 4.1.1.1 Time mode: execute now, timed and recurring Commands will be saved on the server, and the device will receive the command at the set time. It relies on the build of the Wake On LAN function. The device can wake up when connected to a Bytello WOL service. See Chapter 11 for more information on Bytello WOL Service. 4.1.1.2 Time mode: recurring with oﬄine mode Commands will be saved locally after the device receives them for the ﬁrst time. Support for oﬄine line mode.  See chapter 3.3 for more information on Oﬄine mode. 4.1.1.3 Power on via the online device Starting with version 23, there's a new way to wake up your device! Support the online devices as WOL Services. After an online device receives the power-on command, it can send command to the devices in the shutdown state via LAN to power on these devices. Previously, it was necessary to download and deploy a WOL server on a Windows device to allow devices on the same network to boot up. Now, every online device can send commands to other devices to turn them on. Ensure the below conditions is met: The device must be under the same wired LAN. At least one of the devices receiving the Power on command must be online to wake the other devices. The client version must be 23 or later. 4.1.2 POWER OFF The device will display a pop-up window for conﬁrmation when the power-oﬀ command is sent. The user in front of the device can reject the Power oﬀ command this time.  If there is no user action for the 60s, the Power oﬀ will be performed. 4.1.3 REBOOT When the restart command is sent, the device will display a pop-up window for conﬁrmation. The user in front of the device can reject the Reboot command this time.  If there is no user action for the 60s, the Reboot will be performed. 4.1.4 BELLS Upload local upload of audio ﬁles and then set a play time. 4.1.5 SCREEN LOCK Screen lock can lock a speciﬁed device for a period of time.
+
+--- Page 18 ---
+When the screen lock command is sent, the locked device can not do any software-level operation and can not use the remote control. For a single locking period for the device, lock to 23:59 of the day at the latest; 
+Screen lock password settings Find the screen lock on the > Password manage page and set a 6-digit password. Unlock Screen lock 1.The end time of the arrival screen lock is automatically unlocked 2.The device will be unlocked automatically when it reaches 23:59 3.Entering a password on the target device during the locked period will work appropriately with the target device. If there is no action for 20 minutes after unlocking, the device will be locked again, and a password will be required to enter here. The password for the screen lock can be viewed on the setting page of admin/Sub-admin. 4.Unlock the target device for a single lock-screen command on the command records page by admin/sub-admin.
+
+--- Page 19 ---
+4.2 MESSAGE 4.2.1 TEXT 
+Enter text to display as text running light subtitles on the target device; When Operation rights open, anyone in front of the device can turn oﬀ the text; 4.2.2 MULTIMEDIA Multimedia supports the release of information in image and video formats. A window appears on the target device with a close button. When operation rights are on, anyone infant of the device can close the multimedia message.  
+4.2.3 FILE PUBLISH File transfer pushes and stores any type of ﬁle in a centralized temporary folder on the target device. It supports uploading ﬁles locally and storing them in the File list
+
+--- Page 20 ---
+After it has been successfully sent to a temporary folder on the target device, it is notiﬁed through the pop-up window 4.2.4 ALERT Introduction Alert will send immediately; Alert has a preset warning template that can be sent directly after changing the text; Supports local upload of images; After the alert information is sent, it will be displayed as a full-screen information display on the target device, and the user can not turn it oﬀ on his own; To recall an Alert When an emergency message is sent, the top bar on the web displays a red light eﬀect that represents the alert. Go back to the emergency page and click on the recall to cancel the release of the emergency. 
+ Device permissions for alert information The Alert directive permission is diﬀerent from other instruction permissions. If the sub-admin has the command permission to send the emergency, the default Alert instruction is valid for all devices in the school. Alert command supports sounds We support a sound along with an image when sending the Alert command, better serving the purpose of warning. 
+You can choose default sounds or upload what you want. After choosing a sound, you can play it on the web console to conﬁrm the eﬀect.
+
+--- Page 21 ---
+4.2.5 LIVE CHANNEL To set up a live channel and broadcast it on the devices.  Support format: RTMP/RTSP Ex: rtmp://example.example/live/example Apple HLS (HTTP Live Streaming) Ex: http://ivi.example.edu.example/hls/example.m3u8
+
+--- Page 22 ---
+4.3 DEVICE SETTINGS Wallpaper Supports the default wallpaper to be restored to the device; When the device receives this instruction, it will automatically change the wallpaper immediately; 
+Instruction sending follows a downward asynchronously, and the device can receive instructions when powered on within 72h of the instruction being sent. If more than 72h has not yet been executed, this instruction is determined to be a failure to perform. Boot Logo Power on logo settings; only support Execute Now; Supports the default boot logo to be restored to the device; Upon receipt of this instruction, the device will automatically replace the boot logo immediately and take eﬀect in the next boot; 
+Instruction sending follows a downward asynchronously, and the device can receive instructions when powered on within 72h of the instruction being sent. If more than 72h has not yet been executed, this instruction is determined to be a failure to perform.
+
+--- Page 23 ---
+4.4 SCREEN CONTROL 4.4.1 REAL-TIME DISPLAY Entry A: device list -> device details -> Real-time display Entry B: device list -> Grid view -> Real-time display  Real-time display mode Once entered, the user can check the device screen and send instant commands.
+
+--- Page 24 ---
+4.4.2 SCREEN CONTROL Entry A: device list -> device details -> Screen control Entry B: device list -> device details -> Real-time display mode -> Screen control Screen control mode Enter Screen control session requires device permission.  IT admin will not be able to take control If a user [Reject] this session; IT admin will take control If a user [Allow] this session or there is no response in the 30s; Waiting for permission 
+Remote screen control session entered
+
+--- Page 25 ---
+4.5 CAMERAS & SPEAKERS Admin can check the external camera and speaker connected to the enrolled device. Entry: Device list -> Device details -> Camera and Speaker 
+Admin can set parameters, check camera positioning, and check the audio output. 
+Admin can check the latest ﬁrmware and upgrade.
+
+--- Page 26 ---
+4.6 DEVICE LOCATION The device location permissions can be edited on Client > Settings and  Web console > Device details. When device location permission is enabled, the administrator can view the device's current location on the map from the web console.
+
+--- Page 27 ---
+5. ADVANCED MANAGE  5.1 APPLICATIONS 5.1.1 APP INSTALL All uploaded apps will display in the list. Select one app, then select send it to the targeted device. Apps will silently download and install automatically. For some apps that do not support silent download and installation, users can choose to push the app ﬁle to the device. 
+Play store application remote installation Supports quick installation of Google play store apps on IFPs! Just paste the app's URL into web console to easily obtain the app, and One-click to install on IFPs. Only supports uploading free applications. 
+  5.1.2 APP MANAGE Users can disable, disable and uninstall existing apps on devices. Apps that do not support speciﬁc actions will not display an action button.
+
+--- Page 29 ---
+5.2 ANDROID ONLY - INPUT SWITCH The ability to switch in bulk for inputs under Android; 
+First, select the target device; then choose which input to switch to; *If the device does not have the target input, the command is determined to fail; if the device is oﬄine, the command is determined to fail; When [Allow user to reject] is selected, users in front of the device will not be able to reject this 
+command. Click an input to change the input’s alias.
+
+--- Page 30 ---
+5.3 FIRMWARE UPDATE Once a new ﬁrmware is released and detected by the device. The notiﬁcation will show in DMS - Firmware update. Click [Update all] to send out the command. The command will not expire. 
+Keep ﬁrmware / software up to date (Premium only)Support set time like every Friday at 5pm, the device will be automatically detected and upgraded to the latest version.5.4 DMS CLIENT UPDATE Android device DMS client management features, issued by its administrator DMS client latest version, keep the new version of DMS to support the latest features.
+
+--- Page 31 ---
+5.5 WINDOW ONLY: POPUPS BLOCK After the Admin turn on the Web console's Popups block switch, users can report pop-ups from Windows Client. Admin will check user-reported pop-ups and decide which pop-ups to block.  If a popup is blocked, It will be displayed again on the device.
+
+--- Page 32 ---
+5.6 CLEAR CACHE Choose a single device and clear its cache. Device details > Basic > Clear cache 5.6 FACTORY RESET Choose a single device and restore it to factory settings. Device details > Basic > Factory reset
+
+--- Page 33 ---
+6. PROFILE  Use the proﬁle to set a batch of settings. If one proﬁle is set as ‘default,’ the new device enrolled will auto-link with the proﬁle. 
+6.1 SECTIONS IN PROFILE 6.1.1 TIME Date & time format, Choose auto, and the device will check the internet to set the date and time. Timezone, Choose the device timezone. Time format, Deﬁne how the date and time are displayed on the device. Choose from a 12-hour clock and a 24-hour clock. 6.1.2 POWER SAVING Saving mode After a period of inactivity, the device auto Power oﬀ or Screen or Screen lock. Power saving mode is a conﬁguration in the proﬁle that controls the energy use of devices by putting them in power off, screen off or screen lock mode for a speciﬁc period of time when it is not in operation.
+
+--- Page 34 ---
+How to conﬁgure Power saving mode on devices:To turn Saving mode on or off, go to Proﬁle > Power savingSet how long the device will automatically Power off, Screen off or Screen lock after no operationSet whether the power saving mode is effective for the whole day or for aspeciﬁc period of timeNo single shutdown Automatic shutdown is when a device is detected to be inoperable for some time.
+
+--- Page 35 ---
+6.1.3 APP MANAGE Create a list of apps inside the proﬁle, and associated devices will auto-install the apps. 6.1.4 DEVICE LOCK Settings lock Once open, the settings can be locked. Users who have the lock password can access settings. Check password on web console - System - Password. Factory menu lock Once open, the factory menu can be locked.  Users who have the admin password can access the factory menu. Check password on web console - System - Password. 6.1.5 WI-FI Set up wiﬁ and send it to the associated devices. Choose diﬀerent security types and required information. Devices that receive the WIFI information can access the WIFI. 
+6.1.6 CLONE PROFILE 6.1.7 SCREEN LOCK Support setting to enter screen lock by clicking the physical power button ofthe device in Proﬁle-Device lock (Premium onlv)
+
+--- Page 36 ---
+6.1.6 WI-FI ALLOW LIST Set a Wi-Fi Allow list. Associated devices can only use WIFI conﬁgured in WIFI-Allow List. 
+6.1.7 DISPLAY & SOUND Android channel The device has Android channels to use applications such as ﬁnder, media player, browser, note, etc. The target device does not have an Android channel when the switch is oﬀ. Image mode - Android only Image mode refers to the device's screen display settings, which only support Execute Now. No feedback on the device. Check advanced settings to check the current location. Sound mode - Android only Sound mode, which refers to the sound mode of the device, supports only Execute Now—no feedback on the device. Check advanced settings to check the current setting. 6.1.8 URL RESTRICTION Able to set Web block list and Allow list. The blocklist prevents users from browsing speciﬁc URLs; the Allow list lets users only browse particular URLs. 6.1.9 CERTIFICATE Set a list of certiﬁcates and send it to associated devices. Choose from Resource-Certiﬁcates or upload from local. 6.1.10 DEVICE SETTINGS Enable Wake on LAN When this is On, the device will be able to receive the Power On command from DMS. Power outage setting - Android only There are three scenarios where a device experiences an unexpected power outage and is plugged in again. Option one - Oﬀ: Power oﬀ and then power on. The device remains oﬀ
+
+--- Page 37 ---
+Option two - On: Power oﬀ and then power on, the device will automatically power on Option three-  Last: Power oﬀ and then connect the device back to the state before the power goes out After the command is sent, the device can receive the command within 24h of the instruction being sent. If more than 24h has yet to be executed, this instruction is determined to be a failure to perform.
+
+--- Page 38 ---
+6.2 ASSOCIATE DEVICES Associate device 
+Associate device to a Proﬁle means the device will get all settings instantly. Associated devices will check each setting current status and sync the Proﬁle to the device again.
+
+--- Page 39 ---
+7. RECORDS  7.1 COMMAND HISTORY 
+Executed commands are sent and then entered into the Execution history list.  Timed and recurring commands enter the Execution history list when the set time is reached. 7.2 HISTORY DETAILS 
+Users can check the speciﬁc execution result of each device under the instruction. Success: this device has successfully executed this instruction. Failed: this device was unable to execute; User can resend; Recalled, the command has been recalled; Wait, this device has not executed this instruction; User can recall;
+
+--- Page 40 ---
+7.3 COMMAND IN SCHEDULE Timed and the recurring command are entered in the schedule list when the set time is not reached.  The status is Unexecuted. 
+In the recurring command, the user can close, edit and delete.
+
+--- Page 41 ---
+8. RESOURCES  Upload and manage all organization resources in one place. 
+8.1 IMAGES Upload images to your organization's resources. Choose these images when sending a command like Alert, Multimedia, Wallpaper, Boot logo, and ﬁle publish. 8.2 VIDEOS All videos here can be selected from command-Multimedia and File publish. 8.3 AUDIOS All audios and music can be selected from command Bells. 8.4 APPS Upload and manage all apps. 8.5 CERTIFICATES Upload and manage all certiﬁcates used for Apps, Wiﬁ, and VPN. 8.6 OTHERS Any other ﬁles can be uploaded to organization resources and sent as File publish.
+
+--- Page 42 ---
+9. USERS  9.1 ADD A USER 9.1.1 INPUT EMAIL ADDRESS Enter an email address and verify if it already exists in the Bytello system; If this account does not exist in the Bytello system, you need to set a password; If this account already exists in the Bytello system, this user already has a password; 
+9.1.2 CHOOSE ROLE & DEVICE GROUPS Choose a pre-deﬁned role, Operator, or Viewer. With all devices’ permission.  Choose a custom role, then choose device groups. 9.1.3 OPTIMIZED THE OPERATION PROCESS FOR CHANGING USER’S ROLE When changing the user's role, some important operation tips are added, please pay attention to them during the operation. If you are the admin role of the organization, please note: When you change your email account or change the role of other users to admin, you will no longer be the administrator of the organization. There can be only one admin role user in the organization.
+
+--- Page 43 ---
+9.2 CUSTOM ROLE - PREMIUM ONLY Create a role and set permissions. Bytello DMS Admin password: This password is used to unenroll a device from a DMS client. If the switch is on, a user with this role can check the password on System -> Password. Screen Lock password: This password is used to unlock a device during screen lock time. If this switch is turned on, a user with this role can check the screen lock password on System -> Password; Command permissions Select what command this role will have.  9.3 CHANGE ROLE Change role for existing users.
+
+--- Page 44 ---
+10. SYSTEM  10.1 ORGANIZATION 10.1.1Basic information: Organization name; Location, the area where the organization is located; Admin account administers email address; Organization code, which is self-generated by the system upon completion of the organization registration and is non-changeable; License information includes license type, credits left, days remaining, and license records. 10.1.2Delete the organization： If you no longer use the organization, the organization admin can clean up the organization data by deleting the organization. Considerations for delete organization: Only the organization admin can delete the organization. Before deleting the organization, remove the enrolled devices and users.
+
+--- Page 45 ---
+10.2 PASSWORD BYTELLO DMS ADMIN LOCK The default is 000000; The admin can set a 6-digit password; When unenrolling a device from the client, the user needs to enter the correct Admin password to operate; SCREEN LOCK The default is 000000; The admin can set a 6-digit password; Users can unlock a device by entering the correct screen lock password. 10.2 PERSONAL SETTINGS CHANGE ADMIN EMAIL Go through veriﬁcation to change the admin’s login email address. *This is an ADMIN-ONLY function.
+
+--- Page 46 ---
+11. WOL SERVICE  11.1 SETUP BYTELLO WOL SERVICE The Power-on command will work when the device is connected to a Bytello WOL Service. Step One:  Download and install Bytello WOL Service on a PC system; ensure this computer is under the same network as the controlled device.  Download Bytello WOL Service here: http://www.bytello.com/dms  
+Step Two:  ﬁll in the Organization code and Admin email to connect this WOL server to your organization; Step Three:  Input Server name to distinguish various WOL servers within one organization. Step Four:  Once the WOL server is connected to the organization, it will start to search devices around it and present a WOL-connected-device-list, both on the Bytello WOL service client and  One organization can have various WOL servers. For Bytello-certiﬁed devices, please make sure Wake on LAN is open.
+
+--- Page 47 ---
+11.2 WOL SERVER ON WEB ONLY ADMIN CAN SEE [WOL Server] on page System -> Organization. 
+Devices without a WOL server connection will fail Power on command； Server state, server connection state; Connected devices, the number of devices connected to this server; Actions that support the removal of this wake-up server; 11.3 WOL SERVICE OPTIMIZATION WOL Service is a way to wake up oﬄine devices. We’ve made some improvements to help you use this feature easily. The improvements mainly include the following: You can download the WOL Service on the web console. Optimize the instruction of WOL Service.

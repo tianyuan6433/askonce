@@ -1,0 +1,12 @@
+MAXHUB Pivot DLL File Not Signed
+Updated by 10/30/2025
+Statement
+This document applies to the MAXHUB Pivot software, and its interpretation is solely owned by MAXHUB.
+This document aims to explain the reason behind the "DLL file not signed" issue in MAXHUB Pivot.
+Recently, we have noticed that some users received a system prompt stating "DLL file is not signed" while using the MAXHUB Pivot software.
+Issue Explanation
+The prompt involves a functional module used for device firmware upgrades in the software (file name: il_firmware_upgrade_x86.dll). This module is an essential part of the official MAXHUB Pivot update process. It is inherently safe, non-harmful, and is not a virus or malicious program. It does not affect the normal functionality of the currently installed software.
+The unsigned prompt occurs because this module temporarily lacks a security certification signature. This is similar to an official document with entirely correct content temporarily missing a "notarized seal," which triggers the system's security mechanism reminder. This is an issue related to the completeness of the certification process, and you can continue using the software with confidence.
+Solution and Plan
+To fully resolve this issue, we have upgraded our software packaging process, implemented strict verification for all files, and supplemented the missing security signature for this functional module.
+We plan to provide a new version of the installation package with complete certification by November 7, 2025. This version will undergo multiple rounds of rigorous internal validation, ensuring a secure and reliable experience for all users.

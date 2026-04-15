@@ -1,0 +1,13 @@
+{
+  "claude_model": "claude-sonnet-4-6",
+  "claude_api_base": "https://navimaxx-cc.test.seewo.com",
+  "confidence_auto_reply": 0.9,
+  "confidence_draft_min": 0.6,
+  "knowledge_stale_days": 0,
+  "max_upload_size_mb": 100,
+  "dark_mode": false,
+  "smart_notifications": true,
+  "ai_summaries": true,
+  "data_retention": "permanent",
+  "storage_limit_gb": 100
+}

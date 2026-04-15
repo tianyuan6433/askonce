@@ -1,0 +1,477 @@
+
+## Sheet: 功能清单-删除无用
+Feature List |  |  | Airgo | DMS |  |  | Pivot |  | 板卡 |  | 
+ |  | Features |  | Basic | Professional | Premium | PRO | Premium | 基础 | 信发 | 高阶
+ |  |  |  | 朗国，维护费用 | 全年10w
+平均8.3美元 | 全年19.7w
+平均9.8美元 |  |  |  |  | 
+Operation System | 支持安卓 | Android Compatible | ✔ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 支持Windows | Windows Compatible |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 支持Linux | Linux Compatible |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Device types | 交互智能平板 | IFP Interactive Plat Panel | ✔ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | LED | LED Wall |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 麦克风 | Soundbar |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 智能屏幕 | Smart Lectron |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 数字标牌 | Digital Signage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+Dashboard | 总览页 | Dashboard |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Enrollment & Device | USB注册 | Device Enroll via USB |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 零接触注册-SN注册 | Zero touch enroll |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 同网段自动注册 | Auto-enrollment on the same network segment |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备信息采集（MAC、SN、IP ...） | Device Info(MAC, SN, IP…) | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+Organization Manage | 自动分配设备组 | Auto-allocation Device Groups |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 设备组 | Device group association | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 自定义设备列表 | Custom device list |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设备名称管理 | Device Name Manage |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 多维度分组管理（空间、班级、自定义） | Multi-dimensional group management (space, class, customization) |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Control | 开机和旁路唤醒局域网服务 | Power on & Bytello Wake On LAN Service | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 关闭电源并重新启动 | Power off & Reboot | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 息屏 | Screen Off |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 屏幕锁 | Screen Lock | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 壁纸和引导标志 | Wallpaper & Booting Logo（Android only） | ✔︎无logo更换 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 通道切换 | Input Switch |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 位置 | Location |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 调整声音、亮度、触摸、遥控器 | Adjust sound, brightness, touch, remote（Android only） | 仅支持声音、亮度 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 工厂复位 | Factory reset（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+外设管理 | 摄像头镜头查看 | View camera footage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 摄像头参数设置 | Set camera parameters |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 摄像头角度调整 | Adjust camera angle |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 自动取景 | Auto framing |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 导出外设日志 | Export peripherals log |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 说话者自动检测 | detect speaker |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 固件更新 | Firmware update |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Proﬁle | 时区，时间设置 | Timezone, time settings |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 省电 | Power saving |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | Android输入启用/禁用（是否允许切换通道） | Android Input Enable/Disable（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 电源设置 | Power settings（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | URL数据块和允许列表 | URL Block & Allow List |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | Wifi设置 | Wiﬁ setting |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | Wifi允许列表 | Wiﬁ Allow List |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 默认要求的应用程序列表 | Default Required App List |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 图像模式 | Image Mode（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 声音模式 | Sound Mode（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | USB锁（限制使用USB口） | USB Lock |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 配置克隆 | Profile Clone |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+Messages | 铃声 | Bells |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 文本 | Text | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 图片/视频 | Images/Videos |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 紧急警报 | Emergency Alert | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 文件发布 | File Publish | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 直播频道（录播视频流地址rtsp··） | Live Channel |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 节目单 | Programe |  |  |  | ✔︎ |  | ✔︎ |  | ✔︎ | ✔︎
+Update & Detect | 客户端自动更新检测 | Client-auto-updates detect |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 客户端更新 | Client updates |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 固件自动更新检测（后续自动升级） | Firmware-auto-update detect（Android only） |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 固件更新（手动更新） | Firmware update | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 客户端连接检测 | Client connection detect |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+App Manage | 应用程序安装和卸载 | App Install & Uninstall | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 应用程序启用和禁用 | App Enable & Disable | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 应用程序自动更新 | keep App version up to date（Android only） |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+Command Manage | 支持多时区 | Multi-timezone supported |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 循环命令重新编辑 | Recurring commands re-edit |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 命令执行历史记录 | Command execution history | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 一键重发失败指令 | One-click resend failed command |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 待执行指令列表 | Command in schedule | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 单设备指令控制 | Single-device command control | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+Screen Control | 屏幕预览 | Screen Preview |  |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 实时屏幕预览 | Real-time Screen Preview |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 远程屏幕控制 | Remote Screen Control | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 巡视 | Inspection/Real-time Class Preview |  |  |  | 可选 |  |  |  |  | 
+Data Display | 应用程序状态 | Applications status |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设备使用情况 | Device usage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 应用程序使用情况 | App usage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 7/30天的活跃趋势 | Active trend for 7/30 days |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 非活动设备列表 | Inactive device list |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 设备流畅度情况 | Device fluency |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 硬件配置情况 | Hardware parameters |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网络流量情况 | Internet Traffic |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网络速度情况 | Internet Speed |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备盘点 | Equipment inventory |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网址访问top10 | Top 10 of URL Access Records |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备明细导出 | Export Device Details |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备优化建议 |  |  |  |  | ✔︎ |  | ✔︎ |  |  | 
+OS Account Manage | 批量创建账号 | Create accounts in bulk |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | NFC账户绑定 | Bind NFC cards to accounts |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+Security | 设备锁定 | Device Lock |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设置锁定 | Settings Lock |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 工厂菜单锁 | Factory mune Lock |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 双重认证 | Two-factor authentication |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 设备预警 |  | ✔︎ |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 弹窗拦截 | pop-ups blocker（Windows only） |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 磁盘清理 | Disk Cleanup |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 网络监管及网速限制 | Traffic Monitoring & Internet speed limit |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 审计日志 | Action logs |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+Users & Role | 多用户协同管理 | Multi users co-manage |  | 1 | 20 | Unlimited | 2 | unlimited |  |  | 
+ | 角色分配 | Role assignment |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 自定义角色 | Custom roles |  |  |  | ✔︎ |  | ✔︎ |  |  | 
+ | 用户通过电子邮件添加 | User adding via email |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 大量用户添加 | Bulk users adding |  |  |  | ✔︎ |  | ✔︎ |  |  | 
+ | 同一个组织代码下对数据权限划分 | Managing resource permissions |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 许可证管理 | License Manage |  |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 组织管理 | Organization Manage |  |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 许可证分发 | License Distribution |  |  | ✔︎ | ✔︎ |  |  |  |  | 
+ |  |  | 远程投屏 |  |  |  |  |  |  |  | 
+
+## Sheet: DMS销售政策
+ |  Market Price (1 license= 1 device/year) |  |  |  | 购买说明
+ | Basic | Pro | Premium |  | 1. 之前有且只有Pro Plan。现在有Basic，Pro，Premium三个Plans可选。
+2. Basci Plan，只有电源控制功能。若客户有预算压力，可推Basic版本。
+3. Pro Plan，基本满足教育标案。建议主推Pro版本。
+4. Premium版本，为大型学校/公司提供降本增效功能。若客户有锁标诉求，建议采用Premium Plan。
+ | 12 | 24 | 48 |  | 
+One-time purchase licenses  | Partner Price (1 license= 1 device/year) |  |  |  | 
+<100 | 8 | 15 | 24 |  | 使用说明
+≧100 | 7 | 13 | 22 |  | 1. 创建组织时，若客户购买了多个Plans, 可选择目标Plans
+2. 组织创建之后，不支持更换Plans
+≧500 | 6 | 12 | 20 |  | 
+≧2000 | 5 | 10 | 18 |  | 
+≧5000 | 4 | 8 | 16 |  | 
+≧10000 | 3 | 6 | 14 |  | 
+≧30000 | Talk to sales | Talk to sales | Talk to sales |  | 
+
+## Sheet: 完整功能清单
+Feature List |  |  | Airgo | DMS |  |  | Pivot |  | 板卡 |  | 
+ |  | Features |  | Basic | Professional | Premium | PRO | Premium | 基础 | 信发 | 高阶
+ |  |  | 免费 | 免费，维护费用 |  |  |  |  |  |  | 
+Operation System | 支持安卓 | Android Compatible |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 支持Windows | Windows Compatible |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 支持Linux | Linux Compatible |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Device types | 交互智能平板 | IFP Interactive Plat Panel |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | LED | LED Wall |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 麦克风 | Soundbar |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 智能屏幕 | Smart Lectron |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 数字标牌 | Digital Signage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+API | 开放ApI | Open Api |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Dashboard | 总览页 | Dashboard |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Enrollment & Device | USB注册 | Device Enroll via USB |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 零接触注册-SN注册 | Zero touch enroll |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 同网段自动注册 | Auto-enrollment on the same network segment |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备信息采集（MAC、SN、IP ...） | Device Info(MAC, SN, IP…) |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+Organization Manage | 自动分配设备组 | Auto-allocation Device Groups |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 设备组 | Device group association |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 自定义设备列表 | Custom device list |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设备标记管理 | Devices Tags Manage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 设备名称管理 | Device Name Manage |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 多维度分组管理（空间、班级、自定义） | Multi-dimensional group management (space, class, customization) |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 资源中心存储 | Resource center storage |  | 0G | 20G | 50G | 20G | 50G |  |  | 
+Control | 开机和旁路唤醒局域网服务 | Power on & Bytello Wake On LAN Service |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 关闭电源并重新启动 | Power off & Reboot |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 息屏 | Screen Off |  |  |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 屏幕锁 | Screen Lock |  |  |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 壁纸和引导标志 | Wallpaper & Booting Logo（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 通道切换 | Input Switch |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 位置 | Location |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | USB摄像头和扬声器 | USB Cameras & Speakers |  |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 调整声音、亮度、触摸、遥控器 | Adjust sound, brightness, touch, remote（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 清除缓存 | Clear cache |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 工厂复位 | Factory reset（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 外部麦克风和扬声器 | External mic and speaker |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+外设管理 | 摄像头镜头查看 | View camera footage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 摄像头参数设置 | Set camera parameters |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 摄像头角度调整 | Adjust camera angle |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 自动取景 | Auto framing |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 导出外设日志 | Export peripherals log |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 说话者自动检测 | detect speaker |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 固件更新 | Firmware update |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Proﬁle | 时区，时间设置 | Timezone, time settings |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 省电 | Power saving |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | Android输入启用/禁用（是否允许切换通道） | Android Input Enable/Disable（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 电源设置 | Power settings（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | URL数据块和允许列表 | URL Block & Allow List |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | Wifi设置 | Wiﬁ setting |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | Wifi允许列表 | Wiﬁ Allow List |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 默认要求的应用程序列表 | Default Required App List |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 图像模式 | Image Mode（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 声音模式 | Sound Mode（Android only） |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | USB锁（限制使用USB口） | USB Lock |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 配置克隆 | Profile Clone |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+Messages | 铃声 | Bells |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 文本 | Text |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 图片/视频 | Images/Videos |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 紧急警报 | Emergency Alert |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 文件发布 | File Publish |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 直播频道（录播视频流地址rtsp··） | Live Channel |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 节目单 | Programe |  |  |  | ✔︎ |  | ✔︎ |  | ✔︎ | ✔︎
+Update & Detect | 客户端自动更新检测 | Client-auto-updates detect |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 客户端更新 | Client updates |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 固件自动更新检测（后续自动升级） | Firmware-auto-update detect（Android only） |  |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 固件更新（手动更新） | Firmware update |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 客户端连接检测 | Client connection detect |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+App Manage | 应用程序安装和卸载 | App Install & Uninstall |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 应用程序启用和禁用 | App Enable & Disable |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 应用程序自动更新 | keep App version up to date（Android only） |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+Command Manage | 支持多时区 | Multi-timezone supported |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 循环命令重新编辑 | Recurring commands re-edit |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 命令执行历史记录 | Command execution history |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 一键重发失败指令 | One-click resend failed command |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 待执行指令列表 | Command in schedule |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 单设备指令控制 | Single-device command control |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 离线模式下的命令 | Command in oﬄine mode |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Screen Control | 屏幕预览 | Screen Preview |  |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 实时屏幕预览 | Real-time Screen Preview |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 远程屏幕控制 | Remote Screen Control |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 巡视 | Inspection/Real-time Class Preview |  |  |  | 可选 |  |  |  |  | 
+Data Display | 应用程序状态 | Applications status |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设备使用情况 | Device usage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 应用程序使用情况 | App usage |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 7/30天的活跃趋势 | Active trend for 7/30 days |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 非活动设备列表 | Inactive device list |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 设备流畅度情况 | Device fluency |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 硬件配置情况 | Hardware parameters |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网络流量情况 | Internet Traffic |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网络速度情况 | Internet Speed |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备盘点 | Equipment inventory |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网址访问top10 | Top 10 of URL Access Records |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备明细导出 | Export Device Details |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备优化建议 |  |  |  |  | ✔︎ |  | ✔︎ |  |  | 
+OS Account Manage | 批量创建账号 | Create accounts in bulk |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | NFC账户绑定 | Bind NFC cards to accounts |  |  |  |  | ✔︎ | ✔︎ |  |  | 
+Security | 设备锁定 | Device Lock |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设置锁定 | Settings Lock |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 工厂菜单锁 | Factory mune Lock |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 双重认证 | Two-factor authentication |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 弹窗拦截 | pop-ups blocker（Windows only） |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 磁盘清理 | Disk Cleanup |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 网络监管及网速限制 | Traffic Monitoring & Internet speed limit |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | AI画面监测服务 | AI screen monitoring |  |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 审计日志 | Action logs |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 操作日志导出90天 | Action logs exporting 90 days |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Users & Role | 多用户协同管理 | Multi users co-manage |  | 1 | 20 | Unlimited | 2 | unlimited | 1 | 1 | 1
+ | 角色分配 | Role assignment |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 自定义角色 | Custom roles |  |  |  | ✔︎ |  | ✔︎ |  |  | 
+ | 用户通过电子邮件添加 | User adding via email |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 大量用户添加 | Bulk users adding |  |  |  | ✔︎ |  | ✔︎ |  |  | 
+ | 同一个组织代码下对数据权限划分 | Managing resource permissions |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Account & License
+Manage | 试用管理（UC） | Free Trail Manage |  |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 许可证管理 | License Manage |  |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 组织管理 | Organization Manage |  |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 许可证分发 | License Distribution |  |  | ✔︎ | ✔︎ |  |  |  |  | 
+
+## Sheet: Global套餐功能清单
+功能清单 |  | Hugo |  |  | Pivot |  | 板卡 |  | 
+ |  | 基础版 | 升级版 | 专业版 | PRO | Premium | 基础 | 信发 | 高阶
+ |  | 免费，维护费用 |  |  |  |  |  |  | 
+Operation System | 支持安卓 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 支持Windows |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 支持Linux |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Device types | 交互智能平板 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | LED |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 麦克风 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 智能屏幕 |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 数字标牌 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+API | 开放ApI |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Dashboard | 总览页 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Enrollment & Device | USB注册 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 零接触注册-SN注册 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 同网段自动注册 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备信息采集（MAC、SN、IP ...） | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+Organization Manage | 自动分配设备组 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 设备组 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 自定义设备列表 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设备标记管理 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 设备名称管理 |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 多维度分组管理（空间、班级、自定义） |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 资源中心存储 | 0G | 20G | 50G | 20G | 50G |  |  | 
+Control | 开机和旁路唤醒局域网服务 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 关闭电源并重新启动 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 息屏 |  |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 屏幕锁 |  |  |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 壁纸和引导标志 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 通道切换 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 位置 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | USB摄像头和扬声器 |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 调整声音、亮度、触摸、遥控器 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 清除缓存 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 工厂复位 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 外部麦克风和扬声器 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+外设管理 | 摄像头镜头查看 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 摄像头参数设置 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 摄像头角度调整 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 自动取景 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 导出外设日志 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 说话者自动检测 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 固件更新 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Proﬁle | 时区，时间设置 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 省电 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | Android输入启用/禁用（是否允许切换通道） |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 电源设置 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | URL数据块和允许列表 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | Wifi设置 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | Wifi允许列表 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 默认要求的应用程序列表 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 图像模式 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 声音模式 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | USB锁（限制使用USB口） |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | 配置克隆 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+Messages | 铃声 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 文本 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 图片/视频 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 紧急警报 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 文件发布 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 直播频道（录播视频流地址rtsp··） |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  | ✔︎ | ✔︎
+ | 节目单 |  |  | ✔︎ |  | ✔︎ |  | ✔︎ | ✔︎
+Update & Detect | 客户端自动更新检测 |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 客户端更新 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 固件自动更新检测（后续自动升级） |  |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 固件更新（手动更新） |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 客户端连接检测 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+App Manage | 应用程序安装和卸载 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 应用程序启用和禁用 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 应用程序自动更新 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+Command Manage | 支持多时区 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 循环命令重新编辑 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 命令执行历史记录 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 一键重发失败指令 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 待执行指令列表 | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 单设备指令控制 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 离线模式下的命令 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Screen Control | 屏幕预览 |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 实时屏幕预览 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 远程屏幕控制 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 巡视 |  |  | 可选 |  |  |  |  | 
+Data Display | 应用程序状态 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设备使用情况 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 应用程序使用情况 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 7/30天的活跃趋势 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 非活动设备列表 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 设备流畅度情况 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 硬件配置情况 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网络流量情况 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网络速度情况 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备盘点 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 网址访问top10 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备明细导出 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 设备优化建议 |  |  | ✔︎ |  | ✔︎ |  |  | 
+OS Account Manage | 批量创建账号 |  |  |  | ✔︎ | ✔︎ |  |  | 
+ | NFC账户绑定 |  |  |  | ✔︎ | ✔︎ |  |  | 
+Security | 设备锁定 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 设置锁定 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 工厂菜单锁 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎ | ✔︎
+ | 双重认证 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 弹窗拦截 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 磁盘清理 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 网络监管及网速限制 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | AI画面监测服务 |  |  | ✔︎ |  | ✔︎ |  |  | ✔︎
+ | 审计日志 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
+ | 操作日志导出90天 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Users & Role | 多用户协同管理 | 1 | 20 | Unlimited | 2 | unlimited | 1 | 1 | 1
+ | 角色分配 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 自定义角色 |  |  | ✔︎ |  | ✔︎ |  |  | 
+ | 用户通过电子邮件添加 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+ | 大量用户添加 |  |  | ✔︎ |  | ✔︎ |  |  | 
+ | 同一个组织代码下对数据权限划分 |  | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | 
+Account & License
+Manage | 试用管理（UC） |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 许可证管理 |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 组织管理 |  | ✔︎ | ✔︎ |  |  | ✔︎ | ✔︎ | ✔︎
+ | 许可证分发 |  | ✔︎ | ✔︎ |  |  |  |  | 
+
+## Sheet: 板卡套餐方案（弃）
+统一集控套餐——板卡 |  |  |  |  |  |  |  |  | 
+ |  | 基础版 | 信发版 | 高阶版 | 备注 |  |  |  | 
+ |  | 15元/年 |  | 150元/年 |  |  |  |  | 
+系统支持 | 支持安卓 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 支持Windows |  |  | ✔︎ | Q2 |  |  |  | 
+设备类型 | 交互智能平板 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | LED |  |  | ✔︎ | Q3 |  |  |  | 
+ | 数字标牌 |  |  | ✔︎ |  |  |  |  | 
+设备关联与管理 | 手动注册 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | USB注册（仅安卓） |  |  | ✔︎ | Q2 |  |  |  | 
+ | 零接触注册-SN注册 |  |  | ✔︎ |  |  |  |  | 
+ | 同网段自动注册 |  |  | ✔︎ |  |  |  |  | 
+ | 设备列表及信息采集（MAC、SN、IP、位置···） | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 多维度分组管理（空间、班级、自定义） | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+指令控制与管理 | 远程开机 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 远程关闭电源、重启 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 屏幕锁 | ✔︎ | ✔︎ | ✔︎ |  |  |  | Messages | 
+ | 息屏 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 打铃 |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 文本消息通知 |  | ✔︎ | ✔︎ |  |  |  |  | 紧急警报
+ | 文件推送 |  | ✔︎ | ✔︎ |  |  |  |  | 文件发布
+ | 倒计日 |  | ✔︎ | ✔︎ |  |  |  |  | 直播频道（录播视频流地址rtsp··）
+ | 网页URL播放 |  | ✔︎ | ✔︎ | Q2 |  |  |  | 节目单
+ | 更换壁纸及重启logo |  | ✔︎ | ✔︎ |  |  |  |  | 
+ | 通道切换 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 调节声音、亮度、屏幕 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 设备位置 |  |  |  |  |  |  |  | 
+ | 屏幕控制 |  |  | ✔︎ |  |  |  |  | 
+ | 直播频道（录播视频流地址rtsp··） |  |  |  |  |  |  |  | 
+ | 指令支持多时区 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 指令执行实时状态及结果 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 待执行指令列表 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 一键重发失败指令 | ✔︎ | ✔︎ | ✔︎ |  |  |  | 外设管理 | 摄像头镜头查看
+配置下发 | 时区、时间设置 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 摄像头参数设置
+ | 电源节省模式 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 摄像头角度调整
+ | 功能锁配置 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 自动取景
+ | 声音与显示 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 导出外设日志
+ | URL数据块和允许列表 |  |  | ✔︎ | Q3 |  |  |  | 说话者自动检测
+ | Android输入启用/禁用 |  |  | ✔︎ |  |  |  |  | 固件更新
+ | Wi-Fi默认连接及允许列表 |  |  | ✔︎ |  |  |  | Proﬁle | 时区，时间设置
+ | 默认应用程序列表 |  |  | ✔︎ |  |  |  |  | 省电
+ | 配置克隆下发 |  |  | ✔︎ |  |  |  |  | Android输入启用/禁用（是否允许切换通道）
+节目单发布 | 紧急警报 |  | ✔︎ | ✔︎ | Q2 |  |  |  | 电源设置
+ | 节目单自定义 |  | ✔︎ | ✔︎ |  |  |  |  | Wifi设置
+ | 循环节目单配置 |  | ✔ | ✔︎ |  |  |  |  | Wifi允许列表
+应用管理 | 应用程序安装和卸载 |  |  | ✔︎ | Q3 |  |  |  | 默认要求的应用程序列表
+ | 应用程序启用和禁用 |  |  | ✔︎ |  |  |  |  | 图像模式
+ | 应用程序自动更新 |  |  | ✔︎ |  |  |  |  | 声音模式
+安全防护 | 弹窗拦截 |  |  | ✔︎ | Q4 |  |  |  | USB锁（限制使用USB口）
+ | 磁盘清理 |  |  | ✔︎ |  |  |  |  | 配置克隆
+ | 流量监管 |  |  | ✔︎ |  |  |  |  | 
+ | AI屏幕监测 |  |  | ✔︎ |  |  |  |  | 
+数据分析 | 设备使用情况 | ✔︎ | ✔︎ | ✔︎ | Q2 |  |  |  | 
+ | 应用程序使用情况 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 
+ | 设备流畅度分析 |  |  | ✔︎ |  |  |  |  | 
+ | 硬件配置分布 |  |  | ✔︎ |  |  |  |  | 
+ | 网络流量情况 |  |  | ✔︎ |  |  |  |  | 
+ | 网速情况 |  |  | ✔︎ |  |  |  | Update&Detect | 客户端自动更新检测
+ | 网址访问top10 |  |  | ✔︎ |  |  |  |  | 客户端更新
+ | 设备盘点 |  |  | ✔︎ |  |  |  |  | 固件自动更新检测（后续自动升级）
+ | 设备明细导出 |  |  | ✔︎ |  |  |  |  | 固件更新（手动更新）
+系统设置 | 组织管理 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 客户端连接检测
+ | 许可证管理 | ✔︎ | ✔︎ | ✔︎ |  |  |  | AppManage | 应用程序安装和卸载
+ | 权限管理 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 应用程序启用和禁用
+ | 审计日志 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 应用程序自动更新
+ | 客户端更新 | ✔︎ | ✔︎ | ✔︎ |  |  |  | CommandManage | 支持多时区
+ | 固件更新 | ✔︎ | ✔︎ | ✔︎ |  |  |  |  | 循环命令重新编辑
+ |  |  |  |  |  |  |  |  | 命令执行历史记录
+ |  |  |  |  |  |  |  |  | 一键重发失败指令
+ |  |  |  |  |  |  |  |  | 待执行指令列表
+ |  |  |  |  |  |  |  |  | 单设备指令控制
+ |  |  |  |  |  |  |  | ScreenControl | 屏幕预览
+ |  |  |  |  |  |  |  |  | 实时屏幕预览
+ |  |  |  |  |  |  |  |  | 远程屏幕控制
+ |  |  |  |  |  |  |  |  | 巡视
+ |  |  |  |  |  |  |  | DataDisplay | 应用程序状态
+ |  |  |  |  |  |  |  |  | 设备使用情况
+ |  |  |  |  |  |  |  |  | 应用程序使用情况
+ |  |  |  |  |  |  |  |  | 7/30天的活跃趋势
+ |  |  |  |  |  |  |  |  | 非活动设备列表
+ |  |  |  |  |  |  |  |  | 设备流畅度情况
+ |  |  |  |  |  |  |  |  | 硬件配置情况
+ |  |  |  |  |  |  |  |  | 网络流量情况
+ |  |  |  |  |  |  |  |  | 网络速度情况
+ |  |  |  |  |  |  |  |  | 设备盘点
+ |  |  |  |  |  |  |  |  | 网址访问top10
+ |  |  |  |  |  |  |  |  | 设备明细导出
+ |  |  |  |  |  |  |  |  | 设备优化建议
+ |  |  |  |  |  |  |  | OSAccountManage | 批量创建账号
+ |  |  |  |  |  |  |  |  | NFC账户绑定
+ |  |  |  |  |  |  |  | Security | 设备锁定
+ |  |  |  |  |  |  |  |  | 设置锁定
+ |  |  |  |  |  |  |  |  | 工厂菜单锁
+ |  |  |  |  |  |  |  |  | 双重认证
+ |  |  |  |  |  |  |  |  | 弹窗拦截
+ |  |  |  |  |  |  |  |  | 磁盘清理
+ |  |  |  |  |  |  |  |  | 网络监管及网速限制
+ |  |  |  |  |  |  |  |  | AI画面监测服务
+ |  |  |  |  |  |  |  |  | 审计日志
+ |  |  |  |  |  |  |  | Users&Role | 多用户协同管理
+ |  |  |  |  |  |  |  |  | 角色分配
+ |  |  |  |  |  |  |  |  | 自定义角色
+ |  |  |  |  |  |  |  |  | 用户通过电子邮件添加
+ |  |  |  |  |  |  |  |  | 大量用户添加
+ |  |  |  |  |  |  |  |  | 同一个组织代码下对数据权限划分
+ |  |  |  |  |  |  |  |  | 许可证管理
+ |  |  |  |  |  |  |  |  | 组织管理
+ |  |  |  |  |  |  |  |  | 许可证分发

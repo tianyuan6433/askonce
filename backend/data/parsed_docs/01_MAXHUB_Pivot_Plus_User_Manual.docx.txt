@@ -1,0 +1,1399 @@
+MAXHUB Pivot⁺
+User Manual
+Update by December 31, 2025
+Table of Contents
+I. Quick Start	1
+1. About Maxhub Pivot⁺	1
+2. Quick Start Guide	3
+3. Device Compatibility List	13
+II. Features Overview	22
+1. Dashboard	22
+2. Device list	24
+3. Profile	32
+4. App	38
+5. Resources	40
+6. Canvas	44
+7. Playlist	47
+8. Schedule	48
+9. Alert	51
+10. Organization	52
+11. Incident	57
+12. Client Update	61
+13. Firmware Update	63
+14. WOL Service	66
+15. Command Records	70
+16. Action logs	71
+III. Plans	72
+1. Plans Comparison	72
+2. Pivot⁺ Pioneer Program	78
+IV. FAQs	88
+1. Relationship Between Pivot and Pivot⁺	88
+2. Migration and Usage Impact	91
+3. Control Functions	92
+4. Content Distribution (CMS) Related	95
+5. Launch Time and Trial Plan	95
+6. Business Strategy	96
+7. Features	97
+8. Security and Others	98
+
+# Quick Start
+
+
+# About Maxhub Pivot⁺
+
+MAXHUB Pivot+ is a cloud-based CMS + DMS platform designed to centrally manage both devices and content across MAXHUB meeting room and display solutions.
+It enables organisations to remotely monitor and manage devices while also creating, scheduling, and publishing content to commercial displays and meeting room screens.
+Pivot+ provides a unified control layer for large-scale deployments, helping IT and operations teams standardise device behaviour, control messaging, and reduce operational complexity across locations.
+
+## Key Features
+
+
+### Zero-Touch Enrollment
+
+Batch import device Serial Numbers and MAC addresses in advance. Devices will automatically complete enrollment once powered on and connected to the network — no manual binding needed, and they’re ready for use immediately.
+The system automatically scans all connected Maxhub devices within the same local area network and lists basic device information. Managers only need to check the required devices to finish batch binding.
+
+### Remote Batch Management
+
+Intuitive visual charts and calendar views clearly show real-time device status, pending tasks, and Anomaly information. Help managers break free from cluttered data to focus on key details quickly.
+Support remote control for multiple device types (including IFP, DS, LED, MTR, UC). Batch issue commands, push configurations, and install/uninstall/enable/disable software — with cross-timezone support for more efficient management.
+The system supports up to 8-level grouping, allowing device management based on spatial concepts. Suitable for large multinational enterprises and chain retail scenarios.
+
+### Efficient O&M
+
+Supports simultaneous remote control of multiple devices in the same meeting room. When controlling one device, you can synchronously view the response status of other devices, making troubleshooting and collaborative O&M more efficient—no need to rush between different locations.
+Firmware updates support both main devices and peripherals. Upload firmware independently for batch updates; the system automatically detects firmware versions and intelligently upgrades to the latest — keeping devices running at their best.
+Custom hierarchical device alerting and full-dimensional log retention ensure fast response to Anomalyities. O&M processes are safe, controllable, compliant, and traceable.
+
+### Flexible Content Distribution
+
+Freely manage various resource types (images, videos, audio, documents, canvases, etc.), which are automatically filed into groups for easy management.
+Enjoy flexible layouts when creating promotional content. Arrange various components and multimedia resources to meet promotional needs in diverse scenarios.
+View-based content playlist arrangement and drag-and-drop time selection make content publishing more convenient and operations smoother.
+
+# Quick Start Guide
+
+In this guide, you can learn how to log in to the system, enroll your device, and learn how to navigate the system's menu structure and menu introduction.
+
+## Log in
+
+
+### Find your account
+
+Check your email inbox for the email titled "Welcome to Pivot⁺" to find your account and your password information.
+If you do not find a password in your email, it means you have registered an account before. If you have forgotten your password, follow the "Forgot Password" process on the login page.
+
+### Access Pivot⁺
+
+Click the button "Login Now" in the email to visit the Pivot⁺ website.
+Or launch your browser and visit the following website:
+https://pivot-plus.maxhub.com/
+Then enter your email address account and password to log in.
+
+### After logging in
+
+Verify your organization name and your organization code (an exclusive 6-digit code) in the top left corner of the system.
+If you have multiple organizations, you can switch to other organizations here for management.
+
+## Install the Client
+
+Before enrolling your device, please first ensure that the Pivot⁺ Client is installed on the device. The logo of our client is shown below—you can find it in the app list.
+If the client is not available on your device, download it first. Via the System menu > Client Update > Client Logs and Downloads path, you can access the supported installation packages. After downloading the package, install it directly on your device to complete the process.
+
+## Device Enrollment
+
+Pivot⁺ provides multiple enrollment methods. Click the "Enroll" button at the top to select a method.
+
+### Method 1: Manual Enrollment – Fill in Information Manually via Client
+
+Find the "Maxhub Pivot⁺" client on your device and double-click to open it.
+Click the "Enroll" button in the client, then enter the Organization Code and Administrator Account to enroll the device to your organization.
+It is recommended to select a device group. After selecting a group, the device will automatically obtain and execute the group’s Profile configuration, and be added to the backend group for easier classification management.
+It is recommended to enter a device name for quick identification and location of the device in the management backend.
+
+### Method 2: Manual Enrollment – Enroll via USB Insertion into Device
+
+From the "Enroll" pop-up window, click Enrollment File to download the enrollment file and save it to a USB drive.
+Find and open the "Maxhub Pivot⁺" client.
+Click the Link Device button, insert the USB drive. The device will automatically obtain the enrollment file information and fill in the Organization Code and Administrator Account. You only need to verify and confirm the information, then click the Enroll button to complete enrollment.
+It is recommended to select a device group. After selecting a group, the device will automatically obtain and execute the group’s Profile configuration, and be added to the backend group for easier classification management.
+It is recommended to enter a device name for quick identification and location of the device in the management backend.
+
+### Method 3: Zero-Touch Enrollment – Batch Import with Pre-filled SN + MAC Information
+
+Access the Remote Batch Enrollment function, download the enrollment template. Fill in the device serial number (SN), MAC address, and optional device group information in the template. After filling, upload the template to the system to complete pre-enrollment.
+It is recommended to fill in the device group. After filling, the device will automatically obtain and execute the group’s Profile configuration, and be added to the backend group for easier classification management.
+How to fill in device group information: If there is only one-level group, enter the group name directly; if there are multi-level groups, separate upper and lower level groups with 「/」, starting from the top-level group. Example: Group1/Subgroup2/··· (Group name supports up to 30 characters; up to 8 levels of grouping are supported).
+When the device is powered on and connected to the network, the system will automatically identify the device’s SN and MAC information. If pre-filled information exists in the backend, the device will be enrolled automatically – no on-site operation at the device location is required.
+
+### Method 4: Zero-Touch Enrollment – Auto-Detect Devices on the Same Network
+
+Access the Auto-Detect Enrollment interface. The system will automatically collect network information of managed devices in your organization, and scan all connected Maxhub terminals (main devices with systems) on the same network.
+Basic information of these devices will be listed on the interface. Managers only need to check the required devices to complete batch enrollment.
+Q：How to Get the Organization Code and Administrator Account?
+A：Log in to the Pivot⁺ Website. Navigate to the System > Organization page, then you can see the Organization Code and Administrator Account.
+Q：How to Cancel Enrollment (Unenroll a Device)?
+A：Go to the Device List page. Locate the device that needs to be unenrolled, then click Edit to unenroll it.
+You can also select a batch of devices to perform bulk unenrollment.
+
+## Introduction to Function Menu Structure
+
+
+### Dashboard
+
+Dashboard：Visualizes real-time device status, scheduled command tasks, device anomalies, and operation/usage data to enable quick tracking of device dynamics.
+
+### Device Management
+
+Devices List: View enrolled devices, real-time number of online devices, and remaining License information in your organization. Perform group management, details management, command issuance, and other operations for devices.
+Profile: This function allows managers to configure a group policy (including time, Wi-Fi, apps, certificates, etc.). The profile can be distributed to any device and automatically executed after each startup, ensuring the device always maintains the basic configuration preset by the manager.
+App: Automatically obtain the software installation list and software running list of all devices in the organization. Support enabling, disabling, installing, and uninstalling software to manage the proper use of applications.
+
+### Content Publishing
+
+Resources: Centralizes all internal organizational resources in a single management hub, with transparent visibility into storage utilization and resource specifics, driving efficient internal resource governance.
+Canvas：Delivers an intuitive visual workspace for content creation and editing, with flexible layout tools and support for diverse element integration, addressing core design and presentation needs.
+Playlist：Organizes multimedia resources into customizable playlists, with flexible sequencing to streamline training sessions, presentations, and other targeted use cases.
+Schedule：Streamlines promotional content planning with a multi-view schedule, centralizing oversight of all campaigns and simplifying the tracking of content release timelines.
+Alert: Permanently located at the top right corner. Used for managers to quickly publish alerts in special emergency scenarios (e.g., fire, earthquake, armed intrusion, emergency situation).
+
+### System Management
+
+Organization: Manage all roles and device permission points in your organization to achieve flexible hierarchical and classified management.
+Incident: Set device conditions, severity levels, and notification methods that the organization focuses on. When an incident occurs, the system will automatically notify recipients according to preset content, and support remote assistance to handle issues.
+Client Update: Pivot⁺ regularly updates functions and fixes known bugs. It is recommended to update regularly to ensure smooth management.
+Firmware Update: All devices come with a firmware package from the factory. Firmware will fix known bugs and upgrade capabilities irregularly. It is recommended to update regularly to ensure smooth management.
+WOL Service: This service is used for remote device startups. You can learn about the introduction and installation guide of the WOL service through this page, and view the status of installed services and details of devices that can be remotely started.
+
+### Log Management
+
+Command records：Logs pending and executed system commands, with clear visibility into command details, status, and initiating users for full-process traceability.
+Action Logs: Captures a comprehensive audit trail of all module operations, with clear visibility into user actions, timestamps, and content modifications to ensure operational traceability and security control.
+Client Logs: Records of terminals executing automated commands. For example, when a device triggers the configuration of "auto-lock after long-term inactivity".
+
+# Device Compatibility List
+
+
+## Compatible Device Series
+
+
+## Feature Support by Device Category
+
+
+# Features Overview
+
+
+# Dashboard
+
+
+## Dashboard Overview
+
+The Dashboard overview is the core visual entry for device management. It combines 4 key features: device status monitoring, command tracking, data analysis, and Anomaly alerts.
+With simple charts and cards, it centralizes device data—letting you quickly check device status without switching modules, supporting management decisions and reducing O&M costs.
+
+## Target Users
+
+This function is only available to users with admin, sub-admin, and viewer permissions.
+
+## Functional Zones
+
+Device Overview：Displays total devices, online/offline/Anomaly device counts via card views, intuitively showing overall device status distribution, online rate, and Anomaly proportion. Hover over a card to view basic device info, desktop screenshots, and Anomaly events; click the card to access the device detail page for in-depth management.
+Schedule Command：Shows command tasks for the past 7 days in a calendar view. Quickly check overall task progress and track key command status to avoid omissions or delays.
+Quick Access: Quick navigation to core management functions. Click to access the view and configuration menu of the corresponding feature for improved operational efficiency.
+Device Update：Displays the number of pending updates for Pivot Plus clients and device firmware, with a quick update entry to trigger updates.
+Offline for Over 7 Days：Centralizes display of devices offline for over 7 days, facilitating focused attention and timely troubleshooting of offline issues.
+
+## Data Analysis Zone
+
+Device Usage：Shows device operation duration and online device count distribution to help analyze device activity.
+Application Usage：Displays app usage frequency and duration distribution to understand app resource consumption.
+Top 10 Visited Sites：Lists the top 10 most visited websites on devices, clearly understanding device network access preferences.
+
+# Device list
+
+
+## Device List Overview
+
+View enrolled devices, real-time online device count, and your organization’s remaining License credits. Perform group management, device detail management, command issuance, and other operations.
+
+## Basic Device Information
+
+View total enrolled devices, online devices, and License Credits at the top of the page:
+Enrolled Devices: Total number of devices enrolled to your organization.
+Online Devices: Real-time count of devices currently online.
+License Credits: Remaining credits
+1 License = 365 Credits
+1 enrolled device consumes 1 Credit per day
+License Credits = Number of managed devices × Management days (No limitation on enrollment devices)
+Example: 10 devices for 3 years, the account will need 30 licenses(3,650 x 3 = 10950 credits).
+
+## Device Group Management
+
+Pivot+ supports up to 8 levels of grouping, ideal for complex management scenarios like cross-border operations or chain stores.
+Hover over a group and click the Settings icon to edit the group info, add subgroups, delete the group, or edit devices in the group.
+A single device can be added to multiple groups for easier management.
+
+### Two Ways to Add Devices to Groups
+
+
+#### Way 1: Manual Selection
+
+Filter by device type, device time zone, or search by device name to locate target devices. Check the devices you want to add and click Confirm.
+
+#### Way 2: Auto-Allocation
+
+Only Admin or sub-admin can edit allocation conditions. After saving, devices that meet the conditions will be automatically added to the group.
+Set conditions based on device name, model, OS, or device type.
+Supported condition rules: Equal to, Contains, Starts with, Ends with.
+
+## Device List
+
+
+### Interface Introduction
+
+View and manage devices in List View or Grid View:
+Grid View: Check device screenshots. Click a screen to access the device’s detailed page.
+List View: View more device parameters. Customize displayed parameters via Column Management on the right.
+Device status indicators: Green = Online; Gray = Offline (may be disconnected from the network or powered off).
+
+### Locate A Device
+
+By Groups: Quickly switch groups via the left group structure to view group-specific devices.
+By Filter: Filter by device type, system type, device status, time zone, name, or ID for fast retrieval.
+
+### Quick Controls
+
+Multi-Device Screen Control: Select one or multiple online devices in the same group to enable remote screen control (supports up to 5 devices simultaneously). While controlling one device, you can view real-time screen responses of other selected devices for more convenient O&M.
+Screen control requires device permission. If the device user rejects the session, the IT administrator cannot take control.
+If the user allows access or the device does not respond within 30 seconds, the IT administrator will gain control.
+During control, you can operate the device desktop as if you were on-site. For Android devices, you can remotely disable touch functionality to ensure smooth control.
+Export: Export device list documents or device Xbug logs.
+Unenroll: Unenroll devices from the organization.
+
+### Single Device Management
+
+Edit: Modify the device name or unenroll the device.
+Details: View basic device data and operation status.
+Left Panel
+Control functions: edit, clear cache, factory reset, send commands, screen control, adjust volume/brightness, etc.
+Basic device information: hardware parameters, network, location
+Right Panel
+Device operation data: RAM usage, disk usage, device usage, software installation/running list.
+Device task status: command plans, device incidents.
+Peripheral management: parameter settings, firmware checks, and updates for video/audio peripherals.
+
+### Send Commands
+
+Select devices and Send device control, message, or settings commands.
+Unsupported commands for selected devices will be grayed out with the prompt: "Unsupported devices are selected."
+Some commands are only applicable to devices with specific systems. See "Feature Support by Device Category" for details.
+After sending commands, view execution records in Command Records.
+Create a Command
+A default command name is provided; edit it for easier future management.
+Supports 3 command execution modes:
+Immediate Execution: The device executes the command immediately after receiving it.
+Scheduled Execution: Specify a date and time. The system automatically sends the command, and the device executes it upon receipt.
+Recurring Execution: Set custom execution days and time periods. The system automatically sends the command at the specified times, and the device executes it upon receipt.
+After setting up a scheduled command, edit command plans in Command Records > In schedule.
+
+# Profile
+
+
+## Overview
+
+A profile is a set of configurations and restrictions designed to manage and secure devices enrolled in Pivot⁺.
+After setting a profile as a default, when a device enrolled to your organization, it will automatically receive and execute the default profile if no custom profile is matched.
+
+## Create a Profile
+
+Profiles can be created based on the device’s operating system (Windows, Android, Linux).
+The configurable details vary by Device types—refer to the Device Compatibility List for specifics.
+Note: "Default" in settings means no changes will be made—devices retain their original configurations.
+
+## Device Execution
+
+Associate Devices: After configuring profile parameters, click "Associate" to select devices or device groups that will execute the profile.
+Automatic Execution: Once associated, devices will execute all profile settings immediately after each startup.
+Execution Status: The list displays three statuses for each device
+Success: The profile was successfully sent to and executed on the device.
+Failed: Execution failed (e.g., system error, server timeout).
+Executing: The device is offline (commands will resume when the device powers on) or conditional settings (e.g., Saving Mode) are pending trigger.
+Available Operations
+Sync: Immediately execute all profile configurations on the device.
+Disassociate: Remove the device from the profile’s execution list (the device will no longer execute the profile after reboot).
+Check: View detailed execution results for the device, including success/failure status and reasons for each parameter.
+
+# App
+
+
+## Overview
+
+Batch install applications, enable/disable software that has run on devices in your organization, and uninstall installed software—all operations are handled remotely to boost management efficiency.
+Supports sending software to devices for installation. You need to upload the software installation file or app store link first.
+After the non-silently installed software is sent to the device, it needs to be manually triggered for installation on the device.
+Support remote management of software installed on the device, including uninstalling installed software and enabling or disabling running software.
+
+## App Installation
+
+
+### App Upload
+
+File Upload: Manually upload software in EXE, MSI, APK, or DEB format (maximum 600MB per file).
+Google Play Link: Paste the URL of a free app from the Google Play Store (only free apps are supported).
+App Installation List: All uploaded apps are displayed in the installation list. Supports re-sending, editing, or deleting installation packages.
+
+### App Installation Process
+
+Select the target app and specify the devices to send the installation command.
+For free Google Play apps, enable "Automatic Update" to get automatic upgrades when new versions are released.
+Installation Behavior:
+Apps are downloaded and installed silently automatically (where supported).
+For non-silent-supported apps, you can choose to push the app as a file to the device, then install it manually.
+
+### Retry Mechanism:
+
+If the device is offline or installation fails, the system will retry installation once the device is powered on and connected to the network within 7 days.
+If the device remains offline or installation fails after 7 days, the command expires. Re-send the command or install manually with the device online.
+
+### Execution Tracking:
+
+View installation status in Command Records at any time.
+One-click re-send is available for failed installations.
+
+## App Management
+
+
+### Run List
+
+Displays all software processes that have run on devices in the organization.
+Enable or disable app processes to restrict user access on devices.
+
+### Installed List
+
+Displays all software installed on devices in the organization.
+Supports remote uninstallation of apps.
+
+# Resources
+
+
+## Overview
+
+The Resource Library manages all organizational resources, including images, videos, documents, and more. Administrators can group, upload, delete, and perform other operations on resources.
+
+## Interface Overview
+
+Resource Storage Distribution: View total storage usage and usage breakdown by resource type.
+Group-Based Resource Management: Categorize resources manually or automatically by file type.
+
+## Resource Upload
+
+Automatic Sync: Files uploaded in any system function (e.g., audio in Bells, apps in App Management) are automatically added to the Resource Library.
+Direct Upload: Resources uploaded directly to the Resource Library are also stored here.
+
+### Supported Resource Types & Formats
+
+
+## Resource Group Management
+
+Group Structure: Supports one-level grouping. Administrators can create custom groups based on management needs.
+Default Group: "All Resources" (cannot be deleted, level 0). All uploaded resources are automatically added to this group.
+Resource Sharing: The same resource can exist in multiple groups without occupying additional storage. Deleting a resource from one group removes it from all groups.
+Resource Categorization: Hover over a group and select "Edit Resources" to add resources manually or automatically:
+Manual Selection: Filter resources by type or name, then select and add them to the group.
+Auto-Allocation: Set rules using "AND/OR" conditions (based on resource type and format). All newly uploaded resources matching the rules are automatically added to the group.
+
+# Canvas
+
+
+## Overview
+
+Canvas is a flexible creative tool. You can customize canvas size and drag resources/components onto it. It works for promotional tasks in retail, meetings, education, and other scenarios.
+
+## Canvas Management
+
+
+### View Modes
+
+Grid View: Find and locate canvases quickly. Operate by hovering your mouse.
+List View: Check detailed canvas info, such as size, creator, and modification time.
+
+### Operations
+
+Quick Publish: Quickly distribute the canvas to devices.
+Edit: Enter the edit page to modify the canvas.
+Duplicate: Create a copy of the canvas.
+Delete: Permanently delete the canvas (irrecoverable). Please operate with caution.
+
+## Create a Canvas
+
+
+### Basic Canvas Settings
+
+Canvas Name: Enter a name for easy identification. A default name (Canvas + timestamp, e.g., Canvas20250827110202) is generated if left blank.
+Select Size: Choose default sizes (16:9, 4:3, 16:10, 21:9, 9:16, 3:4, 10:16) or custom size (max 4096*4096).
+Resource Group: Canvases are automatically saved to the organization's group after creation for easy future use.
+Background: Use image fill or color fill (transparency adjustable).
+Background Music: Select music to play when the canvas runs.
+
+### Component Combination
+
+General Component Operations
+Supports layout (position, size, rotation, alignment, layers, quick layout), style settings (background color, border, rounded corners, opacity), duplication, and deletion.
+Supported Components
+Resources:
+Image: Replace/delete images, set fill mode.
+Video/Audio: Replace/delete files, set volume, and toggle loop playback.
+Text: Set font, font size, bold/italic/underline, font color, line height, letter spacing, and text alignment.
+URLs: Enter URL and set refresh rate.
+Widgets:
+Time: Set time format, time zone, time font size, date font size, and font color.
+QR Code: Set QR code link and color.
+
+# Playlist
+
+
+## Overview
+
+A Playlist is a tool to organize prepared resources into a list. You can adjust the playback order and duration of the resources.
+
+## Playlist Management
+
+
+### View Modes
+
+Grid View: Find and locate playlists quickly. Operate by hovering your mouse.
+List View: Check detailed playlist info, such as number of resources, creator, and modification time.
+
+### Operations
+
+Quick Publish: Quickly distribute the playlist to devices.
+Edit: Enter the edit page to modify the playlist.
+Duplicate: Create a copy of the playlist.
+Delete: Permanently delete the playlist (irrecoverable). Please operate with caution.
+
+## Create a Playlist
+
+Add Resources
+Drag and drop images, videos, audio, Canvas, or playlists into the playlist edit area.
+Adjust Content
+Drag to reorder the playback sequence of resources.
+Click to edit the playback duration of each resource.
+After setup, you can preview, save, or directly publish the task.
+
+# Schedule
+
+
+## Overview
+
+Schedule lets you view all content distribution tasks and their execution status through a calendar view.
+
+## Active Schedules
+
+Calendar view displays ongoing content distribution plans.
+Drag to quickly adjust playback time; batch adjust recurring tasks via drag-and-drop.
+Hover over any task to see its key info; click to edit or pause the task directly.
+
+## Create a Schedule
+
+
+### Select Time
+
+Drag to choose the time for the planned task.
+
+### Set Content
+
+Select the content to distribute, set playback volume, and choose fill mode for device playback.
+
+### Playback Plan (auto-filled based on selected time)
+
+Time Mode
+Timed: The command runs based on the device’s local time zone (for multi-time zone selection).
+Recurring: One device can have only one set of recurring commands. New recurring commands replace old ones.
+Play Mode
+Duration: Content loops during the specified time.
+Cycle: Set start time and number of playback times.
+Play Method
+Takeover: Stop all current programs and play this content. Original programs won’t resume after playback.
+Interrupt: Pause non-full-screen programs and play this content first. Original programs resume after playback.
+Target Devices
+Select Devices: Choose devices by group or individually.
+Execute with Power on: Enable to force devices to power on before running the command.
+Operation rights: Enable to let clients stop the command task.
+Unlock EDLA device: Enable to unlock the EDLA device, ensuring the task runs properly.
+
+## History
+
+View detailed execution records of all content distribution tasks.
+Support publishing or deleting tasks.
+
+# Alert
+
+
+## Overview
+
+Push alerts to device screens for emergency situations.
+Alert supports 4 pre-built templates (Fire, Earthquake, Armed Intrusion, Emergency) and allows one-click delivery to all devices.
+Alerts cannot be closed manually on devices—only administrators can stop them via the backend.
+
+## Alert Notification
+
+After sending an emergency message, a red flashing bar will appear at the top of the web console, indicating the alert is active.
+Administrators can click the "Stop Alert" button to stop the emergency message.
+
+# Organization
+
+
+## Overview
+
+The Organization Center allows you to view and modify basic organizational information, manage administrator roles and members, and implement refined permission control.
+
+## Organization Information management
+
+View the organization name, organization code, geographic location, and administrator account in the top information area.
+Three function buttons below enable different configurations:
+Setting: Modify the organization name and location.
+Records: View license purchase and usage records for procurement tracking.
+Password: View and change the administrator password and unlock password.
+Administrator password: Used to deregister devices.
+Unlock password: Used to unlock devices.
+Both support 6-digit numeric, the default password is 000000.
+
+## Users & Roles
+
+Supports hierarchical management of organizational Roles and Users.
+
+### Role Management
+
+
+#### Default Roles
+
+The system presets three immutable roles:
+Admin: Only 1 Administrator (highest-level administrator) is allowed per organization. It has full access to all functions, devices, and maximum system permissions.
+Sub-admin: Equivalent to Admin, except cannot delete the organization.
+Viewer: Only has view access to all pages; no management actions (e.g., cannot send commands or upload resources).
+
+#### Custom Roles
+
+Click "Create Role" to customize permissions:
+Page Permissions: Set accessible pages (matches menu structure).
+Function Permissions: Set operable functions.
+Account Permission: Auto-logout after xx minutes of inactivity.
+
+### User Management
+
+
+#### User List
+
+View and modify all administrators, their roles, and device management scopes.
+
+#### Add Users
+
+Single User: Click "Create User", enter the user’s email, select a role, and assign device/resource groups.
+Batch Add: Click "Batch Add", download the import template, fill in emails and roles, save, and submit the file.
+After adding, users receive an email from Maxhub Pivot⁺ with account credentials. Click "Login Now" to start managing devices.
+
+#### Delete Users
+
+Select users from the list and click "Remove" to remove them from the organization’s administrators.
+
+#### Transfer Admin Rights
+
+If you can no longer manage the organization, find your email in the list, click "Transfer", select another member, and confirm.After transfer, you are immediately removed from the administrator list and can no longer access the organization (unless re-invited).
+
+## Personal Account Management
+
+Each user has a settings center in Pivot⁺:Click your avatar in the top right corner > "Settings" to:
+Modify your avatar, username and password.
+Enable 2-Factor Authentication: Requires a verification code to log in to MAXHUB Pivot⁺ if enabled.
+Enable Multiple Logins: If enabled, the same account can be used on multiple terminals simultaneously. If disabled, the first login is logged out and notified when a second login occurs.
+View privacy and security-related content: Privacy Policy, User Agreement, User Experience Program, and Platform Message Subscription.
+
+# Incident
+
+
+## Overview
+
+Incident automatically identifies Anomaly device behaviors during operation and notifies administrators by severity level. It helps administrators quickly grasp device anomalies and perform remote interventions.
+
+## Configure Anomaly Detection Items
+
+
+### Add Detection Conditions
+
+Click "Add Condition" in the top right corner to select a detection item, set trigger conditions, severity level, and applicable devices. Enable the condition after configuration to activate it.
+Multiple configurations can be created for the same detection item (for different devices or severity levels).
+The system supports 12 detection items, each with customizable trigger conditions, severity levels, and applicable devices.
+
+### Detection Items
+
+Insufficient system disk space
+Insufficient storage space
+Excessive RAM usage
+Excessive CPU usage
+Excessive CPU temperature
+Device offline
+Device unenrolled
+Unstable network
+Client version needs update
+Online devices idle for a long time
+Device online for too long
+Peripheral disconnection
+
+### Trigger Conditions
+
+Each detection item has fully customizable trigger conditions.
+For example: "Excessive memory usage" can be set to "Alert immediately when memory usage exceeds 90% for 15 consecutive minutes".
+
+### Severity Levels
+
+Supports three levels: Normal, Urgent, Serious.
+
+## Configure Notification Methods
+
+Notification methods can be set separately by severity level:
+Supported channels: Email and Info Center.
+Personalized push: Targeted notifications for different roles.
+Push timing: Immediate or custom schedule.
+
+## Anomaly Identification, Notification & Remote Intervention
+
+When an anomaly trigger condition is met, relevant administrators receive notifications based on configured settings and can perform remote interventions quickly.
+
+### Notification Channels
+
+Info Center: View anomaly incidents in the top right corner Info Center. Click any incident to view details.
+Email: Receive Incident notifications via email.
+
+### Remote Intervention
+
+Anomaly details provided: Occurrence time, trigger conditions, resolution suggestions, and intervention options.
+Intervention methods: Vary by anomaly type (e.g., shutdown, reboot, remote screen control).
+
+### Anomaly Resolution
+
+Manual resolution: Click "Solved" to close the incident manually.
+Automatic resolution: The system continuously monitors. If the anomaly no longer occurs, it is automatically resolved and moved to the "Solved" list.
+
+## Incident Summary Management
+
+Access the Incident menu to view solved and active incidents.
+Filter by incident items, incident type, severity level, device type, or device name to quickly locate anomalies for remote intervention or historical review.
+Active: Click any unresolved incident to view details, including resolution suggestions and actionable items.
+Solved: View historical records and details of resolved incidents.
+
+# Client Update
+
+
+## Overview
+
+Client Update allows you to view and download Pivot⁺-supported client information, check the client version status of all devices in your organization, and identify devices requiring updates.
+It also provides batch update and auto-update capabilities to keep clients running the latest version, reducing the administrator’s workload of frequent manual updates.
+
+## Client Download
+
+Access "Client Logs and Downloads" to:
+View update logs for Pivot⁺ clients compatible with various operating systems.
+Download the latest client version directly for installation.
+
+## Client Update
+
+
+### Manual Batch Update
+
+The device list displays each device’s current client version and update status.
+Select target devices and click Update Client in the top right corner to initiate remote updates.
+Important Note: Do not force power off the device or interrupt the update process during installation.
+Executed with Power On Command: If the device is offline, it will be forced to power on. Once connected to the network, the client updates automatically (the device remains powered on after the update).
+Automatically power off after update is completed: Select it if the device needs to be shut down after updating,
+
+### Auto-Keep Latest Version
+
+Select target devices and click "Auto-Keep Latest Version", set the update time, and configure options:
+Whether to force the device to power on for the update.
+Whether to automatically power off the device after the update.
+After configuration, devices will automatically detect and install new Pivot⁺ client versions upon the release—no manual trigger required.
+
+# Firmware Update
+
+
+## Overview
+
+Firmware Update works for main devices and peripherals. You can check real-time firmware versions and update status of devices, and remotely update firmware in batches—either manually or automatically.
+
+#### Peripherals
+
+Within MAXHUB’s product range, these are devices without an operating system. They connect to main systems (Windows/Mac/Android) via IP/USB/Wi-Fi, such as cameras, microphones, speakers, or other accessories.
+
+#### Firmware
+
+Software built into hardware that controls basic device functions and low-level operations.
+
+## Why Update Firmware?
+
+Older versions may not support new features.
+Fix issues in old versions to ensure devices run and are managed smoothly.
+
+## Important Notes
+
+When a new firmware version is detected, you can update the device remotely. The firmware download takes about 10–30 minutes.
+For Windows devices, only MAXHUB OS can be updated (not the Windows system itself).
+Don’t force power off the device or stop the update process while it’s running.
+
+## Manual Upload & Update Firmware
+
+Click "Upload to Update" to manually upload a verified firmware package.
+Select target devices and send the update command.
+Note: Uploading the wrong file may damage your device—please operate carefully.
+Executed with Power On Command: If the device is offline, it will turn on automatically. Once connected to the network, the firmware updates on its own (the device stays on after updating).
+Automatically power off after update is completed: Select it if the device needs to be shut down after updating,
+
+## Batch Firmware Update
+
+Check the devices you want to update in the device list.
+Send the update command to start batch updates.
+
+## Auto-Keep Firmware Up to Date
+
+MAXHUB hardware devices get regular firmware updates to fix known issues and add new features. These updates are uploaded to the Pivot+ backend.
+When "Keep Firmware Up to Date" is enabled, Devices automatically detect new firmware packages and update to the latest version—no manual action needed.
+
+### How to Set Up
+
+Select target devices and click "Keep Firmware Up to Date".
+Set the update time.
+Suggestion: Schedule updates during device idle time to avoid affecting users.
+Choose options:
+Whether to turn on the device to update.
+Whether to shut down the device after the update.
+Click "Send" to save settings.
+
+# WOL Service
+
+
+## Overview
+
+WOL (Wake-on-LAN) Service is required for remotely powering on Windows devices. Here you can learn how WOL works, download the WOL client, check WOL server status, and view detect results for whether devices can be powered on.
+Once a Power On command is created, it is stored on the server. At the set time, the server sends the command to devices. Devices connected to the WOL Service will be powered on.
+
+## Set Up WOL Service
+
+Download and install the WOL Service. It can only be installed on Windows devices, and the device with WOL Service must be on the same network segment as the controlled devices.
+Enter your organization code and admin email to connect the WOL server to your organization. Input a server name to distinguish different WOL servers in the same organization.
+After connecting to the organization, the WOL server will start searching for nearby devices. The list of connected devices will be displayed in the WOL client and on the devices. One organization can have multiple WOL servers.
+Ensure the WOL Service is always online—Power On commands are sent through this service.
+
+## Server List
+
+After WOL configuration, you can view the status of the WOL server and the number of devices on the same network segment in the "Server List".
+You can also remotely delete the server via the "Delete" button.
+
+## Power-On Support Detect
+
+Go to "Service Detection" to detect if Windows devices can be remotely powered on. You’ll see reasons for failure (if any) and solutions. Follow the prompts to fix issues and retest.
+To ensure devices can be powered on: Enable the Wake-on-LAN feature on the devices according to the method shown in the figure below.
+
+### Remote Power-On Technical Principle
+
+When a computer is shut down or in hibernation, its network card and part of the motherboard still receive weak power. This keeps the network card running at low power to monitor broadcast messages from outside the computer.
+When the network card detects a specific "Magic Packet" in the broadcast and recognizes it as targeting its own address, it notifies the motherboard and power supply to start the boot (or wake-up) process.
+
+##### Requirements for WOL Remote Wake-Up
+
+The network card must support WOL or WoWLAN.
+The motherboard must support WOL.
+The power supply must meet the ATX2.01 standard.
+
+##### About Magic Packet
+
+A Magic Packet is a broadcast frame containing the MAC address of the target device. Since MAC addresses are usually unique, the packet is uniquely identified by the target device.
+Transmission protocol: Usually UDP, with ports 7 or 9 (not mandatory—Pivot⁺ uses UDP but different ports).
+Structure: Starts with 6 consecutive "FF" (hexadecimal, 11111111 in binary), followed by the 48-bit MAC address of the target device repeated 16 times. The total length is usually 102 bytes. Sometimes 4–6 bytes of password are added at the end.
+
+# Command Records
+
+
+## Overview
+
+Command Management enables you to not only check the results of command execution but also manage command schedules.
+
+## Execution Results
+
+The system will generate a list of historical records for the results of executed commands, including immediate and scheduled commands. You can view the specific execution result of each device for every command.
+Success: The device has successfully executed the command.
+Failure: The device failed to execute the command; you can resend it.
+Executing: The device is offline and hasn't executed the command yet. Or the command is being executed, and the device hasn't returned a success or failure result.
+Resend: For Anomaly commands, you can access the details to view the cause of the exception and resend the command with one click.
+
+## In Schedule
+
+All recurring or scheduled commands set in the system will be automatically added to the command Schedule List.
+You can view, edit, and delete these commands. You can also temporarily enable or disable an command (only enabled commands will be executed).
+
+# Action logs
+
+
+## Overview
+
+Action logs provide a complete global audit trail of all platform user and device-side actions. You can review operational details and quickly identify the root cause of problems.
+
+## Log Types
+
+Platform Operation Logs: Records of management actions performed by administrators in the Pivot Plus backend.
+Device-side Operation Logs: Execution logs from devices, such as device unenrollment, device power-off in saving mode, etc.
+
+# Plans
+
+
+# Plans Comparison
+
+We offer two dedicated versions to meet diverse management needs: Basic Version and Professional Version.
+
+## Basic Version
+
+It provides basic management functions, requiring more manual intervention and featuring fundamental capabilities, but it still covers scenarios including device enrollment, management, and configuration.
+
+## Professional Version
+
+Focusing on improving management and O&M efficiency. Beyond the capabilities of the Basic Version, it adds services such as anomaly detection & Alert, content management & distribution, and data management to help administrators remotely manage devices more easier, more efficiency.
+Below is a features comparison between the two versions—you can select the appropriate version based on your organization’s management scenarios and needs.
+
+# Pivot⁺ Pioneer Program
+
+Pivot⁺, the powerful upgrade to Pivot, is launching soon—designed to supercharge your device management efficiency!
+We’re inviting loyal Pivot users to join our Pioneer Experience Officer program and collaborate directly with our R&D team to shape the final product.
+
+## Key Pivot⁺ Upgrades
+
+Sleeker interface: 30% fewer clicks for faster, lower training costs, better daily management efficiency.
+Ultra-simple bulk enrollment: No manual device-by-device setup—cuts initial enrollment time.
+Intelligent O&M: Real-time dashboard auto-alerts for equipment/network incidents (early detection & resolution remotely).
+Visual content distribution: Intuitive canvas mixing, custom playlists, drag-and-drop scheduled one-click release.(coming soon)
+
+## Pioneer Experience Officer Program
+
+
+### Eligibility
+
+Active existing Pivot users
+Eager to co-create and improve Pivot⁺ with our team
+
+### Timeline
+
+Application Period: November 1, 2025 – June 30, 2026
+Review: 3 business days; you’ll be notified via email once a decision is made(starting January 26, 2026).
+
+### How to Apply
+
+We use a targeted invitation & sales liaison model:
+Reach out to your dedicated sales consultant or via the official contact page: https://www.maxhub.com/en/contact_us/
+Provide organization details (Admin Account, Organization Code, Device Types/Models) to complete registration.
+Upon approval, we’ll activate your access, send a detailed migration guide, and assist with migration.
+
+### Exclusive Pioneer Benefits
+
+Free Professional Access: 60 months of complimentary Pivot⁺ Professional usage (valid from activation date).
+Direct R&D Collaboration: Share feedback directly with product managers and technical leads—your input drives version optimizations.
+
+## Migration Risks
+
+To ensure a smooth transition, please review these key points before migrating:
+Device Compatibility: Pivot⁺ doesn’t support all legacy Pivot devices. Check the Pivot⁺ Compatibility List first—if not listed, delay migration.
+Data Migration Limitations: Some Pivot features/data cannot be migrated. Prepare backups or adjustments in advance (see details below).
+Attachment: Migration Checklist
+Coexistence Conflict: Pivot and Pivot⁺ can coexist temporarily but risk command conflicts. We recommend disabling Pivot permissions after migration.
+Migration Duration: The full migration process typically takes 5 business days. Please plan accordingly.
+On-Site Support Required: While the migration is performed online, some local user support is necessary.
+
+### Switch Back Option
+
+After using Pivot⁺, if you’re not satisfied with it, you can switch back to the original Pivot at any time.
+However, you’ll lose all Pioneer Experience Officer benefits, and operations performed on your devices during the Pivot⁺ migration cannot be transferred back—you’ll need to reconfigure settings manually. Please be advised.
+Attachment: Feature Differences Between Pivot and Pivot⁺
+
+# FAQs
+
+
+# Relationship Between Pivot and Pivot⁺
+
+
+#### Q: What is Pivot⁺? What is its relationship with the existing Pivot?
+
+A: MAXHUB Pivot⁺ is a next-generation centralized control product fully upgraded based on the core capabilities of the existing Pivot. Tailored for IT administrators, it supports more scenarios, offers a smoother UI experience, and delivers higher O&M efficiency—perfect for meeting the needs of enterprise-scale management.
+MAXHUB Pivot⁺ is a cloud-based CMS + DMS platform designed to centrally manage both devices and content across MAXHUB meeting room and display solutions.It enables organisations to remotely monitor and manage devices while also creating, scheduling, and publishing content to commercial displays and meeting room screens.
+Pivot⁺ provides a unified control layer for large-scale deployments, helping IT and operations teams standardise device behaviour, control messaging, and reduce operational complexity across locations.
+Kindly note that Pivot⁺ adopts an entirely new technical underlying architecture, which is different from the original Pivot. Therefore, existing organizations cannot migrate to the new Pivot⁺ seamlessly, and simple configuration adjustments are required during migration.
+
+#### Q: Will Pivot be replaced or discontinued by Pivot⁺ in the future?
+
+A: Please rest assured. Pivot's services will continue to run stably throughout 2026 without affecting your normal use, but no new features will be added in subsequent updates.
+Starting from July 1, 2026, existing Pivot users can freely choose whether to upgrade to Pivot⁺ to enjoy new services.
+We will continue to monitor the migration progress and feedback of existing Pivot users, and then determine the specific shutdown time of Pivot based on actual circumstances, ensuring you have sufficient time to prepare.
+
+#### Q: Why did MAXHUB launch Pivot⁺? What limitations exist in the existing Pivot?
+
+A: With the deepening of enterprise digital transformation, the existing Pivot has gradually exposed bottlenecks that are difficult to meet current needs: the UI interaction and operation process are not quite in line with modern users' aesthetic and efficiency requirements; the compatibility and management of new devices (such as Microsoft MTR series) are complicated; the underlying architecture lacks flexibility, leading to slow feature iterations that cannot keep up with business development.
+Pivot⁺ is designed to solve these pain points! Through three core upgrades—reconstructed underlying architecture, optimized interactive experience, and expanded multi-scenario compatibility—it creates a dedicated platform more suitable for enterprise-scale management. It not only makes device management easier and more efficient but also further strengthens MAXHUB's competitive advantage in the field of device centralized control.
+
+#### Q: What are the core improvements of Pivot⁺ over Pivot in terms of functions and capabilities?
+
+A: Focusing on users' core needs in device management, Pivot⁺ has achieved comprehensive improvements in four key areas, making it more user-friendly and efficient:
+Significantly Improved Enrollment Efficiency
+Batch import device serial numbers, MAC addresses, and grouping information in advance. Once the device is powered on and connected to the network, it will automatically complete enrollment—no need for on-site manual binding.
+The system will automatically scan all MAXHUB devices connected to the same local area network and list basic device information. Administrators only need to check the required devices to quickly complete batch binding, saving time and effort.
+Notably Optimized Management Efficiency
+Intuitive visual charts and calendar views clearly display real-time device status, pending tasks, and Anomaly information. This helps administrators break free from complicated data and quickly focus on key points.
+Supports up to 8-level grouping management, enabling device control by spatial dimensions. It is easily adaptable to large multinational enterprises and chain retail scenarios, allowing for more refined management.
+Fully Upgraded O&M Efficiency
+Supports simultaneous remote control of multiple devices in the same meeting room. When controlling one device, you can synchronously view the response status of other devices, making troubleshooting and collaborative O&M more efficient—no need to rush between different locations.
+Firmware upgrades support both main devices and peripherals. You can upload firmware packages independently for batch updates, or the system will automatically detect firmware versions and intelligently upgrade to the latest, ensuring devices always operate at their best.
+Custom hierarchical device alerting and full-dimensional log retention ensure fast response to Anomalyities. O&M processes are safe, controllable, compliant, and traceable.
+More Flexible and Convenient Content Distribution
+Freely manage various resource types (images, videos, audio, documents, canvases, etc.). The system automatically categorizes and archives resources for easy search and management.
+Enjoy flexible layouts when creating promotional content. You can freely arrange various components and multimedia resources to meet promotional needs in diverse scenarios, such as in-store promotions or corporate publicity.
+Supports arranging content playlists in view mode and selecting release times via drag-and-drop, making content publishing more convenient and the operation process smoother.
+
+# Migration and Usage Impact
+
+
+#### Q: Do existing Pivot users have to migrate to Pivot⁺?
+
+A: No, it’s not mandatory! We will continue to ensure the stable operation of the Pivot system throughout 2026, so you can keep using it as usual. However, Pivot product licenses will no longer be sold or automatically renewed.
+We strongly recommend you try the new Pivot⁺, as it will significantly improve your device management efficiency and make management easier. Meanwhile, we will continue to monitor the migration progress and feedback of existing Pivot users, and then determine the specific shutdown time of Pivot, giving you ample time to adapt and prepare.
+Q: Will not migrating to Pivot⁺ for the time being affect the use of the existing Pivot?
+A: It will not affect it at all! We will continue to ensure the stable operation of the Pivot system throughout 2026. Your enrolled devices can still enjoy all Pivot's device management services normally—no need to worry about current usage.
+Q: Will migrating from Pivot to Pivot⁺ affect the normal operation of existing devices?
+A: During the migration process, the commands and configurations set in the original Pivot may not be executed in a timely manner before the migration to Pivot⁺ is completed. However, please rest assured that this will not affect the normal use of devices in actual scenarios such as meetings, education, and retail, and core functions will remain unaffected.
+
+#### Q: Does Pivot⁺ support a free trial before deciding to migrate?
+
+A: Yes! Starting from July 1, 2026, we will open a free registration channel for Pivot⁺ on the official website. You can register first to try Pivot⁺’s services, and we will provide you with a 30-day full-feature Pro version trial. After experiencing it thoroughly, you can decide whether to migrate officially based on your needs. If you have any questions during the trial, feel free to contact us at any time!
+
+# Control Functions
+
+Q: What practical efficiency improvements can Pivot⁺ bring to large-scale device deployment and O&M?
+A: Addressing the pain points of large-scale device management, Pivot⁺ brings tangible efficiency improvements in two key areas—deployment and O&M—making management easier:
+Deployment: Offers zero-touch enrollment services, including pre-renrollment by importing SN⁺MAC in advance and automatic discovery enrollment for newly purchased devices. This greatly reduces manual operations, significantly improves deployment efficiency, and eliminates the need for individual configuration.
+O&M: Provides batch remote screen control for multiple devices in the same room. When a device causes an Anomaly incidents, it will send automatic notifications and support remote troubleshooting. Additionally, a task-oriented workbench clearly lists risks and pending tasks, making O&M simpler and more efficient—no need to travel around.
+Q: Is Pivot⁺ more complex to operate and manage? Is it easy for ordinary administrators to get started?
+A: No need to worry at all! Pivot⁺ optimizes the interactive experience with the core concept of "humanization and high efficiency," making it even easier to get started than traditional platforms—ordinary administrators can master it quickly:
+Extremely low interaction threshold: The interface is redesigned following mainstream design standards from Google and Microsoft, adopting a "core functions on homepage, shortest operation path" design. Key entrances (such as device status checks and alert handling) require no multi-level navigation. With red, and blue indicators for device status, information is intuitive and easy to understand—no need to struggle to find what you need.
+Efficient operation process: The operation path for core management actions (such as batch upgrades and device searches) is shortened by 50%. It supports multi-level filtering to locate devices and issues, eliminating the need to remember complex operation logic—you can get started right away.
+Controllable learning cost: New users can independently complete core tasks such as device enrollment, status monitoring, and routine O&M after just 15 minutes of basic training. No professional IT background is required—you can easily handle the management work.
+
+#### Q: Does Pivot⁺ support the management and monitoring of third-party devices?
+
+A: Currently, Pivot⁺ only provides management services for MAXHUB ecosystem hardware and does not support third-party devices. If you have needs related to third-party device management, please feel free to provide feedback. We will focus on and evaluate it in subsequent product iterations!
+Q: Will Pivot⁺ replace Microsoft Teams Admin Center (TAC) or Microsoft Teams Rooms Pro Management Portal?
+A: Microsoft's management functions include Teams app management (settings, updates, meeting settings), Teams Rooms digital signage, and basic management of meeting room devices. We usually recommend using Pivot⁺ Pro together with Microsoft Teams Rooms Pro Management. The two can complement each other to bring you a more comprehensive and efficient management experience.
+
+#### Q: What unique management and monitoring capabilities does Pivot⁺ offer that Microsoft Teams Admin Center (TAC) or Microsoft Teams Rooms Pro Management Portal do not have?
+
+A: Microsoft's management capabilities for Android devices are not as robust as those for Windows devices. Pivot⁺ provides more professional Android device management tools, such as remote desktop control for Android meeting room devices, which can help you solve problems more quickly. In addition, Pivot⁺ also has basic CMS service capabilities, including canvas resource creation, playlist arrangement, and schedule management, bringing you a more convenient content distribution experience for daily management.
+
+# Content Distribution (CMS) Related
+
+
+#### Q: Does Pivot⁺ include content distribution (CMS) capabilities? How does it integrate with device management?
+
+A: Yes! Pivot⁺ is an integrated device management platform combining DMS (Device Management System) and CMS (Content Management System). It allows you to achieve "management ⁺ distribution" in one stop without switching between multiple systems!
+The device management module provides you with core capabilities such as device enrollment and basic maintenance. After creating content in the CMS module, you can directly and quickly distribute it to managed devices. The process is smooth and convenient, greatly improving work efficiency.
+
+#### Q: Can Pivot⁺ replace existing information distribution or digital signage management systems?
+
+A: Yes! The CMS services currently provided by Pivot⁺ cover core functions, including resource upload and management, content creation, playlist arrangement, and drag-and-drop schedule publishing. It can fully meet the basic needs of daily information distribution and digital signage management—you can safely use it to replace existing systems!
+
+# Launch Time and Trial Plan
+
+
+#### Q: When is Pivot⁺ scheduled to be officially launched? What phase will it be in the first half of 2026?
+
+A: We will launch the Beta version of Pivot⁺ in the first half of 2026, which will be available for experience by selected organizations invited by the sales team. During the experience, we will carefully listen to every user's suggestions and feedback, continuously polish the product details to ensure the official version better meets everyone's needs. The official launch of Pivot⁺ is scheduled for July 1, 2026.
+
+#### Q: If I am interested in Pivot⁺ now, what ways can I participate in or learn more about it?
+
+A: You can first learn about detailed product information of Pivot⁺ through the MAXHUB official website. If you are more interested and want to try it in advance, you can submit an application through your dedicated sales representative. We will activate a trial account for you or invite you to join our Pioneer Program, allowing you to experience the convenience and efficiency of Pivot⁺ ahead of time!
+
+#### Q: Can I sign up for Pivot⁺ on my own or through my local reseller?
+
+A: The Beta version will be released in the first half of 2026, available only to invited customers participating in the Pioneer Program.
+Starting from July 1, 2026, free self-registration will be officially opened. All registered users will automatically receive a 30-day trial of the Pro version, which will be downgraded to the free Basic version after the trial period ends.
+
+# Business Strategy
+
+
+#### Q: Is Pivot⁺ still free?
+
+A: Pivot⁺ offers two versions to meet different needs: a free Basic version with functions consistent with the original Pivot Free version, which can fully meet basic device management requirements; and a paid Pro version with more rich features than the original Pivot Pre version, including practical CMS services, helping you achieve more comprehensive and efficient device management.
+
+#### Q: What are the Pivot⁺ plans?
+
+A: For detailed comparisons between versions, please refer to the official "Plans Comparison" which clearly presents the specific functions included in each version for your reference when making a choice!
+
+#### Q: How can I buy Pivot⁺?
+
+A: Like MAXHUB hardware, Pivot⁺ is purchased through MAXHUB local authorized reseller partners. You can contact your local authorized reseller for consultation and purchase. If you need help finding a reseller, you can also contact our official customer service for support.
+
+#### Q: Is access to Pivot⁺ included with the purchase of all MAXHUB devices?
+
+A: Every hardware device comes with access to Pivot⁺’s Basic version! Starting from July 1, 2026, after purchasing any MAXHUB device, you can register a Pivot⁺ account through the official website to manage your device, making device management more convenient and easy to operate.
+
+# Features
+
+
+#### Q：How to Switch language？
+
+A：Maxhub Pivot+ supports multiple languages. Click the map-style icon in the top right corner to switch to your preferred language.
+After switching, the page will reload—please ensure all current page content is saved to avoid data loss.
+
+#### Q：How to contact us？
+
+A：When you encounter issues, you can contact the Pivot+ team through the following two methods:
+Send an email directly to pivot-plus@maxhub.com. Please describe the problem, symptoms, and suggestions in as much detail as possible, along with your organization name and Organization Code. This helps us verify and resolve the issue efficiently.
+Click the message-style icon in the top right corner of the system to submit your feedback. We will get in touch with you as soon as possible.
+
+# Security and Others
+
+
+#### Q: Is there a security whitepaper for Pivot⁺ that I can download?
+
+A: The Pivot⁺ Security Whitepaper is available in the Resource Center on the official website. You can download and review it at any time to learn more about the product's security mechanisms!
+
+#### Q: Where are Pivot⁺’s data centers located?
+
+A: We have deployed servers in the United States and Germany. Multi-region server deployment better ensures service stability and accessibility, providing reliable support for your global device management needs.
+
+#### Q: Does Pivot⁺ support any secure login mechanisms? SAML SSO? Please describe all security measures. What Single Sign-On (SSO) integrations does Pivot⁺ support?
+
+A: Currently, SSO is not supported. However, Pivot⁺ has passed multiple security compliance certifications. Core security measures include full-dimensional log retention, hierarchical permission control, and encrypted data transmission, which can fully protect the security of your device management data. For more detailed security information, please refer to the "Pivot⁺ Security Whitepaper."
+Q: Does Pivot⁺ integrate with any other third-party cloud management software, such as XYTE?
+A: Currently, Pivot⁺ does not integrate with any third-party cloud management platforms. If you have relevant integration needs, please feel free to provide feedback. We will conduct technical research and evaluation based on user needs in subsequent iterations.
+
+#### Q: Does Pivot⁺ provide API access? How can I obtain Pivot⁺ API access rights?
+
+A: Currently, API access is not available. We will continue to collect user needs for API access. If there is sufficient market demand, we will consider opening related services in subsequent product updates. Please pay attention to our official announcements for the latest information!
+
+[Table]
+ | Device Series | Images
+IFP | U Series 
+3588 platform | 
+IFP | MH OS V series | 
+DS | CMA、CMB series | 
+MTR-W | Xboard V7 Teams Room | 
+MTR-W | Xcore Kit Pro
+TCP30T + XC25T | 
+MTR-W | Xbar W70 Kit
+XBar W70 
++ TCP31T | 
+MTR-W | XT20-VB Kit
+Xcore Kit Pro 
++ XBar U50 | 
+MTR-W | XT20-PS Kit
+Xcore Kit Pro 
++ BM45 + P30 | 
+MTR-A | Videobar&Schedule Panel
+Xbar V50 Kit、Xbar V70 Kit | 
+LED | All-in-one 
+LED V3 | 
+[/Table]
+
+
+[Table]
+Moudle | Features | MTR-W | MTR-A | Android IFP | Win IFP | DS
+Enrollment | Manual Enrollment | ✓ | ✓ | ✓ | ✓ | ✓
+Enrollment | Enroll via USB | ✓ | ✓ | ✓ | ✓ | ✓
+Enrollment | Zero-Touch Enrollment
+（SN+MAC） | ✓ | ✓ | ✓ | ✓ | ✓
+Enrollment | Same-Network Enrollment | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Device Information Viewing and Export | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Location | ✓ | ✓ | ✓ | ✓ | ✓
+Management | Screen View | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Power On | ✓ |  | ✓ | ✓ | ✓
+Control Commands | Power Off | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Reboot | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Screen Lock | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Screen Off | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Bells | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Brightness |  | ✓ | ✓ | ✓ | ✓
+Control Commands | Image Mode |  |  | ✓ | ✓ | ✓
+Control Commands | Volume |  | ✓ | ✓ | ✓ | ✓
+Control Commands | Sound Mode |  | ✓ | ✓ | ✓ | ✓
+Control Commands | Input Switch |  |  | ✓ | ✓ | 
+Control Commands | Wallpaper |  |  | ✓ |  | ✓
+Control Commands | Booting logo |  |  | ✓ |  | ✓
+Control Commands | Clear Cache | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Factory Reset |  | ✓ | ✓ |  | ✓
+Control Commands | Remote Screen Control | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Date & Time | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Power Saving | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Device Lock | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Hotspot Settings |  | ✓ | ✓ |  | ✓
+Profile | BYOD Settings | ✓ | ✓ |  |  | 
+Profile | Wi-Fi Settings | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Wi-Fi Allow List | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Display & Sound |  | ✓ | ✓ | ✓ | ✓
+Profile | URL Block List | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Default Required Certificate List | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Default Required App List | ✓ |  | ✓ | ✓ | ✓
+Profile | Wake-Up Settings |  | ✓ | ✓ |  | ✓
+Profile | Accessibility System navigation |  |  | ✓EDLA |  | 
+Profile | OOBE |  | ✓ |  |  | 
+Profile | Other Personalized Settings | Plugin | Video/Audio Config |  | MH OS Config | 
+APP | File Upload & Installation | ✓ |  | ✓ | ✓ | ✓
+APP | Store Link Installation & Auto-Update |  |  | ✓ |  | ✓
+APP | App Uninstallation | ✓ |  | ✓ | ✓ | ✓
+APP | App Enable / Disable | ✓ |  | ✓ | ✓ | ✓
+APP | Pop-Up Blocking | ✓ |  |  | ✓ | 
+Incident Items | Insufficient Disk Storage | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Insufficient System Disk Space | ✓ |  |  | ✓ | 
+Incident Items | RAM Over Usage | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | CPU Over Usage | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | CPU Over Temperature | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Device Offline For Too Long | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Device Unenroll | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Unstable Network | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Client Version To Be Updated | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Online Device Unused For Too Long | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Device Online For Too Long | ✓ | ✓ | ✓ | ✓ | ✓
+Incident Items | Peripheral Disconnection | ✓ | ✓ | ✓ | ✓ | ✓
+Operations & Data | Firmware Update | ✓ | ✓ | ✓ | ✓ | ✓
+Operations & Data | Usage Data | ✓ | ✓ | ✓ | ✓ | ✓
+Operations & Data | App Operation Data | ✓ | ✓ | ✓ | ✓ | ✓
+Operations & Data | Top 10 Most Visited URLs | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Playlist | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Send Image / Video | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Send Text | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | File Publish | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Send URL / Live Channel | ✓ | ✓ | ✓ | ✓ | ✓
+CMS | Emergency Alert | ✓ | ✓ | ✓ | ✓ | ✓
+[/Table]
+
+
+[Table]
+Category | Commands | Notes
+Controls | Power on | Requires WOL service. Works only if the service is available and the device is on the same network.
+Controls | Power off | Supports Mandatory execution: If enabled, command can be executed without request to the client.
+If not enabled, a countdown confirmation window will pop up on the device. The user can reject the shutdown; if no operation is performed within 10 seconds, the device will shut down automatically.
+Controls | Reboot | Restarts the device.
+Controls | Screen Lock | The device displays a locked screen after receiving the command; a correct password is required to unlock.
+If a screen lock schedule is set, the device will unlock automatically at the end of the scheduled period.
+Set the screen lock password in "Organization" > "Password" (supports 6-digit numeric passwords).
+Controls | Screen Off | Turns off the screen; the system continues to run normally.
+Controls | Bells | Select audio, set playback duration, and choose whether to allow the client to terminate the command.
+Message | Text | Send plain text content. Set playback times or duration, and choose whether to allow the client to terminate the command.
+Message | File | Upload and send files (supports all formats except HTML, JS, and SVG). 
+Specify the storage location on the device.
+Message | URL | Enter a URL (including live stream links), set playback volume, and choose whether to allow the client to terminate the command.
+Settings | Brightness | Adjust screen brightness via the slider.
+Settings | Image mode | Supports Standard, Bright, Soft, and other modes (execution fails if the device does not support the selected mode).
+Settings | Volume | Adjust device volume via the slider.
+Settings | Sound mode | Supports Standard, Classroom, Meeting, and other modes (execution fails if the device does not support the selected mode).
+Settings | Input switch | Automatically detects all input sources of devices in the organization. 
+Supports switching a specified device to a selected input source (switch fails if the device does not support the input source).
+Settings | Wallpaper | Modify the device’s system desktop wallpaper.
+Settings | Boot logo | Set the boot logo for Android devices (takes effect on the next startup).
+Others | Clear cache | Clear cache files for a single device (available on the device details page).
+Others | Factory reset | Perform a factory reset for a single device (available on the device details page).
+[/Table]
+
+
+[Table]
+Profile | Setting Item | Details
+Time | Date and Time Format | Select "Auto" to let the device fetch and set time to the current internet time.
+Time | Time Zone | Choose the device’s time zone.
+Time | Time Format | Define how date and time are displayed on the device (supports 12-hour and 24-hour formats).
+Power saving | Saving mode | Automatically trigger actions (shutdown, screen off, or screen lock) to save energy when the device is inactive.
+Set inactivity duration (1–120 minutes) and the corresponding action (shutdown/screen lock/screen off) to execute during the specified period.
+App management | App management | Add a list of required applications to ensure they are available on the device at all times.
+Device lock | Power Button Lock | The device automatically locks when the physical power button is pressed. Unlock requires the system password.
+Set the screen lock password in "Organization" > "Password" (supports 6-digit numeric passwords).
+Device lock | System Settings Menu Lock | Requires a password to access the system settings menu.
+Device lock | Factory Menu Lock | Requires a password to access the factory menu.
+Device lock | USB Lock | Requires a password to access files on connected USB devices.
+Wi-Fi | Wi-Fi | Configure Wi-Fi name, password, and other details. The device automatically connects when it detects this Wi-Fi.
+Wi-Fi | Wi-Fi allow list | Restrict the device to connect only to Wi-Fi networks on the allow list.
+Display 
+& Sound | Brightness | Set the default screen brightness after device startup.
+Display 
+& Sound | Volume | Set the default device volume after startup.
+Display 
+& Sound | Android Sidebar | Android-only. 
+Hide or show the sidebar tool.
+Display 
+& Sound | Image Mode | Android-only. 
+Supports Standard, Bright, Soft, and custom modes (execution fails if the device does not support the selected mode).
+Display 
+& Sound | Sound Mode | Android-only. 
+Supports Standard, Classroom, Meeting, and custom modes (execution fails if the device does not support the selected mode).
+URL restriction | URL restriction | Set a whitelist (devices can only access listed URLs) or blacklist (devices can access all URLs except those listed).
+Certificates | Certificates | Add a list of required certificates to ensure they are installed on the device at all times.
+Option to delete all installed certificates when the profile is removed.
+Device settings | Wake Up LAN | Enable or disable Wake-on-LAN (WOL) functionality. 
+Disabling it will prevent remote device startup.
+Device settings | Power Outage Setting | Android-only. 
+Configure device display reconnection after a power outage.
+Device settings | Hide Native Status Bar | EDLA devices only. 
+Takes effect immediately; status synchronizes after reboot.
+Accessibility | System navigation | EDLA devices only. 
+Supports gesture navigation, 3-button navigation, and Traditional navigation.
+Others | Video | Configure camera mode, exposure, white balance, image settings, and video fence.
+Others | Audio | Configure microphone, speaker, intelligent noise reduction, audio fence, and hearing aid settings.
+Others | BYOD | Configure BYOD mode, wallpaper, and other related settings.
+Others | OOBE | MTR-A devices only. New MTR-A devices matching this profile during enrollment will skip OOBE setup items.
+Configurable options: language, time zone, OTA service, Admin password, data diagnosis, meeting platform service, etc.
+Others | Personality | MH OS V6+ devices only. 
+Configure desktop layout, whiteboard, and screen sharing parameters.
+[/Table]
+
+
+[Table]
+Resource Type | Supported Formats
+Images | JPG, PNG,GIF, TIF, WebP,BMP
+Videos | MP4, AVI,M4V
+Documents | DOCX,DOC,XLSX,XLS,PPTX,PPT,PDF
+Audios | MP3, WAV, AAC, OGG
+Apps | APK, EXE, MSI, DEB
+Certificates | PEM, CER, CRT, DER, P7B, P12, PFX
+Text | TXT, RTF
+Others | JFIF, ICO, RAW, PSD, AI, TIF, BMP, SVG, FLAC, WMA, APE, AMR, M4R, MPEG, MKV, MOV, WMV, WEBM, FLV, 3GP, AEP, ODT, EPUB, CSV, ICS, MSG, EXO, M3U, ZIP, RAR, 7Z, TAR, ISO, DMG, PKG, RPM, MSIX, DLL, SYS, BAT, CMD, PS1, SH, PY, DB, SQLITE, MDB, ACCDB, FRM, MYD, MYI, DBF, HEX, LIC, ENB, CRX, OBJ, FBX, STL, BLEND, SKP, DWG, DXF, URL, HOSTS, XML, JSON, INI, TTF, OTF, WOFF, SRT, SUB, PUB
+[/Table]
+
+
+[Table]
+Moudle | Features | Basic | Pro
+Types | Android IFP(U Series) | ✓ | ✓
+Types | MH OS IFP(V series) | ✓ | ✓
+Types | MTR-Android | ✓ | ✓
+Types | MTR-Windows | ✓ | ✓
+Types | Digital Signage(CMA、CMB) | ✓ | ✓
+Types | All-In-One LED | ✓ | ✓
+Enrollment | Manual Enrollment | ✓ | ✓
+Enrollment | Enroll via USB | ✓ | ✓
+Enrollment | Zero-Touch Enrollment（SN+MAC） |  | ✓
+Enrollment | Same-Network Enrollment |  | ✓
+Management | 8-level & Auto-allocation Device Groups | ✓ | ✓
+Management | Peripheral Parameter Configuration | ✓ | ✓
+Management | Control Commands (Power On/Off、Reboot、Screen Lock、Screen Off、Bells、Clear Cache、Factory Reset) | ✓ | ✓
+Management | Setting Commands (Brightness/Volume、Image/Sound Mode、Input Switch、Wallpaper、Booting Logo) | ✓ | ✓
+Management | App File Upload & Installation | ✓ | ✓
+Management | App Store Link Installation & Auto-Update | ✓ | ✓
+Management | App Enable / Disable / Install / Uninstall | ✓ | ✓
+Management | Manual Upload Firmware To Update |  | ✓
+Management | Keep Fireware Up To Date |  | ✓
+Management | Bulk Update Main Device Firmware | ✓ | ✓
+Management | Bulk Update Peripheral Firmware |  | ✓
+Management | Command in schedule & Re-Edit | ✓ | ✓
+profile | System Config(Date & Time、Powering Saving、Display & Sound、Wake-Up Settings) | ✓ | ✓
+profile | Wi-Fi Config(Wi-Fi Settings & Allow List） | ✓ | ✓
+profile | App Config（Default Required App & Certificate List） | ✓ | ✓
+profile | Lock Config（Device Lock、Setting Lock、Factory Menu Lock） | ✓ | ✓
+profile | Other Personalized Config（BYOD、OOBE、URL Block List, Plugin for MTR、Hotspot Settings、Peripheral Parameter...） |  | ✓
+Operations & Data | Multi-Devices Remote Screen Control |  | ✓
+Operations & Data | Hierarchical Incident Management |  | ✓
+Operations & Data | Anomaly Incident Detection & Alert |  | ✓
+Operations & Data | Remote Fix for Anomaly Incidents |  | ✓
+Operations & Data | DashBoard | ✓basic data | ✓
+Operations & Data | Usage Data | ✓ | ✓
+Operations & Data | App Operation Data | ✓ | ✓
+Operations & Data | Top 10 Most Visited URLs |  | ✓
+Operations & Data | Open API |  | ✓
+CMS | Resources | 20GB | 50GB
+CMS | Create Canvas |  | ✓
+CMS | Playlist |  | ✓
+CMS | Content Published In Schedule |  | ✓
+CMS | Send Image / Video | ✓ | ✓
+CMS | Send URL / Live Channel | ✓ | ✓
+CMS | File Publish | ✓ | ✓
+CMS | Send Text | ✓ | ✓
+CMS | Emergency Alert with 4 Default Templates | ✓ | ✓
+Organization | Default Roles（admin、sub-admin、viewer） | ✓ | ✓
+Organization | Bulk users adding | ✓ | ✓
+Organization | Custom Roles |  | ✓
+Organization | Bulk Client Update | ✓ | ✓
+Organization | WOL Service Update & Device Power-On Detection | ✓ | ✓
+Logs | Command Execution Logs | ✓ | ✓
+Logs | Action Logs | ✓ | ✓
+Logs | Client Execution Logs |  | ✓
+Logs | Bulk Export of XBug Logs | ✓ | ✓
+[/Table]
+
+
+[Table]
+Pivot Core Feature | Migratable to Pivot⁺? | Required User Action
+Organization Information | Yes | 
+Roles & Permissions | Yes | 
+Device Enrollment | Yes | Keep devices powered on
+Device Group Relationships | No | 
+Profile Content | Yes | 
+Associated devices of Profile | No | Manually re-associate devices in Pivot⁺
+Enable/Disable Status | Yes | 
+Account | No | 
+management | Yes | 
+Resource Groups & Content | Yes | 
+Program / Published Program | No | Recreate program in Pivot⁺
+Command Logs /Action Logs | No | 
+Pending Commands | No | Recreate pending commands in Pivot⁺
+Admin/Unlock Passwords | Yes | 
+Personal Account Settings (Username/2-Factor Authentication/Multiple logins) | Yes | 
+Device usage Data | No | 
+[/Table]
+
+
+[Table]
+ |  | Pivot | Pivot | Pivot Plus | Pivot Plus
+Moudle | Features | Free | Premium | Basic | Pro
+Types | Android IFP(U Series) | ✓ | ✓ | ✓ | ✓
+Types | MH OS IFP(V series) | ✓ | ✓ | ✓ | ✓
+Types | MTR-Android |  |  | ✓ | ✓
+Types | MTR-Windows | ✓ | ✓ | ✓ | ✓
+Types | Digital Signage(CMA、CMB) |  |  | ✓ | ✓
+Types | All-In-One LED | ✓ | ✓ | ✓ | ✓
+Enrollment | Manual Enrollment | ✓ | ✓ | ✓ | ✓
+Enrollment | Enroll via USB | ✓ | ✓ | ✓ | ✓
+Enrollment | Zero-Touch Enrollment（SN&MAC） |  | ✓ |  | ✓
+Enrollment | Same-Network Enrollment |  |  |  | ✓
+Management | 8-level & Auto-allocation Device Groups |  | ✓5-level | ✓ | ✓
+Management | Peripheral Parameter Configuration | ✓ | ✓ | ✓ | ✓
+Management | Control Commands (Power On/Off、Reboot、Screen Lock、Screen Off、Bells、Clear Cache、Factory Reset) | ✓ | ✓ | ✓ | ✓
+Management | Setting Commands (Brightness/Volume、Image/Sound Mode、Input Switch、Wallpaper、Booting Logo) | ✓ | ✓ | ✓ | ✓
+Management | App File Upload & Installation | ✓ | ✓ | ✓ | ✓
+Management | App Store Link Installation & Auto-Update | ✓without Auto-Update | ✓without Auto-Update | ✓ | ✓
+Management | App Enable / Disable / Install / Uninstall | ✓ | ✓ | ✓ | ✓
+Management | Manual Upload Firmware To Update |  |  |  | ✓
+Management | Keep Fireware Up To Date |  | ✓ |  | ✓
+Management | Bulk Update Main Device Firmware | ✓ | ✓ | ✓ | ✓
+Management | Bulk Update Peripheral Firmware |  |  |  | ✓
+Management | Command in schedule & Re-Edit | ✓ | ✓ | ✓ | ✓
+profile | System Config(Date & Time、Powering Saving、Display & Sound、Wake-Up Settings) | ✓ | ✓ | ✓ | ✓
+profile | Wi-Fi Config(Wi-Fi Settings & Allow List） | ✓ | ✓ | ✓ | ✓
+profile | App Config（Default Required App & Certificate List） | ✓ | ✓ | ✓ | ✓
+profile | Lock Config（Device Lock、Setting Lock、Factory Menu Lock） | ✓ | ✓ | ✓ | ✓
+profile | Other Personalized Config（BYOD、OOBE、URL Block List, Plugin for MTR、Hotspot Settings、Peripheral Parameter...） |  | ✓without OOBE、Peripheral |  | ✓
+Operations & Data | Multi-Devices Remote Screen Control |  |  |  | ✓
+Operations & Data | Hierarchical Incident Management |  |  |  | ✓
+Operations & Data | Anomaly Incident Detection & Alert |  |  |  | ✓
+Operations & Data | Remote Fix for Anomaly Incidents |  |  |  | ✓
+Operations & Data | DashBoard | ✓basic data | ✓basic data | ✓basic data | ✓
+Operations & Data | Usage Data | ✓ | ✓ | ✓ | ✓
+Operations & Data | App Operation Data | ✓ | ✓ | ✓ | ✓
+Operations & Data | Top 10 Most Visited URLs |  |  |  | ✓
+Operations & Data | Open API |  |  |  | ✓
+CMS | Resources | 20GB | 50GB | 20GB | 50GB
+CMS | Create Canvas |  |  |  | ✓
+CMS | Playlist |  | ✓ |  | ✓
+CMS | Content Published In Schedule |  |  |  | ✓
+CMS | Send Image / Video | ✓ | ✓ | ✓ | ✓
+CMS | Send URL / Live Channel | ✓ | ✓ | ✓ | ✓
+CMS | File Publish | ✓ | ✓ | ✓ | ✓
+CMS | Send Text | ✓ | ✓ | ✓ | ✓
+CMS | Emergency Alert with 4 Default Templates | ✓without templates | ✓without templates | ✓ | ✓
+Organization | Default Roles（admin、sub-admin、viewer） | ✓ | ✓ | ✓ | ✓
+Organization | Bulk users adding |  | ✓ | ✓ | ✓
+Organization | Custom Roles |  | ✓ |  | ✓
+Organization | Bulk Client Update | ✓ | ✓ | ✓ | ✓
+Organization | WOL Service Update & Device Power-On Detection | ✓update only | ✓update only | ✓ | ✓
+Logs | Command Execution Logs | ✓ | ✓ | ✓ | ✓
+Logs | Action Logs | ✓download only | ✓download only | ✓ | ✓
+Logs | Client Execution Logs |  |  |  | ✓
+Logs | Bulk Export of XBug Logs | ✓without bulk export | ✓without bulk export | ✓ | ✓
+ | Bulk Export of XBug Logs | ✓ |  |  | 
+[/Table]

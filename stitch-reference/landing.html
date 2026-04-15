@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d4dfde",
+                    "on-error": "#ffefee",
+                    "tertiary-dim": "#00557b",
+                    "surface-container-high": "#dbe4e3",
+                    "on-primary-fixed": "#004440",
+                    "error-container": "#fb5151",
+                    "background": "#f1f8f7",
+                    "tertiary-fixed": "#40bbff",
+                    "primary-fixed-dim": "#8cddd6",
+                    "on-background": "#293030",
+                    "primary-dim": "#005a55",
+                    "inverse-on-surface": "#979e9e",
+                    "primary": "#006762",
+                    "secondary-container": "#aaefe9",
+                    "on-surface": "#293030",
+                    "on-secondary": "#bdfff9",
+                    "inverse-primary": "#abfdf5",
+                    "surface": "#f1f8f7",
+                    "on-secondary-container": "#095c58",
+                    "error-dim": "#9f0519",
+                    "inverse-surface": "#090f0f",
+                    "secondary-fixed-dim": "#9ce1db",
+                    "surface-container": "#e1eae9",
+                    "secondary-fixed": "#aaefe9",
+                    "outline": "#717878",
+                    "on-primary-container": "#005854",
+                    "on-tertiary-container": "#00344d",
+                    "tertiary": "#00628c",
+                    "error": "#b31b25",
+                    "primary-fixed": "#9aebe4",
+                    "on-surface-variant": "#565d5c",
+                    "on-primary-fixed-variant": "#00635e",
+                    "on-primary": "#befff8",
+                    "surface-tint": "#006762",
+                    "secondary-dim": "#045956",
+                    "surface-bright": "#f1f8f7",
+                    "surface-container-low": "#eaf2f1",
+                    "on-secondary-fixed": "#004844",
+                    "tertiary-container": "#40bbff",
+                    "surface-dim": "#cbd7d6",
+                    "primary-container": "#9aebe4",
+                    "outline-variant": "#a7afae",
+                    "tertiary-fixed-dim": "#18adf3",
+                    "on-error-container": "#570008",
+                    "on-secondary-fixed-variant": "#1b6662",
+                    "on-tertiary-fixed": "#001a29",
+                    "on-tertiary-fixed-variant": "#003d5a",
+                    "surface-container-highest": "#d4dfde",
+                    "secondary": "#1b6662",
+                    "on-tertiary": "#e9f4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar Shell -->
+<nav class="fixed left-0 top-0 h-full flex flex-col py-6 bg-emerald-50 dark:bg-emerald-950/20 w-64 border-r border-emerald-100/10 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-100 tracking-tighter">AskOnce</h1>
+<p class="text-xs text-on-surface-variant opacity-60">Digital Sanctuary</p>
+</div>
+<div class="flex flex-col space-y-1">
+<a class="text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-4 py-3 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+                Library
+            </a>
+<a class="text-emerald-900 dark:text-white bg-white/50 dark:bg-emerald-900/40 rounded-3xl mx-2 shadow-sm border-l-4 border-emerald-600 flex items-center gap-3 px-4 py-3 transition-colors duration-300 scale-95 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                Ask
+            </a>
+<a class="text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-4 py-3 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+                Stats
+            </a>
+<a class="text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-4 py-3 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto px-6">
+<div class="p-4 bg-surface-container-high/40 rounded-lg flex items-center gap-3">
+<img alt="close up professional headshot of a smiling woman with warm lighting and soft blurred background" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0rc2wCi5xN-UcOoiYFZQ9gJ-_Ycxky5p_U7u9C4I82INojHudWPOO8kJvhNh3MTLfeLyqcCgvQqNkvZlUzpXhKlmiIQNmnT6IH3jTtNHfuQwtRtFxkUgCYfIFzaLi32NbwilihiNxDujx1dja5q8rsZLQrwBTYJgMg9RCbjs_lip0m7jOYeI7rmPskEvQo_xxaKjGEg6iRK88DgdyIWej2ugPXL0tACIv-lr7uvcFvcBl77xKPu2SS-suCvUxbb_ReFUG3Z0suzM"/>
+<div>
+<p class="text-xs font-bold">Studio Archive</p>
+<p class="text-[10px] opacity-60">Pro Plan</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen p-8">
+<!-- TopNavBar Shell (Sticky Search) -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full mb-8 rounded-full bg-white/70 dark:bg-emerald-950/40 backdrop-blur-xl px-6 py-2 shadow-[0_20px_40px_rgba(0,72,68,0.06)] focus-within:ring-2 focus-within:ring-emerald-500/20">
+<div class="flex items-center flex-1 max-w-xl">
+<span class="material-symbols-outlined text-on-surface-variant mr-3" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm font-['Plus_Jakarta_Sans']" placeholder="Search interactions..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</button>
+</div>
+</header>
+<!-- Page Header -->
+<div class="mb-12">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Ask &amp; Smart Reply</h2>
+<p class="text-on-surface-variant text-lg">Input your query or upload a screenshot to generate a sanctuary-grade response.</p>
+</div>
+<!-- Guided 3-Column Layout -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Step 1: Drop Zone & Text Input -->
+<section class="col-span-12 lg:col-span-3 space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">1</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Input Zone</h3>
+</div>
+<div class="bg-surface-container-lowest border border-primary/5 rounded-xl p-6 space-y-4">
+<div class="group relative bg-surface-container-low/30 border-2 border-dashed border-outline-variant/30 rounded-xl p-6 flex flex-col items-center justify-center text-center transition-all hover:border-primary/50 aspect-[4/3]">
+<div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<p class="text-xs font-bold text-on-surface mb-1">Upload Screenshot</p>
+<p class="text-[10px] text-on-surface-variant">Drag &amp; drop or browse</p>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<div class="relative">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-surface-container-lowest px-2 text-on-surface-variant/40 font-bold">OR</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Direct Text Query</label>
+<textarea class="w-full bg-surface-container-low/30 border-none focus:ring-2 focus:ring-primary/20 rounded-xl p-4 text-xs leading-relaxed text-on-surface resize-none h-32" placeholder="Paste or type the customer question here..."></textarea>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-xl hover:opacity-90 transition-opacity">Analyze Text</button>
+</div>
+</div>
+<!-- Recent History (Brief) -->
+<div class="bg-surface-container-low rounded-xl p-6">
+<h4 class="text-xs font-bold mb-4 opacity-60">RECENT DRAFTS</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="image">image</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold truncate">Customer_Inquiry_04.png</p>
+<p class="text-[10px] opacity-50">2 mins ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="text_snippet">text_snippet</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold truncate">Email_Feedback_Text</p>
+<p class="text-[10px] opacity-50">1 hour ago</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 2: AI Identification -->
+<section class="col-span-12 lg:col-span-4 space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">2</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">AI Identification</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-primary/5">
+<div class="mb-6">
+<label class="text-[10px] font-bold text-primary tracking-widest block mb-2">DETECTED QUESTION</label>
+<p class="text-lg font-medium leading-relaxed italic text-on-surface">
+                            "Hi team, we're looking for the updated pricing tier for the enterprise integration. Can you send the PDF or a link to the portal?"
+                        </p>
+</div>
+<div class="mb-8">
+<label class="text-[10px] font-bold text-primary tracking-widest block mb-3">TAGS &amp; CONTEXT</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full">PRICING</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full">ENTERPRISE</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full">SALES_SUPPORT</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg aspect-video border border-outline-variant/10">
+<img alt="clean digital dashboard interface showing analytics and data charts with a professional business aesthetic" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOgsJ5NeEq_LFHsr4E_zPKddIfUcl1eMxt7IGmwfydmudY7pWgkBbFkTKXD7gjuzNNtS86ucvW2f2pYMY_bTt9d2gbxTLC3FbAW4dTRn6Np9eeYJzOHJJyVrUdB5IzUG3XUdio6qzTn8agsRWIqM0xK9Y6FidRZNRjicncjb6f_sboYlzq-Nfx-OhF9ULCea_7-YhfQNllupvZdyDk5ZHuguhIssw4UOggEgxYpwm7j1F_4P9124L7UA-D7gVwmlbuzsEMShPtfU"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<span class="bg-white/90 backdrop-blur px-3 py-1 rounded text-[10px] font-bold">SCANNING COMPLETED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Suggested Answer -->
+<section class="col-span-12 lg:col-span-5 space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">3</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Suggested Answer</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-xl border border-primary/10 relative">
+<!-- Confidence Badge -->
+<div class="absolute top-8 right-8 flex items-center gap-2 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[11px] font-bold text-emerald-800">98% CONFIDENCE</span>
+</div>
+<!-- Controls -->
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Output Language</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 rounded-lg text-xs font-bold py-2 pl-3 pr-8 appearance-none cursor-pointer">
+<option selected="">English (US)</option>
+<option>Chinese (Mandarin)</option>
+<option>Spanish (ES)</option>
+<option>French (FR)</option>
+<option>Japanese (JP)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-sm pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Reply Channel</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 rounded-lg text-xs font-bold py-2 pl-3 pr-8 appearance-none cursor-pointer">
+<option>Email</option>
+<option selected="">Chat/Slack</option>
+<option>LinkedIn DM</option>
+<option>Intercom</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-sm pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<label class="text-[10px] font-bold text-primary tracking-widest block mb-4 uppercase">AI DRAFT RESPONSE</label>
+<div class="mb-8">
+<textarea class="w-full bg-surface-container-low/30 border-none focus:ring-2 focus:ring-primary/20 rounded-xl p-6 text-base leading-relaxed text-on-surface resize-none" rows="7">Hello! Thanks for reaching out about the Enterprise integration. 
+
+You can find the most recent pricing breakdown at the following link: [link_to_portal]. I have also attached the PDF summary to this thread for your convenience.
+
+Let me know if you need a custom quote for specific user counts!</textarea>
+</div>
+<div class="flex items-center justify-between gap-4">
+<button class="flex-1 px-8 py-4 bg-surface-container-high text-on-surface font-bold rounded-full hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                            Edit Draft
+                        </button>
+<button class="flex-[2] px-8 py-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary font-bold rounded-full shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                            Confirm &amp; Send
+                        </button>
+</div>
+</div>
+<!-- Logic Hint -->
+<div class="bg-tertiary/5 p-6 rounded-xl border border-tertiary/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
+<div>
+<p class="text-sm font-bold text-tertiary mb-1">Smart Routing Active</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                                This response utilizes <span class="font-mono bg-tertiary/10 px-1 rounded text-tertiary">logic.{{DATA:TEXT:TEXT_2}}</span> to verify customer tier status before revealing pricing data based on the selected channel.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Secondary Layout: Recent Activity Grid -->
+<section class="mt-16">
+<h3 class="text-xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+                Drafting Sanctuary History
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined" data-icon="done_all">done_all</span>
+</div>
+<p class="text-sm font-bold mb-1 truncate">Project Alpha Sync</p>
+<p class="text-xs text-on-surface-variant mb-4">Sent to client via Slack</p>
+<span class="text-[10px] font-bold text-on-surface-variant/40">YESTERDAY</span>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined" data-icon="done_all">done_all</span>
+</div>
+<p class="text-sm font-bold mb-1 truncate">Billing Inquiry #902</p>
+<p class="text-xs text-on-surface-variant mb-4">Resolved in Intercom</p>
+<span class="text-[10px] font-bold text-on-surface-variant/40">2 DAYS AGO</span>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="drafts">drafts</span>
+</div>
+<p class="text-sm font-bold mb-1 truncate">Roadmap Question</p>
+<p class="text-xs text-on-surface-variant mb-4">Saved to Library</p>
+<span class="text-[10px] font-bold text-on-surface-variant/40">3 DAYS AGO</span>
+</div>
+<div class="p-6 border-2 border-dashed border-outline-variant/20 rounded-xl flex flex-col items-center justify-center text-center group cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary mb-2" data-icon="add_circle">add_circle</span>
+<p class="text-xs font-bold text-outline-variant">View Full Archive</p>
+</div>
+</div>
+</section>
+</main>
+</body></html>

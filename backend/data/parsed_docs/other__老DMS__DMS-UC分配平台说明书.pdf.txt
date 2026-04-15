@@ -1,0 +1,114 @@
+--- Page 1 ---
+1USERGUIDE
+BYTELLOHUGO
+USER
+CENTER
+Update:2025AUG
+THISUSERGUIDEISNOTFORENDUSERS.
+
+--- Page 2 ---
+2TABLEOFCONTENT
+1.INTRODUCTION.......................................................................3
+2.REGISTERACCOUNT.............................................................4
+3.ADDSUB-ACCOUNT..............................................................5
+3.1SENDINVITATION............................................................5
+3.2APPROVEAPPLICATION.................................................6
+4.SUB-ACCOUNTMANAGE.......................................................7
+4.1CREATEAFORMALORGANIZATION..............................7
+4.2DISTRIBUTELICENSES................................................10
+\\
+
+--- Page 3 ---
+31.INTRODUCTION
+UserCenterisauser&productauthoritymanagementplatformbuiltforproductmanagersand
+intermediaries.Themainfunctionsincludeauthorization,licensesrenewal,andsub-account
+management.
+
+--- Page 4 ---
+42.REGISTERACCOUNT
+Stepone:Checkthemailinbox,andfindaninvitationtogettheuniqueregistrationlink.
+Steptwo:Filltheregistrationformandsubmit.
+Stepthree:Waitfortheconfirmationandloginuc.bytello.com
+
+--- Page 5 ---
+53.ADDSUB-ACCOUNT
+3.1SENDINVITATION
+Enteremail
+Sendaninvitationemailwithauniqueregistrationlink.
+Waitforregistration
+CheckapplicationstatusonManager->Invitationmanagement.
+Resendinvitationemail
+Sendregistrationlink
+Iftheusercannotreceivetheemail,sendtheregistrationlinkdirectly.
+
+--- Page 6 ---
+63.2APPROVEAPPLICATION
+Notificationofnewapplication
+Onceyoursub-accountsubmitstheregistrationform,youwillreceiveanotificationemail.
+Approval
+Clickthebutton[Agree]toapprovetheapplication.
+Onceapproved,thisuserbecomesyoursub-accountandappearsinthelist.
+Invitationprocess
+
+--- Page 7 ---
+74.SUB-ACCOUNTMANAGE
+Usershavesub-accounts;theycan:
+*CreateaBytelloHugoDMSorganization.Seechapter4.1
+*Grant‘Distributionright’toallowthemtoself-manage.Seechapter4.2
+4.1CREATEAFORMALORGANIZATION
+4.1.1WHATYOUCANDOWHENYOUHAVEANORGANIZATION
+Usershaveorganizationscan:
+*Logintohugo.bytello.com
+*Managedevices
+Parent-accountsneedtoassignBytelloHugoDMSlicenseswhencreatinganorganization.Make
+sureyouhaveenough.
+Checkyouravailablelicenses.
+Ifyoudonothaveenoughlicenses,approachyourparentaccountformore.
+Checkyourparent-account
+
+--- Page 8 ---
+84.1.2CREATEAFORMALORGANIZATIONTOSUB-ACCOUNT
+WhatlicenseQuantitytoinputwhencreating?
+Licensesquantitydependsonhowmanydevicesareinthisorganizationandhowmanyyearsthey
+wanttomanage.
+1BytelloHugoDMSlicenseallowsoneenrolleddevicetouse365days(1year)
+Example:
+Fivedevicestouseforoneyear;theorganizationneedsﬁvelicenses.
+Tendevicestousefortwoyears;theorganizationneeds20licenses.
+Twentydevicestouseforthreeyears;theorganizationneeds60licenses.
+HowhaveBytelloHugoDMSlicensesbeenconsumed?
+Licenseswillconverttocreditsafterbeingassignedtoanorganization.
+1BytelloHugoDMSlicense=365credits
+Oneenrolleddeviceconsumesonecreditoneday.
+Createaformalorganizationdirectly
+Step1:Locateuser->Click[Createorganization]
+Step2:Inputlicensesquantity
+
+--- Page 9 ---
+94.1.3ADDLICENSESTOANEXISTINGORGANIZATION
+Step1:Locateuser->BytelloHugoproduct->[Addlicenses]
+Step2:Inputlicensequantity
+Example:
+1device*1year=1licensesbeenaddedtotheorganization,convertedto1*365=365credits
+Existing1095credits+365credits=1460credits
+
+--- Page 10 ---
+104.2DISTRIBUTELICENSES
+4.2.1WHATIS‘DISTRIBUTIONRIGHT.’
+Userswith‘Distributionright'inBytelloHugoDMSproductmeanstheycan:
+*Inviteanewusertobecometheirsub-account->Chapter2
+*CreateaBytelloHugoDMSorganizationfortheirsub-account>Chapter4.1.2
+*Grant‘Distributionright’totheirsub-accounttoletthemself-manage->Chapter4.2.2
+4.2.2GRANT‘DISTRIBUTIONRIGHT’TOSUB-ACCOUNT
+1.Authorizesub-account
+Step:Manager->Licensemanagement->[Licensedistribution]->[Authorize]
+Afterauthorizationforyoursub-account,yoursub-accountcaninviteotherstobecomehis/hersub-account.
+2.Distributesub-account
+Step:Manager->Licensemanagement->[Licensedistribution]->[Distribute]
+Afterdistribution,yoursub-accountwillhavelicensefromyou,he/shecancreateformalorganizationforhis/hersub-
+account,addlicensetohis/hersub-account’sorganization.Orhe/shecandistributelicensetohis/hersub-account.
+
+--- Page 11 ---
+11
+Ifyouleavelicensesas‘0’(Zero)whengranting‘Distributionright’,itmeanstheusercannot
+createanorganizationbecausetheydonothaveenoughlicenses.

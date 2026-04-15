@@ -1,0 +1,89 @@
+Pivot Plus Product Training
+Hi everyone! Today I’m gonna break this training into 4 parts. First, why we built Pivot Plus and its key upgrades. Second, how we’ll sell it. Third, the main customer questions we might get. Let’s jump right in!
+Pivot Plus came from fixing problems we saw with the old Pivot. Over the years, we’ve worked with 3,000+ organizations and 15,000+ devices. But we ran into issues: device enrollment fails a lot, slowing things down. Remote screen control keeps disconnecting. Firmware updates are late—we had to manually install firmware via USB for lots of devices, which is super inefficient. Also, new hardware comes out but software can’t keep up.
+The big reasons? First, the old Pivot’s base wasn’t stable enough, so it didn’t work well with new gear—like Microsoft Teams Room devices or Google’s EDLA service for education. So we redesigned it to be more flexible and compatible. That’s Pivot Plus!
+We’ve spruced up the whole experience: the design is more modern and clean. Menus are simpler but still look sharp. Every feature—from enrollment and management to maintenance and future CMS paid services—focuses on saving time. We’re also getting more safety certifications under MAXHUB. SOC 2 is in progress, and we should get the certificate in February.
+Pivot Plus is a web-based cloud management platform that combines CMS and DMS. Our CMS is built like popular commercial content distribution tools, covering everything from enrollment and control to maintenance and content display—all to make work faster. We’re still using it for meetings and education, but now we’re trying retail too, with better CMS content display as the key.
+Let me show you the main features. The interface has 5 main sections: Dashboard, Devices, Publish, System, and logs. Dashboard shows all device tasks, status, and basic data. Devices has all device management and maintenance tools. Publish handles all related tasks. System has settings, and all logs are in one place called “Logs.”
+First, device enrollment and connection—we upgraded the zero-touch enrollment:
+Remote pre-import: For MTR-Android devices, you used to need to finish setup before using them. Now, you can import the device’s SN and Mac info remotely, plus preset OOBE settings (like language, time zone, OTA). Once the device turns on, it auto-completes setup and connects to the platform.
+Same-network detection: If your organization already has some connected devices, the system uses their IP, router’s Mac address, or Wi-Fi SSID to find other devices on the same network. Just click “Enroll” to connect them quickly.
+I just connected an IFP device and an MTR Android device—you can see them in the device list now.
+These connected devices support one-click batch remote control. Both the MTR’s bar screen and console screen can be managed together. Watch—my actions show up on the console right away. For IFP devices connected to the bar, I can also see and adjust controls in real time.
+Now the CMS you’ve been waiting for! It has 4 parts: resource management, canvas creation, playlist setup, and schedule planning. After uploading materials, you can see storage usage and file types at the top. The canvas lets you make quick edits—add videos, pictures, text, or QR codes. For example, I can change the canvas background to green, add a MAXHUB promo video, and a QR code linking to baidu.com. Once done, publish it to a device instantly.
+We use offline playback: looped tasks download materials first, then delete them after playing. This stops devices with small storage (like CMA) from running out of space. Playlists let you drag and drop single files, canvas creations, or old playlists—easily adjust the order and playtime. Schedules are also drag-and-drop: move a weekly task from Tuesday/Thursday to Wednesday/Friday, or change a date from the 23rd to the 24th. You can check if all tasks worked in the history and logs.
+We also upgraded maintenance:
+Anomaly detection: Monitor 10+ issues (like low disk space). Set alerts and choose which devices to watch. Alerts go to managers via in-app messages or email—you can fix problems remotely.
+Firmware updates: Now update peripherals (like MTR consoles) too. For urgent temporary firmware not on the OTA platform, upload it manually and push it to all devices.
+Dashboard: Blue = online and normal, light blue = offline, orange = needs attention. Click to see device screens and details, plus view past, present, and future tasks. Export data easily.
+Those are the 4 key upgrades: easier/faster enrollment , multi-device remote control, clear dashboard, and better remote maintenance + content display.
+Now let’s talk sales. We have 2 versions:
+Basic (free): Same as the old Pivot’s free version—no cuts, just better UI and a few extra features.
+Pro (paid): Includes all the time-saving features I showed. Price: $88 per license per year. But until June 30 (before InfoComm), all customers get 50% off.
+If you have price issues in different regions, we can talk to the general manager and country managers about bigger discounts—like for Asia Pacific and Southeast Asia, where we’re pushing education hard next year. For old Premium users (who paid ~$50/year), we can discuss extra discounts for renewals—case by case.
+Milestones:
+February (ISE Show): Launch Beta version (it’s fully tested and ready for business!). Start the “Champion Program”—invite 30 organizations to get 5 years of free Pro access. Pre-orders are open with 50% off. Test firmware is on Teams—download it for yourself or share with distributors.
+June (InfoComm Show): Stop the beta, launch the official version. Add one-click migration for users (no more back-and-forth between pre-sales, sales, and customers). Finish most hardware OTA updates.
+2027: Gradually stop Pivot services. Help 130+ current Pivot users switch smoothly—free Pivot users go to Basic, Prime users to Pro.
+Champion Program details:
+Apply via WeChat Work “Jian Dao Yun.” Include the number of device seats and manager info. Make sure customers know the benefits and risks first.
+Benefits: Exclusive group chat with R&D, 5 years of free Pro, one-on-one manual migration by our R&D team.
+Timeline: Start contacting applicants on January 26. Send an activation email within 24 hours of approval—includes benefits, risks, and group chat access.
+Firmware update schedule:
+January 30: Full MTR Android firmware (current Teams version has partial features).
+March: Door sign firmware.
+Before May: MTR Windows (I3 series) adaptation.
+Before June: Most hardware OTA updates. CMA is being phased out—no full OTA (download manually if needed). UW series has low shipments—no OTA.
+Migration risks to note:
+Some devices (like I3 series) aren’t fully adapted yet—advise delaying migration.
+Some data can’t be migrated—we’ll list details in the Champion Program docs.
+If Pivot and Pivot Plus have conflicting commands, they’ll “fight.” We suggest pausing Pivot after switching, but customers can keep both if they want.
+Rarely, you might need on-site support (e.g., can’t update remotely)—but this is just a backup.
+Safety white paper (approved by compliance) is on our official website. All materials (temporary firmware, user manuals, Pivot vs. Pivot Plus comparison, competitor analysis, device compatibility) are on Teams. We’ll put them on the official website and resource center by January 30—they’re ready to upload now.
+Ordering is the same as for hardware. We’re exploring online payment. After purchase, submit an activation request (local sales can do this)—we’ll review and send an email within 24 hours. Once automation is done, this step won’t be needed.
+That’s all for today! Any questions?
+Q&A
+Daleel Yu: We often need to export logs from MTR devices. Customers are far away, and some IT teams aren’t very skilled. Can our R&D or after-sales team connect to the device remotely if the customer provides the SN and authorizes it—so we don’t have to go on-site?
+Reply: We’re working on this. Accessing customer device data directly is risky, so we need their approval first. We’re talking to the compliance team about how to do it. For now, we’ve simplified log exports: go to the device details page for MTR devices, click “Export Log,” and all logs will be packaged and downloaded—much easier.
+Ken Zhou: Cisco’s Control Hub lets customers authorize Cisco staff to access their devices remotely. Will our CMS support permission management? Usually, content editors and approvers have different roles.
+Reply: Yes! We have 3 default roles: Admin (full access), Sub Admin (almost full access—can’t delete the organization), and Viewer (only view, no management). We also offer custom roles: you can set permissions for uploading, editing, downloading, deleting resources, and content display. You can even limit access to specific devices or resource groups—it’s very flexible.
+Sally Yu: Can our Pivot CMS work with third-party CMS (like Samsung’s built-in CMS)? Do customers have to choose between theirs and ours?
+Reply: We don’t support full resource sharing yet, but it’s in our plans. Next, we’ll let users import third-party resources—then you can schedule and publish them on our platform. We’re working on it, but it’s not ready now.
+Klaus Fan: Does Pivot Plus support one-click log export for both Android and Windows? Is the log the same as the one from Windows in Ali? How does the device detection work?
+Reply: First, yes—both Android and Windows support one-click log export, and all logs are exported from the same place. Second, yes—it’s the same log exported directly from the device. Third, detection works like this: the system gets the IP, router’s Mac address (unique), or Wi-Fi SSID (unique) of your connected devices. It uses this info to find other devices on the same network—so it won’t pick up non-organization devices. Just click “Register” to connect them.
+Steven Wang: Is the $88 per year MSRP or the distributor price? Many vendors offer basic content display for free—can our Basic version match Yama, Samsung, or LG’s built-in features? The old Premium was ~$50/year—raising it might upset existing users.
+Reply: First, $88 is the public price—distributors can sell it for more if they want. Second, basic features (like text display) are in Basic. Yama’s content display is free (included with hardware), but Samsung charges for their management and content platforms—their CMS is free for 1 month, then ~$20/month. We referenced industry prices (most CMS are ~$10/month) for our pricing. Third, the price increase is because Pro has more features. For existing users renewing, we can discuss extra discounts—case by case.
+Tom Cai: If a customer has many devices, will there be a one-click migration feature?
+Reply: Yes! We plan to launch one-click migration when we release the Close Beta in June. There will be a dedicated entry on the platform—just follow the steps. For now, only managers in the Champion Program get one-on-one manual migration help from our R&D team.
+Pivot Plus 产品培训讲稿
+各位同事，今天的培训主要分为四个部分：一是 Pivot Plus 的产品背景与升级价值，二是核心功能升级展示，三是销售策略与版本划分，四是里程碑计划与迁移相关说明，最后会解答大家的疑问。
+首先，我们来聊聊为什么要推出 Pivot Plus 这款产品。此前 Pivot 在服务 3000 多个组织、5000 多台设备的过程中，暴露了不少运维问题：设备注册频繁失败，影响整体效率；远程桌面控制容易断连；固件更新不及时，临时固件无法批量下发，设备量大时只能靠运维人员手动 USB 刷机；还有硬件上市后软件适配跟不上的情况。这些问题的核心原因，一是原有产品底座稳固性不足，兼容度不高；二是互联网环境瞬息万变，我们推出了 MPR 类会议产品、谷歌教育 FP 环境的 edla 服务等新型硬件，而早期产品并未考虑到这些特殊适配需求。
+所以，为了兼顾更多诉求，打造更灵活、兼容性更强的产品力，我们在原有 Pivot 的基础上，借鉴运维管理经验，升级推出了 Pivot Plus。这款产品在整体体验上做了全面优化：视觉风格更现代化、干净整洁，菜单以轻量化方式呈现，增强视觉冲击感；从注册、管控、运维到后续 CMS 商业化服务，全流程以提效为核心进行管理升级；同时我们以 MAXHUB 名义申请更多安全认证与合规证书，目前 SOC 2 认证正在进行中，预计 2 月份就能拿到证书。
+Pivot Plus 的核心定位是基于 Web 平台的云管理平台，整合了 CMS 与 DMS 两大能力。其中 CMS 对标线上主流商用内容分发平台构建，提供从注册、控制、运维到信发的全流程提效服务。适用场景上，除了原有会议、教育场景，我们还新增了零售方向探索，核心发力 CMS 信发能力。
+接下来给大家演示产品的核心功能升级，大家可以看到当前的产品界面，整体功能分为四大模块：总览、设备、信发服务、系统。总览模块能查看所有设备的任务、状态及基础数据；设备模块整合了所有设备管理与运维相关能力；信发服务模块集中管理所有信发相关操作；系统模块包含各类设置项，平台所有日志统一归集在 logs 中。
+先看设备注册与关联功能，我们对原有零接触注册做了两大提升：一是远程预导入，大家熟悉的 MTR 设备，出厂后原本需要完成开机引导才能使用，现在通过 Pivot Plus，可远程提前导入设备 SN+Mac 信息，预设 OOBE 配置文件，包含语言、时区、OTA 等信息，设备开机后会自动执行 OOBE 任务，完成后直接关联至平台设备列表。二是同网络探测关联，若组织已绑定部分设备，系统会获取这些设备的 IP、路由器 Mac 地址（或 Wi-Fi 的 SSID），以此探测同网络下未关联的设备，点击 enrollment 就能快速完成关联。我现场就关联了一台 FP 设备和一台 MTR 安卓设备，大家可以看到它们已成功出现在设备列表中。
+这些关联后的设备支持批量远程一键控制，无论是 MTR 设备的 bar 画面还是 console 画面，都能通过联集的方式进行管控。大家可以看到，我的操作能实时同步到 console 上，对于 bar 连接的 FP 设备，也能实时查看控制动作、调试状态并进行调整，响应非常及时。
+再重点说说大家期待的 CMS 信发功能，整体框架分为资源素材管理、画布创作、播放列表排布、日程排程四部分。素材上传后，顶部会显示资源占用情况及不同类型资源信息；画布创作支持快速创建，可编辑视频、图片、文字、二维码等内容，比如我把画布底色调成绿色，加入 MAXHUB 宣传片，再添加一个指向baidu.com的常驻二维码，创作完成后能实时发布到指定设备。播放方式采用离线播放，循环任务会提前下载素材，播放完成后自动清理本地资源，避免 CMA 这类存储空间不足的设备出现存储爆满问题。播放列表支持单素材、画布创作内容、原有播放列表的拖拽添加，顺序和播放时间可灵活调整；日程排程也支持拖拽修改，比如把周二、周四的周循环日程调整到周三、周五，把 23 号的定时指令移动到 24 号，操作非常便捷。所有信发任务的执行情况，都能在历史记录和指令日志中查看。
+运维部分的升级也很实用，首先是设备异常事件管理，支持对磁盘空间不足等十多种特殊事件进行定时探测，可设置告警阈值、关注设备及告警级别，通过站内信和邮件推送给管理者，待解决的异常情况能在平台查看，还能直接远程处理。其次是固件升级，以前只能对主设备升级，现在所有外设（比如 MTR 的 console）都能快速选择类型、查看更新状态；对于未及时同步到 OTA 平台的紧急临时固件，可手动上传并批量发布给所有设备，解决临时性问题。最后是工作台优化，蓝色标识在线正常设备，浅蓝色是离线设备，橙色是有异常需处理的设备，点击可查看设备屏幕画面和基础详情并进行管理；任务以视图形式呈现当日、历史及未来需执行的任务，所有指令集中展示，设备使用、软件使用等基础数据可快速查看和导出。
+以上就是核心更新的四大能力：更简洁高效的注册方式、多设备远程控制、清晰直观的工作台、强化的远程运维与信发功能。
+接下来介绍销售策略，Pivot Plus 分为两个版本：一是 Basic 基础版，免费提供，功能与原有 Pivot 免费版一致且无删减，仅优化了界面 UI，新增少量功能；二是 Pro 专业版，包含刚才演示的所有效率提升功能，定价 88 美元 / 年 / 授权。优惠政策方面，6 月 30 日前（InfoComm 展前）下单的客户，可享受 50% 折扣。需要说明的是，不同地区若存在价格分歧，可联合总经理、国家经理沟通区域专属折扣，比如亚太东南亚这类明年重点推广教育场景的区域，价格可能更敏感，可进一步协商；老用户复购也可探讨额外折扣，具体按项目灵活沟通。
+再跟大家同步产品里程碑计划，核心有两个节点：2 月份 ISE 展将发布 Beta 版，这个版本虽名为公测版，但已通过严格测试，完全可商用，同时启动招募者计划，邀请 30 个组织参与，提供 5 年免费 Pro 版权限，还会开启预售，预售期间同样享受 5 折优惠，硬件测试固件已上传至 Teams，大家可自行下载或提供给经销商做预测试。6 月份 InfoComm 展将关停内测版，正式发布产品，上架用户自主手动迁移功能，大部分硬件 OTA 适配也会在此之前完成。2027 年将逐步关停 Pivot 服务，优先保障 130 家现有 Pivot 用户平稳迁移，原有免费版 Pivot 迁移至 Basic 版，Prime 版直接迁移至 Pro 版。
+关于招募者计划，申请需通过企业微信捡到云提交，需包含客户点位数、管理者信息等，务必提前告知客户权益与风险。通过申请的组织将获得专属群聊（直连产研端）、5 年免费 Pro 版权限、研发一对一手动迁移服务。1 月 26 日起我们会逐步联系申请客户，审核通过后 24 小时内发送激活邮件，包含产品优势、风险提示等信息，并创建专属群聊沟通。
+固件适配时间计划如下：1 月 30 日前发布 MTR 安卓完整功能适配固件（现有 Teams 固件为部分功能版）；3 月发布门牌相关固件；5 月前完成 MTR Windows I3 系列适配；6 月前完成大部分硬件 OTA 适配。需要注意的是，CMA 逐步退市，不做完整 OTA，需单独下载升级；UW 系列出货量少，不做 OTA。
+迁移过程中可能存在一些风险，需要大家提前知晓：部分设备型号（如 I3 系列）暂未适配，建议延后迁移；部分设备数据无法迁移，具体明细会在招募者计划文档中告知用户；若 Pivot 与 Pivot Plus 设置互斥指令，同时安装会导致执行冲突，建议迁移后暂停 Pivot 服务，客户不同意可保留双端；极端情况下（远程无法升级）需客户提供现场支撑，这是以防万一的需求，并非必然出现。
+安全方面，安全白皮书已通过合规审核，后续会上架官网；临时固件包、用户手册、Pivot 与 Pivot Plus 差异对比、竞品分析、设备适配性说明、招募者计划文档等资料均已在 Teams 呈现，官网及资源中心最晚 1 月 30 日前上架所有资料，包括便于发给客户的招募者计划长图，目前资料已定稿，正在准备上传。
+下单方式与硬件保持一致，未来会探索线上付费模式。购买后需提交激活申请（可由本地销售提交），我们会在 24 小时内审核并发送邮件，自动化完成后将简化该流程。
+以上就是今天培训的全部内容，接下来欢迎大家提问交流。
+提问与回复汇总
+Daleel Yu：MTR 设备经常需要导出 log，客户现场偏远或无工作人员，IT 人员操作能力有限，能否通过客户提供 SN 码并授权，让总部研发或售后直接远程连接客户设备诊断，无需现场操作？
+回复：这个部分我们正在探索，因涉及客户设备基础资料，直接调取存在风险，需经客户同意后才能操作，目前正与合规部门沟通具体实现方式。不过现在 log 下载已简化，在设备详情页进入 MTR 设备，点击导出 log 即可打包导出所有日志，操作更便捷。
+Ken Zhou：Cisco 的 control hub 可通过客户授权让服务人员远程访问企业设备，Pivot Plus 信发系统后续是否计划支持权限管理（区分内容编辑者与审核发布者角色分工）？
+回复：支持的。我们默认分为三类角色：admin（最高权限）、sub admin（权限近似 admin，无法注销组织）、查看者（仅查看权限）。同时提供自定义角色功能，可细化拆分资源上传、编辑、下载、删除、信发等操作权限，还能指定权限生效的设备或资源组，配置非常灵活，能满足内容编辑与审核发布的角色分工需求。
+Sally Yu：Pivot Plus 的 CMS 能否与第三方 CMS（如三星等品牌自带 CMS）合作，调取第三方信息，还是只能二选一使用？
+回复：目前暂未实现开放的资源共享，但这在我们的规划范围内。下一步计划除自有创建资源外，支持获取第三方资源，获取后可在平台内进行排程和发布，现在该功能还在推进中，尚未上线。
+Klaus Fan：安卓与 Windows 设备是否均已在 Pivot Plus 版本支持一键抓 log？导出的 log 与 Ali 中 Windows 设备导出的 log 是否为同一版本？设备检测功能的核心原理是什么？
+回复：第一，安卓与 Windows 设备均已支持一键抓 log，所有日志都可在同一位置导出；第二，导出的 log 与 Ali 中 Windows 设备导出的日志是同一版本，均为设备本身导出的日志；第三，设备检测的核心原理是：系统先获取已关联设备的 IP、路由器 Mac 地址（唯一标识），若设备连接 Wi-Fi 则补充 Wi-Fi 的 SSID（唯一标识），通过这些信息组合探测同网络下符合条件的设备，避免探测到非本组织设备，点击注册即可完成绑定。
+Steven Wang：88 美元 / 年 / 授权是 MSRP 还是经销商采购价？基础信发功能很多厂商免费，Pivot Plus Basic 版能否对标 Yama、三星、LG 等品牌的自带信发功能？原有 Pivot Premium 用户年费约 50 美元，此次涨价对老用户是否友好？
+回复：第一，88 美元是公开发布的价格，经销商可根据情况自主定价，允许售价高于该价格；第二，基础信发功能（如文本信发）已包含在 Basic 版中，Yama 的信发功能是标配且不单独收费，而三星的管理平台和信发平台均收费，其 CMS 能力仅提供一个月试用，后续售价约 20 美元 / 月，我们的定价是参考了行业普遍情况（主流 CMS 厂商基础功能约 10 美元 / 月）制定的；第三，此次 Pro 版涨价是因为功能有大幅提升，针对老用户复购，我们可根据具体项目探讨额外折扣，具体灵活协商。
+Tom Cai：客户设备数量较多时，是否会提供一键迁移功能？
+回复：会的。我们计划在 6 月份正式发布 Close Beta 版本时，上架一键迁移功能，届时平台会有专属入口，按步骤操作即可完成迁移。目前仅为招募者计划参与的管理者提供定向一对一手动迁移服务，由研发同学协助完成。

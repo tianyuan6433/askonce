@@ -1,0 +1,58 @@
+
+## Sheet: Sheet1
+Moudle | Features | Pivot |  | Pivot Plus | 
+ |  | Free | Premium | Basic | Pro
+Types | Android IFP(U Series) | ✓ | ✓ | ✓ | ✓
+ | MH OS IFP(V series) | ✓ | ✓ | ✓ | ✓
+ | MTR-Android |  |  | ✓ | ✓
+ | MTR-Windows | ✓ | ✓ | ✓ | ✓
+ | Digital Signage(CMA、CMB) |  |  | ✓ | ✓
+ | All-In-One LED | ✓ | ✓ | ✓ | ✓
+Enrollment | Manual Enrollment | ✓ | ✓ | ✓ | ✓
+ | Enroll via USB | ✓ | ✓ | ✓ | ✓
+ | Zero-Touch Enrollment（SN+MAC+Group） |  | ✓ |  | ✓
+ | Same-Network Enrollment |  |  |  | ✓
+Management | 8-level & Auto-allocation Device Groups |  | ✓5-level | ✓ | ✓
+ | Peripheral Parameter Configuration | ✓ | ✓ | ✓ | ✓
+ | Control Commands (Power On/Off、Reboot、Screen Lock、Screen Off、Bells、Clear Cache、Factory Reset) | ✓ | ✓ | ✓ | ✓
+ | Setting Commands (Brightness/Volume、Image/Sound Mode、Input Switch、Wallpaper、Booting Logo) | ✓ | ✓ | ✓ | ✓
+ | App File Upload & Installation | ✓ | ✓ | ✓ | ✓
+ | App Store Link Installation & Auto-Update | ✓without Auto-Update | ✓without Auto-Update | ✓ | ✓
+ | App Enable / Disable / Install / Uninstall | ✓ | ✓ | ✓ | ✓
+ | Manual Upload Firmware To Update |  |  |  | ✓
+ | Keep Fireware Up To Date |  | ✓ |  | ✓
+ | Bulk Update Main Device Firmware | ✓ | ✓ | ✓ | ✓
+ | Bulk Update Peripheral Firmware |  |  | ✓ | ✓
+ | Command in schedule & Re-Edit | ✓ | ✓ | ✓ | ✓
+profile | System Config(Date & Time、Powering Saving、Display & Sound、Wake-Up Settings) | ✓ | ✓ | ✓ | ✓
+ | Wi-Fi Config(Wi-Fi Settings & Allow List） | ✓ | ✓ | ✓ | ✓
+ | App Config（Default Required App & Certificate List） | ✓ | ✓ | ✓ | ✓
+ | Lock Config（Device Lock、Setting Lock、Factory Menu Lock） | ✓ | ✓ | ✓ | ✓
+ | Other Personalized Config（BYOD、OOBE、URL Block List, Plugin for MTR、Hotspot Settings、Peripheral Parameter...） |  | ✓without OOBE、Peripheral |  | ✓
+Operations & Data | Multi-Devices Remote Screen Control |  |  |  | ✓
+ | Hierarchical Incident Management |  |  |  | ✓
+ | Anomaly Incident Detection & Alert |  |  |  | ✓
+ | Remote Fix for Anomaly Incidents |  |  |  | ✓
+ | DashBoard | ✓basic data | ✓basic data | ✓basic data | ✓
+ | Usage Data | ✓ | ✓ | ✓ | ✓
+ | App Operation Data | ✓ | ✓ | ✓ | ✓
+ | Top 10 Most Visited URLs |  |  |  | ✓
+ | Open API (coming soon) |  |  |  | ✓
+CMS | Resources | 20GB | 50GB | 20GB | 50GB
+ | Create Canvas |  |  |  | ✓
+ | Playlist |  | ✓ |  | ✓
+ | Content Published In Schedule |  |  |  | ✓
+ | Send Image / Video | ✓ | ✓ | ✓ | ✓
+ | Send URL / Live Channel | ✓ | ✓ | ✓ | ✓
+ | File Publish | ✓ | ✓ | ✓ | ✓
+ | Send Text | ✓ | ✓ | ✓ | ✓
+ | Emergency Alert with 4 Default Templates | ✓without templates | ✓without templates | ✓ | ✓
+Organization | Default Roles（admin、sub-admin、viewer） | ✓ | ✓ | ✓ | ✓
+ | Bulk users adding |  | ✓ | ✓ | ✓
+ | Custom Roles |  | ✓ |  | ✓
+ | Bulk Client Update | ✓ | ✓ | ✓ | ✓
+ | WOL Service Update & Device Power-On Detection | ✓update only | ✓update only | ✓ | ✓
+Logs | Command Execution Logs | ✓ | ✓ | ✓ | ✓
+ | Action Logs | ✓download only | ✓download only | ✓ | ✓
+ | Client Execution Logs |  |  | ✓ | ✓
+ | Bulk Export of XBug Logs | ✓without bulk export | ✓without bulk export | ✓ | ✓

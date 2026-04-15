@@ -1,0 +1,27 @@
+It is recommended to uninstall the original Pivot prior to installation.
+Restart device after installing Pivot Plus.
+For MTR-W, MH OS V Series:
+PivotPlus_Windows_3.0.8.887.exe
+For IFP (U4, E3, S2, B8620), DS (CMA/CMB/UW), LED:
+Install both of the following packages. Reboot the device after installation to activate:
+PivotPlus_Android_3.1.0.7.apk
+Vendor_811_Andorid_3.1.0.7.apk
+For MTR-A (Xbar V50 / V70 Kit) , AP30:
+Install the two services separately on the MTR device's Bar and Console, then install both packages and reboot the device to activate.
+PivotPlus_MTR_A_Android_3.1.0.7.apk
+Vendor_638_MTR_A_3.1.0.7.apk
+For Panel:
+Install both of the following packages. Reboot the device after installation to activate:
+PivotPlus_Panel_3.1.0.7.apk
+Vendor_638_Panel_3.1.0.7.apk
+Android Device Service Installation Guide
+Overview
+Establish connection between your PC and the Android device under the same network, then install the services to the MTR device via the PC.
+Enable PC control permission for the device
+Locate and enable ADB in the device’s factory menu (Android Debug Bridge: A built-in Android debugging tool. Once enabled, the PC can install apps, transfer files, debug programs, and even modify system settings for the Android device via command line).
+Contact the corresponding device after-sales support (MTR Team, IFP Team, LED Team) if you cannot access the factory menu.
+Ensure PC and device are on the same network
+Connect to the same Wi-Fi or wired network and verify the device IP is reachable via ping.
+Install services via PC
+Double-click the Install Service tool in the attachment to install the two services.
+Note: For Mac users using the tool for the first time, an authorization prompt may pop up. Go to System Settings > Privacy & Security, scroll to the bottom, select "Open Anyway", then double-click the tool again to launch it.

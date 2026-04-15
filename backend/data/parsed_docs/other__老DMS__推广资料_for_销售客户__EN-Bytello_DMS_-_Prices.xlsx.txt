@@ -1,0 +1,17 @@
+
+## Sheet: Sheet1
+ |  Market Price (1 license= 1 device/year) |  |  |  | 购买说明
+ | Basic | Pro | Premium |  | 1. 之前有且只有Pro Plan。现在有Basic，Pro，Premium三个Plans可选。
+2. Basic Plan，只有电源控制功能。若客户有预算压力、或者用其他产品压价，可推Basic版本。
+3. Pro Plan，基本满足教育标案。建议主推Pro版本。
+4. Premium版本，为大型学校/公司提供降本增效功能。帮助重点客户锁标，建议采用Premium Plan。
+ | 12 | 24 | 48 |  | 
+One-time purchase licenses  | Partner Price (1 license= 1 device/year) |  |  |  | 
+<100 | 8 | 15 | 24 |  | 使用说明
+≧100 | 7 | 13 | 22 |  | 1. 创建组织时，若客户购买了多个Plans, 可选择目标Plans
+2. 组织创建之后，不支持更换Plans
+≧500 | 6 | 12 | 20 |  | 
+≧2000 | 5 | 10 | 18 |  | 
+≧5000 | 4 | 8 | 16 |  | 
+≧10000 | 3 | 6 | 14 |  | 
+≧30000 | Talk to sales | Talk to sales | Talk to sales |  | 

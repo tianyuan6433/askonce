@@ -1,0 +1,78 @@
+--- Page 1 ---
+USER GUIDE BYTELLO  USER  CENTER Update: 2023 MAY THIS USER GUIDE IS NOT FOR DMS USERS.
+
+--- Page 2 ---
+TABLE OF CONTENT 1. Introduction  32. Register an account  43. Add sub-account  53.1 Send invitation  53.2 Approve application  64. Sub-account Manage  74.1 Free trial  74.1.1 What is DMS Free trial  74.1.2 Open trial for sub-account  74.2 Create a DMS organization  84.2.1 What is the DMS organization  84.2.2 Create an organization  94.2.3 What license Quantity to input when creating?  114.2.4 Add licenses to an existing organization  114.3 Distribute licenses  134.3.1 What is ‘Distribution right’  134.3.2 Grant ‘Distribution right’ only  134.3.3 Distribute licenses to sub-account  144.3.4 Cancel Distribution right  155. Account Manage 16
+
+--- Page 3 ---
+1. INTRODUCTION  Bytello User Center is an authority management platform built for managers and intermediaries. The main functions include account invitation, license renewal, free trial management, and sub-account management.
+
+--- Page 4 ---
+2. REGISTER AN ACCOUNT  Step 1: Contact your resellers to send you the invitation, then check your mail inbox and ﬁnd the unique registration link. 
+Step 2: Fill out the registration form, submit and wait for approval  
+Step 3: Find the conﬁrmation email and log in uc.bytello.com
+
+--- Page 5 ---
+3. ADD SUB-ACCOUNT  3.1 SEND INVITATION 3.1.1 Enter email Send out an invitation email 
+3.1.2 Wait for registration completed Check application status on Manager > Invitation management. 
+If there is no response, try to resend the invitation email 
+Or send the registration link directly if the user can not receive the email
+
+--- Page 6 ---
+3.2 APPROVE APPLICATION Notiﬁcation of new application Once your sub-account submits the registration form, you will receive a notiﬁcation email. 
+Approval Click the button [Agree] to approve the application. Once approved, this user becomes your sub-account and appears on the top of your list. 
+Invitation process
+
+--- Page 7 ---
+4. SUB-ACCOUNT MANAGE  Users have sub-accounts; they can: 
+Open DMS free trial. See chapter 4.1 
+Create a DMS organization. See chapter 4.2 
+Grant ‘Distribution right’ to allow them to self-manage. See chapter 4.3 4.1 FREE TRIAL 4.1.1 WHAT IS DMS FREE TRIAL The free trial allows users to try out DMS products. One user has one free trial. The trial has 60 days of access.  A trial organization can manage ten devices maximally. 4.1.2 OPEN TRIAL FOR SUB-ACCOUNT Step 1: Manager > License Management > (Hover) No organization state >Click [Trial or Create organization]  
+Step 2: Select [Free trial] > [Conﬁrm] 
+Step 3: Check trial information > [Conﬁrm]
+
+--- Page 8 ---
+Check trial state 4.2 CREATE A DMS ORGANIZATION 4.2.1 WHAT IS THE DMS ORGANIZATION Users have organizations can:  
+Login to dms.bytello.com  
+Manage devices Parent- accounts need to use DMS licenses when creating an organization. Make sure you have enough.  Check your available licenses. 
+If you do not have enough licenses, approach your parent-account for more. Check your parent-account
+
+--- Page 9 ---
+4.2.2 CREATE AN ORGANIZATION Two methods to create organizations for sub-account: 
+Create an organization - for sub-accounts organization in [no organization] state 
+Upgrade trial organization - for sub-accounts organization in [Trial] & [Trial end] state Method 1 - Create an organization Step 1: DMS product > Locate user >  (Hover) No organization state > Click [Trial or Create organization]  
+Step 2: Input Device and Period of use to create 
+Step 3: Check the organization's state
+
+--- Page 10 ---
+Method 2 - Change a trial organization to a formal one Step 1: DMS product > Locate user >  (Hover) [Trial] and [Trial end] state > [Upgrade to formal organization] 
+Step 2: Input licenses devices and period of use 
+Step 3: Check organization state
+
+--- Page 11 ---
+4.2.3 WHAT LICENSE QUANTITY TO INPUT WHEN CREATING? Licenses quantity depends on how many devices are in this organization and how many years they want to manage.  1 DMS license allows one enrolled device to use 365 days(1 year) Example:  Five devices to use for one year; the organization needs ﬁve licenses.  Ten devices to use for two years; the organization needs 20 licenses.  Twenty devices to use for three years; the organization needs 60 licenses. How have DMS licenses been consumed? Licenses will convert to credits after being assigned to an organization. 1 DMS license =  365 credits One enrolled device consumes one credit one day. 4.2.4 ADD LICENSES TO AN EXISTING ORGANIZATION Supports adding licenses for organizations that are in [In use], [Expired], and [Insuﬃcient]. How to add licenses to an organization Step 1: DMS product > Locate user >  (Hover) [In use], [Expired], or [Insuﬃcient] state -> [Add licenses] 
+Step 2: Input license quantity
+
+--- Page 12 ---
+What's the "Period of use”? Option 1 - Select a new period of use (1/2/3/5 years) Expiration date = Original expiration date + 1/2/3/5 years Note: Remaining credits in the organization will expire on the new expiration date. Option 2 - Select Keep the original expiration date Expiration date = Original expiration date Note: Total number of licenses is determined by the number of devices, 1 device = 1 license.
+
+--- Page 13 ---
+4.3 DISTRIBUTE LICENSES 4.3.1 WHAT IS ‘DISTRIBUTION RIGHT’ Users with ‘Distribution right' in DMS product means they can: 
+Invite a new user to become their sub-account  > Chapter 2 
+Open DMS free trial for their sub-account > Chapter 4.1 
+Create DMS organization for their sub-account > Chapter 4.2 
+Grant ‘Distribution right’ to their sub-account to let them self-manage >Chapter 4.3.2 4.3.2 GRANT ‘DISTRIBUTION RIGHT’ ONLY Step 1: Manager > License Management > (Hover) No distribution authorization state > [Authorize] Note: Only support to Grant ‘Distribution right’ to sub-accounts in [No distribution authorization] state. 
+Step 2: [Authorize] 
+Step 3: If you need to distribute licenses to a sub-account, click the [Distribute license now]. On the contrary,  just click [Distribute later] or close the dialog.
+
+--- Page 14 ---
+4.3.3 DISTRIBUTE LICENSES TO SUB-ACCOUNT Note: Sub-accounts can only be distributed licenses after they are granted distribution rights. Step 1: Manager > License Management > (Hover) Distributable license state > [Distribute licenses] 
+Step 2: Select license > Input [License Quantity]  > [Distribute]
+
+--- Page 15 ---
+4.3.4 CANCEL DISTRIBUTION RIGHT After canceling the sub-account’s product distribution right, the sub-account - can still use the existing license for himself on the Personal-My License page - cannot see the product information on the License Management page Step 1: Manager > License Management > (Hover) Distributable license state > [Distribute licenses] 
+Step 2: Click [Activated] 
+Step 3: Click [Cancel]
+
+--- Page 16 ---
+5. ACCOUNT MANAGE  - Data migration: Migrate your license or sub-account to others. - Change parent-account - Remove access - Delete account

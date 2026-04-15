@@ -1,0 +1,6 @@
+
+## Sheet: Sheet1
+ | Note | License Units | NA/EU/A1 | A3/A2/Latam/MEA | MSRP
+Pivot Plus (Pro)
+006.001.0011240 | Large education projects to be discussed separately. | < 100 | $39 per device/year | $29 per device/year | 88
+ |  | ≥ 100 | $29 per device/year | $19 per device/year | 88

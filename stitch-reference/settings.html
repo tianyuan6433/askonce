@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - AskOnce Digital Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f8f7;
+            color: #293030;
+            margin: 0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .tonal-shift-no-borders {
+            border: none !important;
+        }
+        .negative-space-layering {
+            border: none !important;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "surface-variant": "#d4dfde",
+                      "on-error": "#ffefee",
+                      "tertiary-dim": "#00557b",
+                      "surface-container-high": "#dbe4e3",
+                      "on-primary-fixed": "#004440",
+                      "error-container": "#fb5151",
+                      "background": "#f1f8f7",
+                      "tertiary-fixed": "#40bbff",
+                      "primary-fixed-dim": "#8cddd6",
+                      "on-background": "#293030",
+                      "primary-dim": "#005a55",
+                      "inverse-on-surface": "#979e9e",
+                      "primary": "#006762",
+                      "secondary-container": "#aaefe9",
+                      "on-surface": "#293030",
+                      "on-secondary": "#bdfff9",
+                      "inverse-primary": "#abfdf5",
+                      "surface": "#f1f8f7",
+                      "on-secondary-container": "#095c58",
+                      "error-dim": "#9f0519",
+                      "inverse-surface": "#090f0f",
+                      "secondary-fixed-dim": "#9ce1db",
+                      "surface-container": "#e1eae9",
+                      "secondary-fixed": "#aaefe9",
+                      "outline": "#717878",
+                      "on-primary-container": "#005854",
+                      "on-tertiary-container": "#00344d",
+                      "tertiary": "#00628c",
+                      "error": "#b31b25",
+                      "primary-fixed": "#9aebe4",
+                      "on-surface-variant": "#565d5c",
+                      "on-primary-fixed-variant": "#00635e",
+                      "on-primary": "#befff8",
+                      "surface-tint": "#006762",
+                      "secondary-dim": "#045956",
+                      "surface-bright": "#f1f8f7",
+                      "surface-container-low": "#eaf2f1",
+                      "on-secondary-fixed": "#004844",
+                      "tertiary-container": "#40bbff",
+                      "surface-dim": "#cbd7d6",
+                      "primary-container": "#9aebe4",
+                      "outline-variant": "#a7afae",
+                      "tertiary-fixed-dim": "#18adf3",
+                      "on-error-container": "#570008",
+                      "on-secondary-fixed-variant": "#1b6662",
+                      "on-tertiary-fixed": "#001a29",
+                      "on-tertiary-fixed-variant": "#003d5a",
+                      "surface-container-highest": "#d4dfde",
+                      "secondary": "#1b6662",
+                      "on-tertiary": "#e9f4ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Plus Jakarta Sans"]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 h-screen w-64 border-r border-emerald-100/10 bg-emerald-50 dark:bg-emerald-950/20 tonal-shift-no-borders z-40">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-100 tracking-tighter">AskOnce</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 font-semibold mt-1">Digital Sanctuary</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Library -->
+<a class="flex items-center text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-8 py-3 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:scale-110 transition-transform" data-icon="folder_open">folder_open</span>
+                Library
+            </a>
+<!-- Ask -->
+<a class="flex items-center text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-8 py-3 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:scale-110 transition-transform" data-icon="chat_bubble">chat_bubble</span>
+                Ask
+            </a>
+<!-- Stats -->
+<a class="flex items-center text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-8 py-3 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:scale-110 transition-transform" data-icon="bar_chart">bar_chart</span>
+                Stats
+            </a>
+<!-- Settings (Active) -->
+<a class="flex items-center text-emerald-900 dark:text-white bg-white/50 dark:bg-emerald-900/40 rounded-3xl mx-2 shadow-sm border-l-4 border-emerald-600 px-6 py-3 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight active:scale-95 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-4 text-emerald-600" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-8 mt-auto">
+<div class="flex items-center gap-3 p-2 rounded-2xl bg-surface-container-low/50">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover" data-alt="Close-up portrait of a professional woman with a calm expression in a minimalist modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0rx2H-Q_DrBAzsYaWhWcl-PDm7Xe6DjiW9jLuKdNuHWD7QZEaPoQp2waXisByE-G94GZPYXHpjNAKLY-X6h4OwU-xxw-ExG0Zzg7n-dstePTldOj9-gUOLNEL7yD6zqtBihdS-3Ax5BGSSxVhxq2mp-ospXBilnYTbwCiIVJ8gZQwrXbHo1cwiBkCD0JWXWRJeF0YUhwroxJg5i-fEgRnMByUVIFILl3BOPj2auQAF_hWJKG2IAxFoIYVhKNph6M29BGibHZgnDI"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Elena Vance</p>
+<p class="text-[10px] text-on-surface-variant truncate">Premium Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Stage -->
+<main class="ml-64 min-h-screen bg-surface relative">
+<!-- TopNavBar Anchor -->
+<header class="sticky top-0 z-30 flex items-center justify-between w-[calc(100%-3rem)] mx-6 rounded-full mt-4 px-6 py-2 bg-white/70 dark:bg-emerald-950/40 backdrop-blur-xl negative-space-layering shadow-[0_20px_40px_rgba(0,72,68,0.06)]">
+<div class="flex items-center flex-1 max-w-md">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-emerald-500/20 rounded-full transition-all">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low/50 border-none rounded-full py-2 pl-12 pr-4 text-sm focus:ring-0 placeholder:text-on-surface-variant/40" placeholder="Search settings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-6">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100/50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100/50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="max-w-5xl mx-auto px-12 py-16">
+<div class="mb-12">
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Settings</h2>
+<p class="text-on-surface-variant text-lg">Curate your digital sanctuary and refine your experience.</p>
+</div>
+<!-- Bento Layout Sections -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Account Section -->
+<section class="col-span-12 lg:col-span-7 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)]">
+<div class="flex items-center gap-4 mb-8">
+<div class="p-3 bg-primary-container/30 rounded-2xl">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<h3 class="text-xl font-bold tracking-tight">Account Profile</h3>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Full Name</label>
+<div class="bg-surface-container-low rounded-lg p-4 text-sm font-medium">Elena Vance</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Work Email</label>
+<div class="bg-surface-container-low rounded-lg p-4 text-sm font-medium">elena.vance@lumon.corp</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider ml-1">Bio</label>
+<div class="bg-surface-container-low rounded-lg p-4 text-sm leading-relaxed text-on-surface-variant">
+                                    Digital archivist focused on streamlining knowledge workflows and creating calm organizational structures.
+                                </div>
+</div>
+<button class="mt-4 px-6 py-3 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-full font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+                                Update Profile
+                            </button>
+</div>
+</div>
+<!-- Connections Section -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)]">
+<div class="flex items-center gap-4 mb-8">
+<div class="p-3 bg-secondary-container/30 rounded-2xl">
+<span class="material-symbols-outlined text-secondary" data-icon="hub">hub</span>
+</div>
+<h3 class="text-xl font-bold tracking-tight">Connections</h3>
+</div>
+<div class="space-y-4">
+<!-- Google Email -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+<img alt="Gmail" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq0SxyuqO-rbu7GPB565Ge6RF2TpMWBseRaZ846uqsIY1r6DoduceV3dlEGwstMV5G4vRxi3Rx8JQbXdO3Z7-yK1JWHarz23P6Duw1uUHZ89YDGmGwOWR1V4e8l-FwqUbl5xw_SGGsAu07VZcWhYeU61x5YYHDQAlqdbyOuHdAQZ2vVBhr1ZGGyfujii72paUUQxk2UCsNTIXWPdX_b3YC2_EtCjGDtXGAPYEYOlAzeY9wI60H-uw0wvdQp3WpvDJibOuJhYuUAag"/>
+</div>
+<div>
+<p class="font-bold text-sm">Google Email</p>
+<p class="text-xs text-on-surface-variant">Syncing inbox and calendar</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-bold text-primary bg-primary-container px-2 py-1 rounded-full uppercase tracking-tighter">Connected</span>
+<button class="material-symbols-outlined text-on-surface-variant/40 hover:text-error" data-icon="link_off">link_off</button>
+</div>
+</div>
+<!-- Slack -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+<img alt="Slack" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-JmAvKiFZmTrY2pCjLY1fOTdvpXlpPs-Zlm4gAKmh4uH2hfFpPb8f0bJsc9_5Hf4Na1iJ3Sdm_lIlHUJMtwCBG4H5quLOW1W0OP5gh75JR-wFiSM0smx_Aq33sbjRK6EhAksPJw87uNSW8kaY2oWs6uu-vmWTZkMQ2uSOfoFiH8L6jS0MW-4VjODijKm4xnoZIt4CpuL7tBVjKpds4T8ifUWQgZcuzACW3ZHnAhk_ph9GTkhmfyKhcwjugFCe-V64kA0U0LoRoc0"/>
+</div>
+<div>
+<p class="font-bold text-sm">Slack</p>
+<p class="text-xs text-on-surface-variant">Integration for smart alerts</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-bold text-primary bg-primary-container px-2 py-1 rounded-full uppercase tracking-tighter">Connected</span>
+<button class="material-symbols-outlined text-on-surface-variant/40 hover:text-error" data-icon="link_off">link_off</button>
+</div>
+</div>
+<!-- Notion Add -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low/40 border-2 border-dashed border-outline-variant/30 rounded-lg group hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-variant/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant/60" data-icon="add">add</span>
+</div>
+<div>
+<p class="font-bold text-sm text-on-surface-variant">Add Notion Workspace</p>
+<p class="text-xs text-on-surface-variant/60">Connect pages and databases</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Preferences Section -->
+<section class="col-span-12 lg:col-span-5 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] h-full">
+<div class="flex items-center gap-4 mb-8">
+<div class="p-3 bg-tertiary-container/20 rounded-2xl">
+<span class="material-symbols-outlined text-tertiary" data-icon="tune">tune</span>
+</div>
+<h3 class="text-xl font-bold tracking-tight">Preferences</h3>
+</div>
+<div class="space-y-10">
+<!-- Toggle: Dark Mode -->
+<div class="flex items-center justify-between">
+<div class="max-w-[70%]">
+<p class="font-bold text-sm mb-1">Dark Mode</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Lower eye strain in low-light environments with a midnight aesthetic.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+<!-- Toggle: Smart Notifications -->
+<div class="flex items-center justify-between">
+<div class="max-w-[70%]">
+<p class="font-bold text-sm mb-1">Smart Notifications</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Only alert you for high-priority insights during your focus hours.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+<!-- Toggle: AI Summary -->
+<div class="flex items-center justify-between">
+<div class="max-w-[70%]">
+<p class="font-bold text-sm mb-1">AI Summaries</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Automatically generate concise bullet points for long conversation threads.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+<div class="pt-8 border-t border-surface-container-high">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Storage Usage</p>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]" style="border-radius: 9999px;"></div>
+</div>
+<div class="flex justify-between mt-3">
+<p class="text-[10px] font-medium text-on-surface-variant">6.5 GB of 10 GB used</p>
+<a class="text-[10px] font-bold text-primary hover:underline" href="#">Manage Storage</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Minimalist Sign Out -->
+<footer class="mt-20 pt-12 flex flex-col items-center">
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent mb-12"></div>
+<button class="flex items-center gap-2 px-8 py-3 text-on-surface-variant/60 hover:text-error transition-colors font-medium text-sm group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform" data-icon="logout">logout</span>
+                    Sign Out of AskOnce
+                </button>
+<p class="mt-6 text-[10px] text-on-surface-variant/40 tracking-widest uppercase">Version 2.4.0 — Made with Intention</p>
+</footer>
+</div>
+</main>
+<!-- Visual Polish: Soft Ambient Light -->
+<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none opacity-50"></div>
+<div class="fixed bottom-0 left-64 -z-10 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] pointer-events-none opacity-50"></div>
+</body></html>

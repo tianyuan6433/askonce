@@ -1,0 +1,171 @@
+MAXHUB Pivot⁺
+FAQs
+Update by December 31, 2025
+Table of Contents
+1. Relationship Between Pivot and Pivot⁺	1
+2. Migration and Usage Impact	4
+3. Control Functions	5
+4. Content Distribution (CMS) Related	7
+5. Launch Time and Trial Plan	8
+6. Business Strategy	9
+7. Features	9
+8. Security and Others	11
+
+# Relationship Between Pivot and Pivot⁺
+
+
+#### Q: What is Pivot⁺? What is its relationship with the existing Pivot?
+
+A: MAXHUB Pivot⁺ is a next-generation centralized control product fully upgraded based on the core capabilities of the existing Pivot. Tailored for IT administrators, it supports more scenarios, offers a smoother UI experience, and delivers higher O&M efficiency—perfect for meeting the needs of enterprise-scale management.
+MAXHUB Pivot⁺ is a cloud-based CMS + DMS platform designed to centrally manage both devices and content across MAXHUB meeting room and display solutions.It enables organisations to remotely monitor and manage devices while also creating, scheduling, and publishing content to commercial displays and meeting room screens.
+Pivot⁺ provides a unified control layer for large-scale deployments, helping IT and operations teams standardise device behaviour, control messaging, and reduce operational complexity across locations.
+Kindly note that Pivot⁺ adopts an entirely new technical underlying architecture, which is different from the original Pivot. Therefore, existing organizations cannot migrate to the new Pivot⁺ seamlessly, and simple configuration adjustments are required during migration.
+
+#### Q: Will Pivot be replaced or discontinued by Pivot⁺ in the future?
+
+A: Please rest assured. Pivot's services will continue to run stably throughout 2026 without affecting your normal use, but no new features will be added in subsequent updates.
+Starting from July 1, 2026, existing Pivot users can freely choose whether to upgrade to Pivot⁺ to enjoy new services.
+We will continue to monitor the migration progress and feedback of existing Pivot users, and then determine the specific shutdown time of Pivot based on actual circumstances, ensuring you have sufficient time to prepare.
+
+#### Q: Why did MAXHUB launch Pivot⁺? What limitations exist in the existing Pivot?
+
+A: With the deepening of enterprise digital transformation, the existing Pivot has gradually exposed bottlenecks that are difficult to meet current needs: the UI interaction and operation process are not quite in line with modern users' aesthetic and efficiency requirements; the compatibility and management of new devices (such as Microsoft MTR series) are complicated; the underlying architecture lacks flexibility, leading to slow feature iterations that cannot keep up with business development.
+Pivot⁺ is designed to solve these pain points! Through three core upgrades—reconstructed underlying architecture, optimized interactive experience, and expanded multi-scenario compatibility—it creates a dedicated platform more suitable for enterprise-scale management. It not only makes device management easier and more efficient but also further strengthens MAXHUB's competitive advantage in the field of device centralized control.
+
+#### Q: What are the core improvements of Pivot⁺ over Pivot in terms of functions and capabilities?
+
+A: Focusing on users' core needs in device management, Pivot⁺ has achieved comprehensive improvements in four key areas, making it more user-friendly and efficient:
+Significantly Improved Enrollment Efficiency
+Batch import device serial numbers, MAC addresses, and grouping information in advance. Once the device is powered on and connected to the network, it will automatically complete enrollment—no need for on-site manual binding.
+The system will automatically scan all MAXHUB devices connected to the same local area network and list basic device information. Administrators only need to check the required devices to quickly complete batch binding, saving time and effort.
+Notably Optimized Management Efficiency
+Intuitive visual charts and calendar views clearly display real-time device status, pending tasks, and Anomaly information. This helps administrators break free from complicated data and quickly focus on key points.
+Supports up to 8-level grouping management, enabling device control by spatial dimensions. It is easily adaptable to large multinational enterprises and chain retail scenarios, allowing for more refined management.
+Fully Upgraded O&M Efficiency
+Supports simultaneous remote control of multiple devices in the same meeting room. When controlling one device, you can synchronously view the response status of other devices, making troubleshooting and collaborative O&M more efficient—no need to rush between different locations.
+Firmware upgrades support both main devices and peripherals. You can upload firmware packages independently for batch updates, or the system will automatically detect firmware versions and intelligently upgrade to the latest, ensuring devices always operate at their best.
+Custom hierarchical device alerting and full-dimensional log retention ensure fast response to Anomalyities. O&M processes are safe, controllable, compliant, and traceable.
+More Flexible and Convenient Content Distribution
+Freely manage various resource types (images, videos, audio, documents, canvases, etc.). The system automatically categorizes and archives resources for easy search and management.
+Enjoy flexible layouts when creating promotional content. You can freely arrange various components and multimedia resources to meet promotional needs in diverse scenarios, such as in-store promotions or corporate publicity.
+Supports arranging content playlists in view mode and selecting release times via drag-and-drop, making content publishing more convenient and the operation process smoother.
+
+# Migration and Usage Impact
+
+
+#### Q: Do existing Pivot users have to migrate to Pivot⁺?
+
+A: No, it’s not mandatory! We will continue to ensure the stable operation of the Pivot system throughout 2026, so you can keep using it as usual. However, Pivot product licenses will no longer be sold or automatically renewed.
+We strongly recommend you try the new Pivot⁺, as it will significantly improve your device management efficiency and make management easier. Meanwhile, we will continue to monitor the migration progress and feedback of existing Pivot users, and then determine the specific shutdown time of Pivot, giving you ample time to adapt and prepare.
+Q: Will not migrating to Pivot⁺ for the time being affect the use of the existing Pivot?
+A: It will not affect it at all! We will continue to ensure the stable operation of the Pivot system throughout 2026. Your enrolled devices can still enjoy all Pivot's device management services normally—no need to worry about current usage.
+Q: Will migrating from Pivot to Pivot⁺ affect the normal operation of existing devices?
+A: During the migration process, the commands and configurations set in the original Pivot may not be executed in a timely manner before the migration to Pivot⁺ is completed. However, please rest assured that this will not affect the normal use of devices in actual scenarios such as meetings, education, and retail, and core functions will remain unaffected.
+
+#### Q: Does Pivot⁺ support a free trial before deciding to migrate?
+
+A: Yes! Starting from July 1, 2026, we will open a free registration channel for Pivot⁺ on the official website. You can register first to try Pivot⁺’s services, and we will provide you with a 30-day full-feature Pro version trial. After experiencing it thoroughly, you can decide whether to migrate officially based on your needs. If you have any questions during the trial, feel free to contact us at any time!
+
+# Control Functions
+
+Q: What practical efficiency improvements can Pivot⁺ bring to large-scale device deployment and O&M?
+A: Addressing the pain points of large-scale device management, Pivot⁺ brings tangible efficiency improvements in two key areas—deployment and O&M—making management easier:
+Deployment: Offers zero-touch enrollment services, including pre-renrollment by importing SN⁺MAC in advance and automatic discovery enrollment for newly purchased devices. This greatly reduces manual operations, significantly improves deployment efficiency, and eliminates the need for individual configuration.
+O&M: Provides batch remote screen control for multiple devices in the same room. When a device causes an Anomaly incidents, it will send automatic notifications and support remote troubleshooting. Additionally, a task-oriented workbench clearly lists risks and pending tasks, making O&M simpler and more efficient—no need to travel around.
+Q: Is Pivot⁺ more complex to operate and manage? Is it easy for ordinary administrators to get started?
+A: No need to worry at all! Pivot⁺ optimizes the interactive experience with the core concept of "humanization and high efficiency," making it even easier to get started than traditional platforms—ordinary administrators can master it quickly:
+Extremely low interaction threshold: The interface is redesigned following mainstream design standards from Google and Microsoft, adopting a "core functions on homepage, shortest operation path" design. Key entrances (such as device status checks and alert handling) require no multi-level navigation. With red, and blue indicators for device status, information is intuitive and easy to understand—no need to struggle to find what you need.
+Efficient operation process: The operation path for core management actions (such as batch upgrades and device searches) is shortened by 50%. It supports multi-level filtering to locate devices and issues, eliminating the need to remember complex operation logic—you can get started right away.
+Controllable learning cost: New users can independently complete core tasks such as device enrollment, status monitoring, and routine O&M after just 15 minutes of basic training. No professional IT background is required—you can easily handle the management work.
+
+#### Q: Does Pivot⁺ support the management and monitoring of third-party devices?
+
+A: Currently, Pivot⁺ only provides management services for MAXHUB ecosystem hardware and does not support third-party devices. If you have needs related to third-party device management, please feel free to provide feedback. We will focus on and evaluate it in subsequent product iterations!
+Q: Will Pivot⁺ replace Microsoft Teams Admin Center (TAC) or Microsoft Teams Rooms Pro Management Portal?
+A: Microsoft's management functions include Teams app management (settings, updates, meeting settings), Teams Rooms digital signage, and basic management of meeting room devices. We usually recommend using Pivot⁺ Pro together with Microsoft Teams Rooms Pro Management. The two can complement each other to bring you a more comprehensive and efficient management experience.
+
+#### Q: What unique management and monitoring capabilities does Pivot⁺ offer that Microsoft Teams Admin Center (TAC) or Microsoft Teams Rooms Pro Management Portal do not have?
+
+A: Microsoft's management capabilities for Android devices are not as robust as those for Windows devices. Pivot⁺ provides more professional Android device management tools, such as remote desktop control for Android meeting room devices, which can help you solve problems more quickly. In addition, Pivot⁺ also has basic CMS service capabilities, including canvas resource creation, playlist arrangement, and schedule management, bringing you a more convenient content distribution experience for daily management.
+
+# Content Distribution (CMS) Related
+
+
+#### Q: Does Pivot⁺ include content distribution (CMS) capabilities? How does it integrate with device management?
+
+A: Yes! Pivot⁺ is an integrated device management platform combining DMS (Device Management System) and CMS (Content Management System). It allows you to achieve "management ⁺ distribution" in one stop without switching between multiple systems!
+The device management module provides you with core capabilities such as device enrollment and basic maintenance. After creating content in the CMS module, you can directly and quickly distribute it to managed devices. The process is smooth and convenient, greatly improving work efficiency.
+
+#### Q: Can Pivot⁺ replace existing information distribution or digital signage management systems?
+
+A: Yes! The CMS services currently provided by Pivot⁺ cover core functions, including resource upload and management, content creation, playlist arrangement, and drag-and-drop schedule publishing. It can fully meet the basic needs of daily information distribution and digital signage management—you can safely use it to replace existing systems!
+
+# Launch Time and Trial Plan
+
+
+#### Q: When is Pivot⁺ scheduled to be officially launched? What phase will it be in the first half of 2026?
+
+A: We will launch the Beta version of Pivot⁺ in the first half of 2026, which will be available for experience by selected organizations invited by the sales team. During the experience, we will carefully listen to every user's suggestions and feedback, continuously polish the product details to ensure the official version better meets everyone's needs. The official launch of Pivot⁺ is scheduled for July 1, 2026.
+
+#### Q: If I am interested in Pivot⁺ now, what ways can I participate in or learn more about it?
+
+A: You can first learn about detailed product information of Pivot⁺ through the MAXHUB official website. If you are more interested and want to try it in advance, you can submit an application through your dedicated sales representative. We will activate a trial account for you or invite you to join our Pioneer Program, allowing you to experience the convenience and efficiency of Pivot⁺ ahead of time!
+
+#### Q: Can I sign up for Pivot⁺ on my own or through my local reseller?
+
+A: The Beta version will be released in the first half of 2026, available only to invited customers participating in the Pioneer Program.
+Starting from July 1, 2026, free self-registration will be officially opened. All registered users will automatically receive a 30-day trial of the Pro version, which will be downgraded to the free Basic version after the trial period ends.
+
+# Business Strategy
+
+
+#### Q: Is Pivot⁺ still free?
+
+A: Pivot⁺ offers two versions to meet different needs: a free Basic version with functions consistent with the original Pivot Free version, which can fully meet basic device management requirements; and a paid Pro version with more rich features than the original Pivot Pre version, including practical CMS services, helping you achieve more comprehensive and efficient device management.
+
+#### Q: What are the Pivot⁺ plans?
+
+A: For detailed comparisons between versions, please refer to the official "Plans Comparison" which clearly presents the specific functions included in each version for your reference when making a choice!
+
+#### Q: How can I buy Pivot⁺?
+
+A: Like MAXHUB hardware, Pivot⁺ is purchased through MAXHUB local authorized reseller partners. You can contact your local authorized reseller for consultation and purchase. If you need help finding a reseller, you can also contact our official customer service for support.
+
+#### Q: Is access to Pivot⁺ included with the purchase of all MAXHUB devices?
+
+A: Every hardware device comes with access to Pivot⁺’s Basic version! Starting from July 1, 2026, after purchasing any MAXHUB device, you can register a Pivot⁺ account through the official website to manage your device, making device management more convenient and easy to operate.
+
+# Features
+
+
+#### Q：How to Switch language？
+
+A：Maxhub Pivot+ supports multiple languages. Click the map-style icon in the top right corner to switch to your preferred language.
+After switching, the page will reload—please ensure all current page content is saved to avoid data loss.
+
+#### Q：How to contact us？
+
+A：When you encounter issues, you can contact the Pivot+ team through the following two methods:
+Send an email directly to pivot-plus@maxhub.com. Please describe the problem, symptoms, and suggestions in as much detail as possible, along with your organization name and Organization Code. This helps us verify and resolve the issue efficiently.
+Click the message-style icon in the top right corner of the system to submit your feedback. We will get in touch with you as soon as possible.
+
+# Security and Others
+
+
+#### Q: Is there a security whitepaper for Pivot⁺ that I can download?
+
+A: The Pivot⁺ Security Whitepaper is available in the Resource Center on the official website. You can download and review it at any time to learn more about the product's security mechanisms!
+
+#### Q: Where are Pivot⁺’s data centers located?
+
+A: We have deployed servers in the United States and Germany. Multi-region server deployment better ensures service stability and accessibility, providing reliable support for your global device management needs.
+
+#### Q: Does Pivot⁺ support any secure login mechanisms? SAML SSO? Please describe all security measures. What Single Sign-On (SSO) integrations does Pivot⁺ support?
+
+A: Currently, SSO is not supported. However, Pivot⁺ has passed multiple security compliance certifications. Core security measures include full-dimensional log retention, hierarchical permission control, and encrypted data transmission, which can fully protect the security of your device management data. For more detailed security information, please refer to the "Pivot⁺ Security Whitepaper."
+Q: Does Pivot⁺ integrate with any other third-party cloud management software, such as XYTE?
+A: Currently, Pivot⁺ does not integrate with any third-party cloud management platforms. If you have relevant integration needs, please feel free to provide feedback. We will conduct technical research and evaluation based on user needs in subsequent iterations.
+
+#### Q: Does Pivot⁺ provide API access? How can I obtain Pivot⁺ API access rights?
+
+A: Currently, API access is not available. We will continue to collect user needs for API access. If there is sufficient market demand, we will consider opening related services in subsequent product updates. Please pay attention to our official announcements for the latest information!

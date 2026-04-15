@@ -1,0 +1,290 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#d4dfde",
+            "on-error": "#ffefee",
+            "tertiary-dim": "#00557b",
+            "surface-container-high": "#dbe4e3",
+            "on-primary-fixed": "#004440",
+            "error-container": "#fb5151",
+            "background": "#f1f8f7",
+            "tertiary-fixed": "#40bbff",
+            "primary-fixed-dim": "#8cddd6",
+            "on-background": "#293030",
+            "primary-dim": "#005a55",
+            "inverse-on-surface": "#979e9e",
+            "primary": "#006762",
+            "secondary-container": "#aaefe9",
+            "on-surface": "#293030",
+            "on-secondary": "#bdfff9",
+            "inverse-primary": "#abfdf5",
+            "surface": "#f1f8f7",
+            "on-secondary-container": "#095c58",
+            "error-dim": "#9f0519",
+            "inverse-surface": "#090f0f",
+            "secondary-fixed-dim": "#9ce1db",
+            "surface-container": "#e1eae9",
+            "secondary-fixed": "#aaefe9",
+            "outline": "#717878",
+            "on-primary-container": "#005854",
+            "on-tertiary-container": "#00344d",
+            "tertiary": "#00628c",
+            "error": "#b31b25",
+            "primary-fixed": "#9aebe4",
+            "on-surface-variant": "#565d5c",
+            "on-primary-fixed-variant": "#00635e",
+            "on-primary": "#befff8",
+            "surface-tint": "#006762",
+            "secondary-dim": "#045956",
+            "surface-bright": "#f1f8f7",
+            "surface-container-low": "#eaf2f1",
+            "on-secondary-fixed": "#004844",
+            "tertiary-container": "#40bbff",
+            "surface-dim": "#cbd7d6",
+            "primary-container": "#9aebe4",
+            "outline-variant": "#a7afae",
+            "tertiary-fixed-dim": "#18adf3",
+            "on-error-container": "#570008",
+            "on-secondary-fixed-variant": "#1b6662",
+            "on-tertiary-fixed": "#001a29",
+            "on-tertiary-fixed-variant": "#003d5a",
+            "surface-container-highest": "#d4dfde",
+            "secondary": "#1b6662",
+            "on-tertiary": "#e9f4ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f8f7; color: #293030; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); }
+    .primary-gradient { background: linear-gradient(135deg, #006762 0%, #005a55 100%); }
+    .tonal-shift-no-borders { border: none !important; }
+    .flat-no-shadows { box-shadow: none !important; }
+  </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 h-screen w-64 border-r border-emerald-100/10 bg-emerald-50 dark:bg-emerald-950/20 tonal-shift-no-borders flat-no-shadows z-50">
+<div class="px-8 mb-10">
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-100 tracking-tighter">AskOnce</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-200 opacity-60">Digital Sanctuary</p>
+</div>
+<nav class="flex-1 space-y-2 px-2">
+<a class="flex items-center text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 rounded-3xl mx-2" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="folder_open">folder_open</span>
+        Library
+      </a>
+<a class="flex items-center text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 rounded-3xl mx-2" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="chat_bubble">chat_bubble</span>
+        Ask
+      </a>
+<a class="flex items-center text-emerald-900 dark:text-white bg-white/50 dark:bg-emerald-900/40 rounded-3xl mx-2 shadow-sm border-l-4 border-emerald-600 px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="bar_chart">bar_chart</span>
+        Stats
+      </a>
+<a class="flex items-center text-emerald-700/70 dark:text-emerald-400/60 hover:text-emerald-900 dark:hover:text-emerald-100 px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-colors duration-300 rounded-3xl mx-2" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+        Settings
+      </a>
+</nav>
+<div class="mt-auto px-6">
+<div class="bg-white/40 p-4 rounded-xl flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="portrait of a professional woman with a calm expression in a minimalist creative studio workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8xQ_W-ZfbVtt2X6U6XWQFmHgiSJY7tWQ1ys4RxbRICwnSn-3MhN2_edPvlFezziV_n052e4CWZ7iPU-AZkyYzUtDSUcCGLym97w0JLBOGps9aMzpe_essc1gWR34P59WTvZWXjQ39OB4DsZC2ePfPLa-82zHsZ1GfHX7Ski2r9heN4gnF_VNWr1__R4Hc2G8O7_B2ZNTjYXndOrEqMo9Z8xT92kPn-4BYYDaiyNh7Nz4rKXQa19WAZGLrlAgj4ekLZKVC8veIK-Q"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Organization Logo</p>
+<p class="text-[10px] opacity-60">Pro Account</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 p-8 min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 flex items-center justify-between w-full mb-10">
+<div class="flex items-center bg-white/70 dark:bg-emerald-950/40 backdrop-blur-xl rounded-full px-6 py-2 shadow-[0_20px_40px_rgba(0,72,68,0.06)] flex-1 max-w-2xl">
+<span class="material-symbols-outlined text-on-surface-variant mr-3" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-on-surface-variant/50" placeholder="Search insights or activity..." type="text"/>
+</div>
+<div class="flex items-center gap-4 ml-6">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-emerald-800 hover:bg-emerald-100/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-emerald-800 hover:bg-emerald-100/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Content: Efficiency Overview -->
+<div class="max-w-6xl mx-auto">
+<div class="mb-12">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Efficiency Overview</h2>
+<p class="text-on-surface-variant font-medium">Your sanctuary's performance over the last 7 days.</p>
+</div>
+<!-- Bento Grid Top Row -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<!-- Hours Saved Card -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="timer">timer</span>
+</div>
+<p class="text-sm font-semibold text-primary mb-1">Time Recovery</p>
+<h3 class="text-6xl font-extrabold text-on-surface mb-4">42.5</h3>
+<p class="text-on-surface-variant text-sm">Total hours saved this week through automated knowledge retrieval.</p>
+<div class="mt-6 flex items-center gap-2 text-tertiary font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>12% from last week</span>
+</div>
+</div>
+<!-- Weekly Activity Chart (Simplified UI Representation) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-8 rounded-xl">
+<div class="flex items-center justify-between mb-8">
+<h4 class="font-bold text-on-surface">Weekly Interaction Volume</h4>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low rounded-full text-[10px] font-bold text-on-surface-variant">MON - SUN</span>
+</div>
+</div>
+<div class="flex items-end justify-between h-48 gap-4 px-4">
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-surface-container-low rounded-t-lg group-hover:bg-primary-container transition-colors" style="height: 40%"></div>
+<span class="text-[10px] font-bold opacity-40">M</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-surface-container-low rounded-t-lg group-hover:bg-primary-container transition-colors" style="height: 65%"></div>
+<span class="text-[10px] font-bold opacity-40">T</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-surface-container-low rounded-t-lg group-hover:bg-primary-container transition-colors" style="height: 85%"></div>
+<span class="text-[10px] font-bold opacity-40">W</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full primary-gradient rounded-t-lg shadow-lg" style="height: 100%"></div>
+<span class="text-[10px] font-bold text-primary">T</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-surface-container-low rounded-t-lg group-hover:bg-primary-container transition-colors" style="height: 70%"></div>
+<span class="text-[10px] font-bold opacity-40">F</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-surface-container-low rounded-t-lg group-hover:bg-primary-container transition-colors" style="height: 30%"></div>
+<span class="text-[10px] font-bold opacity-40">S</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-surface-container-low rounded-t-lg group-hover:bg-primary-container transition-colors" style="height: 20%"></div>
+<span class="text-[10px] font-bold opacity-40">S</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Second Row -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Knowledge Coverage Gauge -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl flex flex-col items-center text-center">
+<h4 class="font-bold text-on-surface mb-8 self-start">Knowledge Coverage</h4>
+<div class="relative w-48 h-48 mb-8 flex items-center justify-center">
+<!-- SVG Gauge -->
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-low" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="125.6" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center rotate-90">
+<span class="text-4xl font-extrabold text-on-surface">75%</span>
+<span class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">Coverage</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Your sanctuary has indexed <span class="text-primary font-bold">12,402 nodes</span> of organizational data. <br/>
+<span class="underline cursor-pointer hover:text-primary mt-2 block">Optimize coverage →</span>
+</p>
+</div>
+<!-- Recent Activity List -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="p-8 pb-4 flex items-center justify-between">
+<h4 class="font-bold text-on-surface">Recent Activity Log</h4>
+<button class="text-xs font-bold text-primary hover:underline">View All</button>
+</div>
+<div class="px-8 pb-8">
+<div class="space-y-0">
+<!-- Activity Row 1 -->
+<div class="flex items-center py-6 border-b border-surface-container hover:bg-surface/50 transition-colors -mx-8 px-8">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mr-4">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Email Summarization Cycle</p>
+<p class="text-xs text-on-surface-variant">Processed 124 unread marketing threads</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-extrabold text-primary">+45m</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Time Saved</p>
+</div>
+</div>
+<!-- Activity Row 2 -->
+<div class="flex items-center py-6 border-b border-surface-container hover:bg-surface/50 transition-colors -mx-8 px-8">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary mr-4">
+<span class="material-symbols-outlined text-lg" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Knowledge Extraction: Project Orion</p>
+<p class="text-xs text-on-surface-variant">Identified key milestones from 12 docs</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-extrabold text-primary">+2.4h</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Time Saved</p>
+</div>
+</div>
+<!-- Activity Row 3 -->
+<div class="flex items-center py-6 hover:bg-surface/50 transition-colors -mx-8 px-8">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container mr-4">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Auto-Response Generation</p>
+<p class="text-xs text-on-surface-variant">Drafted 12 client support replies</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-extrabold text-primary">+1.2h</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Time Saved</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="fixed bottom-0 right-0 -z-10 opacity-20 pointer-events-none">
+<img class="w-[600px] h-auto" data-alt="abstract flowing organic shapes in shades of mint green and teal with a soft gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3C5nlL74qPiI5GHy_1HHeNql8F_xI_H8A-c4VrdgYL4qgPych6jQeCwBnkv_hCD4lgJdea_H46IoQO7-3u7mxLy3tV_5ZC_-E8sb2UZ4MzcsTTdfaXDBO5lYGYeL90w-RfnEZffNdopAHZPxY0s5Bkc-SpuwnnXE2KWhHh3hl2ctE1L-HJVZOu0ejYy2US4238C40CCb0zJ0ycjmCTzB1jH-am9jP9JaWrL-NpL-mTgY2VHssMxrkb2LUTJSbyy9Ij_Y8TG73lF8"/>
+</div>
+</main>
+<!-- Floating Action Button - Contextual for Dashboard/Stats -->
+<div class="fixed bottom-10 right-10">
+<button class="primary-gradient text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,1940 @@
+--- Page 1 ---
+MAXHUBPivot⁺
+UserManual
+UpdatebyDecember31,2025
+
+--- Page 2 ---
+TableofContents
+I.QuickStart..........................................................1
+1.AboutMaxhubPivot⁺................................................................................................1
+2.QuickStartGuide......................................................................................................3
+3.DeviceCompatibilityList........................................................................................13
+II.FeaturesOverview.........................................22
+1.Dashboard...............................................................................................................22
+2.Devicelist.................................................................................................................24
+3.Profile.......................................................................................................................32
+4.App...........................................................................................................................38
+5.Resources................................................................................................................40
+6.Canvas.....................................................................................................................44
+7.Playlist.....................................................................................................................47
+8.Schedule..................................................................................................................48
+9.Alert.........................................................................................................................51
+10.Organization..........................................................................................................52
+11.Incident..................................................................................................................57
+12.ClientUpdate........................................................................................................61
+13.FirmwareUpdate..................................................................................................63
+14.WOLService..........................................................................................................66
+
+--- Page 3 ---
+15.CommandRecords...............................................................................................70
+16.Actionlogs.............................................................................................................71
+III.Plans................................................................72
+1.PlansComparison...................................................................................................72
+2.Pivot⁺PioneerProgram..........................................................................................78
+IV.FAQs...............................................................88
+1.RelationshipBetweenPivotandPivot⁺.................................................................88
+2.MigrationandUsageImpact..................................................................................91
+3.ControlFunctions....................................................................................................92
+4.ContentDistribution(CMS)Related......................................................................95
+5.LaunchTimeandTrialPlan....................................................................................95
+6.BusinessStrategy...................................................................................................96
+7.Features..................................................................................................................97
+8.SecurityandOthers................................................................................................98
+
+--- Page 4 ---
+1I.QuickStart
+1.AboutMaxhubPivot⁺
+MAXHUBPivot+isacloud-basedCMS+DMSplatformdesignedtocentrally
+managebothdevicesandcontentacrossMAXHUBmeetingroomanddisplay
+solutions.
+Itenablesorganisationstoremotelymonitorandmanagedeviceswhilealso
+creating,scheduling,andpublishingcontenttocommercialdisplaysandmeeting
+roomscreens.
+Pivot+providesaunifiedcontrollayerforlarge-scaledeployments,helpingITand
+operationsteamsstandardisedevicebehaviour,controlmessaging,andreduce
+operationalcomplexityacrosslocations.
+1.1.KeyFeatures
+1.1.1.Zero-TouchEnrollment
+a.BatchimportdeviceSerialNumbersandMACaddressesinadvance.Devices
+willautomaticallycompleteenrollmentoncepoweredonandconnectedto
+
+--- Page 5 ---
+2thenetwork—nomanualbindingneeded,andthey’rereadyforuse
+immediately.
+b.ThesystemautomaticallyscansallconnectedMaxhubdeviceswithinthe
+samelocalareanetworkandlistsbasicdeviceinformation.Managersonly
+needtochecktherequireddevicestofinishbatchbinding.
+1.1.2.RemoteBatchManagement
+a.Intuitivevisualchartsandcalendarviewsclearlyshowreal-timedevicestatus,
+pendingtasks,andAnomalyinformation.Helpmanagersbreakfreefrom
+cluttereddatatofocusonkeydetailsquickly.
+b.Supportremotecontrolformultipledevicetypes(includingIFP,DS,LED,MTR,
+UC). Batch issue commands, push configurations, and
+install/uninstall/enable/disablesoftware—withcross-timezonesupportfor
+moreefficientmanagement.
+c.Thesystemsupportsupto8-levelgrouping,allowingdevicemanagement
+basedonspatialconcepts.Suitableforlargemultinationalenterprisesand
+chainretailscenarios.
+1.1.3.EfficientO&M
+a.Supportssimultaneousremotecontrolofmultipledevicesinthesame
+meetingroom.Whencontrollingonedevice,youcansynchronouslyviewthe
+responsestatusofotherdevices,makingtroubleshootingandcollaborative
+O&Mmoreefficient—noneedtorushbetweendifferentlocations.
+b.Firmwareupdatessupportbothmaindevicesandperipherals.Upload
+firmwareindependentlyforbatchupdates;thesystemautomaticallydetects
+firmwareversionsandintelligentlyupgradestothelatest—keepingdevices
+runningattheirbest.
+c.Customhierarchicaldevicealertingandfull-dimensionallogretentionensure
+fastresponsetoAnomalyities.O&Mprocessesaresafe,controllable,
+compliant,andtraceable.
+1.1.4.FlexibleContentDistribution
+
+--- Page 6 ---
+3a.Freelymanagevariousresourcetypes(images,videos,audio,documents,
+canvases,etc.),whichareautomaticallyfiledintogroupsforeasy
+management.
+b.Enjoyflexiblelayoutswhencreatingpromotionalcontent.Arrangevarious
+componentsandmultimediaresourcestomeetpromotionalneedsindiverse
+scenarios.
+c.View-basedcontentplaylistarrangementanddrag-and-droptimeselection
+makecontentpublishingmoreconvenientandoperationssmoother.
+2.QuickStartGuide
+Inthisguide,youcanlearnhowtologintothesystem,enrollyourdevice,and
+learnhowtonavigatethesystem'smenustructureandmenuintroduction.
+2.1.Login
+2.1.1.Findyouraccount
+a.Checkyouremailinboxfortheemailtitled"WelcometoPivot⁺"tofindyour
+accountandyourpasswordinformation.
+b.Ifyoudonotfindapasswordinyouremail,itmeansyouhaveregisteredan
+accountbefore.Ifyouhaveforgottenyourpassword,followthe"Forgot
+Password"processontheloginpage.
+2.1.2.AccessPivot⁺
+a.Clickthebutton"LoginNow"intheemailtovisitthePivot⁺website.
+b.Orlaunchyourbrowserandvisitthefollowingwebsite:
+https://pivot-plus.maxhub.com/
+c.Thenenteryouremailaddressaccountandpasswordtologin.
+2.1.3.Afterloggingin
+a.Verifyyourorganizationnameandyourorganizationcode(anexclusive
+6-digitcode)inthetopleftcornerofthesystem.
+
+--- Page 7 ---
+4b.Ifyouhavemultipleorganizations,youcanswitchtootherorganizationshere
+formanagement.
+2.2.InstalltheClient
+Beforeenrollingyourdevice,pleasefirstensurethatthePivot⁺Clientisinstalled
+onthedevice.Thelogoofourclientisshownbelow—youcanfinditintheapplist.
+Iftheclientisnotavailableonyourdevice,downloaditfirst.ViatheSystem
+menu>ClientUpdate>ClientLogsandDownloadspath,youcanaccessthe
+supportedinstallationpackages.Afterdownloadingthepackage,installitdirectly
+onyourdevicetocompletetheprocess.
+2.3.DeviceEnrollment
+Pivot⁺providesmultipleenrollmentmethods.Clickthe"Enroll"buttonatthetopto
+selectamethod.
+
+--- Page 8 ---
+52.3.1.Method1:ManualEnrollment–FillinInformation
+ManuallyviaClient
+a.Findthe"MaxhubPivot⁺"clientonyourdeviceanddouble-clicktoopenit.
+b.Clickthe"Enroll"buttonintheclient,thenentertheOrganizationCodeand
+AdministratorAccounttoenrollthedevicetoyourorganization.
+a)Itisrecommendedtoselectadevicegroup.Afterselectingagroup,the
+devicewillautomaticallyobtainandexecutethegroup’sProfile
+configuration,andbeaddedtothebackendgroupforeasier
+classificationmanagement.
+b)Itisrecommendedtoenteradevicenameforquickidentificationand
+locationofthedeviceinthemanagementbackend.
+2.3.2.Method2:ManualEnrollment–EnrollviaUSB
+InsertionintoDevice
+a.Fromthe"Enroll"pop-upwindow,clickEnrollmentFiletodownloadthe
+enrollmentfileandsaveittoaUSBdrive.
+b.Findandopenthe"MaxhubPivot⁺"client.
+c.ClicktheLinkDevicebutton,inserttheUSBdrive.Thedevicewill
+automaticallyobtaintheenrollmentfileinformationandfillinthe
+OrganizationCodeandAdministratorAccount.Youonlyneedtoverifyand
+confirmtheinformation,thenclicktheEnrollbuttontocompleteenrollment.
+a)Itisrecommendedtoselectadevicegroup.Afterselectingagroup,the
+devicewillautomaticallyobtainandexecutethegroup’sProfile
+
+--- Page 9 ---
+6configuration,andbeaddedtothebackendgroupforeasier
+classificationmanagement.
+b)Itisrecommendedtoenteradevicenameforquickidentificationand
+locationofthedeviceinthemanagementbackend.
+2.3.3.Method3:Zero-TouchEnrollment–BatchImport
+withPre-filledSN+MACInformation
+a.AccesstheRemoteBatchEnrollmentfunction,downloadtheenrollment
+template.Fillinthedeviceserialnumber(SN),MACaddress,andoptional
+devicegroupinformationinthetemplate.Afterfilling,uploadthetemplateto
+thesystemtocompletepre-enrollment.
+a)Itisrecommendedtofillinthedevicegroup.Afterfilling,thedevicewill
+automaticallyobtainandexecutethegroup’sProfileconfiguration,and
+beaddedtothebackendgroupforeasierclassificationmanagement.
+b)Howtofillindevicegroupinformation:Ifthereisonlyone-levelgroup,
+enterthegroupnamedirectly;iftherearemulti-levelgroups,separate
+upperandlowerlevelgroupswith「/」,startingfromthetop-levelgroup.
+Example:Group1/Subgroup2/···(Groupnamesupportsupto30
+characters;upto8levelsofgroupingaresupported).
+b.Whenthedeviceispoweredonandconnectedtothenetwork,thesystemwill
+
+--- Page 10 ---
+7automaticallyidentifythedevice’sSNandMACinformation.Ifpre-filled
+informationexistsinthebackend,thedevicewillbeenrolledautomatically–
+noon-siteoperationatthedevicelocationisrequired.
+2.3.4.Method4:Zero-TouchEnrollment–Auto-Detect
+DevicesontheSameNetwork
+a.AccesstheAuto-DetectEnrollmentinterface.Thesystemwillautomatically
+collectnetworkinformationofmanageddevicesinyourorganization,and
+scanallconnectedMaxhubterminals(maindeviceswithsystems)onthe
+samenetwork.
+b.Basicinformationofthesedeviceswillbelistedontheinterface.Managers
+onlyneedtochecktherequireddevicestocompletebatchenrollment.
+
+--- Page 11 ---
+8
+Q：HowtoGettheOrganizationCodeandAdministratorAccount?
+A：LogintothePivot⁺Website.NavigatetotheSystem>Organizationpage,then
+youcanseetheOrganizationCodeandAdministratorAccount.
+Q：HowtoCancelEnrollment(UnenrollaDevice)?
+A：GototheDeviceListpage.Locatethedevicethatneedstobeunenrolled,then
+clickEdittounenrollit.
+Youcanalsoselectabatchofdevicestoperformbulkunenrollment.
+
+--- Page 12 ---
+9
+2.4.IntroductiontoFunctionMenuStructure
+2.4.1.Dashboard
+a.Dashboard：Visualizesreal-timedevicestatus,scheduledcommandtasks,
+deviceanomalies,andoperation/usagedatatoenablequicktrackingof
+devicedynamics.
+
+--- Page 13 ---
+102.4.2.DeviceManagement
+a.DevicesList:Viewenrolleddevices,real-timenumberofonlinedevices,and
+remainingLicenseinformationinyourorganization.Performgroup
+management,detailsmanagement,commandissuance,andotheroperations
+fordevices.
+b.Profile:Thisfunctionallowsmanagerstoconfigureagrouppolicy(including
+time,Wi-Fi,apps,certificates,etc.).Theprofilecanbedistributedtoany
+deviceandautomaticallyexecutedaftereachstartup,ensuringthedevice
+alwaysmaintainsthebasicconfigurationpresetbythemanager.
+c.App:Automaticallyobtainthesoftwareinstallationlistandsoftwarerunning
+listofalldevicesintheorganization.Supportenabling,disabling,installing,
+anduninstallingsoftwaretomanagetheproperuseofapplications.
+2.4.3.ContentPublishing
+a.Resources:Centralizesallinternalorganizationalresourcesinasingle
+managementhub,withtransparentvisibilityintostorageutilizationand
+resourcespecifics,drivingefficientinternalresourcegovernance.
+b.Canvas：Deliversanintuitivevisualworkspaceforcontentcreationand
+editing,withflexiblelayouttoolsandsupportfordiverseelementintegration,
+
+--- Page 14 ---
+11addressingcoredesignandpresentationneeds.
+c.Playlist：Organizesmultimediaresourcesintocustomizableplaylists,with
+flexiblesequencingtostreamlinetrainingsessions,presentations,andother
+targetedusecases.
+d.Schedule：Streamlinespromotionalcontentplanningwithamulti-view
+schedule,centralizingoversightofallcampaignsandsimplifyingthetracking
+ofcontentreleasetimelines.
+e.Alert:Permanentlylocatedatthetoprightcorner.Usedformanagersto
+quicklypublishalertsinspecialemergencyscenarios(e.g.,fire,earthquake,
+armedintrusion,emergencysituation).
+
+--- Page 15 ---
+122.4.4.SystemManagement
+a.Organization:Manageallrolesanddevicepermissionpointsinyour
+organizationtoachieveflexiblehierarchicalandclassifiedmanagement.
+b.Incident:Setdeviceconditions,severitylevels,andnotificationmethodsthat
+theorganizationfocuseson.Whenanincidentoccurs,thesystemwill
+automaticallynotifyrecipientsaccordingtopresetcontent,andsupport
+remoteassistancetohandleissues.
+c.ClientUpdate:Pivot⁺regularlyupdatesfunctionsandfixesknownbugs.Itis
+recommendedtoupdateregularlytoensuresmoothmanagement.
+d.FirmwareUpdate:Alldevicescomewithafirmwarepackagefromthefactory.
+Firmwarewillfixknownbugsandupgradecapabilitiesirregularly.Itis
+recommendedtoupdateregularlytoensuresmoothmanagement.
+e.WOLService:Thisserviceisusedforremotedevicestartups.Youcanlearn
+abouttheintroductionandinstallationguideoftheWOLservicethroughthis
+page,andviewthestatusofinstalledservicesanddetailsofdevicesthatcan
+beremotelystarted.
+
+--- Page 16 ---
+13
+2.4.5.LogManagement
+a.Commandrecords：Logspendingandexecutedsystemcommands,withclear
+visibilityintocommanddetails,status,andinitiatingusersforfull-process
+traceability.
+b.ActionLogs:Capturesacomprehensiveaudittrailofallmoduleoperations,
+withclearvisibilityintouseractions,timestamps,andcontentmodifications
+toensureoperationaltraceabilityandsecuritycontrol.
+c.ClientLogs:Recordsofterminalsexecutingautomatedcommands.For
+example,whenadevicetriggerstheconfigurationof"auto-lockafter
+long-terminactivity".
+3.DeviceCompatibilityList
+3.1.CompatibleDeviceSeries
+DeviceSeries Images
+
+--- Page 17 ---
+14IFPUSeries
+3588platform
+MHOSVseries
+DSCMA、CMBseries
+MTR-
+WXboardV7Teams
+Room
+
+--- Page 18 ---
+15XcoreKitPro
+TCP30T+XC25T
+XbarW70Kit
+XBarW70
++TCP31T
+XT20-VBKit
+XcoreKitPro
++XBarU50
+XT20-PSKit
+XcoreKitPro
++BM45+P30
+
+--- Page 19 ---
+16MTR-AVideobar&Schedule
+Panel
+XbarV50Kit、Xbar
+V70Kit
+LED All-in-one
+LEDV3
+3.2.FeatureSupportbyDeviceCategory
+Moudle FeaturesMTR-
+WMTR-
+AAndroi
+dIFPWin
+IFPDS
+EnrollmentManualEnrollment ✓ ✓ ✓ ✓ ✓
+EnrollviaUSB ✓ ✓ ✓ ✓ ✓
+
+--- Page 20 ---
+17Zero-TouchEnrollment
+（SN+MAC）✓ ✓ ✓ ✓ ✓
+Same-NetworkEnrollment ✓ ✓ ✓ ✓ ✓
+Manageme
+ntDeviceInformationViewing
+andExport✓ ✓ ✓ ✓ ✓
+Location ✓ ✓ ✓ ✓ ✓
+ScreenView ✓ ✓ ✓ ✓ ✓
+Control
+CommandsPowerOn ✓ ✓ ✓ ✓
+PowerOff ✓ ✓ ✓ ✓ ✓
+Reboot ✓ ✓ ✓ ✓ ✓
+ScreenLock ✓ ✓ ✓ ✓ ✓
+ScreenOff ✓ ✓ ✓ ✓ ✓
+Bells ✓ ✓ ✓ ✓ ✓
+
+--- Page 21 ---
+18Brightness ✓ ✓ ✓ ✓
+ImageMode ✓ ✓ ✓
+Volume ✓ ✓ ✓ ✓
+SoundMode ✓ ✓ ✓ ✓
+InputSwitch ✓ ✓
+Wallpaper ✓ ✓
+Bootinglogo ✓ ✓
+ClearCache ✓ ✓ ✓ ✓ ✓
+FactoryReset ✓ ✓ ✓
+RemoteScreenControl ✓ ✓ ✓ ✓ ✓
+ProfileDate&Time ✓ ✓ ✓ ✓ ✓
+PowerSaving ✓ ✓ ✓ ✓ ✓
+
+--- Page 22 ---
+19DeviceLock ✓ ✓ ✓ ✓ ✓
+HotspotSettings ✓ ✓ ✓
+BYODSettings ✓ ✓
+Wi-FiSettings ✓ ✓ ✓ ✓ ✓
+Wi-FiAllowList ✓ ✓ ✓ ✓ ✓
+Display&Sound ✓ ✓ ✓ ✓
+URLBlockList ✓ ✓ ✓ ✓ ✓
+Default Required
+CertificateList✓ ✓ ✓ ✓ ✓
+DefaultRequiredAppList ✓ ✓ ✓ ✓
+Wake-UpSettings ✓ ✓ ✓
+Accessibility System
+navigation✓EDLA
+OOBE ✓
+
+--- Page 23 ---
+20Other Personalized
+SettingsPluginVideo/
+Audio
+ConfigMHOS
+Config
+APPFileUpload&Installation ✓ ✓ ✓ ✓
+StoreLinkInstallation&
+Auto-Update✓ ✓
+AppUninstallation ✓ ✓ ✓ ✓
+AppEnable/Disable ✓ ✓ ✓ ✓
+Pop-UpBlocking ✓ ✓
+Incident
+ItemsInsufficientDiskStorage ✓ ✓ ✓ ✓ ✓
+InsufficientSystemDisk
+Space✓ ✓
+RAMOverUsage ✓ ✓ ✓ ✓ ✓
+CPUOverUsage ✓ ✓ ✓ ✓ ✓
+CPUOverTemperature ✓ ✓ ✓ ✓ ✓
+
+--- Page 24 ---
+21DeviceOfflineForTooLong ✓ ✓ ✓ ✓ ✓
+DeviceUnenroll ✓ ✓ ✓ ✓ ✓
+UnstableNetwork ✓ ✓ ✓ ✓ ✓
+ClientVersionToBe
+Updated✓ ✓ ✓ ✓ ✓
+OnlineDeviceUnusedFor
+TooLong✓ ✓ ✓ ✓ ✓
+DeviceOnlineForTooLong ✓ ✓ ✓ ✓ ✓
+PeripheralDisconnection ✓ ✓ ✓ ✓ ✓
+Operations
+&DataFirmwareUpdate ✓ ✓ ✓ ✓ ✓
+UsageData ✓ ✓ ✓ ✓ ✓
+AppOperationData ✓ ✓ ✓ ✓ ✓
+Top10MostVisitedURLs ✓ ✓ ✓ ✓ ✓
+CMS Playlist ✓ ✓ ✓ ✓ ✓
+
+--- Page 25 ---
+22II.FeaturesOverview
+1.Dashboard
+1.1.DashboardOverview
+TheDashboardoverviewisthecorevisualentryfordevicemanagement.It
+combines4keyfeatures:devicestatusmonitoring,commandtracking,data
+analysis,andAnomalyalerts.
+Withsimplechartsandcards,itcentralizesdevicedata—lettingyouquicklycheck
+devicestatuswithoutswitchingmodules,supportingmanagementdecisionsand
+reducingO&Mcosts.SendImage/Video ✓ ✓ ✓ ✓ ✓
+SendText ✓ ✓ ✓ ✓ ✓
+FilePublish ✓ ✓ ✓ ✓ ✓
+SendURL/LiveChannel ✓ ✓ ✓ ✓ ✓
+EmergencyAlert ✓ ✓ ✓ ✓ ✓
+
+--- Page 26 ---
+23
+1.2.TargetUsers
+Thisfunctionisonlyavailabletouserswithadmin,sub-admin,andviewer
+permissions.
+1.3.FunctionalZones
+a.DeviceOverview：Displaystotaldevices,online/offline/Anomalydevice
+
+--- Page 27 ---
+24countsviacardviews,intuitivelyshowingoveralldevicestatusdistribution,
+onlinerate,andAnomalyproportion.Hoveroveracardtoviewbasicdevice
+info,desktopscreenshots,andAnomalyevents;clickthecardtoaccessthe
+devicedetailpageforin-depthmanagement.
+b.ScheduleCommand：Showscommandtasksforthepast7daysinacalendar
+view.Quicklycheckoveralltaskprogressandtrackkeycommandstatusto
+avoidomissionsordelays.
+c.QuickAccess:Quicknavigationtocoremanagementfunctions.Clicktoaccess
+theviewandconfigurationmenuofthecorrespondingfeatureforimproved
+operationalefficiency.
+d.DeviceUpdate：DisplaysthenumberofpendingupdatesforPivotPlusclients
+anddevicefirmware,withaquickupdateentrytotriggerupdates.
+e.OfflineforOver7Days：Centralizesdisplayofdevicesofflineforover7days,
+facilitatingfocusedattentionandtimelytroubleshootingofofflineissues.
+1.4.DataAnalysisZone
+a.DeviceUsage：Showsdeviceoperationdurationandonlinedevicecount
+distributiontohelpanalyzedeviceactivity.
+b.ApplicationUsage：Displaysappusagefrequencyanddurationdistributionto
+understandappresourceconsumption.
+c.Top10VisitedSites：Liststhetop10mostvisitedwebsitesondevices,clearly
+understandingdevicenetworkaccesspreferences.
+2.Devicelist
+2.1.DeviceListOverview
+Viewenrolleddevices,real-timeonlinedevicecount,andyourorganization’s
+remainingLicensecredits.Performgroupmanagement,devicedetail
+management,commandissuance,andotheroperations.
+
+--- Page 28 ---
+25
+2.2.BasicDeviceInformation
+a.Viewtotalenrolleddevices,onlinedevices,andLicenseCreditsatthetopof
+thepage:
+b.EnrolledDevices:Totalnumberofdevicesenrolledtoyourorganization.
+c.OnlineDevices:Real-timecountofdevicescurrentlyonline.
+d.LicenseCredits:Remainingcredits
+a)1License=365Credits
+b)1enrolleddeviceconsumes1Creditperday
+c)LicenseCredits=Numberofmanageddevices×Managementdays(No
+limitationonenrollmentdevices)
+d)Example:10devicesfor3years,theaccountwillneed30licenses(3,650x
+3=10950credits).
+2.3.DeviceGroupManagement
+Pivot+supportsupto8levelsofgrouping,idealforcomplexmanagement
+scenarioslikecross-borderoperationsorchainstores.
+
+--- Page 29 ---
+26HoveroveragroupandclicktheSettingsicontoeditthegroupinfo,add
+subgroups,deletethegroup,oreditdevicesinthegroup.
+Asingledevicecanbeaddedtomultiplegroupsforeasiermanagement.
+2.3.1.TwoWaystoAddDevicestoGroups
+Way1:ManualSelection
+Filterbydevicetype,devicetimezone,orsearchbydevicenametolocatetarget
+devices.CheckthedevicesyouwanttoaddandclickConfirm.
+Way2:Auto-Allocation
+a.OnlyAdminorsub-admincaneditallocationconditions.Aftersaving,devices
+thatmeettheconditionswillbeautomaticallyaddedtothegroup.
+b.Setconditionsbasedondevicename,model,OS,ordevicetype.
+c.Supportedconditionrules:Equalto,Contains,Startswith,Endswith.
+2.4.DeviceList
+2.4.1.InterfaceIntroduction
+ViewandmanagedevicesinListVieworGridView:
+a.GridView:Checkdevicescreenshots.Clickascreentoaccessthedevice’s
+detailedpage.
+b.ListView:Viewmoredeviceparameters.Customizedisplayedparametersvia
+ColumnManagementontheright.
+a)Devicestatusindicators:Green=Online;Gray=Offline(maybe
+disconnectedfromthenetworkorpoweredoff).
+
+--- Page 30 ---
+27
+2.4.2.LocateADevice
+a.ByGroups:Quicklyswitchgroupsviatheleftgroupstructuretoview
+group-specificdevices.
+b.ByFilter:Filterbydevicetype,systemtype,devicestatus,timezone,name,or
+IDforfastretrieval.
+2.4.3.QuickControls
+a.Multi-DeviceScreenControl:Selectoneormultipleonlinedevicesinthesame
+grouptoenableremotescreencontrol(supportsupto5devices
+simultaneously).Whilecontrollingonedevice,youcanviewreal-timescreen
+responsesofotherselecteddevicesformoreconvenientO&M.
+a)Screencontrolrequiresdevicepermission.Ifthedeviceuserrejectsthe
+session,theITadministratorcannottakecontrol.
+b)Iftheuserallowsaccessorthedevicedoesnotrespondwithin30
+
+--- Page 31 ---
+28seconds,theITadministratorwillgaincontrol.
+c)Duringcontrol,youcanoperatethedevicedesktopasifyouwereon-site.
+ForAndroiddevices,youcanremotelydisabletouchfunctionalityto
+ensuresmoothcontrol.
+b.Export:ExportdevicelistdocumentsordeviceXbuglogs.
+c.Unenroll:Unenrolldevicesfromtheorganization.
+2.4.4.SingleDeviceManagement
+a.Edit:Modifythedevicenameorunenrollthedevice.
+b.Details:Viewbasicdevicedataandoperationstatus.
+a)LeftPanel
+i.Controlfunctions:edit,clearcache,factoryreset,sendcommands,
+screencontrol,adjustvolume/brightness,etc.
+ii.Basicdeviceinformation:hardwareparameters,network,location
+b)RightPanel
+i.Deviceoperationdata:RAMusage,diskusage,deviceusage,
+
+--- Page 32 ---
+29softwareinstallation/runninglist.
+ii.Devicetaskstatus:commandplans,deviceincidents.
+iii.Peripheralmanagement:parametersettings,firmwarechecks,and
+updatesforvideo/audioperipherals.
+2.4.5.SendCommands
+a.SelectdevicesandSenddevicecontrol,message,orsettingscommands.
+a)Unsupportedcommandsforselecteddeviceswillbegrayedoutwiththe
+prompt:"Unsupporteddevicesareselected."
+b)Somecommandsareonlyapplicabletodeviceswithspecificsystems.See
+"FeatureSupportbyDeviceCategory"fordetails.
+c)Aftersendingcommands,viewexecutionrecordsinCommandRecords.
+b.CreateaCommand
+a)Adefaultcommandnameisprovided;edititforeasierfuture
+management.
+b)Supports3commandexecutionmodes:
+i.ImmediateExecution:Thedeviceexecutesthecommandimmediately
+afterreceivingit.
+ii.ScheduledExecution:Specifyadateandtime.Thesystem
+automaticallysendsthecommand,andthedeviceexecutesitupon
+receipt.
+iii.RecurringExecution:Setcustomexecutiondaysandtimeperiods.
+Thesystemautomaticallysendsthecommandatthespecifiedtimes,
+
+--- Page 33 ---
+30andthedeviceexecutesituponreceipt.
+c)Aftersettingupascheduledcommand,editcommandplansinCommand
+Records>Inschedule.
+CategoryCommandsNotes
+ControlsPoweronRequiresWOLservice.Worksonlyiftheserviceis
+availableandthedeviceisonthesamenetwork.
+PoweroffSupportsMandatoryexecution:Ifenabled,command
+canbeexecutedwithoutrequesttotheclient.
+Ifnotenabled,acountdownconfirmationwindowwill
+popuponthedevice.Theusercanrejectthe
+shutdown;ifnooperationisperformedwithin10
+seconds,thedevicewillshutdownautomatically.
+Reboot Restartsthedevice.
+Screen
+LockThedevicedisplaysalockedscreenafterreceivingthe
+command;acorrectpasswordisrequiredtounlock.
+Ifascreenlockscheduleisset,thedevicewillunlock
+automaticallyattheendofthescheduledperiod.
+Setthescreenlockpasswordin"Organization">
+"Password"(supports6-digitnumericpasswords).
+ScreenOffTurnsoffthescreen;thesystemcontinuestorun
+normally.
+
+--- Page 34 ---
+31BellsSelectaudio,setplaybackduration,andchoose
+whethertoallowtheclienttoterminatethecommand.
+MessageTextSendplaintextcontent.Setplaybacktimesorduration,
+andchoosewhethertoallowtheclienttoterminatethe
+command.
+FileUploadandsendfiles(supportsallformatsexcept
+HTML,JS,andSVG).
+Specifythestoragelocationonthedevice.
+URLEnteraURL(includinglivestreamlinks),setplayback
+volume,andchoosewhethertoallowtheclientto
+terminatethecommand.
+SettingsBrightness Adjustscreenbrightnessviatheslider.
+Image
+modeSupportsStandard,Bright,Soft,andothermodes
+(executionfailsifthedevicedoesnotsupportthe
+selectedmode).
+Volume Adjustdevicevolumeviatheslider.
+Sound
+modeSupportsStandard,Classroom,Meeting,andother
+modes(executionfailsifthedevicedoesnotsupport
+theselectedmode).
+
+--- Page 35 ---
+32Input
+switchAutomaticallydetectsallinputsourcesofdevicesinthe
+organization.
+Supportsswitchingaspecifieddevicetoaselected
+inputsource(switchfailsifthedevicedoesnotsupport
+theinputsource).
+Wallpaper Modifythedevice’ssystemdesktopwallpaper.
+BootlogoSetthebootlogoforAndroiddevices(takeseffecton
+thenextstartup).
+OthersClearcacheClearcachefilesforasingledevice(availableonthe
+devicedetailspage).
+Factory
+resetPerformafactoryresetforasingledevice(available
+onthedevicedetailspage).
+3.Profile
+3.1.Overview
+Aprofileisasetofconfigurationsandrestrictionsdesignedtomanageand
+securedevicesenrolledinPivot⁺.
+Aftersettingaprofileasadefault,whenadeviceenrolledtoyourorganization,it
+willautomaticallyreceiveandexecutethedefaultprofileifnocustomprofileis
+matched.
+
+--- Page 36 ---
+33
+3.2.CreateaProfile
+Profilescanbecreatedbasedonthedevice’soperatingsystem(Windows,
+Android,Linux).
+TheconfigurabledetailsvarybyDevicetypes—refertotheDeviceCompatibility
+Listforspecifics.
+Note:"Default"insettingsmeansnochangeswillbemade—devicesretaintheir
+originalconfigurations.
+Profile SettingItem Details
+TimeDateandTime
+FormatSelect"Auto"toletthedevicefetchandset
+timetothecurrentinternettime.
+
+--- Page 37 ---
+34TimeZone Choosethedevice’stimezone.
+TimeFormatDefinehowdateandtimearedisplayedon
+thedevice(supports12-hourand24-hour
+formats).
+Powersaving
+SavingmodeAutomaticallytriggeractions(shutdown,
+screenoff,orscreenlock)tosaveenergy
+whenthedeviceisinactive.
+Setinactivityduration(1–120minutes)and
+thecorrespondingaction(shutdown/screen
+lock/screenoff)toexecuteduringthe
+specifiedperiod.
+App
+managementApp
+managementAddalistofrequiredapplicationstoensure
+theyareavailableonthedeviceatalltimes.
+DevicelockPower Button
+LockThedeviceautomaticallylockswhenthe
+physicalpowerbuttonispressed.Unlock
+requiresthesystempassword.
+Setthescreenlockpasswordin
+"Organization">"Password"(supports
+6-digitnumericpasswords).
+SystemSettings
+MenuLockRequiresapasswordtoaccessthesystem
+settingsmenu.
+Factory Menu
+LockRequiresapasswordtoaccessthefactory
+menu.
+
+--- Page 38 ---
+35USBLockRequiresapasswordtoaccessfileson
+connectedUSBdevices.
+Wi-FiWi-FiConfigureWi-Finame,password,andother
+details.Thedeviceautomaticallyconnects
+whenitdetectsthisWi-Fi.
+Wi-FiallowlistRestrictthedevicetoconnectonlytoWi-Fi
+networksontheallowlist.
+Display
+&SoundBrightnessSetthedefaultscreenbrightnessafter
+devicestartup.
+Volume Setthedefaultdevicevolumeafterstartup.
+AndroidSidebarAndroid-only.
+Hideorshowthesidebartool.
+ImageModeAndroid-only.
+SupportsStandard,Bright,Soft,andcustom
+modes(executionfailsifthedevicedoesnot
+supporttheselectedmode).
+SoundModeAndroid-only.
+SupportsStandard,Classroom,Meeting,and
+custommodes(executionfailsifthedevice
+doesnotsupporttheselectedmode).
+
+--- Page 39 ---
+36URL
+restrictionURLrestrictionSetawhitelist(devicescanonlyaccesslisted
+URLs)orblacklist(devicescanaccessall
+URLsexceptthoselisted).
+Certificates CertificatesAddalistofrequiredcertificatestoensure
+theyareinstalledonthedeviceatalltimes.
+Optiontodeleteallinstalledcertificates
+whentheprofileisremoved.
+Device
+settingsWakeUpLANEnableordisableWake-on-LAN(WOL)
+functionality.
+Disablingitwillpreventremotedevice
+startup.
+PowerOutage
+SettingAndroid-only.
+Configuredevicedisplayreconnectionafter
+apoweroutage.
+Hide Native
+StatusBarEDLAdevicesonly.
+Takes effect immediately; status
+synchronizesafterreboot.
+AccessibilitySystem
+navigationEDLAdevicesonly.
+Supportsgesturenavigation,3-button
+navigation,andTraditionalnavigation.
+Others VideoConfigurecameramode,exposure,white
+balance,imagesettings,andvideofence.
+
+--- Page 40 ---
+37AudioConfiguremicrophone,speaker,intelligent
+noisereduction,audiofence,andhearingaid
+settings.
+BYODConfigureBYODmode,wallpaper,andother
+relatedsettings.
+OOBEMTR-Adevicesonly.NewMTR-Adevices
+matchingthisprofileduringenrollmentwill
+skipOOBEsetupitems.
+Configurableoptions:language,timezone,
+OTAservice,Adminpassword,data
+diagnosis,meetingplatformservice,etc.
+PersonalityMHOSV6+devicesonly.
+Configuredesktoplayout,whiteboard,and
+screensharingparameters.
+3.3.DeviceExecution
+a.AssociateDevices:Afterconfiguringprofileparameters,click"Associate"to
+selectdevicesordevicegroupsthatwillexecutetheprofile.
+b.AutomaticExecution:Onceassociated,deviceswillexecuteallprofilesettings
+immediatelyaftereachstartup.
+c.ExecutionStatus:Thelistdisplaysthreestatusesforeachdevice
+a)Success:Theprofilewassuccessfullysenttoandexecutedonthedevice.
+b)Failed:Executionfailed(e.g.,systemerror,servertimeout).
+c)Executing:Thedeviceisoffline(commandswillresumewhenthedevice
+powerson)orconditionalsettings(e.g.,SavingMode)arependingtrigger.
+d.AvailableOperations
+
+--- Page 41 ---
+38a)Sync:Immediatelyexecuteallprofileconfigurationsonthedevice.
+b)Disassociate:Removethedevicefromtheprofile’sexecutionlist(the
+devicewillnolongerexecutetheprofileafterreboot).
+c)Check:Viewdetailedexecutionresultsforthedevice,including
+success/failurestatusandreasonsforeachparameter.
+4.App
+4.1.Overview
+Batchinstallapplications,enable/disablesoftwarethathasrunondevicesinyour
+organization,anduninstallinstalledsoftware—alloperationsarehandled
+remotelytoboostmanagementefficiency.
+a.Supportssendingsoftwaretodevicesforinstallation.Youneedtouploadthe
+softwareinstallationfileorappstorelinkfirst.
+b.Afterthenon-silentlyinstalledsoftwareissenttothedevice,itneedstobe
+manuallytriggeredforinstallationonthedevice.
+c.Supportremotemanagementofsoftwareinstalledonthedevice,including
+uninstallinginstalledsoftwareandenablingordisablingrunningsoftware.
+4.2.AppInstallation
+
+--- Page 42 ---
+394.2.1.AppUpload
+a.FileUpload:ManuallyuploadsoftwareinEXE,MSI,APK,orDEBformat
+(maximum600MBperfile).
+b.GooglePlayLink:PastetheURLofafreeappfromtheGooglePlayStore
+(onlyfreeappsaresupported).
+c.AppInstallationList:Alluploadedappsaredisplayedintheinstallationlist.
+Supportsre-sending,editing,ordeletinginstallationpackages.
+4.2.2.AppInstallationProcess
+a.Selectthetargetappandspecifythedevicestosendtheinstallation
+command.
+b.ForfreeGooglePlayapps,enable"AutomaticUpdate"togetautomatic
+upgradeswhennewversionsarereleased.
+c.InstallationBehavior:
+a)Appsaredownloadedandinstalledsilentlyautomatically(where
+supported).
+b)Fornon-silent-supportedapps,youcanchoosetopushtheappasafile
+tothedevice,theninstallitmanually.
+4.2.3.RetryMechanism:
+a.Ifthedeviceisofflineorinstallationfails,thesystemwillretryinstallation
+oncethedeviceispoweredonandconnectedtothenetworkwithin7days.
+b.Ifthedeviceremainsofflineorinstallationfailsafter7days,thecommand
+expires.Re-sendthecommandorinstallmanuallywiththedeviceonline.
+4.2.4.ExecutionTracking:
+c.ViewinstallationstatusinCommandRecordsatanytime.
+d.One-clickre-sendisavailableforfailedinstallations.
+
+--- Page 43 ---
+40
+4.3.AppManagement
+4.3.1.RunList
+a.Displaysallsoftwareprocessesthathaverunondevicesintheorganization.
+b.Enableordisableappprocessestorestrictuseraccessondevices.
+4.3.2.InstalledList
+a.Displaysallsoftwareinstalledondevicesintheorganization.
+b.Supportsremoteuninstallationofapps.
+5.Resources
+5.1.Overview
+TheResourceLibrarymanagesallorganizationalresources,includingimages,
+videos,documents,andmore.Administratorscangroup,upload,delete,and
+performotheroperationsonresources.
+
+--- Page 44 ---
+41
+5.2.InterfaceOverview
+a.ResourceStorageDistribution:Viewtotalstorageusageandusage
+breakdownbyresourcetype.
+b.Group-BasedResourceManagement:Categorizeresourcesmanuallyor
+automaticallybyfiletype.
+5.3.ResourceUpload
+a.AutomaticSync:Filesuploadedinanysystemfunction(e.g.,audioinBells,
+appsinAppManagement)areautomaticallyaddedtotheResourceLibrary.
+b.DirectUpload:ResourcesuploadeddirectlytotheResourceLibraryarealso
+storedhere.
+5.3.1.SupportedResourceTypes&Formats
+
+--- Page 45 ---
+42ResourceTypeSupportedFormats
+Images JPG,PNG,GIF,TIF,WebP,BMP
+Videos MP4,AVI,M4V
+Documents DOCX,DOC,XLSX,XLS,PPTX,PPT,PDF
+Audios MP3,WAV,AAC,OGG
+Apps APK,EXE,MSI,DEB
+Certificates PEM,CER,CRT,DER,P7B,P12,PFX
+Text TXT,RTF
+OthersJFIF,ICO,RAW,PSD,AI,TIF,BMP,SVG,FLAC,WMA,APE,
+AMR,M4R,MPEG,MKV,MOV,WMV,WEBM,FLV,3GP,AEP,
+ODT,EPUB,CSV,ICS,MSG,EXO,M3U,ZIP,RAR,7Z,TAR,ISO,
+DMG,PKG,RPM,MSIX,DLL,SYS,BAT,CMD,PS1,SH,PY,DB,
+SQLITE,MDB,ACCDB,FRM,MYD,MYI,DBF,HEX,LIC,ENB,
+CRX,OBJ,FBX,STL,BLEND,SKP,DWG,DXF,URL,HOSTS,
+XML,JSON,INI,TTF,OTF,WOFF,SRT,SUB,PUB
+
+--- Page 46 ---
+43
+5.4.ResourceGroupManagement
+a.GroupStructure:Supportsone-levelgrouping.Administratorscancreate
+customgroupsbasedonmanagementneeds.
+a)DefaultGroup:"AllResources"(cannotbedeleted,level0).Alluploaded
+resourcesareautomaticallyaddedtothisgroup.
+b)ResourceSharing:Thesameresourcecanexistinmultiplegroupswithout
+occupyingadditionalstorage.Deletingaresourcefromonegroup
+removesitfromallgroups.
+b.ResourceCategorization:Hoveroveragroupandselect"EditResources"to
+addresourcesmanuallyorautomatically:
+a)ManualSelection:Filterresourcesbytypeorname,thenselectandadd
+themtothegroup.
+b)Auto-Allocation:Setrulesusing"AND/OR"conditions(basedonresource
+typeandformat).Allnewlyuploadedresourcesmatchingtherulesare
+automaticallyaddedtothegroup.
+
+--- Page 47 ---
+44
+6.Canvas
+6.1.Overview
+Canvasisaflexiblecreativetool.Youcancustomizecanvassizeanddrag
+resources/componentsontoit.Itworksforpromotionaltasksinretail,meetings,
+education,andotherscenarios.
+6.2.CanvasManagement
+6.2.1.ViewModes
+a.GridView:Findandlocatecanvasesquickly.Operatebyhoveringyourmouse.
+b.ListView:Checkdetailedcanvasinfo,suchassize,creator,andmodification
+time.
+
+--- Page 48 ---
+456.2.2.Operations
+a.QuickPublish:Quicklydistributethecanvastodevices.
+b.Edit:Entertheeditpagetomodifythecanvas.
+c.Duplicate:Createacopyofthecanvas.
+d.Delete:Permanentlydeletethecanvas(irrecoverable).Pleaseoperatewith
+caution.
+6.3.CreateaCanvas
+6.3.1.BasicCanvasSettings
+a.CanvasName:Enteranameforeasyidentification.Adefaultname(Canvas
++timestamp,e.g.,Canvas20250827110202)isgeneratedifleftblank.
+b.SelectSize:Choosedefaultsizes(16:9,4:3,16:10,21:9,9:16,3:4,10:16)or
+customsize(max4096*4096).
+c.ResourceGroup:Canvasesareautomaticallysavedtotheorganization's
+groupaftercreationforeasyfutureuse.
+d.Background:Useimagefillorcolorfill(transparencyadjustable).
+e.BackgroundMusic:Selectmusictoplaywhenthecanvasruns.
+6.3.2.ComponentCombination
+a.GeneralComponentOperations
+a)Supportslayout(position,size,rotation,alignment,layers,quicklayout),
+stylesettings(backgroundcolor,border,roundedcorners,opacity),
+duplication,anddeletion.
+
+--- Page 49 ---
+46b.SupportedComponents
+a)Resources:
+i.Image:Replace/deleteimages,setfillmode.
+ii.Video/Audio:Replace/deletefiles,setvolume,andtoggleloop
+playback.
+iii.Text:Setfont,fontsize,bold/italic/underline,fontcolor,lineheight,
+letterspacing,andtextalignment.
+iv.URLs:EnterURLandsetrefreshrate.
+b)Widgets:
+i.Time:Settimeformat,timezone,timefontsize,datefontsize,and
+fontcolor.
+ii.QRCode:SetQRcodelinkandcolor.
+
+--- Page 50 ---
+477.Playlist
+7.1.Overview
+APlaylistisatooltoorganizepreparedresourcesintoalist.Youcanadjustthe
+playbackorderanddurationoftheresources.
+7.2.PlaylistManagement
+7.2.1.ViewModes
+a.GridView:Findandlocateplaylistsquickly.Operatebyhoveringyourmouse.
+b.ListView:Checkdetailedplaylistinfo,suchasnumberofresources,creator,
+andmodificationtime.
+7.2.2.Operations
+a.QuickPublish:Quicklydistributetheplaylisttodevices.
+b.Edit:Entertheeditpagetomodifytheplaylist.
+c.Duplicate:Createacopyoftheplaylist.
+d.Delete:Permanentlydeletetheplaylist(irrecoverable).Pleaseoperatewith
+caution.
+7.3.CreateaPlaylist
+a.AddResources
+Draganddropimages,videos,audio,Canvas,orplaylistsintotheplaylistedit
+area.
+b.AdjustContent
+
+--- Page 51 ---
+48a)Dragtoreordertheplaybacksequenceofresources.
+b)Clicktoedittheplaybackdurationofeachresource.
+c)Aftersetup,youcanpreview,save,ordirectlypublishthetask.
+8.Schedule
+8.1.Overview
+Scheduleletsyouviewallcontentdistributiontasksandtheirexecutionstatus
+throughacalendarview.
+8.2.ActiveSchedules
+a.Calendarviewdisplaysongoingcontentdistributionplans.
+b.Dragtoquicklyadjustplaybacktime;batchadjustrecurringtasksvia
+drag-and-drop.
+c.Hoveroveranytasktoseeitskeyinfo;clicktoeditorpausethetaskdirectly.
+
+--- Page 52 ---
+49
+8.3.CreateaSchedule
+8.3.1.SelectTime
+Dragtochoosethetimefortheplannedtask.
+8.3.2.SetContent
+Selectthecontenttodistribute,setplaybackvolume,andchoosefillmodefor
+deviceplayback.
+8.3.3.PlaybackPlan(auto-filledbasedonselectedtime)
+a.TimeMode
+a)Timed:Thecommandrunsbasedonthedevice’slocaltimezone(for
+multi-timezoneselection).
+b)Recurring:Onedevicecanhaveonlyonesetofrecurringcommands.New
+recurringcommandsreplaceoldones.
+b.PlayMode
+a)Duration:Contentloopsduringthespecifiedtime.
+b)Cycle:Setstarttimeandnumberofplaybacktimes.
+c.PlayMethod
+
+--- Page 53 ---
+50a)Takeover:Stopallcurrentprogramsandplaythiscontent.Original
+programswon’tresumeafterplayback.
+b)Interrupt:Pausenon-full-screenprogramsandplaythiscontentfirst.
+Originalprogramsresumeafterplayback.
+d.TargetDevices
+a)SelectDevices:Choosedevicesbygrouporindividually.
+b)ExecutewithPoweron:Enabletoforcedevicestopoweronbefore
+runningthecommand.
+c)Operationrights:Enabletoletclientsstopthecommandtask.
+d)UnlockEDLAdevice:EnabletounlocktheEDLAdevice,ensuringthetask
+runsproperly.
+8.4.History
+a.Viewdetailedexecutionrecordsofallcontentdistributiontasks.
+b.Supportpublishingordeletingtasks.
+
+--- Page 54 ---
+51
+9.Alert
+9.1.Overview
+a.Pushalertstodevicescreensforemergencysituations.
+b.Alertsupports4pre-builttemplates(Fire,Earthquake,ArmedIntrusion,
+Emergency)andallowsone-clickdeliverytoalldevices.
+c.Alertscannotbeclosedmanuallyondevices—onlyadministratorscanstop
+themviathebackend.
+
+--- Page 55 ---
+52
+9.2.AlertNotification
+a.Aftersendinganemergencymessage,aredflashingbarwillappearatthe
+topofthewebconsole,indicatingthealertisactive.
+b.Administratorscanclickthe"StopAlert"buttontostoptheemergency
+message.
+10.Organization
+10.1.Overview
+TheOrganizationCenterallowsyoutoviewandmodifybasicorganizational
+information,manageadministratorrolesandmembers,andimplementrefined
+
+--- Page 56 ---
+53permissioncontrol.
+10.2.OrganizationInformationmanagement
+Viewtheorganizationname,organizationcode,geographiclocation,and
+administratoraccountinthetopinformationarea.
+Threefunctionbuttonsbelowenabledifferentconfigurations:
+a.Setting:Modifytheorganizationnameandlocation.
+b.Records:Viewlicensepurchaseandusagerecordsforprocurementtracking.
+c.Password:Viewandchangetheadministratorpasswordandunlock
+password.
+a)Administratorpassword:Usedtoderegisterdevices.
+b)Unlockpassword:Usedtounlockdevices.
+c)Bothsupport6-digitnumeric,thedefaultpasswordis000000.
+
+--- Page 57 ---
+54
+10.3.Users&Roles
+SupportshierarchicalmanagementoforganizationalRolesandUsers.
+10.3.1.RoleManagement
+DefaultRoles
+Thesystempresetsthreeimmutableroles:
+a.Admin:Only1Administrator(highest-leveladministrator)isallowedper
+organization.Ithasfullaccesstoallfunctions,devices,andmaximumsystem
+permissions.
+b.Sub-admin:EquivalenttoAdmin,exceptcannotdeletetheorganization.
+c.Viewer:Onlyhasviewaccesstoallpages;nomanagementactions(e.g.,
+cannotsendcommandsoruploadresources).
+CustomRoles
+Click"CreateRole"tocustomizepermissions:
+d.PagePermissions:Setaccessiblepages(matchesmenustructure).
+e.FunctionPermissions:Setoperablefunctions.
+f.AccountPermission:Auto-logoutafterxxminutesofinactivity.
+
+--- Page 58 ---
+55
+10.3.2.UserManagement
+UserList
+Viewandmodifyalladministrators,theirroles,anddevicemanagementscopes.
+AddUsers
+a.SingleUser:Click"CreateUser",entertheuser’semail,selectarole,and
+assigndevice/resourcegroups.
+b.BatchAdd:Click"BatchAdd",downloadtheimporttemplate,fillinemailsand
+roles,save,andsubmitthefile.
+c.Afteradding,usersreceiveanemailfromMaxhubPivot⁺withaccount
+credentials.Click"LoginNow"tostartmanagingdevices.
+
+--- Page 59 ---
+56
+DeleteUsers
+Selectusersfromthelistandclick"Remove"toremovethemfromthe
+organization’sadministrators.
+TransferAdminRights
+Ifyoucannolongermanagetheorganization,findyouremailinthelist,click
+"Transfer",selectanothermember,andconfirm.Aftertransfer,youare
+immediatelyremovedfromtheadministratorlistandcannolongeraccessthe
+organization(unlessre-invited).
+10.4.PersonalAccountManagement
+EachuserhasasettingscenterinPivot⁺:Clickyouravatarinthetoprightcorner>
+"Settings"to:
+a.Modifyyouravatar,usernameandpassword.
+b.Enable2-FactorAuthentication:Requiresaverificationcodetologinto
+
+--- Page 60 ---
+57MAXHUBPivot⁺ifenabled.
+c.EnableMultipleLogins:Ifenabled,thesameaccountcanbeusedonmultiple
+terminalssimultaneously.Ifdisabled,thefirstloginisloggedoutandnotified
+whenasecondloginoccurs.
+Viewprivacyandsecurity-relatedcontent:PrivacyPolicy,UserAgreement,User
+ExperienceProgram,andPlatformMessageSubscription.
+11.Incident
+11.1.Overview
+IncidentautomaticallyidentifiesAnomalydevicebehaviorsduringoperationand
+notifiesadministratorsbyseveritylevel.Ithelpsadministratorsquicklygrasp
+deviceanomaliesandperformremoteinterventions.
+11.2.ConfigureAnomalyDetectionItems
+11.2.1.AddDetectionConditions
+a.Click"AddCondition"inthetoprightcornertoselectadetectionitem,set
+
+--- Page 61 ---
+58triggerconditions,severitylevel,andapplicabledevices.Enablethecondition
+afterconfigurationtoactivateit.
+b.Multipleconfigurationscanbecreatedforthesamedetectionitem(for
+differentdevicesorseveritylevels).
+c.Thesystemsupports12detectionitems,eachwithcustomizabletrigger
+conditions,severitylevels,andapplicabledevices.
+11.2.2.DetectionItems
+a.Insufficientsystemdiskspace
+b.Insufficientstoragespace
+c.ExcessiveRAMusage
+d.ExcessiveCPUusage
+e.ExcessiveCPUtemperature
+f.Deviceoffline
+g.Deviceunenrolled
+h.Unstablenetwork
+i.Clientversionneedsupdate
+j.Onlinedevicesidleforalongtime
+k.Deviceonlinefortoolong
+l.Peripheraldisconnection
+11.2.3.TriggerConditions
+Eachdetectionitemhasfullycustomizabletriggerconditions.
+Forexample:"Excessivememoryusage"canbesetto"Alertimmediatelywhen
+memoryusageexceeds90%for15consecutiveminutes".
+11.2.4.SeverityLevels
+Supportsthreelevels:Normal,Urgent,Serious.
+
+--- Page 62 ---
+59
+11.3.ConfigureNotificationMethods
+Notificationmethodscanbesetseparatelybyseveritylevel:
+a.Supportedchannels:EmailandInfoCenter.
+b.Personalizedpush:Targetednotificationsfordifferentroles.
+c.Pushtiming:Immediateorcustomschedule.
+11.4.AnomalyIdentification,Notification&Remote
+Intervention
+Whenananomalytriggerconditionismet,relevantadministratorsreceive
+notificationsbasedonconfiguredsettingsandcanperformremoteinterventions
+quickly.
+11.4.1.NotificationChannels
+a.InfoCenter:ViewanomalyincidentsinthetoprightcornerInfoCenter.Click
+anyincidenttoviewdetails.
+
+--- Page 63 ---
+60b.Email:ReceiveIncidentnotificationsviaemail.
+11.4.2.RemoteIntervention
+a.Anomalydetailsprovided:Occurrencetime,triggerconditions,resolution
+suggestions,andinterventionoptions.
+b.Interventionmethods:Varybyanomalytype(e.g.,shutdown,reboot,remote
+screencontrol).
+11.4.3.AnomalyResolution
+a.Manualresolution:Click"Solved"toclosetheincidentmanually.
+b.Automaticresolution:Thesystemcontinuouslymonitors.Iftheanomalyno
+longeroccurs,itisautomaticallyresolvedandmovedtothe"Solved"list.
+11.5.IncidentSummaryManagement
+AccesstheIncidentmenutoviewsolvedandactiveincidents.
+Filterbyincidentitems,incidenttype,severitylevel,devicetype,ordevicename
+toquicklylocateanomaliesforremoteinterventionorhistoricalreview.
+a.Active:Clickanyunresolvedincidenttoviewdetails,includingresolution
+suggestionsandactionableitems.
+b.Solved:Viewhistoricalrecordsanddetailsofresolvedincidents.
+
+--- Page 64 ---
+61
+12.ClientUpdate
+12.1.Overview
+ClientUpdateallowsyoutoviewanddownloadPivot⁺-supportedclient
+information,checktheclientversionstatusofalldevicesinyourorganization,and
+identifydevicesrequiringupdates.
+Italsoprovidesbatchupdateandauto-updatecapabilitiestokeepclientsrunning
+thelatestversion,reducingtheadministrator’sworkloadoffrequentmanual
+updates.
+12.2.ClientDownload
+Access"ClientLogsandDownloads"to:
+a.ViewupdatelogsforPivot⁺clientscompatiblewithvariousoperating
+systems.
+b.Downloadthelatestclientversiondirectlyforinstallation.
+
+--- Page 65 ---
+62
+12.3.ClientUpdate
+12.3.1.ManualBatchUpdate
+Thedevicelistdisplayseachdevice’scurrentclientversionandupdatestatus.
+SelecttargetdevicesandclickUpdateClientinthetoprightcornertoinitiate
+remoteupdates.
+a.ImportantNote:Donotforcepoweroffthedeviceorinterrupttheupdate
+processduringinstallation.
+b.ExecutedwithPowerOnCommand:Ifthedeviceisoffline,itwillbeforcedto
+poweron.Onceconnectedtothenetwork,theclientupdatesautomatically
+(thedeviceremainspoweredonaftertheupdate).
+c.Automaticallypoweroffafterupdateiscompleted:Selectitifthedevice
+needstobeshutdownafterupdating,
+12.3.2.Auto-KeepLatestVersion
+Selecttargetdevicesandclick"Auto-KeepLatestVersion",settheupdatetime,
+andconfigureoptions:
+a.Whethertoforcethedevicetopoweronfortheupdate.
+b.Whethertoautomaticallypoweroffthedeviceaftertheupdate.
+Afterconfiguration,deviceswillautomaticallydetectandinstallnewPivot⁺client
+versionsupontherelease—nomanualtriggerrequired.
+
+--- Page 66 ---
+63
+13.FirmwareUpdate
+13.1.Overview
+FirmwareUpdateworksformaindevicesandperipherals.Youcancheck
+real-timefirmwareversionsandupdatestatusofdevices,andremotelyupdate
+firmwareinbatches—eithermanuallyorautomatically.
+Peripherals
+WithinMAXHUB’sproductrange,thesearedeviceswithoutanoperatingsystem.
+Theyconnecttomainsystems(Windows/Mac/Android)viaIP/USB/Wi-Fi,such
+ascameras,microphones,speakers,orotheraccessories.
+
+--- Page 67 ---
+64Firmware
+Softwarebuiltintohardwarethatcontrolsbasicdevicefunctionsandlow-level
+operations.
+13.2.WhyUpdateFirmware?
+a.Olderversionsmaynotsupportnewfeatures.
+b.Fixissuesinoldversionstoensuredevicesrunandaremanagedsmoothly.
+13.3.ImportantNotes
+a.Whenanewfirmwareversionisdetected,youcanupdatethedevice
+remotely.Thefirmwaredownloadtakesabout10–30minutes.
+b.ForWindowsdevices,onlyMAXHUBOScanbeupdated(nottheWindows
+systemitself).
+c.Don’tforcepoweroffthedeviceorstoptheupdateprocesswhileit’srunning.
+13.4.ManualUpload&UpdateFirmware
+a.Click"UploadtoUpdate"tomanuallyuploadaverifiedfirmwarepackage.
+b.Selecttargetdevicesandsendtheupdatecommand.
+
+--- Page 68 ---
+65a)Note:Uploadingthewrongfilemaydamageyourdevice—pleaseoperate
+carefully.
+b)ExecutedwithPowerOnCommand:Ifthedeviceisoffline,itwillturnon
+automatically.Onceconnectedtothenetwork,thefirmwareupdateson
+itsown(thedevicestaysonafterupdating).
+c)Automaticallypoweroffafterupdateiscompleted:Selectitifthedevice
+needstobeshutdownafterupdating,
+13.5.BatchFirmwareUpdate
+a.Checkthedevicesyouwanttoupdateinthedevicelist.
+b.Sendtheupdatecommandtostartbatchupdates.
+13.6.Auto-KeepFirmwareUptoDate
+a.MAXHUBhardwaredevicesgetregularfirmwareupdatestofixknownissues
+andaddnewfeatures.TheseupdatesareuploadedtothePivot+backend.
+b.When"KeepFirmwareUptoDate"isenabled,Devicesautomaticallydetect
+newfirmwarepackagesandupdatetothelatestversion—nomanualaction
+needed.
+HowtoSetUp
+
+--- Page 69 ---
+66a.Selecttargetdevicesandclick"KeepFirmwareUptoDate".
+b.Settheupdatetime.
+a)Suggestion:Scheduleupdatesduringdeviceidletimetoavoidaffecting
+users.
+c.Chooseoptions:
+a)Whethertoturnonthedevicetoupdate.
+b)Whethertoshutdownthedeviceaftertheupdate.
+d.Click"Send"tosavesettings.
+14.WOLService
+14.1.Overview
+WOL(Wake-on-LAN)ServiceisrequiredforremotelypoweringonWindows
+devices.HereyoucanlearnhowWOLworks,downloadtheWOLclient,check
+WOLserverstatus,andviewdetectresultsforwhetherdevicescanbepowered
+on.
+OnceaPowerOncommandiscreated,itisstoredontheserver.Atthesettime,
+theserversendsthecommandtodevices.DevicesconnectedtotheWOLService
+willbepoweredon.
+
+--- Page 70 ---
+6714.2.SetUpWOLService
+a.DownloadandinstalltheWOLService.ItcanonlybeinstalledonWindows
+devices,andthedevicewithWOLServicemustbeonthesamenetwork
+segmentasthecontrolleddevices.
+b.EnteryourorganizationcodeandadminemailtoconnecttheWOLserverto
+yourorganization.InputaservernametodistinguishdifferentWOLservers
+inthesameorganization.
+c.Afterconnectingtotheorganization,theWOLserverwillstartsearchingfor
+nearbydevices.ThelistofconnecteddeviceswillbedisplayedintheWOL
+clientandonthedevices.OneorganizationcanhavemultipleWOLservers.
+d.EnsuretheWOLServiceisalwaysonline—PowerOncommandsaresent
+throughthisservice.
+14.3.ServerList
+a.AfterWOLconfiguration,youcanviewthestatusoftheWOLserverandthe
+numberofdevicesonthesamenetworksegmentinthe"ServerList".
+b.Youcanalsoremotelydeletetheserverviathe"Delete"button.
+
+--- Page 71 ---
+6814.4.Power-OnSupportDetect
+a.Goto"ServiceDetection"todetectifWindowsdevicescanberemotely
+poweredon.You’llseereasonsforfailure(ifany)andsolutions.Followthe
+promptstofixissuesandretest.
+b.Toensuredevicescanbepoweredon:EnabletheWake-on-LANfeatureon
+thedevicesaccordingtothemethodshowninthefigurebelow.
+RemotePower-OnTechnicalPrinciple
+a.Whenacomputerisshutdownorinhibernation,itsnetworkcardandpartof
+themotherboardstillreceiveweakpower.Thiskeepsthenetworkcard
+runningatlowpowertomonitorbroadcastmessagesfromoutsidethe
+computer.
+
+--- Page 72 ---
+69b.Whenthenetworkcarddetectsaspecific"MagicPacket"inthebroadcast
+andrecognizesitastargetingitsownaddress,itnotifiesthemotherboard
+andpowersupplytostarttheboot(orwake-up)process.
+RequirementsforWOLRemoteWake-Up
+a.ThenetworkcardmustsupportWOLorWoWLAN.
+b.ThemotherboardmustsupportWOL.
+c.ThepowersupplymustmeettheATX2.01standard.
+AboutMagicPacket
+a.AMagicPacketisabroadcastframecontainingtheMACaddressofthe
+targetdevice.SinceMACaddressesareusuallyunique,thepacketisuniquely
+identifiedbythetargetdevice.
+b.Transmissionprotocol:UsuallyUDP,withports7or9(notmandatory—Pivot⁺
+usesUDPbutdifferentports).
+c.Structure:Startswith6consecutive"FF"(hexadecimal,11111111inbinary),
+followedbythe48-bitMACaddressofthetargetdevicerepeated16times.
+Thetotallengthisusually102bytes.Sometimes4–6bytesofpasswordare
+addedattheend.
+
+--- Page 73 ---
+70
+15.CommandRecords
+15.1.Overview
+CommandManagementenablesyoutonotonlychecktheresultsofcommand
+executionbutalsomanagecommandschedules.
+15.2.ExecutionResults
+Thesystemwillgeneratealistofhistoricalrecordsfortheresultsofexecuted
+commands,includingimmediateandscheduledcommands.Youcanviewthe
+specificexecutionresultofeachdeviceforeverycommand.
+a.Success:Thedevicehassuccessfullyexecutedthecommand.
+b.Failure:Thedevicefailedtoexecutethecommand;youcanresendit.
+c.Executing:Thedeviceisofflineandhasn'texecutedthecommandyet.Orthe
+commandisbeingexecuted,andthedevicehasn'treturnedasuccessor
+
+--- Page 74 ---
+71failureresult.
+d.Resend:ForAnomalycommands,youcanaccessthedetailstoviewthe
+causeoftheexceptionandresendthecommandwithoneclick.
+15.3.InSchedule
+Allrecurringorscheduledcommandssetinthesystemwillbeautomatically
+addedtothecommandScheduleList.
+Youcanview,edit,anddeletethesecommands.Youcanalsotemporarilyenable
+ordisableancommand(onlyenabledcommandswillbeexecuted).
+16.Actionlogs
+16.1.Overview
+Actionlogsprovideacompleteglobalaudittrailofallplatformuserand
+device-sideactions.Youcanreviewoperationaldetailsandquicklyidentifythe
+rootcauseofproblems.
+
+--- Page 75 ---
+7216.2.LogTypes
+a.PlatformOperationLogs:Recordsofmanagementactionsperformedby
+administratorsinthePivotPlusbackend.
+b.Device-sideOperationLogs:Executionlogsfromdevices,suchasdevice
+unenrollment,devicepower-offinsavingmode,etc.
+III.Plans
+1.PlansComparison
+Weoffertwodedicatedversionstomeetdiversemanagementneeds:Basic
+VersionandProfessionalVersion.
+1.1.BasicVersion
+Itprovidesbasicmanagementfunctions,requiringmoremanualinterventionand
+featuringfundamentalcapabilities,butitstillcoversscenariosincludingdevice
+enrollment,management,andconfiguration.
+1.2.ProfessionalVersion
+FocusingonimprovingmanagementandO&Mefficiency.Beyondthecapabilities
+oftheBasicVersion,itaddsservicessuchasanomalydetection&Alert,content
+
+--- Page 76 ---
+73management&distribution,anddatamanagementtohelpadministrators
+remotelymanagedevicesmoreeasier,moreefficiency.
+Belowisafeaturescomparisonbetweenthetwoversions—youcanselectthe
+appropriateversionbasedonyourorganization’smanagementscenariosand
+needs.
+Moudle Features Basic Pro
+TypesAndroidIFP(USeries) ✓ ✓
+MHOSIFP(Vseries) ✓ ✓
+MTR-Android ✓ ✓
+MTR-Windows ✓ ✓
+DigitalSignage(CMA、CMB) ✓ ✓
+All-In-OneLED ✓ ✓
+EnrollmentManualEnrollment ✓ ✓
+EnrollviaUSB ✓ ✓
+Zero-TouchEnrollment（SN+MAC） ✓
+
+--- Page 77 ---
+74Same-NetworkEnrollment ✓
+Manageme
+nt8-level&Auto-allocationDeviceGroups ✓ ✓
+PeripheralParameterConfiguration ✓ ✓
+ControlCommands(PowerOn/Off、Reboot、
+ScreenLock、ScreenOff、Bells、ClearCache、
+FactoryReset)✓ ✓
+SettingCommands(Brightness/Volume、
+Image/SoundMode、InputSwitch、Wallpaper、
+BootingLogo)✓ ✓
+AppFileUpload&Installation ✓ ✓
+AppStoreLinkInstallation&Auto-Update ✓ ✓
+AppEnable/Disable/Install/Uninstall ✓ ✓
+ManualUploadFirmwareToUpdate ✓
+KeepFirewareUpToDate ✓
+BulkUpdateMainDeviceFirmware ✓ ✓
+
+--- Page 78 ---
+75BulkUpdatePeripheralFirmware ✓
+Commandinschedule&Re-Edit ✓ ✓
+profileSystemConfig(Date&Time、PoweringSaving、
+Display&Sound、Wake-UpSettings)✓ ✓
+Wi-FiConfig(Wi-FiSettings&AllowList） ✓ ✓
+AppConfig（DefaultRequiredApp&Certificate
+List）✓ ✓
+LockConfig（DeviceLock、SettingLock、Factory
+MenuLock）✓ ✓
+OtherPersonalizedConfig（BYOD、OOBE、URL
+BlockList,PluginforMTR、HotspotSettings、
+PeripheralParameter...）✓
+Operations
+&DataMulti-DevicesRemoteScreenControl ✓
+HierarchicalIncidentManagement ✓
+AnomalyIncidentDetection&Alert ✓
+
+--- Page 79 ---
+76RemoteFixforAnomalyIncidents ✓
+DashBoard✓basic
+data✓
+UsageData ✓ ✓
+AppOperationData ✓ ✓
+Top10MostVisitedURLs ✓
+OpenAPI ✓
+CMSResources 20GB 50GB
+CreateCanvas ✓
+Playlist ✓
+ContentPublishedInSchedule ✓
+SendImage/Video ✓ ✓
+SendURL/LiveChannel ✓ ✓
+
+--- Page 80 ---
+77FilePublish ✓ ✓
+SendText ✓ ✓
+EmergencyAlertwith4DefaultTemplates ✓ ✓
+Organizatio
+nDefaultRoles（admin、sub-admin、viewer） ✓ ✓
+Bulkusersadding ✓ ✓
+CustomRoles ✓
+BulkClientUpdate ✓ ✓
+WOLServiceUpdate&DevicePower-On
+Detection✓ ✓
+LogsCommandExecutionLogs ✓ ✓
+ActionLogs ✓ ✓
+ClientExecutionLogs ✓
+BulkExportofXBugLogs ✓ ✓
+
+--- Page 81 ---
+782.Pivot⁺PioneerProgram
+Pivot⁺,thepowerfulupgradetoPivot,islaunchingsoon—designedtosupercharge
+yourdevicemanagementefficiency!
+We’reinvitingloyalPivotuserstojoinourPioneerExperienceOfficerprogram
+andcollaboratedirectlywithourR&Dteamtoshapethefinalproduct.
+2.1.KeyPivot⁺Upgrades
+a.Sleekerinterface:30%fewerclicksforfaster,lowertrainingcosts,betterdaily
+managementefficiency.
+b.Ultra-simplebulkenrollment:Nomanualdevice-by-devicesetup—cutsinitial
+enrollmenttime.
+c.IntelligentO&M:Real-timedashboardauto-alertsforequipment/network
+incidents(earlydetection&resolutionremotely).
+d.Visualcontentdistribution:Intuitivecanvasmixing,customplaylists,
+drag-and-dropscheduledone-clickrelease.(comingsoon)
+
+--- Page 82 ---
+79
+2.2.PioneerExperienceOfficerProgram
+2.2.1.Eligibility
+a.ActiveexistingPivotusers
+b.Eagertoco-createandimprovePivot⁺withourteam
+2.2.2.Timeline
+a.ApplicationPeriod:November1,2025–June30,2026
+b.Review:3businessdays;you’llbenotifiedviaemailonceadecisionis
+made(startingJanuary26,2026).
+2.2.3.HowtoApply
+Weuseatargetedinvitation&salesliaisonmodel:
+a.Reachouttoyourdedicatedsalesconsultantorviatheofficialcontactpage:
+https://www.maxhub.com/en/contact_us/
+b.Provideorganizationdetails(AdminAccount,OrganizationCode,Device
+Types/Models)tocompleteregistration.
+c.Uponapproval,we’llactivateyouraccess,sendadetailedmigrationguide,
+andassistwithmigration.
+2.2.4.ExclusivePioneerBenefits
+a.FreeProfessionalAccess:60monthsofcomplimentaryPivot⁺Professional
+usage(validfromactivationdate).
+b.DirectR&DCollaboration:Sharefeedbackdirectlywithproductmanagers
+andtechnicalleads—yourinputdrivesversionoptimizations.
+
+--- Page 83 ---
+802.3.MigrationRisks
+Toensureasmoothtransition,pleasereviewthesekeypointsbeforemigrating:
+a.DeviceCompatibility:Pivot⁺doesn’tsupportalllegacyPivotdevices.Check
+thePivot⁺CompatibilityListfirst—ifnotlisted,delaymigration.
+b.DataMigrationLimitations:SomePivotfeatures/datacannotbemigrated.
+Preparebackupsoradjustmentsinadvance(seedetailsbelow).
+Attachment:MigrationChecklist
+PivotCoreFeatureMigratable
+toPivot⁺?RequiredUserAction
+OrganizationInformation Yes
+Roles&Permissions Yes
+DeviceEnrollment Yes Keepdevicespoweredon
+DeviceGroupRelationships No
+ProfileContent Yes
+AssociateddevicesofProfile NoManually re-associate
+devicesinPivot⁺
+Enable/DisableStatus Yes
+
+--- Page 84 ---
+81c.CoexistenceConflict:PivotandPivot⁺cancoexisttemporarilybutrisk
+commandconflicts.WerecommenddisablingPivotpermissionsafter
+migration.
+d.MigrationDuration:Thefullmigrationprocesstypicallytakes5businessdays.
+Pleaseplanaccordingly.
+e.On-SiteSupportRequired:Whilethemigrationisperformedonline,someAccount No
+management Yes
+ResourceGroups&Content Yes
+Program/PublishedProgram No RecreateprograminPivot⁺
+CommandLogs/ActionLogs No
+PendingCommands NoRecreate pending
+commandsinPivot⁺
+Admin/UnlockPasswords Yes
+PersonalAccountSettings(Username/2-Factor
+Authentication/Multiplelogins)Yes
+DeviceusageData No
+
+--- Page 85 ---
+82localusersupportisnecessary.
+SwitchBackOption
+AfterusingPivot⁺,ifyou’renotsatisfiedwithit,youcanswitchbacktotheoriginal
+Pivotatanytime.
+However,you’llloseallPioneerExperienceOfficerbenefits,andoperations
+performedonyourdevicesduringthePivot⁺migrationcannotbetransferred
+back—you’llneedtoreconfiguresettingsmanually.Pleasebeadvised.
+Attachment:FeatureDifferencesBetweenPivotandPivot⁺
+Pivot PivotPlus
+Moudle Features Free Premium Basic Pro
+TypesAndroidIFP(USeries) ✓ ✓ ✓ ✓
+MHOSIFP(Vseries) ✓ ✓ ✓ ✓
+MTR-Android ✓ ✓
+MTR-Windows ✓ ✓ ✓ ✓
+DigitalSignage(CMA、
+CMB)✓ ✓
+
+--- Page 86 ---
+83All-In-OneLED ✓ ✓ ✓ ✓
+EnrollmentManualEnrollment ✓ ✓ ✓ ✓
+EnrollviaUSB ✓ ✓ ✓ ✓
+Zero-TouchEnrollment
+（SN&MAC）✓ ✓
+Same-Network
+Enrollment✓
+Management8-level&Auto-allocation
+DeviceGroups✓5-level ✓ ✓
+PeripheralParameter
+Configuration✓ ✓ ✓ ✓
+ControlCommands
+(PowerOn/Off、Reboot、
+ScreenLock、ScreenOff、
+Bells、ClearCache、
+FactoryReset)✓ ✓ ✓ ✓
+SettingCommands
+(Brightness/Volume、
+Image/SoundMode、
+InputSwitch、Wallpaper、✓ ✓ ✓ ✓
+
+--- Page 87 ---
+84BootingLogo)
+AppFileUpload&
+Installation✓ ✓ ✓ ✓
+AppStoreLink
+Installation&
+Auto-Update✓without
+Auto-Update✓without
+Auto-Update✓ ✓
+AppEnable/Disable/
+Install/Uninstall✓ ✓ ✓ ✓
+ManualUploadFirmware
+ToUpdate✓
+KeepFirewareUpTo
+Date✓ ✓
+BulkUpdateMainDevice
+Firmware✓ ✓ ✓ ✓
+BulkUpdatePeripheral
+Firmware✓
+Commandinschedule&
+Re-Edit✓ ✓ ✓ ✓
+profileSystemConfig(Date&
+Time、PoweringSaving、
+Display&Sound、✓ ✓ ✓ ✓
+
+--- Page 88 ---
+85Wake-UpSettings)
+Wi-FiConfig(Wi-Fi
+Settings&AllowList）✓ ✓ ✓ ✓
+AppConfig（Default
+RequiredApp&
+CertificateList）✓ ✓ ✓ ✓
+LockConfig（DeviceLock、
+SettingLock、Factory
+MenuLock）✓ ✓ ✓ ✓
+OtherPersonalized
+Config（BYOD、OOBE、
+URLBlockList,Pluginfor
+MTR、HotspotSettings、
+PeripheralParameter...）✓without
+OOBE、
+Peripheral✓
+Operations&
+DataMulti-DevicesRemote
+ScreenControl✓
+HierarchicalIncident
+Management✓
+AnomalyIncident
+Detection&Alert✓
+
+--- Page 89 ---
+86RemoteFixforAnomaly
+Incidents✓
+DashBoard ✓basicdata ✓basicdata✓basic
+data✓
+UsageData ✓ ✓ ✓ ✓
+AppOperationData ✓ ✓ ✓ ✓
+Top10MostVisitedURLs ✓
+OpenAPI ✓
+CMSResources 20GB 50GB 20GB 50GB
+CreateCanvas ✓
+Playlist ✓ ✓
+ContentPublishedIn
+Schedule✓
+SendImage/Video ✓ ✓ ✓ ✓
+
+--- Page 90 ---
+87SendURL/LiveChannel ✓ ✓ ✓ ✓
+FilePublish ✓ ✓ ✓ ✓
+SendText ✓ ✓ ✓ ✓
+EmergencyAlertwith4
+DefaultTemplates✓without
+templates✓without
+templates✓ ✓
+OrganizationDefaultRoles（admin、
+sub-admin、viewer）✓ ✓ ✓ ✓
+Bulkusersadding ✓ ✓ ✓
+CustomRoles ✓ ✓
+BulkClientUpdate ✓ ✓ ✓ ✓
+WOLServiceUpdate&
+DevicePower-On
+Detection✓updateonly ✓updateonly ✓ ✓
+LogsCommandExecution
+Logs✓ ✓ ✓ ✓
+ActionLogs ✓download ✓download✓ ✓
+
+--- Page 91 ---
+88IV.FAQs
+1.RelationshipBetweenPivotand
+Pivot⁺
+Q:WhatisPivot⁺?Whatisitsrelationshipwiththeexisting
+Pivot?
+A:MAXHUBPivot⁺isanext-generationcentralizedcontrolproductfullyupgraded
+basedonthecorecapabilitiesoftheexistingPivot.TailoredforITadministrators,
+itsupportsmorescenarios,offersasmootherUIexperience,anddelivershigher
+O&Mefficiency—perfectformeetingtheneedsofenterprise-scalemanagement.
+MAXHUBPivot⁺isacloud-basedCMS+DMSplatformdesignedtocentrally
+managebothdevicesandcontentacrossMAXHUBmeetingroomanddisplay
+solutions.Itenablesorganisationstoremotelymonitorandmanagedeviceswhile
+alsocreating,scheduling,andpublishingcontenttocommercialdisplaysand
+meetingroomscreens.only only
+ClientExecutionLogs ✓
+BulkExportofXBugLogs✓without
+bulkexport✓withoutbulk
+export✓ ✓
+BulkExportofXBugLogs ✓
+
+--- Page 92 ---
+89Pivot⁺providesaunifiedcontrollayerforlarge-scaledeployments,helpingITand
+operationsteamsstandardisedevicebehaviour,controlmessaging,andreduce
+operationalcomplexityacrosslocations.
+KindlynotethatPivot⁺adoptsanentirelynewtechnicalunderlyingarchitecture,
+whichisdifferentfromtheoriginalPivot.Therefore,existingorganizationscannot
+migratetothenewPivot⁺seamlessly,andsimpleconfigurationadjustmentsare
+requiredduringmigration.
+Q:WillPivotbereplacedordiscontinuedbyPivot⁺inthe
+future?
+A:Pleaserestassured.Pivot'sserviceswillcontinuetorunstablythroughout
+2026withoutaffectingyournormaluse,butnonewfeatureswillbeaddedin
+subsequentupdates.
+StartingfromJuly1,2026,existingPivotuserscanfreelychoosewhetherto
+upgradetoPivot⁺toenjoynewservices.
+WewillcontinuetomonitorthemigrationprogressandfeedbackofexistingPivot
+users,andthendeterminethespecificshutdowntimeofPivotbasedonactual
+circumstances,ensuringyouhavesufficienttimetoprepare.
+Q:WhydidMAXHUBlaunchPivot⁺?Whatlimitationsexistin
+theexistingPivot?
+A:Withthedeepeningofenterprisedigitaltransformation,theexistingPivothas
+graduallyexposedbottlenecksthataredifficulttomeetcurrentneeds:theUI
+interactionandoperationprocessarenotquiteinlinewithmodernusers'
+aestheticandefficiencyrequirements;thecompatibilityandmanagementofnew
+devices(suchasMicrosoftMTRseries)arecomplicated;theunderlying
+architecturelacksflexibility,leadingtoslowfeatureiterationsthatcannotkeepup
+withbusinessdevelopment.
+Pivot⁺isdesignedtosolvethesepainpoints!Throughthreecore
+upgrades—reconstructedunderlyingarchitecture,optimizedinteractive
+
+--- Page 93 ---
+90experience,andexpandedmulti-scenariocompatibility—itcreatesadedicated
+platformmoresuitableforenterprise-scalemanagement.Itnotonlymakes
+devicemanagementeasierandmoreefficientbutalsofurtherstrengthens
+MAXHUB'scompetitiveadvantageinthefieldofdevicecentralizedcontrol.
+Q:WhatarethecoreimprovementsofPivot⁺overPivotin
+termsoffunctionsandcapabilities?
+A:Focusingonusers'coreneedsindevicemanagement,Pivot⁺hasachieved
+comprehensiveimprovementsinfourkeyareas,makingitmoreuser-friendlyand
+efficient:
+a.SignificantlyImprovedEnrollmentEfficiency
+a)Batchimportdeviceserialnumbers,MACaddresses,andgrouping
+informationinadvance.Oncethedeviceispoweredonandconnectedto
+thenetwork,itwillautomaticallycompleteenrollment—noneedfor
+on-sitemanualbinding.
+b)ThesystemwillautomaticallyscanallMAXHUBdevicesconnectedtothe
+samelocalareanetworkandlistbasicdeviceinformation.Administrators
+onlyneedtochecktherequireddevicestoquicklycompletebatchbinding,
+savingtimeandeffort.
+b.NotablyOptimizedManagementEfficiency
+a)Intuitivevisualchartsandcalendarviewsclearlydisplayreal-timedevice
+status,pendingtasks,andAnomalyinformation.Thishelps
+administratorsbreakfreefromcomplicateddataandquicklyfocusonkey
+points.
+b)Supportsupto8-levelgroupingmanagement,enablingdevicecontrolby
+spatialdimensions.Itiseasilyadaptabletolargemultinational
+enterprisesandchainretailscenarios,allowingformorerefined
+management.
+c.FullyUpgradedO&MEfficiency
+a)Supportssimultaneousremotecontrolofmultipledevicesinthesame
+
+--- Page 94 ---
+91meetingroom.Whencontrollingonedevice,youcansynchronouslyview
+theresponsestatusofotherdevices,makingtroubleshootingand
+collaborativeO&Mmoreefficient—noneedtorushbetweendifferent
+locations.
+b)Firmwareupgradessupportbothmaindevicesandperipherals.Youcan
+uploadfirmwarepackagesindependentlyforbatchupdates,orthe
+systemwillautomaticallydetectfirmwareversionsandintelligently
+upgradetothelatest,ensuringdevicesalwaysoperateattheirbest.
+c)Customhierarchicaldevicealertingandfull-dimensionallogretention
+ensurefastresponsetoAnomalyities.O&Mprocessesaresafe,
+controllable,compliant,andtraceable.
+d.MoreFlexibleandConvenientContentDistribution
+a)Freelymanagevariousresourcetypes(images,videos,audio,documents,
+canvases,etc.).Thesystemautomaticallycategorizesandarchives
+resourcesforeasysearchandmanagement.
+b)Enjoyflexiblelayoutswhencreatingpromotionalcontent.Youcanfreely
+arrangevariouscomponentsandmultimediaresourcestomeet
+promotionalneedsindiversescenarios,suchasin-storepromotionsor
+corporatepublicity.
+c)Supportsarrangingcontentplaylistsinviewmodeandselectingrelease
+timesviadrag-and-drop,makingcontentpublishingmoreconvenient
+andtheoperationprocesssmoother.
+2.MigrationandUsageImpact
+Q:DoexistingPivotusershavetomigratetoPivot⁺?
+A:No,it’snotmandatory!Wewillcontinuetoensurethestableoperationofthe
+Pivotsystemthroughout2026,soyoucankeepusingitasusual.However,Pivot
+productlicenseswillnolongerbesoldorautomaticallyrenewed.
+WestronglyrecommendyoutrythenewPivot⁺,asitwillsignificantlyimprove
+yourdevicemanagementefficiencyandmakemanagementeasier.Meanwhile,
+
+--- Page 95 ---
+92wewillcontinuetomonitorthemigrationprogressandfeedbackofexistingPivot
+users,andthendeterminethespecificshutdowntimeofPivot,givingyouample
+timetoadaptandprepare.
+Q:WillnotmigratingtoPivot⁺forthetimebeingaffectthe
+useoftheexistingPivot?
+A:Itwillnotaffectitatall!Wewillcontinuetoensurethestableoperationofthe
+Pivotsystemthroughout2026.YourenrolleddevicescanstillenjoyallPivot's
+devicemanagementservicesnormally—noneedtoworryaboutcurrentusage.
+Q:WillmigratingfromPivottoPivot⁺affectthenormal
+operationofexistingdevices?
+A:Duringthemigrationprocess,thecommandsandconfigurationssetinthe
+originalPivotmaynotbeexecutedinatimelymannerbeforethemigrationto
+Pivot⁺iscompleted.However,pleaserestassuredthatthiswillnotaffectthe
+normaluseofdevicesinactualscenariossuchasmeetings,education,andretail,
+andcorefunctionswillremainunaffected.
+Q:DoesPivot⁺supportafreetrialbeforedecidingto
+migrate?
+A:Yes!StartingfromJuly1,2026,wewillopenafreeregistrationchannelfor
+Pivot⁺ontheofficialwebsite.YoucanregisterfirsttotryPivot⁺’sservices,andwe
+willprovideyouwitha30-dayfull-featureProversiontrial.Afterexperiencingit
+thoroughly,youcandecidewhethertomigrateofficiallybasedonyourneeds.If
+youhaveanyquestionsduringthetrial,feelfreetocontactusatanytime!
+3.ControlFunctions
+Q:WhatpracticalefficiencyimprovementscanPivot⁺bring
+tolarge-scaledevicedeploymentandO&M?
+A:Addressingthepainpointsoflarge-scaledevicemanagement,Pivot⁺brings
+
+--- Page 96 ---
+93tangibleefficiencyimprovementsintwokeyareas—deploymentandO&M—making
+managementeasier:
+a.Deployment:Offerszero-touchenrollmentservices,includingpre-renrollment
+byimportingSN⁺MACinadvanceandautomaticdiscoveryenrollmentfor
+newlypurchaseddevices.Thisgreatlyreducesmanualoperations,
+significantlyimprovesdeploymentefficiency,andeliminatestheneedfor
+individualconfiguration.
+b.O&M:Providesbatchremotescreencontrolformultipledevicesinthesame
+room.WhenadevicecausesanAnomalyincidents,itwillsendautomatic
+notificationsandsupportremotetroubleshooting.Additionally,a
+task-orientedworkbenchclearlylistsrisksandpendingtasks,makingO&M
+simplerandmoreefficient—noneedtotravelaround.
+Q:IsPivot⁺morecomplextooperateandmanage?Isiteasy
+forordinaryadministratorstogetstarted?
+A:Noneedtoworryatall!Pivot⁺optimizestheinteractiveexperiencewiththe
+coreconceptof"humanizationandhighefficiency,"makingiteveneasiertoget
+startedthantraditionalplatforms—ordinaryadministratorscanmasteritquickly:
+a.Extremelylowinteractionthreshold:Theinterfaceisredesignedfollowing
+mainstreamdesignstandardsfromGoogleandMicrosoft,adoptinga"core
+functionsonhomepage,shortestoperationpath"design.Keyentrances(such
+asdevicestatuschecksandalerthandling)requirenomulti-levelnavigation.
+Withred,andblueindicatorsfordevicestatus,informationisintuitiveand
+easytounderstand—noneedtostruggletofindwhatyouneed.
+b.Efficientoperationprocess:Theoperationpathforcoremanagementactions
+(suchasbatchupgradesanddevicesearches)isshortenedby50%.It
+supportsmulti-levelfilteringtolocatedevicesandissues,eliminatingthe
+needtoremembercomplexoperationlogic—youcangetstartedrightaway.
+c.Controllablelearningcost:Newuserscanindependentlycompletecoretasks
+suchasdeviceenrollment,statusmonitoring,androutineO&Mafterjust15
+minutesofbasictraining.NoprofessionalITbackgroundisrequired—youcan
+
+--- Page 97 ---
+94easilyhandlethemanagementwork.
+Q:DoesPivot⁺supportthemanagementandmonitoringof
+third-partydevices?
+A:Currently,Pivot⁺onlyprovidesmanagementservicesforMAXHUBecosystem
+hardwareanddoesnotsupportthird-partydevices.Ifyouhaveneedsrelatedto
+third-partydevicemanagement,pleasefeelfreetoprovidefeedback.Wewill
+focusonandevaluateitinsubsequentproductiterations!
+Q:WillPivot⁺replaceMicrosoftTeamsAdminCenter(TAC)
+orMicrosoftTeamsRoomsProManagementPortal?
+A:Microsoft'smanagementfunctionsincludeTeamsappmanagement(settings,
+updates,meetingsettings),TeamsRoomsdigitalsignage,andbasicmanagement
+ofmeetingroomdevices.WeusuallyrecommendusingPivot⁺Protogetherwith
+MicrosoftTeamsRoomsProManagement.Thetwocancomplementeachother
+tobringyouamorecomprehensiveandefficientmanagementexperience.
+Q:Whatuniquemanagementandmonitoringcapabilities
+doesPivot⁺offerthatMicrosoftTeamsAdminCenter(TAC)
+orMicrosoftTeamsRoomsProManagementPortaldonot
+have?
+A:Microsoft'smanagementcapabilitiesforAndroiddevicesarenotasrobustas
+thoseforWindowsdevices.Pivot⁺providesmoreprofessionalAndroiddevice
+managementtools,suchasremotedesktopcontrolforAndroidmeetingroom
+devices,whichcanhelpyousolveproblemsmorequickly.Inaddition,Pivot⁺also
+hasbasicCMSservicecapabilities,includingcanvasresourcecreation,playlist
+arrangement,andschedulemanagement,bringingyouamoreconvenient
+contentdistributionexperiencefordailymanagement.
+
+--- Page 98 ---
+954.ContentDistribution(CMS)Related
+Q:DoesPivot⁺includecontentdistribution(CMS)capabilities?
+Howdoesitintegratewithdevicemanagement?
+A:Yes!Pivot⁺isanintegrateddevicemanagementplatformcombiningDMS
+(DeviceManagementSystem)andCMS(ContentManagementSystem).Itallows
+youtoachieve"management⁺distribution"inonestopwithoutswitching
+betweenmultiplesystems!
+Thedevicemanagementmoduleprovidesyouwithcorecapabilitiessuchas
+deviceenrollmentandbasicmaintenance.AftercreatingcontentintheCMS
+module,youcandirectlyandquicklydistributeittomanageddevices.Theprocess
+issmoothandconvenient,greatlyimprovingworkefficiency.
+Q:CanPivot⁺replaceexistinginformationdistributionor
+digitalsignagemanagementsystems?
+A:Yes!TheCMSservicescurrentlyprovidedbyPivot⁺covercorefunctions,
+includingresourceuploadandmanagement,contentcreation,playlist
+arrangement,anddrag-and-dropschedulepublishing.Itcanfullymeetthebasic
+needsofdailyinformationdistributionanddigitalsignagemanagement—youcan
+safelyuseittoreplaceexistingsystems!
+5.LaunchTimeandTrialPlan
+Q:WhenisPivot⁺scheduledtobeofficiallylaunched?What
+phasewillitbeinthefirsthalfof2026?
+A:WewilllaunchtheBetaversionofPivot⁺inthefirsthalfof2026,whichwillbe
+availableforexperiencebyselectedorganizationsinvitedbythesalesteam.
+Duringtheexperience,wewillcarefullylistentoeveryuser'ssuggestionsand
+feedback,continuouslypolishtheproductdetailstoensuretheofficialversion
+bettermeetseveryone'sneeds.TheofficiallaunchofPivot⁺isscheduledforJuly1,
+
+--- Page 99 ---
+962026.
+Q:IfIaminterestedinPivot⁺now,whatwayscanI
+participateinorlearnmoreaboutit?
+A:YoucanfirstlearnaboutdetailedproductinformationofPivot⁺throughthe
+MAXHUBofficialwebsite.Ifyouaremoreinterestedandwanttotryitinadvance,
+youcansubmitanapplicationthroughyourdedicatedsalesrepresentative.We
+willactivateatrialaccountforyouorinviteyoutojoinourPioneerProgram,
+allowingyoutoexperiencetheconvenienceandefficiencyofPivot⁺aheadoftime!
+Q:CanIsignupforPivot⁺onmyownorthroughmylocal
+reseller?
+A:TheBetaversionwillbereleasedinthefirsthalfof2026,availableonlyto
+invitedcustomersparticipatinginthePioneerProgram.
+StartingfromJuly1,2026,freeself-registrationwillbeofficiallyopened.All
+registereduserswillautomaticallyreceivea30-daytrialoftheProversion,which
+willbedowngradedtothefreeBasicversionafterthetrialperiodends.
+6.BusinessStrategy
+Q:IsPivot⁺stillfree?
+A:Pivot⁺offerstwoversionstomeetdifferentneeds:afreeBasicversionwith
+functionsconsistentwiththeoriginalPivotFreeversion,whichcanfullymeet
+basicdevicemanagementrequirements;andapaidProversionwithmorerich
+featuresthantheoriginalPivotPreversion,includingpracticalCMSservices,
+helpingyouachievemorecomprehensiveandefficientdevicemanagement.
+Q:WhatarethePivot⁺plans?
+A:Fordetailedcomparisonsbetweenversions,pleaserefertotheofficial"Plans
+Comparison"whichclearlypresentsthespecificfunctionsincludedineachversion
+foryourreferencewhenmakingachoice!
+
+--- Page 100 ---
+97Q:HowcanIbuyPivot⁺?
+A:LikeMAXHUBhardware,Pivot⁺ispurchasedthroughMAXHUBlocalauthorized
+resellerpartners.Youcancontactyourlocalauthorizedresellerforconsultation
+andpurchase.Ifyouneedhelpfindingareseller,youcanalsocontactourofficial
+customerserviceforsupport.
+Q:IsaccesstoPivot⁺includedwiththepurchaseofall
+MAXHUBdevices?
+A:EveryhardwaredevicecomeswithaccesstoPivot⁺’sBasicversion!Starting
+fromJuly1,2026,afterpurchasinganyMAXHUBdevice,youcanregistera
+Pivot⁺accountthroughtheofficialwebsitetomanageyourdevice,makingdevice
+managementmoreconvenientandeasytooperate.
+7.Features
+Q：HowtoSwitchlanguage？
+A：MaxhubPivot+supportsmultiplelanguages.Clickthemap-styleiconinthetop
+rightcornertoswitchtoyourpreferredlanguage.
+Afterswitching,thepagewillreload—pleaseensureallcurrentpagecontentis
+savedtoavoiddataloss.
+
+--- Page 101 ---
+98Q：Howtocontactus？
+A：Whenyouencounterissues,youcancontactthePivot+teamthroughthe
+followingtwomethods:
+a.Sendanemaildirectlytopivot-plus@maxhub.com.Pleasedescribethe
+problem,symptoms,andsuggestionsinasmuchdetailaspossible,alongwith
+yourorganizationnameandOrganizationCode.Thishelpsusverifyand
+resolvetheissueefficiently.
+b.Clickthemessage-styleiconinthetoprightcornerofthesystemtosubmit
+yourfeedback.Wewillgetintouchwithyouassoonaspossible.
+8.SecurityandOthers
+Q:IsthereasecuritywhitepaperforPivot⁺thatIcan
+download?
+A:ThePivot⁺SecurityWhitepaperisavailableintheResourceCenteronthe
+officialwebsite.Youcandownloadandreviewitatanytimetolearnmoreabout
+theproduct'ssecuritymechanisms!
+Q:WherearePivot⁺’sdatacenterslocated?
+
+--- Page 102 ---
+99A:WehavedeployedserversintheUnitedStatesandGermany.Multi-region
+serverdeploymentbetterensuresservicestabilityandaccessibility,providing
+reliablesupportforyourglobaldevicemanagementneeds.
+Q:DoesPivot⁺supportanysecureloginmechanisms?SAML
+SSO?Pleasedescribeallsecuritymeasures.WhatSingle
+Sign-On(SSO)integrationsdoesPivot⁺support?
+A:Currently,SSOisnotsupported.However,Pivot⁺haspassedmultiplesecurity
+compliancecertifications.Coresecuritymeasuresincludefull-dimensionallog
+retention,hierarchicalpermissioncontrol,andencrypteddatatransmission,
+whichcanfullyprotectthesecurityofyourdevicemanagementdata.Formore
+detailedsecurityinformation,pleaserefertothe"Pivot⁺SecurityWhitepaper."
+Q:DoesPivot⁺integratewithanyotherthird-partycloud
+managementsoftware,suchasXYTE?
+A:Currently,Pivot⁺doesnotintegratewithanythird-partycloudmanagement
+platforms.Ifyouhaverelevantintegrationneeds,pleasefeelfreetoprovide
+feedback.Wewillconducttechnicalresearchandevaluationbasedonuserneeds
+insubsequentiterations.
+Q:DoesPivot⁺provideAPIaccess?HowcanIobtainPivot⁺
+APIaccessrights?
+A:Currently,APIaccessisnotavailable.Wewillcontinuetocollectuserneedsfor
+APIaccess.Ifthereissufficientmarketdemand,wewillconsideropeningrelated
+servicesinsubsequentproductupdates.Pleasepayattentiontoourofficial
+announcementsforthelatestinformation!

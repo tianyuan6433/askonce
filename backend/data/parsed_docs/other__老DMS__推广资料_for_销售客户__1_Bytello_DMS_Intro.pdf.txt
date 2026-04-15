@@ -1,0 +1,29 @@
+--- Page 1 ---
+DMS  Device Management System
+
+--- Page 2 ---
+DMS (Device Management System)
+DMS is a web-based software simpliﬁes the management of your campus equipment. With the DMS software, you can enjoy cluster management functionality for your interactive ﬂat panels. Options include status monitoring, panel grouping, time and channel switching, volume control, and information bulletins. Everything you need is available in the same uniﬁed space.Ultimate intelligent solution for administrators
+
+--- Page 3 ---
+Features of DMS
+Ability to control various equipments.1Control over IFP, Digital signage, Soundbar;  Compatible with Android and windows OSControl, manage, and wake up screens from a distance, or even lock a screen when necessary. The android system works perfectly from a remote location so that you can control your tech from a distance.2Convenient Device ManagementSupport personalized schedules so you can time tasks according to your needs. Option to schedule third-party upgrades and patch times, so they don’t disrupt users.3Scheduling Options for Admins
+Manage a healthy and sustainable campus with easy-to-manage software. Controlling and troubleshooting devices from a distance just got simpler.4Remote Screen control
+
+--- Page 4 ---
+Efﬁcient 4-Step Account Setups in DMS
+1.Timely email notiﬁcation and clear guidelines via email.2.Easy account and school setups.3.Quicker time access to MDM software.1.Stop being an “information transfer”. Send invitation to end-user in one-click. Safe time form information gathering, application form ﬁlling.2.Access to backstage, change schools panel numbers directly.3.Be able to start a “free-30-day-trail” for new customers.
+Beneﬁts for  SALES peopleBeneﬁts for  End-user
+
+--- Page 5 ---
+admin@bytello.com
+A@SCHOOL A.comBytello teamAccount managerBrand sales teamEnd-userAM@cvte.comTim@BrandW.comChris@BrandY.comB@SCHOOL B.comHow User Center works
+
+--- Page 6 ---
+How to switch form R6 to DMS?School info:  - same code/name/locationAdmin account: - when admin logins, school already been setup. - exclude admin with multiple schoolDevices: - Have to bind device to DMSCustom groups: - Have to create groupsScheduled commands: - Need to setup by adminWhat can be transferred?What can not be transferred?How current 510/811/551 install DMS?Software OTA to all platformsCan R6 & DMS co-exist?Yes, Remote 6 will not been affected when DMS installed. Schools can switch to DMS anytime.What existing schools need to provide?Excel ﬁle with: school code, school name, admin email, locations and upper account. * excel template will be provided by R&D team
+
+--- Page 7 ---
+81155199508386972510Supported platforms of DMSCurrentPlanmoreRetired1.DMS will support basic functions for 510 platform. 2.Any new functions will no longer support 510.
+
+--- Page 8 ---
+PlansBasic:         ActivePro:            ActiveUNIT PRICE MAY VARY CONTACT ACCOUNT MANAGER FOR DETAILS

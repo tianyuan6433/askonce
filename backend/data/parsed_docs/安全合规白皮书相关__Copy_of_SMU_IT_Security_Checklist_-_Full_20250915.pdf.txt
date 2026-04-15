@@ -1,0 +1,1329 @@
+--- Page 1 ---
+SMU Classification: Restricted #
+S/N SMU requirements Requirement 
+Category
+1 Account and PasswordThe vendor shall provide detailed evidence that of Root or default 
+Administrator accounts:
+- default passwords have been changed
+- the accounts are locked/disabled and shall not be used for day-to-
+day operations
+- access to the accounts (if absolutely necessary) shall be via privileged 
+access management with proper approval process
+2 Account and PasswordThe vendor shall provide detailed user access matrix for the 
+service(s)/ system(s)
+3 Account and PasswordThe vendor shall provide evidence on implementation of password 
+complexity:
+- At least 12 characters
+- At least one numeric character (0 - 9)
+- At least one lower case character (a - z)
+- At least one upper case character (A - Z)
+- At least one special character (~!@#$%^&*-+?) for systems that 
+support special characters.
+4 Account and PasswordThe vendor shall provide evidence on implementation of secrets 
+management tool (e.g. AWS Secrets Manager, Azure Key Vault) to 
+securely store and manage secrets (e.g. password, keys). Otherwise, 
+these secrets must be minimally encrypted if stored on local 
+configuration files.
+5 Account and PasswordThe vendor shall provide evidence on implementation of the following 
+password requirements:
+- Change their initial passwords immediately upon the first successful 
+login
+- Minimal password age no less than three (3) days.
+- Password expiry at most 180 day
+- Disallow using at least last three (3) previous passwords
+- Account locked after at most five (5) failed login attempts
+
+--- Page 2 ---
+SMU Classification: Restricted #
+6 Account and PasswordThe vendor shall provide evidence that all passwords are encrypted.
+7 Account and PasswordThe vendor shall provide evidence that role-based access control 
+(RBAC) is implemented for assigning permissions to users and based 
+on the principle of least privilege.
+8 Account and PasswordThe vendor shall provide evidence that services (e.g. application 
+service, database) are run using least-privilege accounts, and shall not 
+use privileged accounts (e.g. root, administrator).
+
+--- Page 3 ---
+SMU Classification: Restricted #
+9 Account and PasswordThe vendor shall provide evidence that the proposed solution 
+support multifactor authentication (MFA) .
+10Account and PasswordThe vendor shall provide evidence that the proposed solution work 
+with Microsoft Azure Entra Single-Sign-On
+11Account and PasswordThe vendor shall provide detailed evidence that of privileged access 
+and administrative tasks on the cloud management console, 
+system, DB, etc.:
+- there is segregation of duty
+- access rights are granted based on principle of least privilege, 
+with proper approval process
+- unique accounts are assigned to unique individuals
+12Account and PasswordThe vendor shall provide evidence that cloud/system/DB access 
+entitlement are immediately disabled or modified when an 
+employee's status changes. (e.g. terminated, transfer, etc.)
+13Account and PasswordThe vendor shall provide evidence that MFA is enabled for 
+privileged accounts to access the cloud management console, 
+system, DB, etc.
+
+--- Page 4 ---
+SMU Classification: Restricted #
+14Account and PasswordThe vendor shall provide evidence that vendor-managed accounts, 
+including vendor's privileged accounts, are reviewed at least 
+quarterly.
+15Account and PasswordThe vendor shall provide their policy and processes that are related 
+to ID/password management.
+Please elaborate how they are applied as related to the service and 
+its host architecture. 
+16 API SecurityThe vendor shall provide documentation for APIs. (applicable if 
+APIs are to be used by SMU)
+17 API SecurityThe vendor shall provide evidence that API security best practices 
+are followed (e.g. OWASP API Security Top 10). (applicable if APIs 
+are to be used by SMU)
+18 API SecurityThe vendor shall provide detailed evidence that they monitor and 
+protect the use of the APIs, e.g. rate limiting, credential, call statistic, 
+API gateway etc. (applicable if APIs are to be used by SMU)
+
+--- Page 5 ---
+SMU Classification: Restricted #
+19 Application SecurityThe vendor shall provide detailed evidence that the system 
+components (e.g., web, application and data tiers) are hosted in a 
+separate segments. 
+The vendor shall provide details of:
+- architecture diagram with and security controls in place
+- application and interfaces flow diagram
+- data flow diagram  
+20 Application SecurityThe vendor shall provide evidence that all components, services, 
+installation packages, reference libraries are taken from trusted or 
+reputable sources.
+
+--- Page 6 ---
+SMU Classification: Restricted #
+21 Application SecurityThe vendor shall provide evidence that they design, develop, deploy, 
+and test the proposed solution in accordance with leading security 
+standards e.g., OWASP for web applications.
+22 Application SecurityThe vendor shall provide evidence that they perform application 
+security scanning using SAST/DAST for each new and major release.
+23 Application SecurityThe vendor shall provide evidence on implementation of data 
+validations on the proposed solution to prevent manual or systematic 
+processing errors, data corruption, or misuse.
+
+--- Page 7 ---
+SMU Classification: Restricted #
+24 Application SecurityThe vendor shall provide evidence that web application firewall 
+(WAF) is implemented.
+25 Application SecurityThe vendor shall provide evidence that the system implements 
+measure to differentiate between real users and automated users 
+(e.g., bots), and block automated users. One example of this 
+solution is CAPTCHA.
+26 Asset ManagementThe vendor shall provide evidence that they don't use hardware, 
+software, and service assets that are past end-of-service (EOS).
+27 Asset ManagementThe vendor shall provide evidence that they maintain up-to-date 
+asset inventory of all the hardware, software, and service assets 
+used by the service(s)/ system(s) provided for SMU, which includes:
+- Asset name
+- Manufacturer/ publisher
+- Version
+- Business purpose
+- Asset classification
+- Approval/authorised date
+- End-of-service date
+- Location(s)
+
+--- Page 8 ---
+SMU Classification: Restricted #
+28 Audit Logs and SIEMThe vendor shall provide detailed evidence that the items below are 
+captured in the audit logs:
+- User access and activities
+- Privileged access and activities
+- Sensitive activities/ transactions
+- Unauthorized access (privileged and non-privileged)
+- System alerts and failures
+- System or security configuration changes
+29 Audit Logs and SIEMThe vendor shall provide evidence that system and application logs 
+are kept for at least 30 days locally in the systems.
+30 Audit Logs and SIEMThe vendor shall provide evidence that continuous security 
+monitoring and response is in place for:
+- anomalous activities (privileged and non-privileged)
+- repeated failed logins
+- account compromises
+- data leaks
+- malware detection
+- other threats
+31 Audit Logs and SIEMThe vendor shall provide the required audit logs upon SMU 
+request within the agreed timeframe for  investigation. (SMU will 
+provide the timeframe)
+32 Audit Logs and SIEMThe vendor shall request SMU's approval for all request to access 
+or disclose of audit logs. (applicable if SMU has dedicated instance 
+and backup)
+33 Audit Logs and SIEMThe vendor shall provide detailed evidence on implementation of 
+SIEM with the following requirements:
+- audit and security logs are stored in SIEM
+- the logs are tamper proofed
+- the logs are kept for at least 180 days
+- the logs have dedicated storage
+- the logs are secured via data-at-rest encryption
+34Availability 
+ManagementThe vendor shall provide support and contact details to:
+- diagnose and resolve incidents and problems
+- advise/ guide on queries
+35Availability 
+ManagementThe vendor shall conduct periodic service level review and 
+improvement plan with SMU.
+
+--- Page 9 ---
+SMU Classification: Restricted #
+36Availability 
+ManagementThe vendor shall provide evidence that they have continuous 
+monitoring on the service(s)/ system(s), which includes the 
+following requirements:
+- use of monitoring tool that provides real time analysis and alerts
+- regular review and fine-tuning of monitoring threshold 
+37Availability 
+ManagementThe vendor shall provide evidence that they have sufficient system 
+resources and personnel to ensure the smooth operation of the 
+service(s)/ system(s) according to SLA. 
+38Availability 
+ManagementThe vendor shall provide monthly system and service level reports 
+to SMU.
+39Availability 
+ManagementThe vendor shall state their service level agreement (SLA) for the 
+service(s)/ system(s) used by SMU.
+40Backup, Restore and 
+DRThe vendor shall provide detailed evidence that all data and system 
+backups within SMU scope are managed and monitored, with the 
+following schedules:
+- transactional: at least daily
+- differential: at least daily
+- full: at least weekly
+41Backup, Restore and 
+DRThe vendor shall provide details on the disaster recovery plan 
+where SMU will be involved/ connected in the recovery process.
+42Backup, Restore and 
+DRThe vendor shall provide evidence that at least one generation of 
+full backup is stored in a secure off-site location.
+
+--- Page 10 ---
+SMU Classification: Restricted #
+43Backup, Restore and 
+DRThe vendor shall provide evidence that backup and restoration 
+procedures are tested before go-live for SMU and at least annually 
+afterwards.
+44Backup, Restore and 
+DRThe vendor shall provide evidence that disaster recovery (DR) 
+procedures are tested before go-live for SMU and at least annually 
+afterwards.
+45Backup, Restore and 
+DRThe vendor shall provide evidence that full backup retention is at 
+least twelve (12) weeks.
+46Backup, Restore and 
+DRThe vendor shall perform data restoration only upon approval by 
+SMU. (applicable if SMU has dedicated instance and backup)
+47Backup, Restore and 
+DRThe vendor shall provide evidence that the system and data is 
+recoverable within the agreed recovery time objective (RTO) and 
+recovery point objective (RPO).
+Note: SMU Project Manager to discuss the requirements with the 
+business owner and share RTO and RPO with the SaaS vendor.
+48Backup, Restore and 
+DRThe vendor shall support SMU disaster recovery DR exercise 
+annually. (applicable if the vendor offers customer-initiated DR 
+exercise option)
+49Change ManagementThe vendor shall communicate clearly with SMU on any changes 
+(e.g. functional, administrative, service etc.) in advance and provide 
+SLA for this notification.
+
+--- Page 11 ---
+SMU Classification: Restricted #
+50Change ManagementThe vendor shall provide detailed evidence on their change 
+management policy/ process, which includes:
+- impact assessment on availability and performance
+- security risk assessment
+- approval at the relevant stages
+- testing/ verification before production deployment
+- system and/or data backup before production deployment
+- rollback plan
+51Cyber Security 
+ManagementThe vendor should provide evidence of service/ product certifications. 
+(e.g. ISO 27001, ISO 27017, ISO 27018, SOC 1, SOC 2, SOC 3, PCI DSS 
+etc.)
+Statement of Applicability (SOA) - Vendor may be required to share 
+more information on these certifications.
+The Control Report for the SOC/SSAE 18 Certifications may be required 
+as well.
+
+--- Page 12 ---
+SMU Classification: Restricted #
+52Cyber Security 
+ManagementThe vendor shall provide evidence that annual security awareness 
+program is in place for employees to make them aware of 
+confidential information, the company's security policies and 
+standards, and good security practices.
+The security awareness programe should include the following:
+- Protecting from phishing
+- Setting strong passphrases and protecting them
+- Protecting corporate and/or personal devices (used for work)
+- Reporting cybersecurity incidents
+- Handling and disclosing personal data and business-critical data 
+securely
+- Working onsite and remotely securely
+53Cyber Security 
+ManagementThe vendor shall provide evidence that their personnel is 
+competent and capabable to run cybersecurity programs, 
+governance, risk management and compliance.
+54 Data SecurityThe vendor shall provide evidence on implementation of data-at-rest 
+encryption for:
+- Server/ device storage volume (e.g. AWS EBS, Azure Disk Storage, 
+Bitlocker, dm-crypt)
+- Files on server instances (e.g. PGP)
+- Database, including database-as-a-Service (e.g., AWS RDS, Azure SQL)
+- Object storage services (e.g. AWS S3, Azure Blob storage)
+55 Data SecurityThe vendor shall provide evidence that data-in-motion encryption (e.g. 
+HTTPS, SQL TLS), including server-to-server communications, is 
+implemented. Please specify the encryption method/ algorithm.
+
+--- Page 13 ---
+SMU Classification: Restricted #
+56 Data SecurityThe vendor shall provide evidence that different client's data is 
+properly segregated in storage and processing.
+57 Data SecurityThe vendor shall provide evidence that production data is not 
+replicated or used in non-production environments.
+58 Data SecurityThe vendor shall provide detailed evidence that only authorised 
+personnel (including outsourced and 3rd party contractors) has 
+access to the system and data (including audit logs and backup 
+copies):
+- there is proper approval process
+- access is granted based on principle of least privilege
+- their actions are logged and monitored
+- they sign non-disclosure agreement which includes disciplinary 
+action(s) or legal consequences
+59 Data SecurityThe vendor shall only collect data from users who have given their 
+consent by accepting the terms of use & privacy statement.
+
+--- Page 14 ---
+SMU Classification: Restricted #
+60 Data SecurityThe vendor shall provide evidence that data and objects containing 
+SMU data are assigned with classification based on data type, value, 
+sensitivity, and criticality. Please provide data security procedures/ 
+policy that apply to handling of such classifications.
+61 Data SecurityThe vendor shall provide evidence that data leak prevention (DLP) 
+solution is implemented for:
+- the service(s)/ system(s) handling SMU data
+- the vendor's personnel (including outsourced and 3rd party 
+contractors) handling SMU data
+62 Data SecurityThe vendor shall provide evidence that the system supports 
+automated data retention.
+63 Data SecurityThe vendor shall provide evidence that they have procedures/ 
+policies on data security, that addresses data confidentiality, 
+integrity, and availability across multiple system interfaces, 
+jurisdictions, and business functions to prevent improper 
+disclosure, alteration, or destruction.
+
+--- Page 15 ---
+SMU Classification: Restricted #
+64 Data SecurityThe vendor shall provide evidence that they maintain and review 
+inventory of data (personal, sensitive and other types of data), 
+which includes:
+- Description
+- Data classification and/or sensitivity
+- Location(s) (including interim or transient set, backup, interfaces, 
+etc.)
+- Retention period
+65 End of Service The vendor shall indicate if there is any additional fees for SMU data 
+66 End of ServiceThe vendor shall provide evidence that SMU data had been 
+securely disposed from all storage media, systems, and network at 
+the end of service.
+Example:
+- Specifications from Cloud provider on their method of secure 
+data sanitisation and destruction.
+- Delete data using secure erase method and destroy the storage 
+media during disposal.
+67 End of Service The vendor shall provide SMU the appropriate tools or means of retr
+68 End of Service The vendor shall provide sufficient time for SMU to fully retrieve SMU
+69 Incident ResponseThe vendor shall ensure that SMU is notified of the below security 
+incident / breach in accordance with the agreed timeline:-
+Within two (2) hours of incident / breach discovery by phone for 
+severity level 1:
+- security attacks, breaches or unauthorised access to SMU system 
+which has an adverse impact on SMU business operation
+- loss of sensitive information
+- loss of personal identifiable information (PII)
+Within forty-eight (48) hours of incident / breach discovery for 
+severity level 2:
+- security attacks, breaches or unauthorised access to SMU system 
+which has an adverse impact on SMU business operation
+- loss of data that could have led to unauthorised access
+70 Incident ResponseThe vendor shall provide detailed evidence on security incident 
+response plan and provide details of the process where SMU will be 
+involved/ connected. The incident response plan should cover:
+- Clear roles and responsibilities of key personnel 
+- Procedures to detect, analyze, contain, eradicate, and recover 
+from the common cybersecurity threat scenarios, e.g., phishing, 
+ransomware, data breach
+- Communication plan and timeline to escalate and report the 
+incident to internal and external stakeholders (such as regulators, 
+customers, and senior management)
+- Post-incident review and learning points to prevent reoccurrence 
+similar incident
+
+--- Page 16 ---
+SMU Classification: Restricted #
+71 Incident ResponseThe vendor shall provide detailed incident reports to SMU
+72 Incident ResponseThe vendor shall provide incident notification via an agreed 
+medium of communication to the specified SMU personnel.
+73 Incident ResponseThe vendor shall provide evidence that they have the required 
+means to perform a security forensics investigation either internally 
+or through a third party service provider.
+74 Incident ResponseThe vendor shall support in SMU incident response exercise. 
+(applicable if the vendor offers customer-initiated incident response 
+exercise option)
+75NDA, PDPA, and 
+ContractThe vendor shall have back-to-back maintenance support with the 
+hardware, software and/or system principal manufacturer.
+76NDA, PDPA, and 
+ContractThe vendor shall sign Non-disclosure Agreement (NDA) with SMU.
+77NDA, PDPA, and 
+ContractIf the system is hosted by third-party cloud service provider, the 
+vendor shall use either AWS, Azure or GCP as cloud service provider.
+78NDA, PDPA, and 
+ContractIf the system will be used for performing credit card transactions, 
+the vendor shall provide evidence that the system is PCI-DSS 
+compliant.
+79NDA, PDPA, and 
+ContractThe vendor shall agree that SMU retain the full ownership of our con
+80NDA, PDPA, and 
+ContractThe vendor shall sign Personal Data Protection Agreement with SMU.
+
+--- Page 17 ---
+SMU Classification: Restricted #
+81 Network SecurityThe vendor shall provide detailed evidence on implementation of 
+network segmentation and access control to separate:
+- DMZ/ web, application and data tiers
+- Production, staging and development environments
+Please provide system/network architecture diagram.
+82 Network SecurityThe vendor shall provide evidence that network firewall (perimeter 
+and internal) is implemented for the service(s)/ system(s).
+83 Network SecurityThe vendor shall provide evidence that Intrusion detection and 
+prevention systems (IDPS) is implemented for the service(s)/ 
+system(s).
+84 Patch ManagementThe vendor shall provide detailed evidence on their patch 
+management policy/ process, which includes: 
+a) timeline according to priority:
+b) testing/ verification before production deployment
+
+--- Page 18 ---
+SMU Classification: Restricted #
+85 Patch ManagementThe vendor shall provide evidence that patches are obtained from 
+original manufacturer.
+86 Patch ManagementThe vendor shall provide the bill of materials (BOM)
+87 Patch ManagementThe vendor shall provide evidence on the implementation and 
+review of patch tracking system, which includes:
+- service/ server host
+- software and patch level
+- status of patch
+- alerts
+88 Perimeter SecurityThe vendor shall provide evidence that secure bastion/jump-host is 
+implemented to access to production systems from the Internet and 
+only from whitelisted IP addresses.
+89 Perimeter SecurityThe vendor shall provide evidence that anti-DDoS solution is 
+implemented for the service(s)/ system(s).
+90 Site SecurityThe vendor shall provide evidence that the data centre hosting their 
+services complies with the following:
+ISO27001 - Physical and environmental security (A.11)
+SOC1 and  SOC2 - Data centers controls (PE-1 to PE-8)
+(applicable if the vendor operates own data centre)
+91 Site SecurityThe vendor shall provide information on all data centre locations 
+used by the service(s)/ system(s) (e.g. Singapore, Hong Kong etc)
+92 System SecurityThe vendor shall provide detailed evidence on implementation of host 
+protection software, which includes anti-malware, on the system, 
+covering:
+- central management of the agents
+- real-time scan
+- regular full scan
+- automatic update of agent and signatures
+- tracking of updates
+- tracking of threat alerts
+
+--- Page 19 ---
+SMU Classification: Restricted #
+93 System SecurityThe vendor shall provide provide detailed evidence that file 
+attachments uploaded by users are scanned and free from malware 
+or malicious codes.
+94 System SecurityThe vendor shall provide detailed evidence that system 
+components (OS, DB, application, etcl) are hardened using 
+guidelines/ benchmarks from credible organisations such NIST, 
+SANS, CIS or equivalent.
+95Vulnerability 
+ManagementThe vendor shall meet the timeline requirement to remediate 
+vulnerabilities according to severity:
+- Critical: within 4 weeks or less
+- High: within 12 weeks or less
+- Medium/ Low: within 6 months or less
+
+--- Page 20 ---
+SMU Classification: Restricted #
+96Vulnerability 
+ManagementThe vendor shall provide detailed evidence of vulnerability 
+management policy/ process which includes remediation timeline 
+according to severity.
+97Vulnerability 
+ManagementThe vendor shall provide evidence that they perform penetration 
+testing before system go-live for SMU or product release, and 
+annually afterwards.
+The penetration testing shall cover all system components used by 
+SMU (e.g., web applications, APIs, servers, appliances, devices) and 
+be conducted by qualified pen-tester.
+Please provide latest penetration testing report.
+98Vulnerability 
+ManagementThe vendor shall allow SMU to perform penetration testing on the 
+service(s)/ system(s) used by SMU.
+Please provide detailed requirements if prior approval from the 
+vendor's management is required.
+99Vulnerability 
+ManagementThe vendor shall update SMU on the progress of the vulnerability 
+remediation according to remediation timeline. (applicable if the 
+vulnerability is reported by SMU or upon request by SMU)
+100AI Model Training & 
+TransparencyAre the data sources used for training documented and available 
+for review?
+101AI Model Training & 
+TransparencyHas the model been instruction-tuned or aligned for safety and 
+responsible use?
+102AI Model Training & 
+TransparencyIs a model card or documentation available (with limitations and 
+intended use)?
+103 AI Prompt InjectionAre there protections against prompt injection (e.g. input 
+validation, escaping)?
+104 AI Prompt InjectionAre indirect prompt injection risks (e.g. from document content) 
+mitigated?
+105 AI Prompt InjectionAre prompt injection regularly evaluated and tested (before and 
+after deployment)?
+106 AI Prompt InjectionHave red-team/adversarial prompt tests been performed?
+107AI Data Privacy & 
+Information LeakageAre mechanisms in place to prevent model inversion or data 
+extraction attacks?
+108AI Output Safety & 
+Content ModerationAre outputs automatically or manually moderated for 
+harmful/unsafe content?
+
+--- Page 21 ---
+SMU Classification: Restricted #
+109AI Output Safety & 
+Content ModerationAre there filters to prevent disclosure of PII or confidential info in 
+responses?
+110AI Output Safety & 
+Content ModerationAre users warned about possible inaccuracies or hallucinations in 
+outputs?
+111AI Output Safety & 
+Content ModerationAre model outputs validated/sanitized before downstream use (e.g. 
+no auto-exec)?
+112AI Bias, Safety, and 
+Automated TestingAre there measures in place to prevent or mitigate bias, toxicity, 
+and ethical risks (e.g., via fine-tuning, guardrails, output filters)?
+113AI Bias, Safety, and 
+Automated TestingAre bias and toxicity regularly evaluated and tested (before and 
+after deployment)?
+114AI Bias, Safety, and 
+Automated TestingIs there a process to handle or report problematic outputs?
+115AI Bias, Safety, and 
+Automated TestingAre users and stakeholders informed of model limitations and risks?
+116AI Bias, Safety, and 
+Automated TestingHas the model or system been independently evaluated or tested 
+using automated AI testing tools or frameworks (e.g., AI Verify 
+Project Moonshot, or other similar tools)?
+117AI Data Usage for 
+Training PurposesIs user interaction data used for further training or fine-tuning?
+118AI Data Usage for 
+Training PurposesIf data is used for training or fine-tuning, is there an opt-out or 
+explicit consent mechanism?
+119AI Data Usage for 
+Training PurposesIs user data anonymized before any use for model improvement?
+
+--- Page 22 ---
+SMU Classification: Restricted #
+Vendor to respond
+中文Comply (C)
+Non-compliance (NC)
+Not applicable (NA)
+供应商应提供关于超级管理员（Root）或默认管
+理员账户的详细证明，包括：
+已修改默认密码；
+上述账户已被锁定 / 禁用，且不得用于日常运营
+工作；
+如需访问上述账户（在确有必要的情况下），必
+须通过特权访问管理工具，并遵循正规审批流程
+。NA
+供应商应提供所涉服务 / 系统的详细用户权限矩
+阵表。C
+供应商应提供密码复杂度规则的实施证明，规则
+如下：
+密码长度至少 12 个字符；
+至少包含 1 个数字字符（0-9）；
+至少包含 1 个小写字母（a-z）；
+至少包含 1 个大写字母（A-Z）；
+对于支持特殊字符的系统，至少包含 1 个特殊字
+符（~!@#$%^&*-+?）。NC
+供应商应提供密钥管理工具（如 AWS 密钥管理器
+、Azure 密钥保管库）的实施证明，以安全存储和
+管理密钥（如密码、密钥文件等）。若未使用此
+类工具，当密钥存储在本地配置文件中时，必须
+至少进行加密处理。C
+供应商应提供以下密码管理要求的实施证明：
+首次成功登录后，立即修改初始密码；
+密码最短使用期限不少于 3 天；
+密码最长有效期不超过 180 天；
+禁止使用最近 3 次使用过的密码；
+连续 5 次登录失败后，锁定账户。NC
+
+--- Page 23 ---
+SMU Classification: Restricted #
+供应商应提供所有密码已加密的证明。 C
+供应商应提供基于角色的访问控制（RBAC）的实
+施证明，该控制用于为用户分配权限，且需遵循
+最小权限原则。C
+供应商应提供服务（如应用服务、数据库）使用
+最小权限账户运行的证明，不得使用特权账户
+（如超级管理员、管理员账户）。C
+
+--- Page 24 ---
+SMU Classification: Restricted #
+供应商应提供拟议解决方案支持多因素认证
+（MFA）的证明。C
+供应商应提供拟议解决方案可与微软 Azure Entra 
+单点登录集成的证明。NA
+供应商应提供关于云管理控制台、系统、数据库
+等的特权访问及管理任务的详细证明，包括：
+实现职责分离；
+基于最小权限原则授予访问权限，并遵循正规审
+批流程；
+为每位独立人员分配唯一账户。C
+供应商应提供当员工状态发生变化（如离职、调
+岗等）时，云 / 系统 / 数据库访问权限被立即禁
+用或修改的证明。C
+供应商应提供特权账户访问云管理控制台、系统
+、数据库等时已启用多因素认证（MFA）的证明
+。C
+
+--- Page 25 ---
+SMU Classification: Restricted #
+供应商应提供供应商管理账户（包括供应商特权
+账户）至少每季度审查一次的证明。C
+供应商应提供其与身份 / 密码管理相关的政策和
+流程，并详细说明这些政策和流程如何应用于本
+服务及其主机架构。C
+供应商应提供应用程序编程接口（API）的相关文
+档。（仅当新加坡管理大学需使用 API 时适用）NA
+供应商应证明其遵循了 API 安全最佳实践（如 
+OWASP API 安全十大风险防护措施）。（仅当新
+加坡管理大学需使用 API 时适用）NA
+供应商应提供详细证明，表明其对 API 的使用进
+行监控和保护，例如速率限制、凭证验证、调用
+统计、API 网关等措施。（仅当新加坡管理大学需
+使用 API 时适用）NA
+
+--- Page 26 ---
+SMU Classification: Restricted #
+供应商应提供详细证明，表明系统组件（如 Web 
+层、应用层和数据层）部署在独立的网段中，并
+需提供以下详细资料：
+包含现有安全控制措施的架构图；
+应用及接口流程图；
+数据流程图。C
+供应商应提供证明，所有组件、服务、安装包及
+引用库均来自可信或权威来源。C
+
+--- Page 27 ---
+SMU Classification: Restricted #
+供应商应提供证明，其拟议解决方案的设计、开
+发、部署和测试均符合主流安全标准，例如针对 
+Web 应用的 OWASP（开放 Web 应用程序安全项
+目）标准。C
+供应商应提供证明，针对每个新版本及重大版本
+更新，均使用静态应用安全测试（SAST）/ 动态应
+用安全测试（DAST）工具进行应用安全扫描。C
+供应商应提供证明，拟议解决方案已实施数据验
+证措施，以防止手动或系统性的处理错误、数据
+损坏或滥用。C
+
+--- Page 28 ---
+SMU Classification: Restricted #
+供应商应提供证明，已部署 Web 应用防火墙
+（WAF）。C
+供应商应提供证明，系统已实施相关措施以区分
+真实用户与自动化用户（如机器人程序），并拦
+截自动化用户。验证码（CAPTCHA）即为该类解
+决方案的一种示例。C
+供应商应提供证明，未使用已过服务终止期
+（EOS）的硬件、软件及服务资产。C
+供应商应提供证明，其对为新加坡管理大学
+（SMU）提供的服务 / 系统所使用的所有硬件、
+软件及服务资产，均维护着最新的资产清单，清
+单应包含以下内容：
+资产名称
+制造商 / 发行商
+版本
+业务用途
+资产分类
+审批 / 授权日期
+服务终止日期
+存放位置C
+
+--- Page 29 ---
+SMU Classification: Restricted #
+供应商应提供详细证明，审计日志中已记录以下
+内容：
+用户访问及活动
+特权访问及活动
+敏感活动 / 交易
+未授权访问（特权账户及非特权账户）
+系统告警及故障
+系统或安全配置变更C
+供应商应提供证明，系统和应用日志已在本地系
+统中保留至少 30 天。 C
+供应商应提供证明，已针对以下内容建立持续安
+全监控与响应机制：
+异常活动（特权账户及非特权账户）
+重复登录失败
+账户泄露
+数据泄露
+恶意软件检测
+其他威胁C
+供应商应在新加坡管理大学（SMU）提出请求
+后，于双方约定时限内提供所需审计日志，配合
+调查工作。（具体时限由新加坡管理大学确定）C
+所有访问或披露审计日志的请求，供应商均需事
+先获得新加坡管理大学的批准。（仅当新加坡管
+理大学拥有专用实例及备份时适用）C
+供应商应提供详细证明，已实施安全信息和事件
+管理系统（SIEM），且满足以下要求：
+审计日志与安全日志存储于 SIEM 系统中；
+日志具备防篡改能力；
+日志保留期限至少为 180 天；
+日志拥有专用存储资源；
+通过静态数据加密保障日志安全。C
+供应商应提供以下支持服务及联系方式：
+诊断并解决事件与问题；
+为咨询提供建议与指导。C
+供应商应与新加坡管理大学定期开展服务级别评
+审，并共同制定改进计划。C
+
+--- Page 30 ---
+SMU Classification: Restricted #
+供应商应提供证明，已对服务 / 系统实施持续监
+控，且满足以下要求：
+使用具备实时分析与告警功能的监控工具；
+定期评审并优化监控阈值。C
+供应商应提供证明，其具备充足的系统资源及人
+员配置，确保服务 / 系统按照服务级别协议
+（SLA）平稳运行。C
+供应商应每月向新加坡管理大学提交系统及服务
+级别报告。NA
+供应商应明确说明其为新加坡管理大学所用服务 / 
+系统制定的服务级别协议（SLA）。C
+供应商应提供详细证明，新加坡管理大学范围内
+的所有数据及系统备份均已纳入管理与监控，并
+遵循以下备份计划：
+事务备份：至少每日一次；
+差异备份：至少每日一次；
+完全备份：至少每周一次。C
+供应商应提供灾难恢复计划的详细内容，明确新
+加坡管理大学在恢复过程中的参与环节及协作方
+式。NA
+供应商应提供证明，至少有一代完全备份存储于
+安全的异地位置。C
+
+--- Page 31 ---
+SMU Classification: Restricted #
+供应商应提供证明，在服务上线前已对备份与恢
+复流程进行测试，且后续每年至少测试一次。C
+供应商应提供证明，在服务上线前已对灾难恢复
+（DR）流程进行测试，且后续每年至少测试一次
+。C
+供应商应提供证明，完全备份的保留期限至少为 
+12 周。C
+供应商仅可在获得新加坡管理大学（SMU）批准
+后，执行数据恢复操作。（仅当新加坡管理大学
+拥有专用实例及备份时适用）C
+供应商应提供证明，系统和数据可在约定的恢复
+时间目标（RTO）和恢复点目标（RPO）内完成恢
+复。
+注：新加坡管理大学项目经理需与业务负责人讨
+论相关要求，并将 RTO 和 RPO 告知 SaaS 供应商
+。C
+供应商应每年支持新加坡管理大学开展灾难恢复
+（DR）演练。（仅当供应商提供客户发起的灾难
+恢复演练选项时适用）C
+供应商应就任何变更（如功能、管理、服务等方
+面）提前与新加坡管理大学进行清晰沟通，并为
+此类通知制定服务级别协议（SLA）。NA
+
+--- Page 32 ---
+SMU Classification: Restricted #
+供应商应提供详细证明，说明其变更管理政策 / 
+流程，该政策 / 流程需包含以下内容：
+对可用性和性能的影响评估；
+安全风险评估；
+相关阶段的审批流程；
+生产环境部署前的测试 / 验证；
+生产环境部署前的系统和 / 或数据备份；
+回滚计划C
+供应商应提供服务 / 产品相关认证的证明（如 ISO 
+27001、ISO 27017、ISO 27018、SOC 1、SOC 2
+、SOC 3、PCI DSS 等）。
+适用性声明（SOA）：供应商可能被要求提供有
+关这些认证的更多信息。
+可能还需提供 SOC/SSAE 18 认证的控制报告。C
+
+--- Page 33 ---
+SMU Classification: Restricted #
+供应商应提供证明，已为员工制定年度安全意识
+培训计划，使其了解机密信息、公司安全政策与
+标准以及良好的安全实践。
+安全意识培训计划应包含以下内容：
+防范钓鱼攻击；
+设置并保护强密码短语；
+保护公司及 / 或个人办公设备；
+报告网络安全事件；
+安全处理和披露个人数据及业务关键数据；
+安全处理现场及远程办公场景。C
+供应商应提供证明，其人员具备执行网络安全项
+目、治理、风险管理及合规工作的能力。C
+供应商应提供证明，已对以下内容实施静态数据
+加密：
+服务器 / 设备存储卷（如 AWS 弹性块存储、
+Azure 磁盘存储、BitLocker、dm-crypt）；
+服务器实例上的文件（如 PGP 加密）；
+数据库，包括数据库即服务（如 AWS 关系型数据
+库服务、Azure SQL 数据库）；
+对象存储服务（如 AWS 简单存储服务、Azure 
+Blob 存储）。C
+供应商应提供证明，已实施动态数据加密（如 
+HTTPS、SQL TLS），包括服务器间通信的加密，
+并请明确说明加密方法 / 算法。C
+
+--- Page 34 ---
+SMU Classification: Restricted #
+供应商应提供证明，不同客户的数据在存储和处
+理过程中已得到妥善隔离。C
+供应商应提供证明，生产环境数据未被复制或用
+于非生产环境。C
+供应商应提供详细证明，只有授权人员（包括外
+包人员和第三方承包商）可访问系统和数据（包
+括审计日志和备份副本），且需满足以下要求：
+具备正规审批流程；
+基于最小权限原则授予访问权限；
+其操作被记录并监控；
+签署包含纪律处分或法律后果的保密协议。C
+供应商仅可从已接受使用条款和隐私声明并给出
+同意的用户处收集数据。C
+
+--- Page 35 ---
+SMU Classification: Restricted #
+供应商应提供证明，已根据数据类型、价值、敏
+感度和关键性，为包含新加坡管理大学数据的数
+据及对象分配分类，并请提供适用于此类分类数
+据处理的安全流程 / 政策。C
+供应商应提供证明，已为以下对象实施数据泄露
+防护（DLP）解决方案：
+处理新加坡管理大学数据的服务 / 系统；
+处理新加坡管理大学数据的供应商人员（包括外
+包人员和第三方承包商）。NA
+供应商应提供证明，系统支持自动数据保留功能
+。C
+供应商应提供证明，已制定数据安全相关流程 / 
+政策，涵盖多系统接口、司法管辖区和业务职能
+下的数据机密性、完整性和可用性，以防止数据
+被不当披露、篡改或销毁。C
+
+--- Page 36 ---
+SMU Classification: Restricted #
+供应商应提供证明，已维护并定期审查数据清单
+（个人数据、敏感数据及其他类型数据），清单
+需包含以下内容：
+数据描述；
+数据分类和 / 或敏感度；
+存储位置（包括临时存储、备份、接口等）；
+保留期限。C
+供应商需说明服务终止后，新加坡管理大学检索
+数据是否产生额外费用。NA
+供应商应提供证明，服务终止时，所有存储介质
+、系统和网络中的新加坡管理大学数据已被安全
+处置。
+示例：
+云服务商提供的安全数据清理和销毁方法说明；
+使用安全擦除方法删除数据，并在处置过程中销
+毁存储介质。C
+服务终止时，供应商应向新加坡管理大学提供检
+索其数据的适当工具或方式。NA
+服务终止后，供应商应给予新加坡管理大学充足
+时间，以完成其数据的全部检索工作。C
+供应商应确保按照约定的时间线，向新加坡管理
+大学通报以下安全事件 / 数据泄露：
+对于一级严重事件，需在发现事件 / 泄露后 2 小
+时内通过电话通知：
+对新加坡管理大学业务运营产生不利影响的安全
+攻击、数据泄露或未授权访问；
+敏感信息丢失；
+个人身份信息（PII）丢失。
+对于二级严重事件，需在发现事件 / 泄露后 48 小
+时内通知：
+对新加坡管理大学业务运营产生不利影响的安全
+攻击、数据泄露或未授权访问；
+可能导致未授权访问的数据丢失。C
+供应商应提供详细证明，说明其安全事件响应计
+划，并明确新加坡管理大学在该流程中的参与环
+节及协作方式。事件响应计划应涵盖以下内容：
+关键人员的明确角色和职责；
+检测、分析、遏制、根除常见网络安全威胁（如
+钓鱼攻击、勒索软件、数据泄露）并从中恢复的
+流程；
+向内部和外部利益相关者（如监管机构、客户、
+高级管理层）上报和升级事件的沟通计划及时间
+线；
+事后审查及经验总结，以防止类似事件再次发生
+。C
+
+--- Page 37 ---
+SMU Classification: Restricted #
+供应商应向新加坡管理大学提供详细的事件报告
+。C
+供应商应通过约定的沟通渠道，向指定的新加坡
+管理大学人员发送事件通知。C
+供应商应提供证明，具备通过内部团队或第三方
+服务提供商开展安全取证调查的必要能力。C
+供应商应支持新加坡管理大学开展事件响应演练
+。（仅当供应商提供客户发起的事件响应演练选
+项时适用）C
+供应商应与硬件、软件和 / 或系统原厂签订背靠
+背维护支持协议。NA
+供应商应与新加坡管理大学签署保密协议
+（NDA）。C
+若系统由第三方云服务商托管，供应商应使用 
+AWS、Azure 或 GCP 作为云服务提供商。C
+若系统将用于处理信用卡交易，供应商应提供证
+明，该系统符合 PCI DSS 标准。NA
+供应商应认可新加坡管理大学对托管在其环境中
+的内容和数据拥有完全所有权。C
+供应商应与新加坡管理大学签署个人数据保护协
+议。C
+
+--- Page 38 ---
+SMU Classification: Restricted #
+供应商应提供详细证明，已实施网络分段和访问
+控制，以隔离以下环境 / 层级：
+非军事区（DMZ）/Web 层、应用层和数据层；
+生产环境、预发布环境和开发环境。
+请提供系统 / 网络架构图。C
+供应商应提供证明，已为服务 / 系统部署网络防
+火墙（边界防火墙和内部防火墙）。C
+供应商应提供证明，已为服务 / 系统部署入侵检
+测与防御系统（IDPS）。C
+供应商应提供详细证明，说明其补丁管理政策 / 
+流程，该政策 / 流程需包含以下内容：
+按优先级划分的补丁部署时间线；
+生产环境部署前的测试 / 验证。C
+
+--- Page 39 ---
+SMU Classification: Restricted #
+供应商应提供证明，补丁均来自原厂。 C
+供应商应提供材料清单（BOM）。 NA
+供应商应提供证明，已实施并定期审查补丁跟踪
+系统，该系统需包含以下内容：
+服务 / 服务器主机；
+软件及补丁级别；
+补丁状态；
+告警信息。NA
+供应商应提供证明，已部署安全堡垒机 / 跳板
+机，用于从互联网访问生产系统，且仅允许来自
+白名单 IP 地址的访问。C
+供应商应提供证明，已为服务 / 系统部署抗 DDoS
+（分布式拒绝服务攻击）解决方案。NA
+供应商应提供证明，其服务所在的数据中心符合
+以下标准要求：
+ISO 27001 标准中的物理与环境安全条款
+（A.11）；
+SOC 1 和 SOC 2 标准中的数据中心控制要求（PE-
+1 至 PE-8）。
+（仅当供应商自行运营数据中心时适用）C
+供应商应提供服务 / 系统所使用的所有数据中心
+位置信息（如新加坡、中国香港等）。C
+供应商应提供详细证明，已在系统上部署主机防
+护软件（包括反恶意软件），且满足以下要求：
+对防护代理进行集中管理；
+支持实时扫描；
+定期执行全面扫描；
+自动更新代理程序和病毒特征库；
+跟踪更新情况；
+跟踪威胁告警信息。C
+
+--- Page 40 ---
+SMU Classification: Restricted #
+供应商应提供详细证明，用户上传的文件附件均
+经过扫描，确保不含恶意软件或恶意代码。C
+供应商应提供详细证明，已依据可信组织（如美
+国国家标准与技术研究院 NIST、系统网络安全协
+会 SANS、互联网安全中心 CIS 或同等机构）的指
+南 / 基准，对系统组件（操作系统、数据库、应
+用程序等）进行安全加固。C
+供应商应按照以下严重级别要求的时间线修复漏
+洞：
+严重漏洞：4 周及以内；
+高危漏洞：12 周及以内；
+中危 / 低危漏洞：6 个月及以内。C
+
+--- Page 41 ---
+SMU Classification: Restricted #
+供应商应提供详细证明，说明其漏洞管理政策 / 
+流程，其中需包含按严重级别划分的漏洞修复时
+间线。C
+供应商应提供证明，在为新加坡管理大学
+（SMU）部署系统或发布产品前已执行渗透测
+试，且后续每年至少执行一次。
+渗透测试需覆盖新加坡管理大学使用的所有系统
+组件（如 Web 应用、API、服务器、设备等），
+并由合格的渗透测试人员执行。
+请提供最新的渗透测试报告。C
+供应商应允许新加坡管理大学对其使用的服务 / 
+系统执行渗透测试。
+若需获得供应商管理层的事先批准，请提供详细
+要求。NA
+供应商应按照漏洞修复时间线，向新加坡管理大
+学同步漏洞修复进展。（仅当漏洞由新加坡管理
+大学报告或应其要求时适用）C
+用于模型训练的数据源是否已形成文档，可供审
+查？NA
+模型是否经过指令微调或对齐优化，以确保安全
+和负责任的使用？NA
+是否提供模型卡片或相关文档（包含模型局限性
+和预期用途）？NA
+是否设有防范提示注入的措施（如输入验证、转
+义处理）？NA
+是否已缓解间接提示注入风险（如来自文档内容
+的风险）？NA
+是否在模型部署前后定期评估和测试提示注入风
+险？NA
+是否执行过红队测试 / 对抗性提示测试？ NA
+是否设有防范模型逆向或数据提取攻击的机制？ NA
+是否对模型输出的有害 / 不安全内容进行自动或
+人工审核？NA
+
+--- Page 42 ---
+SMU Classification: Restricted #
+是否设有过滤器，防止在响应中泄露个人身份信
+息（PII）或机密信息？NA
+是否已向用户提示模型输出可能存在的不准确或
+幻觉问题？NA
+模型输出在下游使用前是否经过验证 / 清理（如
+禁止自动执行）？NA
+是否设有预防或缓解偏见、有害内容及伦理风险
+的措施（如通过微调、防护规则、输出过滤器
+等）？NA
+是否在模型部署前后定期评估和测试偏见及有害
+内容问题？NA
+是否建立处理或上报问题输出的流程？ NA
+是否已向用户及利益相关者告知模型的局限性和
+风险？NA
+是否使用自动化 AI 测试工具或框架（如 AI Verify
+、Project Moonshot 或其他类似工具）对模型或
+系统进行过独立评估或测试？NA
+用户交互数据是否用于进一步的模型训练或微
+调？NA
+若将数据用于训练或微调，是否提供退出机制或
+明确的同意授权机制？NA
+用户数据在用于模型改进前是否经过匿名化处
+理？NA
+
+--- Page 43 ---
+SMU Classification: Restricted #
+Vendor to respond IITS and business unit joint review
+Please elaborate on your responseMet SMU 
+expectation? 
+(Yes / No)
+There is only one Admin role within an organization. When a 
+user registers the organization for the first time, a password will 
+be sent to the applicant via email. The password is a randomly 
+generated 10-character combination of numbers, uppercase 
+and lowercase letters. Whether the administrator needs to 
+change the password is a personal choice, and the platform 
+has no mandatory requirements in this regard.
+The platform does not monitor individual accounts, and 
+therefore will not lock or disable any account.
+The system presets three default roles and custom roles。
+1. Admin: Only 1 Administrator (highest-level administrator) is 
+allowed per organization. It has full access to all functions, 
+devices, and maximum system permissions.
+2. Sub-admin: Equivalent to Admin, except cannot delete the 
+organization.
+3. Viewer: Only has view access to all pages; no management 
+actions (e.g., cannot send commands or upload resources).
+4. Custom Roles: Set page permission and functional 
+permission by admin
+Sensitive configurations (such as administrator account and 
+password, unlock password) are encrypted and stored locally 
+on the client side to ensure the security of the key.
+The system only allows up to 10 consecutive failed login 
+attempts, after which the account will be locked. To resume 
+using the account, email verification is required.
+
+--- Page 44 ---
+SMU Classification: Restricted #
+
+--- Page 45 ---
+SMU Classification: Restricted #
+Single sign-on is not supported.
+The domain accounts of departed employees will be 
+immediately removed, and they will no longer have access to 
+all internal R&D systems.
+
+--- Page 46 ---
+SMU Classification: Restricted #
+The platform is logged in via email account. Only members of 
+the Pivot Plus organization management are authorized to 
+access the platform; passwords can be changed by users 
+themselves.
+The platform does not support APIs.
+The platform does not support APIs.
+The platform does not support APIs.
+
+--- Page 47 ---
+SMU Classification: Restricted #
+
+--- Page 48 ---
+SMU Classification: Restricted #
+
+--- Page 49 ---
+SMU Classification: Restricted #
+商务侧，合同
+商务侧
+
+--- Page 50 ---
+SMU Classification: Restricted #
+The company has established a SIEM system for unified log 
+integration. Logs are stored separately and can only be 
+accessed by administrators. All operations are logged, and log 
+modification is strictly prohibited. Logs are retained for more 
+than 180 days and stored independently.
+A global after-sales service center is available via the Gcsm 
+System, which provides users with integrated support 
+assistance.https://gcsm.cvte.com
+This initiative is launched by the university, and we will 
+cooperate in its implementation.
+
+--- Page 51 ---
+SMU Classification: Restricted #
+The operation and maintenance team, infrastructure service 
+team, and business R&D team have clear division of 
+responsibilities.
+
+--- Page 52 ---
+SMU Classification: Restricted #
+
+--- Page 53 ---
+SMU Classification: Restricted #
+The "CVTE-ISMS-033 Change Control Procedure Version 1.0" 
+has been established.
+
+--- Page 54 ---
+SMU Classification: Restricted #
+
+--- Page 55 ---
+SMU Classification: Restricted #
+https://pivot-plus.maxhub.com/#/agreement/policy
+
+--- Page 56 ---
+SMU Classification: Restricted #
+We will not use organizational data.
+《CVTE-ISMS-011 Information Asset and Classification Control 
+Procedure Version 1.1
+》、《CVTE-ISMS-039 Personal Information Protection 
+Control Procedure Version 1.0
+》
+
+--- Page 57 ---
+SMU Classification: Restricted #
+Upon service termination, all data will be sealed immediately. 
+Additional fees may be incurred if data retrieval is required.
+https://pivot-plus.maxhub.com/#/agreement/policy
+When the service is terminated, data will go through a process 
+of logical deletion followed by physical deletion.
+Prior to service expiration, a reminder will be sent via the 
+platform to notify the user of the upcoming expiration.
+Disclosure and handling can be carried out as required, and 
+this clause may be included in the contract.
+《CVTE-ISMS-040 Information Security Incident Reporting and 
+Handling Process Version 2.0
+》
+
+--- Page 58 ---
+SMU Classification: Restricted #
+In the event of a security incident, our company will handle and 
+analyze it in accordance with the "CVTE-ISMS-040 
+Information Security Incident Reporting and Handling 
+Process Version 2.0", and prepare an incident report to be 
+sent to Singapore Management University.
+A dedicated Cybersecurity Department has been established 
+within the company to handle, follow up on, and analyze 
+internal security incidents, as well as conduct forensic 
+investigations into such incidents.
+We will jointly formulate an emergency response plan with 
+Singapore Management University and assist in conducting 
+drills.
+商务侧
+If necessary, the legal team may be involved to assist with the 
+signing process.
+Azure cloud services are utilized.
+The service is not used for credit card transactions.
+Approval has been obtained.
+Users must agree to the Privacy Policy before accessing the 
+platform services.
+
+--- Page 59 ---
+SMU Classification: Restricted #
+
+--- Page 60 ---
+SMU Classification: Restricted #
+The software does not contain such content. 
+The software does not contain such content. 
+Reference Azure's SOC 2 Report：Azure + Dynamics 365 + 
+Online Services - Public & Government SOC 2 Type II Report 
+(10-01-2024 to 09-30-2025)
+https://www.kdocs.cn/l/clzSJVUJKGNE
+Singapore
+
+--- Page 61 ---
+SMU Classification: Restricted #
+Meeting the remediation requirements can be included in the 
+contract.
+
+--- Page 62 ---
+SMU Classification: Restricted #
+Yes, it is conducted once a year. The latest one was on 
+December 11, 2025.
+Report：https://cvte.kdocs.cn/l/cqwZ1f4DBNOv
+The organization's real data will not be used for model 
+training.
+
+--- Page 63 ---
+SMU Classification: Restricted #
+AI testing tools have not been used.
+We will not collect user interaction data.
+We will not collect user interaction data.
+We will not collect user interaction data.
+
+--- Page 64 ---
+SMU Classification: Restricted #
+IITS and business unit joint review
+If gap exist, please comment.If partial gap exist, please 
+rate the risk.
+(Low / Medium/ High)
+
+--- Page 65 ---
+SMU Classification: Restricted #
+
+--- Page 66 ---
+SMU Classification: Restricted #
+
+--- Page 67 ---
+SMU Classification: Restricted #
+
+--- Page 68 ---
+SMU Classification: Restricted #
+
+--- Page 69 ---
+SMU Classification: Restricted #
+
+--- Page 70 ---
+SMU Classification: Restricted #
+
+--- Page 71 ---
+SMU Classification: Restricted #
+
+--- Page 72 ---
+SMU Classification: Restricted #
+
+--- Page 73 ---
+SMU Classification: Restricted #
+
+--- Page 74 ---
+SMU Classification: Restricted #
+
+--- Page 75 ---
+SMU Classification: Restricted #
+
+--- Page 76 ---
+SMU Classification: Restricted #
+
+--- Page 77 ---
+SMU Classification: Restricted #
+
+--- Page 78 ---
+SMU Classification: Restricted #
+
+--- Page 79 ---
+SMU Classification: Restricted #
+
+--- Page 80 ---
+SMU Classification: Restricted #
+
+--- Page 81 ---
+SMU Classification: Restricted #
+
+--- Page 82 ---
+SMU Classification: Restricted #
+
+--- Page 83 ---
+SMU Classification: Restricted #
+
+--- Page 84 ---
+SMU Classification: Restricted #
+
+--- Page 85 ---
+SMU Classification: Restricted #
+
+--- Page 86 ---
+SMU Classification: Restricted #
+
+--- Page 87 ---
+SMU Classification: Restricted #
+
+--- Page 88 ---
+SMU Classification: Restricted #
+
+--- Page 89 ---
+SMU Classification: Restricted #
+
+--- Page 90 ---
+SMU Classification: Restricted #
+
+--- Page 91 ---
+SMU Classification: Restricted #
+
+--- Page 92 ---
+SMU Classification: Restricted #
+
+--- Page 93 ---
+SMU Classification: Restricted #
+
+--- Page 94 ---
+SMU Classification: Restricted #
+
+--- Page 95 ---
+SMU Classification: Restricted #
+
+--- Page 96 ---
+SMU Classification: Restricted #
+
+--- Page 97 ---
+SMU Classification: Restricted #
+
+--- Page 98 ---
+SMU Classification: Restricted #
+
+--- Page 99 ---
+SMU Classification: Restricted #
+
+--- Page 100 ---
+SMU Classification: Restricted #
+
+--- Page 101 ---
+SMU Classification: Restricted #
+
+--- Page 102 ---
+SMU Classification: Restricted #

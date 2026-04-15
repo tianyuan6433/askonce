@@ -1,0 +1,25 @@
+# Dependencies
+backend/venv/
+frontend/node_modules/
+frontend/.next/
+
+# Database (contains real data)
+backend/askonce.db
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+__pycache__/
+*.pyc
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Build
+*.egg-info/
+dist/
+build/

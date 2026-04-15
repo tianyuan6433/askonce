@@ -1,0 +1,191 @@
+--- Page 1 ---
+MAXHUBPivot⁺
+PioneerProgram
+UpdatebyJanuary25,2026
+
+--- Page 2 ---
+TableofContents
+I.KeyPivot⁺Upgrades·················································································1
+1.Sleekerinterface·······································································································································1
+2.Ultra-simplebulkenrollment················································································································1
+3.IntelligentO&M·········································································································································1
+4.Visualcontentdistribution····················································································································1
+II.PioneerExperienceOfficerProgram··················································2
+1.Eligibility······················································································································································2
+2.Timeline······················································································································································2
+3.HowtoApply············································································································································2
+4.ExclusivePioneerBenefits····················································································································2
+III.MigrationRisks·······················································································2
+1.DeviceCompatibility·······························································································································2
+2.DataMigrationLimitations··················································································································2
+3.CoexistenceConflict·······························································································································3
+4.MigrationDuration·································································································································4
+5.On-SiteSupportRequired····················································································································4
+IV.SwitchBackOption···············································································4
+Attachment:FeatureDifferencesBetweenPivotandPivot⁺·························································4
+
+--- Page 3 ---
+1
+Pivot⁺,thepowerfulupgradetoPivot,islaunchingsoon—designedtosuperchargeyourdevice
+managementefficiency!
+We’reinvitingloyalPivotuserstojoinourPioneerExperienceOfficerprogramandcollaboratedirectly
+withourR&Dteamtoshapethefinalproduct.
+I.KeyPivot⁺Upgrades
+1.Sleekerinterface
+30%fewerclicksforfaster,lowertrainingcosts,betterdailymanagementefficiency.
+2.Ultra-simplebulkenrollment
+Nomanualdevice-by-devicesetup—cutsinitialenrollmenttime.
+3.IntelligentO&M
+Real-timedashboardalertsforequipment/networkissues(remoteearlydetection&resolution)
+4.Visualcontentdistribution
+Intuitivecanvasmixing,customplaylists,drag-and-dropscheduledone-clickrelease.(comingsoon)
+
+--- Page 4 ---
+2
+II.PioneerExperienceOfficerProgram
+1.Eligibility
+A.ActiveexistingPivotusers
+B.Eagertoco-createandimprovePivot⁺withourteam
+2.Timeline
+A.ApplicationPeriod:February1,2026–June30,2026
+B.Review:3businessdays;you’llbenotifiedviaemailonceadecisionismade.
+3.HowtoApply
+Weuseatargetedinvitation&salesliaisonmodel:
+A.Reachouttoyourdedicatedsalesconsultantorviamaxhub.com(top-rightblueContactUsbutton).
+B.Provideorganizationdetails(AdminAccount,OrganizationCode,DeviceTypes/Models)tocomplete
+registration.
+C.Uponapproval,we’llactivateyouraccess,sendadetailedmigrationguide,andassistwithmigration.
+4.ExclusivePioneerBenefits
+A.FreeProfessionalAccess:60monthsofcomplimentaryPivot⁺Professionalusage(validfrom
+activationdate).
+B.DirectR&DCollaboration:Sharefeedbackdirectlywithproductmanagersandtechnicalleads—your
+inputdrivesversionoptimizations.
+III.MigrationRisks
+Toensureasmoothtransition,pleasereviewthesekeypointsbeforemigrating:
+1.DeviceCompatibility
+Pivot⁺doesn’tsupportalllegacyPivotdevices.CheckthePivot⁺CompatibilityListfirst—ifnotlisted,
+delaymigration.
+2.DataMigrationLimitations
+SomePivotfeatures/datacannotbemigrated.Preparebackupsoradjustmentsinadvance(see
+detailsbelow).
+
+--- Page 5 ---
+3
+Attachment:MigrationChecklist
+PivotCoreFeature MigratabletoPivot⁺? RequiredUserAction
+OrganizationInformation Yes
+Roles&Permissions Yes
+DeviceEnrollment Yes Keepdevicespoweredon
+DeviceGroupRelationships Yes
+ProfileContent Yes
+AssociateddevicesofProfile No Manuallyre-associatedevicesinPivot⁺
+Enable/DisableStatus Yes
+Account No
+Incident Yes
+ResourceGroups&Content Yes
+Program/PublishedProgram No RecreateprograminPivot⁺
+CommandLogs/ActionLogs No
+PendingCommands No RecreatependingcommandsinPivot⁺
+Admin/UnlockPasswords Yes
+PersonalAccountSettings
+Username,Multiplelogins,
+2-FactorAuthenticationYes
+DeviceusageData No
+CoexistenceConflict
+PivotandPivot⁺cancoexisttemporarilybutriskcommandconflicts.WerecommenddisablingPivot
+permissionsaftermigration.
+
+--- Page 6 ---
+4
+3.MigrationDuration
+Thefullmigrationprocesstypicallytakes5businessdays.Pleaseplanaccordingly.
+4.On-SiteSupportRequired
+Whilethemigrationisperformedonline,somelocalusersupportisnecessary.
+IV.SwitchBackOption
+AfterusingPivot⁺,ifyou’renotsatisfiedwithit,youcanswitchbacktotheoriginalPivotatanytime.
+However,you’llloseallPioneerExperienceOfficerbenefits,andoperationsperformedonyourdevices
+duringthePivot⁺migrationcannotbetransferredback—you’llneedtoreconfiguresettingsmanually.
+Pleasebeadvised.
+Attachment:FeatureDifferencesBetweenPivotandPivot⁺
+Pivot PivotPlus
+Moudle Features Free Premium Basic Pro
+TypesAndroidIFP(USeries) ✓ ✓ ✓ ✓
+MHOSIFP(Vseries) ✓ ✓ ✓ ✓
+MTR-Android ✓ ✓
+MTR-Windows ✓ ✓ ✓ ✓
+DigitalSignage(CMA,CMB) ✓ ✓
+All-In-OneLED ✓ ✓ ✓ ✓
+EnrollmentManualEnrollment ✓ ✓ ✓ ✓
+EnrollviaUSB ✓ ✓ ✓ ✓
+Pre-importSN&MACenrollment ✓ ✓
+Same-NetworkEnrollment ✓
+Management8-level&Auto-allocationDeviceGroups ✓5-level ✓ ✓
+
+--- Page 7 ---
+5
+PeripheralParameterConfiguration ✓ ✓ ✓ ✓
+ControlCommands
+PowerOn/Off,Reboot,ScreenLock,Bells,
+ScreenOff,ClearCache,FactoryReset✓ ✓ ✓ ✓
+SettingCommands
+Brightness/Volume,Wallpaper,
+Image/SoundMode,InputSwitch,
+BootingLogo✓ ✓ ✓ ✓
+AppFileUpload&Installation ✓ ✓ ✓ ✓
+AppStoreLinkInstallation&Auto-Update ✓withoutAuto-Update ✓ ✓
+AppEnable/Disable/Install/Uninstall ✓ ✓ ✓ ✓
+ManualUploadFirmwareToUpdate ✓
+KeepFirmwareUpToDate ✓ ✓
+BulkUpdateMainDeviceFirmware ✓ ✓ ✓ ✓
+BulkUpdatePeripheralFirmware ✓
+Commandinschedule&Re-Edit ✓ ✓ ✓ ✓
+profileSystemConfiguration
+Date&Time,PoweringSaving,Wake-Up
+Settings,Display&Sound✓ ✓ ✓ ✓
+Wi-FiConfiguration
+Wi-FiSettings&AllowList✓ ✓ ✓ ✓
+AppConfiguration
+DefaultRequiredApp&CertificateList✓ ✓ ✓ ✓
+LockConfiguration
+Device/Setting/FactoryMenuLock✓ ✓ ✓ ✓
+OtherPersonalizedConfiguration
+BYOD,OOBE,URLBlockList,
+PluginforMTR,HotspotSettings,
+PeripheralParameter...✓
+withoutOOBE,
+Peripheral✓
+Operations Multi-DevicesRemoteScreenControl ✓
+
+--- Page 8 ---
+6
+&Data HierarchicalIncidentManagement ✓
+AnomalyIncidentDetection&Alert ✓
+RemoteFixforAnomalyIncidents ✓
+Dashboard ✓basicdata ✓
+UsageData ✓ ✓ ✓ ✓
+AppOperationData ✓ ✓ ✓ ✓
+Top10MostVisitedURLs ✓
+CMSResources 20GB 50GB 20GB 50GB
+CreateCanvas ✓
+Playlist ✓ ✓
+ContentPublishedInSchedule ✓
+SendImage/Video ✓ ✓ ✓ ✓
+SendURL/LiveChannel ✓ ✓ ✓ ✓
+FilePublish ✓ ✓ ✓ ✓
+SendText ✓ ✓ ✓ ✓
+EmergencyAlertwith4DefaultTemplates ✓withouttemplates ✓ ✓
+OrganizationDefaultRoles
+admin,sub-admin,viewer✓2users ✓ ✓ ✓
+Bulkusersadding ✓ ✓ ✓
+CustomRoles ✓ ✓
+BulkClientUpdate ✓ ✓ ✓ ✓
+WOLServiceUpdate&DevicePower-On
+Detection✓updateonly ✓ ✓
+LogsCommandExecutionLogs ✓ ✓ ✓ ✓
+ActionLogs ✓downloadonly ✓ ✓
+ClientExecutionLogs ✓
+BulkExportofXBugLogs ✓withoutbulkexport ✓ ✓
+
+--- Page 9 ---
+7
+MAXHUBPivot⁺

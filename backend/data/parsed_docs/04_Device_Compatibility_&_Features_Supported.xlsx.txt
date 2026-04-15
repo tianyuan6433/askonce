@@ -1,0 +1,161 @@
+
+## Sheet: Feature Support by Category
+Moudle | Features | MTR-Windows | Win IFP | MTR-Android | Android IFP | Digital Signage | Wireless Box
+Enrollment | Manual Enrollment | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Enroll via USB | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Zero-Touch Enrollment(SN+MAC) | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Same-Network Enrollment | ✓ | ✓ | ✓ | ✓ | ✓ | 
+Management | Device Info Viewing and Export | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Location | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Screen View | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+Control Commands | Power On | ✓ | ✓ |  | ✓ | ✓ | 
+ | Power Off | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Reboot | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Screen Lock | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Screen Off | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Bells | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Brightness |  | ✓ | ✓ | ✓ | ✓ | 
+ | Image Mode |  | ✓ |  | ✓ | ✓ | 
+ | Volume |  | ✓ | ✓ | ✓ | ✓ | 
+ | Sound Mode |  | ✓ | ✓ | ✓ | ✓ | 
+ | Input Switch |  | ✓ |  | ✓ |  | 
+ | Wallpaper |  |  |  | ✓ | ✓ | ✓
+ | Booting logo |  |  |  | ✓ | ✓ | 
+ | Clear Cache | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Factory Reset |  |  | ✓ | ✓ | ✓ | ✓
+ | Remote Screen Control | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+Profile | Date & Time | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Power Saving | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Device Lock | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Hotspot Settings |  |  | ✓ | ✓ | ✓ | 
+ | BYOD Settings | ✓ |  | ✓ |  |  | 
+ | Wi-Fi Settings | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Wi-Fi Allow List | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Display & Sound |  | ✓ | ✓ | ✓ | ✓ | 
+ | URL Block List | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Default Required Certificate List | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Default Required App List | ✓ | ✓ |  | ✓ | ✓ | ✓
+ | Wake-Up Settings |  |  | ✓ | ✓ | ✓ | 
+ | Accessibility System navigation |  |  |  | ✓EDLA |  | 
+ | OOBE |  |  | ✓ |  |  | 
+ | Other Personalized Settings | Plugin | MH OS System Settings | Video/Audio Config |  |  | 
+APP | File Upload & Installation | ✓ | ✓ |  | ✓ | ✓ | ✓
+ | Store Link Installation & Auto-Update |  |  |  | ✓ | ✓ | ✓
+ | App Uninstallation | ✓ | ✓ |  | ✓ | ✓ | ✓
+ | App Enable / Disable | ✓ | ✓ |  | ✓ | ✓ | ✓
+Incident Items | Insufficient Disk Storage | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Insufficient System Disk Space | ✓ | ✓ |  |  |  | 
+ | RAM Over Usage | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | CPU Over Usage | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | CPU Over Temperature | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Device Offline For Too Long | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Device Unenroll | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Unstable Network | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Client Version To Be Updated | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Online Device Unused For Too Long | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Device Online For Too Long | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Peripheral Disconnection | ✓ | ✓ | ✓ | ✓ | ✓ | 
+Operations
+& Data | Firmware Update | ✓ | ✓ | ✓ | ✓ | ✓ | ✓(不可用)
+ | Usage Data | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | App Operation Data | ✓ | ✓ | ✓ | ✓ | ✓ | 
+ | Top 10 Most Visited URLs | ✓ | ✓ | ✓ | ✓ | ✓ | 
+CMS | Playlist | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Send Image / Video | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Send Text | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | File Publish | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Send URL / Live Channel | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ | Emergency Alert | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+
+## Sheet: Device Compatibility List
+ | Device Series | List | Images
+IFP | Education Series | U4/E3/S2/B8620 | =DISPIMG("ID_A93D4D119AE34365BAEA28359701D8E0",1)
+ | MH OS V series | V6/V7 | =DISPIMG("ID_FBD23574BF7D42FDA43AEE224AECDB5A",1)
+DS | CMA | CMA | =DISPIMG("ID_E42DA33A4469494EB05B1E7509F8356C",1)
+ | CMB | CMB | 
+ | UW | UW | =DISPIMG("ID_EDAF1CA902744BA29441270790359745",1)
+MTR-Windows | Xboard Teams Room | Xboard V7 teams room | =DISPIMG("ID_AA89005CD7DD43DB95B4890D9C10DC89",1)
+ | Xcore Kit Pro | TCP30T | =DISPIMG("ID_4BC71CE8A2054A368D4DBD72C5180386",1)
+ |  | XC25T | =DISPIMG("ID_CDB83B51B2344104A9C466E132974770",1)
+ | Xbar W70 Kit | XBar W70 | =DISPIMG("ID_4FEE9CDBC9074B679443A0C4C3B9CEB1",1)
+ |  | TCP31T | =DISPIMG("ID_4BC71CE8A2054A368D4DBD72C5180386",1)
+ | XT20-VB Kit | 
+TCP30T | =DISPIMG("ID_4BC71CE8A2054A368D4DBD72C5180386",1)
+ |  | XC25T | =DISPIMG("ID_CDB83B51B2344104A9C466E132974770",1)
+ |  | XBar U50 | =DISPIMG("ID_ED9AEA237AF545879F159A3BD834F64D",1)
+ | XT20-PS Kit | 
+TCP30T | =DISPIMG("ID_4BC71CE8A2054A368D4DBD72C5180386",1)
+ |  | XC25T | =DISPIMG("ID_CDB83B51B2344104A9C466E132974770",1)
+ |  | UC BM45 | =DISPIMG("ID_199936E3F85A455498FC8280CC51F545",1)
+ |  | UC P30 | =DISPIMG("ID_1D2F6648C93840D7840CB520B7C9B6C6",1)
+MTR-Android | Videobar&Schedule Panel | Xbar V50 Kit | =DISPIMG("ID_4FEE9CDBC9074B679443A0C4C3B9CEB1",1)
+ |  | Xbar V70 Kit | =DISPIMG("ID_ED9AEA237AF545879F159A3BD834F64D",1)
+ |  | Panel | =DISPIMG("ID_8F94BE8662BC4048BEDA5BE0EE7C6A57",1)
+LED | All-in-one LED V3 | V3 | =DISPIMG("ID_98C91273F87544C7A2742D3BE7FE7441",1)
+
+## Sheet: Sheet1
+Moudle | Features | MTR-Windows | 
+Enrollment | Manual Enrollment | ✓ | 
+ | Enroll via USB | ✓ | 
+ | Zero-Touch Enrollment(SN+MAC) | ✓ | 
+Management | Device Info Viewing and Export | ✓ | 
+ | Location | ✓ | 
+ | Screen View | ✓ | 
+Control Commands | Power On |  | 
+ | Power Off | ✓ | 
+ | Reboot | ✓ | 
+ | Screen Lock | ✓ | 
+ | Screen Off | ✓ | 
+ | Bells | ✓ | 
+ | Brightness |  | 
+ | Image Mode |  | 
+ | Volume |  | 
+ | Sound Mode |  | 
+ | Input Switch |  | 
+ | Wallpaper |  | 
+ | Booting logo |  | 
+ | Clear Cache | ✓ | 
+ | Factory Reset |  | 
+ | Remote Screen Control | ✓ | 
+Profile | Date & Time | ✓ | 
+ | Power Saving | ✓ | 
+ | Device Lock | ✓ | 
+ | Hotspot Settings |  | 
+ | BYOD Settings | ✓ | 
+ | Wi-Fi Settings | ✓ | 
+ | Wi-Fi Allow List | ✓ | 
+ | Display & Sound |  | 
+ | URL Block List | ✓ | 
+ | Default Required Certificate List | ✓ | 
+ | Default Required App List | ✓ | 
+ | Wake-Up Settings |  | 
+ | Accessibility System navigation |  | 
+ | OOBE |  | 
+ | Other Personalized Settings | Plugin | 
+APP | File Upload & Installation | ✓ | 
+ | Store Link Installation & Auto-Update |  | 
+ | App Uninstallation | ✓ | 
+ | App Enable / Disable | ✓ | 
+Incident Items | Insufficient Disk Storage | ✓ | 
+ | Insufficient System Disk Space |  | 
+ | RAM Over Usage |  | 
+ | CPU Over Usage |  | 
+ | CPU Over Temperature | ✓ | 
+ | Device Offline For Too Long |  | 
+ | Device Unenroll |  | 
+ | Unstable Network |  | 
+ | Client Version To Be Updated |  | 
+ | Online Device Unused For Too Long |  | 
+ | Device Online For Too Long |  | 
+ | Peripheral Disconnection | ✓ | 
+Operations
+& Data | Firmware Update | ✓ | 
+ | Usage Data | ✓ | 
+ | App Operation Data | ✓ | 
+ | Top 10 Most Visited URLs |  | 
+CMS | Playlist |  | 
+ | Send Image / Video |  | 
+ | Send Text | ✓ | 
+ | File Publish | ✓ | 
+ | Send URL / Live Channel |  | 
+ | Emergency Alert | ✓ | 

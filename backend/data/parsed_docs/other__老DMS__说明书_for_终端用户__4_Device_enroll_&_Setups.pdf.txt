@@ -1,0 +1,35 @@
+--- Page 1 ---
+How to enroll device?
+
+--- Page 2 ---
+DMS APK download:How to bind device to school?Step 1: Open DMS on your devicehttps://drive.cvte.com/p/DelB9MYQ0Z0BGODqCA
+Download APK on a thumb drive and install on device.
+Open DMS
+
+--- Page 3 ---
+How to bind device to school?Step 2: Fill device enroll form
+1. Login to: dms.bytello.com  2. Go System Manage -> School Manage 3. Find Admin account & School codeWhere to ﬁnd these info?
+
+--- Page 4 ---
+8888 and 8883 ports need to open
+How to bind device to school?If unable to bind device, check ports
+
+--- Page 5 ---
+How to setup WOL?
+
+--- Page 6 ---
+How to setup WOL?Step 1: Turn on Wake on LAN 
+Open Debug Menu
+Android Control ! ONWake on LAN -> ONEnter Remote Control
+
+--- Page 7 ---
+Step 2 Install WOL.exeHow to setup WOL?
+DMS WOL download:https://drive.cvte.com/p/DelB9MYQ0Z0BGODqCADownload WOL.exe on a windows computer
+When installed：
+
+--- Page 8 ---
+binding code = school codeserver name: user-self-deﬁnedStep 2 Fill form and connectHow to setup WOL?1. Login to: dms.bytello.com  2. Go System Manage -> School Manage 3. Find School codeWhere to ﬁnd School code?
+
+--- Page 9 ---
+2. Make sure the ethernet card supports WOL protocol.
+If the WOL does not workHow to setup WOL?1. Make sure PC and IFPs are under same local network.

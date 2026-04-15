@@ -1,0 +1,55 @@
+--- Page 1 ---
+MAKE MANAGEMENT SIMPLER, 
+MORE EFFICIENT, SAFER
+Device Control | Software Management | Content Distribution | Resource Management
+Full-Cycle Management
+Cover the entire lifecycle of device deployment, 
+operation, and maintenance.
+All-in-One 
+Combine device management and content distribution 
+into one platform for integrated operations.
+Security & Compliance
+Adhere to GDPR, SOC, and NIS2 compliance 
+standards to ensure data and device security.
+
+--- Page 2 ---
+MANAGEMENT - GLOBAL CONTROL
+• Smart Dashboard
+View device status, tasks, and resources at a glance. Manage everything with 
+one click.
+• Multi-Device Management
+Centrally control MAXHUB Windows, Android devices. Remotely send 
+commands and configure settings in batches.
+• App Management
+Batch install apps, and remotely manage (enable/disable/uninstall) apps on 
+devices.
+ENROLLMENT - ZERO-TOUCH
+• Start Using Immediately, Deploy Efficiently
+Pre-import serial numbers/MACs for auto-enrollment, auto-detect LAN 
+devices for one-click batch enrollment.
+MAINTENANCE - INTELLIGENT SUPPORT
+• Multi-Device Screen Control
+Remotely control the screens of multiple conference room devices 
+simultaneously to boost efficiency in issue diagnosis and troubleshooting.
+• Custom Incidents
+Monitor devices in real time, set custom incidents for issues, and notify the 
+right people instantly.
+• Smart Firmware Updates
+Auto-detect new firmware versions; update devices in batches (or 
+automatically) to fix issues quickly.
+• Centralized Log Management
+Keep all logs in one place—never lose records, full traceability at all times.
+CONTENT DISTRIBUTIONS - EASY FOR EVERYONE
+• Store Assets Freely
+One-stop repo for all assets (images, videos, docs, etc.) with auto-
+categorization—neat, efficient resource management.
+• Assemble Content Freely
+Mix components/multimedia on an intuitive canvas; craft tailored promo 
+content for diverse scenarios effortlessly.
+• Arrange Programs Flexibly
+Combine stored assets/custom content on demand to build ordered playlists—
+smooth, flexible sequencing.
+• Set Releases Easily
+Drag-and-drop calendar for time slots, one-click playback schedules—
+streamlined content release.
+www.maxhub.com MAXHUB MAXHUB_Global MAXHUB MAXHUB_Global

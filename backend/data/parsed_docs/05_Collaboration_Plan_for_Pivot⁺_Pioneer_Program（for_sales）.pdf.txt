@@ -1,0 +1,115 @@
+--- Page 1 ---
+CollaborationPlanforPivot ⁺ Pioneer
+Program
+ForSales
+ThismanualstandardizesthefullcustomerapplicationprocessforthePivot ⁺ PioneerProgram,
+clarifiesexecutionstandards,responsibilityboundaries,andkeyoperationalpointsforthesales
+team.
+Itensuresseamlesscoordinationacrosscustomerrecruitment,eligibilityreview,permission
+activation,andfollow-upservices,enhancingcustomerexperienceandprojectefficiency.
+1.SubmitApplication
+a.SubmittedbyyourChinesesalesrepviaWeChatWork-JiandaoCloud
+i.ThedeadlineforapplicationsubmissionisJune30,2026.
+ii.Link:
+https://jdy.cvte.com/app/64e8ab008194fb000e128200/entry/693100f6c12427515d42ef
+6e
+b.KeyRequirements
+i.Verifytheauthenticityandaccuracyofcustomerinformation(organizationname,
+contactdetails,numberofdevices,devicetypes,etc.)toavoidapplicationrejection
+duetoerrors.
+ii.Ensurethecustomerfullyunderstandstheprogram’scorebenefits(5-yeartrial,bulk
+licenses,exclusivesupport)andmigration-relatedriskstopreventfuture
+misunderstandings.
+2.EligibilityReview
+a.EligibilityCheck：TianYuanwillverifytheorganization’sinformation,sitescale,and
+devicecompatibilitywithin1businessdayofapplication(startingJanuary26,2026).
+b.PermissionSetup：Onceapproved,thecustomwillreceive5-yearexclusivetrialaccess
+toPivot ⁺ ,matchingthenumberofdevicesyousubmitted..
+3.PermissionActivation&Notification
+
+--- Page 2 ---
+a.PermissionActivation:Afterapproval,TianYuanwillactivatethecustomer’s5-year
+exclusivetrialpermission(matchingthenumberofsubmitteddevices).
+b.NotificationSynchronization:Onceactivated,confirmthecustomerhasreceivedthe
+emailtitled"[Pivot ⁺ PioneerProgram]YourTrialAccessisActivated‒GetStartedGuide",
+andremindthemtochecktheaccountcredentialsemail(from"MAXHUBpivot ⁺ ",subject
+"WelcomeToPivot ⁺ ").
+4.TeamsGroupCoordination
+a.GroupSetup:TianYuanwillcreateadedicatedTeamssupportgroup(includingthe
+customer,sales,FAE,R&D/operationsteams);salesmustensurethecustomerjoinsthe
+group.
+b.GroupCollaboration:ThePivot ⁺ teamwillalignwiththecustomerintheexclusive
+Teamsgrouppriortoprovidinganyassistance,andproactivelyfollowupwithcustomers
+toaddressquestionsrelatedtoproductusage.
+ScriptsforCustomers
+1.EmailTemplateforPioneerProgramNotification
+1.EmailSubject
+[Pivot ⁺ PioneerProgram]NotificationofTrialPermissionActivationandUserGuide
+2.EmailRecipients
+•Primaryrecipients:Customers
+•Carboncopy(CC):Correspondingsalespersonnel,correspondingFAE(FieldApplication
+Engineer),coremanagementofthePivot ⁺ Team(HuangJieqiang,TangLejun)
+3.EmailBody
+Hi,[CustomerOrganizationName]team
+ThankyouforjoiningthePivot ⁺PioneerProgram!Yourexclusivetrialaccessisnowofficially
+activated—youcandiverightintoexploringPivot ⁺ ’snewfeatures.
+3.1KeyFeaturesofPivot ⁺
+Comparedwiththetraditionalversion,Pivot ⁺ bringsyou4coreupgrades:
+
+--- Page 3 ---
+1.Sleekerinterface:30%fewerclicksforfaster,lowertrainingcosts,betterdaily
+managementefficiency.
+2.Ultra-simplebulkenrollment:Nomanualdevice-by-devicesetup—cutsinitialenrollment
+time.
+3.IntelligentO&M:Real-timedashboardauto-alertsforequipment/networkincidents(early
+detection&resolutionremotely).
+4.Visualcontentdistribution:Intuitivecanvasmixing,customplaylists,drag-and-drop
+scheduledone-clickrelease.
+3.2YourPioneerProgramBenefits
+1.60-monthtrialwithXXlicenses(startsonactivationdate).
+2.Freeaccesstoallpremiumfeatures&one-on-onetechnicalsupport.
+3.Priorityforproductfeaturerequests—sharefeedbackanytimetohelpusimprove.
+3.3MigrationKeyNotes
+Toensureasmoothtransition,pleasereviewtheserisksbeforeproceeding:
+1.DeviceCompatibility:Pivot ⁺doesn’tsupportalllegacyPivotdevices.CheckthePivot ⁺
+CompatibilityListfirst—ifnotlisted,delaymigration.
+2.DataMigrationLimitations:CertainPivotfeaturesanddatacannotbemigratedtoPivot ⁺ .
+Pleasereviewthisinadvanceandpreparefordatabackuporadjustments.
+3.CoexistenceConflict:PivotandPivot ⁺cancoexisttemporarilybutriskcommand
+conflicts.WerecommenddisablingPivotpermissionsaftermigration.
+4.MigrationDuration:Thefullmigrationprocesstypicallytakes5businessdays.Pleaseplan
+accordingly.
+5.On-SiteSupportRequired:Whilethemigrationisperformedonline,somelocaluser
+supportisnecessary.
+3.4GetStarted
+1.Login:pivot-plus.maxhub.com
+2.Credentials:Sentseparatelyviaemail(from"MAXHUBpivot ⁺ ",subject"WelcomeTo
+Pivot ⁺").
+3.Guides:
+a.QuickStartGuide
+b.Howtoenrolldevices？
+c.Manual
+
+--- Page 4 ---
+d.FAQs
+3.5ExclusiveSupport
+We’vesetupadedicatedTeamsgroup([TeamsGroupLink])withproduct,dev,andO&M
+specialists.Postquestionsanytime—we’llrespondpromptly.
+ThankyoufortrustingPivot ⁺ !We’reexcitedtopartnerwithyoutobuildamoreefficient
+O&Mandcontentdistributionsystem.
+Bestregards,
+Pivot ⁺ PioneerProgramTeam
+2.GroupChatScripts
+1.welcome
+Hieveryone!ThanksforjoiningthePivot+2.0PioneerProgram.
+WithPivot+,youcanmanagedevicesremotelyinbulkandcreate/releaseresourcesefficiently.
+Checktheproductguidestogetstarted,andfeelfreetoaskquestionshereanytime.
+2.MigrationRiskConfirmation
+Beforewestartthemigration,couldyoupleaseconfirmthatyou'vereviewedourmigration
+processandassociatedrisks?
+Migration&RiskDocument:Pivot ⁺PioneerProgram
+3.MigrationStartsAfterYourConfirmation
+Next,we'llstartyour5-dayexclusivemigrationservice:
+1.Migrationsteps:Firstmigratedeviceassociations,thensyncPivotplatformconfigurations.
+2.Progressupdates:We'llpostinthegroupbeforeandaftereachmigrationsteptokeepyou
+updated.Thanksforyourcooperation!

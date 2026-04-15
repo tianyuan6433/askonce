@@ -1,0 +1,89 @@
+--- Page 1 ---
+1 Firmware update2 Thumb driveRemote3 App Install4 File PublishAndroid version compatibilityOnly works for 811, 9950AllAllAllRequire device connected to ‘Remote’Not requiredNot requiredRequiredRequiredR&D team participationRequired, took about 30 working days for testingNot requiredNot requiredNot requiredEnd-user manual operation requirementRequire user to update ﬁrmwareRequire user to install apkNot required Required user to install apkApp remaining after resettingRemainsNoNoNoKey points1.Not working for all platforms；
+2.Long process for ﬁrmware testing;
+3.Need end user to update ﬁrmware manually
+1.Need end user to install apk manually
+2.Need re-install after device resettingApp install command only works for device online1.Need end user to install apk manually
+2.Need re-install after device resetting4 Ways to Install DMS Comparison
+
+--- Page 2 ---
+1Install DMS via ﬁrmware update
+
+--- Page 3 ---
+Install DMS via ﬁrmware update.Step 1: Conﬁrm required informationPlease provide info below to R&D team: 1.Client name 2.Platform        eg: K75CA-BO9D11A-GThe ﬁrmware update requires 30 working days. 
+Please check with your Software Account Manager for accurate release date.
+
+--- Page 4 ---
+Install DMS via ﬁrmware update.Step 2: Check update & downloadOnce ﬁrmware released, end user can update ﬁrmware for device
+Settings -> System Update
+
+--- Page 5 ---
+Install DMS via ﬁrmware update.Step 3: InstallOnce download completed, start install.
+Install
+
+--- Page 6 ---
+Install DMS via ﬁrmware update.Step 4: Restart & Check DMS app Find DMS app in all apps
+Conﬁrm & Restart
+
+--- Page 7 ---
+2Install DMS via thumb drive
+
+--- Page 8 ---
+Latest DMS APK:How to install DMS apk?Step 1: Download DMS apk to a thumb drivehttps://drive.cvte.com/p/DelB9MYQ0Z0BGODqCADownload APK into a thumb drive
+
+--- Page 9 ---
+Double-click on the apk ﬁleHow to install DMS apk?Step 2: insert thumb & install
+click [ Install ]
+
+--- Page 10 ---
+Close installerHow to install DMS apk?Step 3: installed & check
+Find Bytello DMS in all apps
+
+--- Page 11 ---
+If you can not install the apk…
+Press [input] [1] [3] [7] [9]  to open Debug menu
+Enter [Android Setting]Turn on [Unknown sources] to enable install apk
+
+--- Page 12 ---
+3Install DMS via ‘Remote’ - App Install* this method only works for the school already have ‘Remove’ account.
+
+--- Page 13 ---
+Install DMS via ‘Remote’ - App InstallStep 1: Log in to Remote & select all devices
+then click [Device]Select all devices
+
+--- Page 14 ---
+Install DMS via ‘Remote’ - App InstallStep 2: Find [App Install]
+Upload DMS apk from local ﬁle
+
+--- Page 15 ---
+Install DMS via ‘Remote’ - App InstallStep 3: Send [DMS] apk to the devicesSelect DMS apkSend
+
+--- Page 16 ---
+Step 4: Check DMS installation resultPlease make sure all devices are online to device App Install command.
+Once DMS is installed, the state will change to Executed.Find Bytello DMS in all apps
+Install DMS via ‘Remote’ - App Install
+
+--- Page 17 ---
+4Send DMS apk to IFPs via ‘Remote’ File Publish * this method only works for the school already have ‘Remove’ account.
+
+--- Page 18 ---
+Step 1: Log in to Remote & select all devices
+then click [Device]
+Select all devicesSend DMS apk to IFPs via ‘Remote’- File Publish
+
+--- Page 19 ---
+Step 2: Upload DMS apk & SendUploadSelect dms apkSendSend DMS apk to IFPs via ‘Remote’- File Publish
+
+--- Page 20 ---
+Step 3: Find DMS apk in ‘Finder’-> ‘Storage’-> ‘Temporary’
+FinderStorageTemporarySend DMS apk to IFPs via ‘Remote’- File Publish
+
+--- Page 21 ---
+Double-click on the apk ﬁleclick [ Install ]Step 4: InstallSend DMS apk to IFPs via ‘Remote’- File Publish
+
+--- Page 22 ---
+Double-click on the apk ﬁleclick [ Install ]Step 5: InstallSend DMS apk to IFPs via ‘Remote’- File Publish
+
+--- Page 23 ---
+Step 6: Installed & checkSend DMS apk to IFPs via ‘Remote’- File Publish
+App installedFind DMS app

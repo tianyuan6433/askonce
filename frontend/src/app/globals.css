@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply bg-surface text-on-surface;
+  }
+}
+
+.dark {
+  --md-sys-color-surface: #1a1c1e;
+  --md-sys-color-on-surface: #e2e2e5;
+  --md-sys-color-surface-container: #272a2d;
+  --md-sys-color-surface-container-low: #1e2124;
+  --md-sys-color-surface-container-high: #2d3033;
+  --md-sys-color-primary: #4dd9d2;
+  --md-sys-color-on-primary: #003735;
+  --md-sys-color-primary-container: #004f4d;
+  --md-sys-color-on-primary-container: #6ff7ee;
+  --md-sys-color-secondary: #b0cccb;
+  --md-sys-color-outline: #899392;
+  --md-sys-color-outline-variant: #3f4948;
+  --md-sys-color-inverse-surface: #e2e2e5;
+  --md-sys-color-inverse-on-surface: #1a1c1e;
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl;
+  }
+  .glass-panel-dark {
+    @apply dark:bg-emerald-950/40;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
