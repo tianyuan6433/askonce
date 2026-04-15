@@ -15,7 +15,8 @@ def seed_database_if_needed():
     """Copy seed.db to the database path if no database exists or database is empty."""
     import sqlite3
     db_path = settings.database_url.split("///")[-1]
-    seed_path = Path(__file__).parent.parent / "data" / "seed.db"
+    # seed.db is in /app/seed/ to avoid being masked by the volume mount on /app/data/
+    seed_path = Path(__file__).parent.parent / "seed" / "seed.db"
 
     if not seed_path.exists():
         print("[seed] No seed.db found, skipping")
