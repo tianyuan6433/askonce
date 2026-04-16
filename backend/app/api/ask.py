@@ -3,6 +3,9 @@ from pydantic import BaseModel
 from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 import json
 import os
 import uuid
@@ -304,25 +307,32 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
             conversation_mgr.add_assistant_message(session_id, full_text)
             conversation_mgr.increment_round(session_id)
 
-            interaction = Interaction(
-                id=str(uuid.uuid4()),
-                query_text=display_query,
-                channel=request.channel,
-                confidence=confidence,
-                status="pending",
-                matched_knowledge_id=results[0]["id"] if results else None,
-            )
-            db.add(interaction)
-            await db.commit()
+            interaction_id = str(uuid.uuid4())
 
+            # Yield clarification event FIRST (before db commit to avoid blocking)
             yield {
                 "event": "clarification",
                 "data": json.dumps({
                     "questions": clarification_data,
                     "round": session.round_count,
-                    "interaction_id": interaction.id,
+                    "interaction_id": interaction_id,
                 }),
             }
+
+            # Persist to database after sending the event
+            try:
+                interaction = Interaction(
+                    id=interaction_id,
+                    query_text=display_query,
+                    channel=request.channel,
+                    confidence=confidence,
+                    status="pending",
+                    matched_knowledge_id=results[0]["id"] if results else None,
+                )
+                db.add(interaction)
+                await db.commit()
+            except Exception as e:
+                logger.warning(f"[stream] Failed to persist clarification interaction: {e}")
         else:
             # Got a direct answer — send immediately, translate in background
             conversation_mgr.add_assistant_message(session_id, full_text)
@@ -350,28 +360,13 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
             else:
                 status = "low_confidence"
 
-            # Build conversation log from session messages
-            conv_log = json.dumps(session.messages) if session.messages else None
+            interaction_id = str(uuid.uuid4())
 
-            interaction = Interaction(
-                id=str(uuid.uuid4()),
-                query_text=display_query,
-                channel=request.channel,
-                draft_reply=reply_en,
-                confidence=confidence,
-                status=status,
-                elapsed_ms=elapsed_ms,
-                conversation_log=conv_log,
-                matched_knowledge_id=results[0]["id"] if results else None,
-            )
-            db.add(interaction)
-            await db.commit()
-
-            # Send complete event immediately (with primary language)
+            # Send complete event FIRST (before db commit)
             yield {
                 "event": "complete",
                 "data": json.dumps({
-                    "id": interaction.id,
+                    "id": interaction_id,
                     "query": display_query,
                     "reply_en": reply_en,
                     "reply_zh": reply_zh,
@@ -383,6 +378,25 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
                     "conversation_log": session.messages,
                 }),
             }
+
+            # Persist to database after sending the event
+            try:
+                conv_log = json.dumps(session.messages) if session.messages else None
+                interaction = Interaction(
+                    id=interaction_id,
+                    query_text=display_query,
+                    channel=request.channel,
+                    draft_reply=reply_en,
+                    confidence=confidence,
+                    status=status,
+                    elapsed_ms=elapsed_ms,
+                    conversation_log=conv_log,
+                    matched_knowledge_id=results[0]["id"] if results else None,
+                )
+                db.add(interaction)
+                await db.commit()
+            except Exception as e:
+                logger.warning(f"[stream] Failed to persist interaction: {e}")
 
             # Now translate in background and send translation event
             try:
@@ -400,6 +414,9 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
                     yield {"event": "translation", "data": json.dumps({"reply_en": reply_en, "reply_zh": translated})}
             except Exception:
                 pass  # Translation failed — user can use sync button
+
+        # Signal end of stream
+        yield {"event": "done", "data": json.dumps({"status": "finished"})}
 
     return EventSourceResponse(event_generator())
 

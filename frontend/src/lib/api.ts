@@ -626,6 +626,9 @@ export async function streamAsk(
               case "translation":
                 callbacks.onTranslation?.(data as { reply_en: string; reply_zh: string });
                 break;
+              case "done":
+                // Stream finished — break out of processing
+                break;
             }
           } catch {
             // Skip malformed JSON lines
