@@ -15,46 +15,19 @@ logger = logging.getLogger("uvicorn.error")
 
 
 def seed_database_if_needed():
-    """Copy seed.db to the database path if no database exists or database is empty."""
-    import sqlite3
+    """Always overwrite database with seed.db to ensure latest data."""
     db_path = settings.database_url.split("///")[-1]
     seed_path = Path(__file__).parent.parent / "seed" / "seed.db"
 
-    logger.warning(f"[seed] db_path={db_path}, abs={os.path.abspath(db_path)}")
-    logger.warning(f"[seed] seed_path={seed_path}, exists={seed_path.exists()}")
-    logger.warning(f"[seed] db exists={os.path.exists(db_path)}, size={os.path.getsize(db_path) if os.path.exists(db_path) else 'N/A'}")
-    logger.warning(f"[seed] cwd={os.getcwd()}")
+    logger.warning(f"[seed] db_path={os.path.abspath(db_path)}, seed exists={seed_path.exists()}")
 
     if not seed_path.exists():
         logger.warning("[seed] No seed.db found, skipping")
         return
 
-    should_seed = False
-    if not os.path.exists(db_path):
-        should_seed = True
-        logger.warning(f"[seed] No database at {db_path}, will seed")
-    else:
-        try:
-            conn = sqlite3.connect(db_path)
-            tables = conn.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
-            logger.warning(f"[seed] Existing db tables: {[t[0] for t in tables]}")
-            cursor = conn.execute("SELECT COUNT(*) FROM knowledge_entries")
-            count = cursor.fetchone()[0]
-            conn.close()
-            logger.warning(f"[seed] Existing db has {count} knowledge entries")
-            if count == 0:
-                should_seed = True
-        except Exception as e:
-            should_seed = True
-            logger.warning(f"[seed] Cannot read database ({e}), will re-seed")
-
-    if should_seed:
-        os.makedirs(os.path.dirname(db_path) or ".", exist_ok=True)
-        shutil.copy2(str(seed_path), db_path)
-        verify_size = os.path.getsize(db_path)
-        logger.warning(f"[seed] Copied seed database to {db_path} (size={verify_size})")
-    else:
-        logger.warning("[seed] Database already has data, skipping seed")
+    os.makedirs(os.path.dirname(db_path) or ".", exist_ok=True)
+    shutil.copy2(str(seed_path), db_path)
+    logger.warning(f"[seed] Force copied seed.db -> {db_path} (size={os.path.getsize(db_path)})")
 
 
 @asynccontextmanager
