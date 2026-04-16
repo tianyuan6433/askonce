@@ -1,9 +1,10 @@
-"""AI service for AskOnce — uses Anthropic Claude via native Messages API.
+"""AI service for AskOnce — uses OpenAI-compatible API (DashScope/Qwen, Claude proxy, etc.).
 Never falls back to mock — errors are surfaced directly."""
 import base64
 import json
 import logging
-import anthropic
+import re
+from openai import OpenAI, APITimeoutError, APIStatusError, APIConnectionError
 from app.config import settings
 
 logger = logging.getLogger(__name__)
@@ -14,46 +15,23 @@ class ClaudeServiceError(Exception):
     pass
 
 
-def _parse_sse_text(sse_response: str) -> str:
-    """Parse SSE (Server-Sent Events) streaming response and concatenate text deltas."""
-    text_parts = []
-    for line in sse_response.splitlines():
-        if not line.startswith("data: "):
-            continue
-        try:
-            data = json.loads(line[6:])
-            if data.get("type") == "content_block_delta":
-                delta = data.get("delta", {})
-                if delta.get("type") == "text_delta":
-                    text_parts.append(delta.get("text", ""))
-        except (json.JSONDecodeError, KeyError):
-            continue
-    return "".join(text_parts)
-
-
 def _parse_json_array(text: str) -> list[dict]:
-    """Extract a JSON array from LLM response text.
-    Handles common JSON errors from LLM output (trailing commas, truncation)."""
+    """Extract a JSON array from LLM response text."""
     start = text.find("[")
     end = text.rfind("]") + 1
     if start < 0 or end <= start:
         return []
     raw = text[start:end]
-    # Try direct parse first
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
         pass
-    # Attempt repairs:
-    # 1. Remove trailing commas before ] or }
-    import re
     repaired = re.sub(r',\s*([}\]])', r'\1', raw)
     try:
         return json.loads(repaired)
     except json.JSONDecodeError:
         pass
-    # 2. Try to find the last valid entry by progressively trimming
-    # Find each complete {...} object and parse individually
+    # Parse individual objects
     entries = []
     depth = 0
     obj_start = None
@@ -67,16 +45,13 @@ def _parse_json_array(text: str) -> list[dict]:
             if depth == 0 and obj_start is not None:
                 obj_str = raw[obj_start:i + 1]
                 try:
-                    obj = json.loads(obj_str)
-                    entries.append(obj)
+                    entries.append(json.loads(obj_str))
                 except json.JSONDecodeError:
-                    # Try removing trailing comma
                     cleaned = re.sub(r',\s*}', '}', obj_str)
                     try:
-                        obj = json.loads(cleaned)
-                        entries.append(obj)
+                        entries.append(json.loads(cleaned))
                     except json.JSONDecodeError:
-                        pass  # skip malformed entry
+                        pass
                 obj_start = None
     return entries
 
@@ -86,7 +61,10 @@ def _parse_json_object(text: str) -> dict | None:
     start = text.find("{")
     end = text.rfind("}") + 1
     if start >= 0 and end > start:
-        return json.loads(text[start:end])
+        try:
+            return json.loads(text[start:end])
+        except json.JSONDecodeError:
+            return None
     return None
 
 
@@ -130,7 +108,7 @@ QUALITY:
 
 
 class ClaudeService:
-    """AI service using Anthropic Claude via native Messages API."""
+    """AI service using OpenAI-compatible API (DashScope, Claude proxy, etc.)."""
 
     def __init__(self):
         if not settings.claude_api_key:
@@ -138,70 +116,60 @@ class ClaudeService:
                 "ASKONCE_CLAUDE_API_KEY is not set. "
                 "Please set it in your .env file or environment variables."
             )
-        base = settings.claude_api_base.rstrip("/")
-        self.client = anthropic.Anthropic(
+        self.client = OpenAI(
             api_key=settings.claude_api_key,
-            base_url=base,
-            timeout=120.0,  # 2 min timeout for large docs
+            base_url=settings.claude_api_base.rstrip("/"),
+            timeout=120.0,
         )
         self.model = settings.claude_model
 
     def _chat(self, messages: list[dict], system: str = "", max_tokens: int = 1024) -> str:
-        """Send a message to Claude and return the text response.
-        Handles standard Anthropic SDK responses, custom proxy SSE streams,
-        and plain string responses."""
-        kwargs = {
-            "model": self.model,
-            "max_tokens": max_tokens,
-            "messages": messages,
-        }
+        """Send messages and return text response."""
+        api_messages = []
         if system:
-            kwargs["system"] = system
-        msg_len = sum(len(m.get("content", "")) for m in messages)
-        print(f"[_chat] Sending request: model={self.model}, max_tokens={max_tokens}, input_chars={msg_len}", flush=True)
+            api_messages.append({"role": "system", "content": system})
+        api_messages.extend(messages)
+
+        msg_len = sum(len(str(m.get("content", ""))) for m in messages)
+        logger.info(f"[_chat] model={self.model}, max_tokens={max_tokens}, input_chars={msg_len}")
+
         try:
-            resp = self.client.messages.create(**kwargs)
-        except anthropic.APITimeoutError as e:
-            print(f"[_chat] TIMEOUT: {e}", flush=True)
-            raise ClaudeServiceError("AI request timed out — the document may be too large. Try a smaller file or split into parts.") from e
-        except anthropic.APIStatusError as e:
-            print(f"[_chat] STATUS ERROR {e.status_code}: {e.message}", flush=True)
+            resp = self.client.chat.completions.create(
+                model=self.model,
+                messages=api_messages,
+                max_tokens=max_tokens,
+            )
+        except APITimeoutError as e:
+            logger.error(f"[_chat] TIMEOUT: {e}")
+            raise ClaudeServiceError("AI request timed out — the document may be too large.") from e
+        except APIStatusError as e:
+            logger.error(f"[_chat] STATUS ERROR {e.status_code}: {e.message}")
             raise ClaudeServiceError(f"AI API error ({e.status_code}): {e.message}") from e
-        except anthropic.APIConnectionError as e:
-            print(f"[_chat] CONNECTION ERROR: {e}", flush=True)
+        except APIConnectionError as e:
+            logger.error(f"[_chat] CONNECTION ERROR: {e}")
             raise ClaudeServiceError("Cannot connect to AI service — please check network.") from e
-        except Exception as e:
-            print(f"[_chat] UNEXPECTED ERROR: {type(e).__name__}: {e}", flush=True)
-            raise
-        print(f"[_chat] Response type: {type(resp).__name__}", flush=True)
-        # Custom proxy returns SSE stream as a plain string
-        if isinstance(resp, str):
-            if "event: content_block_delta" in resp:
-                return _parse_sse_text(resp)
-            return resp  # plain text response
-        # Standard Anthropic SDK response
-        if hasattr(resp, "content") and resp.content:
-            block = resp.content[0]
-            return block.text if hasattr(block, "text") else str(block)
-        return ""
+
+        return resp.choices[0].message.content or ""
 
     def _chat_stream(self, messages: list[dict], system: str = "", max_tokens: int = 2048):
-        """Stream a Claude response, yielding text chunks.
-        Falls back to non-streaming for proxies that don't support it."""
-        kwargs = {
-            "model": self.model,
-            "max_tokens": max_tokens,
-            "messages": messages,
-        }
+        """Stream response, yielding text chunks."""
+        api_messages = []
         if system:
-            kwargs["system"] = system
+            api_messages.append({"role": "system", "content": system})
+        api_messages.extend(messages)
 
         try:
-            with self.client.messages.stream(**kwargs) as stream:
-                for text in stream.text_stream:
-                    yield text
+            stream = self.client.chat.completions.create(
+                model=self.model,
+                messages=api_messages,
+                max_tokens=max_tokens,
+                stream=True,
+            )
+            for chunk in stream:
+                if chunk.choices and chunk.choices[0].delta.content:
+                    yield chunk.choices[0].delta.content
         except Exception:
-            # Fallback: non-streaming call, yield entire response at once
+            # Fallback to non-streaming
             full_text = self._chat(messages, system=system, max_tokens=max_tokens)
             yield full_text
 
@@ -214,13 +182,7 @@ class ClaudeService:
         reply_lang: str = "en",
         reply_format: str = "chat",
     ):
-        """Generate a streaming reply using full conversation history.
-        
-        Yields dicts with keys:
-          {"type": "token", "text": "..."}
-          {"type": "clarification", "questions": [...]}
-          {"type": "done", "full_text": "..."}
-        """
+        """Generate a streaming reply using full conversation history."""
         format_hints = {
             "email": "[Format: formal email reply, sign off as Yuan]",
             "chat": "[Format: short casual chat message, no greeting/sign-off needed]",
@@ -233,14 +195,12 @@ class ClaudeService:
         if force_direct_answer:
             system_suffix = "\n\nIMPORTANT: Do NOT ask for clarification. Give your best answer with the information available."
 
-        # Inject knowledge context into the latest user message
         last_user_msg = messages[-1]["content"] if messages else ""
         context_block = (
             f"\n\nKnowledge sources:\n{knowledge_context}\n\n"
             f"{lang_hint}\n{format_hint}\n\n"
         )
         if force_clarification:
-            # Forced multi-turn: MUST ask clarification questions
             context_block += (
                 "MANDATORY CLARIFICATION:\n"
                 "You MUST ask clarification questions before answering. Do NOT give a direct answer yet.\n"
@@ -284,7 +244,6 @@ class ClaudeService:
             full_text += chunk
             yield {"type": "token", "text": chunk}
 
-        # Check if the full response is a clarification JSON
         clarification = _parse_json_object(full_text)
         if clarification and clarification.get("type") == "clarification" and clarification.get("questions"):
             yield {"type": "clarification", "questions": clarification["questions"]}
@@ -292,23 +251,13 @@ class ClaudeService:
             yield {"type": "done", "full_text": full_text}
 
     async def generate_reply(self, query: str, context_entries: list[dict], followup_context: list[dict] | None = None) -> dict:
-        """Generate a reply using RAG context from knowledge base.
-        
-        If the query is ambiguous, Claude may return clarification questions instead of a direct answer.
-        The response dict will have:
-          - type: "reply" | "clarification"
-          - reply: the text reply (if type="reply")
-          - questions: list of {id, text, options} (if type="clarification")
-        
-        followup_context: list of {question, answer} dicts from previous clarification rounds.
-        """
+        """Generate a reply using RAG context from knowledge base."""
         context_text = "\n\n".join([
             f"Q: {', '.join(e.get('question_patterns', []))}\n"
             f"A: {e.get('answer', '')}"
             for e in context_entries
         ])
 
-        # Build conversation history for multi-turn
         clarify_section = ""
         if followup_context:
             lines = []
@@ -327,17 +276,11 @@ class ClaudeService:
             f"{clarify_section}"
             f"CLARIFICATION PROTOCOL:\n"
             f"Answer directly when you can. Ask for clarification ONLY when:\n"
-            f"1. The answer would be COMPLETELY DIFFERENT depending on a missing detail "
-            f"(e.g., pricing varies by region/country, features differ by product model)\n"
+            f"1. The answer would be COMPLETELY DIFFERENT depending on a missing detail\n"
             f"2. You literally cannot give ANY useful answer without that info\n"
-            f"3. The knowledge sources provide different answers for different scenarios "
-            f"(different regions, tiers, device types, etc.) — ASK which scenario applies\n\n"
-            f"IMPORTANT: If you see region-specific, country-specific, or tier-specific data "
-            f"in the knowledge sources, you MUST ask which applies before answering.\n\n"
-            f"If you DO need clarification, respond ONLY with this exact JSON (nothing else):\n"
+            f"3. The knowledge sources provide different answers for different scenarios\n\n"
+            f'If you DO need clarification, respond ONLY with this exact JSON (nothing else):\n'
             f'{{"type":"clarification","questions":[{{"id":"q1","text":"Your question","options":["Option A","Option B"]}}]}}\n\n'
-            f"Rules: Max 3 questions, 2-5 options each. Use ALL knowledge sources provided — "
-            f"never say you don't have information that IS in the sources above.\n\n"
             f"Otherwise, output ONLY the final reply text — no JSON, no analysis, no metadata. "
             f"Plain text only, absolutely no markdown formatting."
         )
@@ -348,14 +291,9 @@ class ClaudeService:
                 system=SYSTEM_PROMPT,
                 max_tokens=2048,
             )
-            # Check if response is a clarification request
             clarification = _parse_json_object(reply_text)
             if clarification and clarification.get("type") == "clarification" and clarification.get("questions"):
-                return {
-                    "type": "clarification",
-                    "questions": clarification["questions"],
-                    "model": self.model,
-                }
+                return {"type": "clarification", "questions": clarification["questions"], "model": self.model}
             return {"type": "reply", "reply": reply_text, "model": self.model}
         except Exception as e:
             return {"type": "reply", "reply": f"Error generating reply: {str(e)}", "model": self.model, "error": str(e)}
@@ -363,8 +301,7 @@ class ClaudeService:
     async def generate_bilingual_reply(self, query: str, context_entries: list[dict],
                                         reply_format: str = "chat",
                                         followup_context: list[dict] | None = None) -> dict:
-        """Generate reply in English, then translate to Chinese (or vice versa). Returns both."""
-        # Generate English reply first
+        """Generate reply in English, then translate to Chinese. Returns both."""
         format_hints = {
             "email": "[Format: formal email reply, sign off as Yuan]",
             "chat": "[Format: short casual chat message, no greeting/sign-off needed]",
@@ -379,7 +316,6 @@ class ClaudeService:
 
         en_reply = result.get("reply", "")
 
-        # Translate to Chinese
         try:
             zh_reply = self._chat([{
                 "role": "user",
@@ -395,13 +331,12 @@ class ClaudeService:
             "type": "reply",
             "reply_en": en_reply,
             "reply_zh": zh_reply,
-            "reply": en_reply,  # backward compat
+            "reply": en_reply,
             "model": self.model,
         }
 
     async def learn_from_edit(self, query: str, original_reply: str, edited_reply: str, matched_knowledge: list[dict]) -> list[dict]:
-        """Analyze user edits to AI reply and suggest knowledge base updates.
-        Returns a list of suggested actions: 'update' (patch existing entry) or 'add' (new entry)."""
+        """Analyze user edits and suggest knowledge base updates."""
         kb_context = "\n".join([
             f"[ID: {e.get('id', 'unknown')}] Q: {', '.join(e.get('question_patterns', []))}\nA: {e.get('answer', '')}"
             for e in matched_knowledge
@@ -443,7 +378,7 @@ Output ONLY valid JSON array:
   }}
 ]
 
-If the edit was just minor wording/style changes (not substantive content), return an empty array: []"""
+If the edit was just minor wording/style changes, return an empty array: []"""
 
         try:
             resp_text = self._chat([{"role": "user", "content": prompt}], max_tokens=2048)
@@ -454,7 +389,7 @@ If the edit was just minor wording/style changes (not substantive content), retu
             return []
 
     async def suggest_merges(self, entries: list[dict]) -> list[dict]:
-        """Analyze knowledge entries and suggest which ones can be merged."""
+        """Analyze knowledge entries and suggest merges."""
         entries_text = "\n\n".join([
             f"[ID: {e.get('id')}] Category: {e.get('category', 'General')}\n"
             f"Q: {', '.join(e.get('question_patterns', []))}\n"
@@ -462,7 +397,7 @@ If the edit was just minor wording/style changes (not substantive content), retu
             for e in entries
         ])
 
-        prompt = f"""You are a knowledge base curator. Review these knowledge entries and identify groups that should be merged because they cover the same topic or have overlapping answers.
+        prompt = f"""You are a knowledge base curator. Review these knowledge entries and identify groups that should be merged.
 
 Entries:
 {entries_text}
@@ -470,7 +405,7 @@ Entries:
 For each merge group, output:
 - "ids": list of entry IDs to merge
 - "reason": why they should be merged
-- "merged_question_patterns": combined question patterns (deduplicated)
+- "merged_question_patterns": combined question patterns
 - "merged_answer": the best combined answer
 - "merged_tags": combined tags
 - "merged_category": the appropriate category
@@ -479,11 +414,11 @@ Output ONLY valid JSON array. If no merges are needed, return [].
 [
   {{
     "ids": ["id1", "id2"],
-    "reason": "Both entries describe the same RBAC feature",
+    "reason": "Both entries describe the same feature",
     "merged_question_patterns": ["Combined question 1?", "Combined question 2?"],
     "merged_answer": "The merged comprehensive answer",
-    "merged_tags": ["rbac", "security"],
-    "merged_category": "Security"
+    "merged_tags": ["tag1", "tag2"],
+    "merged_category": "Technical"
   }}
 ]"""
 
@@ -512,13 +447,9 @@ Respond in JSON format:
 }"""
 
         try:
-            text = self._chat([{
-                "role": "user",
-                "content": [
-                    {"type": "image", "source": {"type": "base64", "media_type": mime_type, "data": b64_image}},
-                    {"type": "text", "text": prompt},
-                ],
-            }], max_tokens=2048)
+            # Use qwen-vl-plus for vision tasks
+            vision_model = "qwen-vl-plus" if "qwen" in self.model else self.model
+            text = self._chat_vision(b64_image, mime_type, prompt, vision_model)
             result = _parse_json_object(text)
             if result:
                 return result
@@ -526,14 +457,26 @@ Respond in JSON format:
         except Exception as e:
             return {"detected_question": f"Error: {str(e)}", "context": "", "tags": [], "extracted_text": "", "error": str(e)}
 
+    def _chat_vision(self, b64_image: str, mime_type: str, prompt: str, model: str) -> str:
+        """Send a vision request using OpenAI-compatible format."""
+        resp = self.client.chat.completions.create(
+            model=model,
+            messages=[{
+                "role": "user",
+                "content": [
+                    {"type": "image_url", "image_url": {"url": f"data:{mime_type};base64,{b64_image}"}},
+                    {"type": "text", "text": prompt},
+                ],
+            }],
+            max_tokens=2048,
+        )
+        return resp.choices[0].message.content or ""
+
     async def extract_knowledge(self, text: str) -> list[dict]:
-        """Extract knowledge Q&A entries from text content.
-        For large documents, splits into chunks and extracts from each."""
-        # For very large docs, split into manageable chunks
-        CHUNK_SIZE = 12000  # ~3K tokens, safe for most models
+        """Extract knowledge Q&A entries from text content."""
+        CHUNK_SIZE = 12000
         chunks = []
         if len(text) > CHUNK_SIZE:
-            # Split on paragraph boundaries
             paragraphs = text.split("\n\n")
             current_chunk = ""
             for para in paragraphs:
@@ -559,38 +502,30 @@ Respond in JSON format:
 
     def _extract_knowledge_chunk(self, text: str) -> list[dict]:
         """Extract knowledge entries from a single text chunk."""
-        prompt = f"""You are a knowledge base curator for MAXHUB Pivot Plus, a professional digital signage and device management platform (DMS/CMS). Extract structured Q&A knowledge entries from the following text.
+        prompt = f"""You are a knowledge base curator for MAXHUB Pivot Plus. Extract structured Q&A entries from the following text.
 
 RULES:
-1. Each entry must be a self-contained, atomic piece of knowledge with a clear question and answer.
-2. question_patterns: 2-4 natural variations of the question users might ask (in the same language as the source text).
-3. answer: Complete, accurate answer directly extracted from the text — do NOT paraphrase or fabricate.
-4. tags: 2-5 concise topic tags (lowercase, relevant keywords).
-5. category: MUST be one of: Product, Pricing, Technical, Support, Security, Content, Organization, General.
-   - Product: features, capabilities, model specs, hardware, screens
-   - Pricing: cost, plans, licensing, subscriptions, discounts
-   - Technical: setup, installation, API, configuration, firmware, network, troubleshooting
-   - Support: warranty, returns, customer service, SLA, contact
-   - Security: authentication, compliance, encryption, GDPR, SOC, permissions
-   - Content: playlists, media, canvas, publishing, scheduling
-   - Organization: users, roles, admin, departments, access control
-   - General: everything else
-6. conditions: optional context about when this answer applies (e.g., "for Enterprise tier only").
-7. Skip vague, redundant, or non-informational sentences.
-8. Do NOT merge multiple distinct facts into one entry — keep them atomic.
-9. Output ONLY valid JSON, no preamble or explanation.
+1. Each entry must be self-contained with a clear question and answer.
+2. question_patterns: 2-4 natural question variations.
+3. answer: Complete, accurate answer from the text — do NOT fabricate.
+4. tags: 2-5 concise topic tags (lowercase).
+5. category: One of: Product, Pricing, Technical, Support, Security, Content, Organization, General.
+6. conditions: optional context (e.g., "for Enterprise tier only").
+7. Skip vague or non-informational sentences.
+8. Keep entries atomic — one fact per entry.
+9. Output ONLY valid JSON.
 
-Text to extract from:
+Text:
 {text}
 
-Output format (strict JSON array):
+Output format:
 [
   {{
-    "question_patterns": ["Question variant 1?", "Question variant 2?"],
-    "answer": "Complete factual answer from the text.",
+    "question_patterns": ["Question 1?", "Question 2?"],
+    "answer": "Factual answer from the text.",
     "tags": ["tag1", "tag2"],
     "category": "Technical",
-    "conditions": "Only applies when X (optional, omit if not needed)"
+    "conditions": "Optional condition"
   }}
 ]"""
 
@@ -622,21 +557,15 @@ Output format (strict JSON array):
         try:
             return self._chat([{
                 "role": "user",
-                "content": f"Translate the following text to {lang_name}. Output ONLY the translation, nothing else.\n\n{text}",
+                "content": f"Translate the following text to {lang_name}. Output ONLY the translation.\n\n{text}",
             }], max_tokens=2048)
         except Exception as e:
             raise ClaudeServiceError(f"Translation failed: {str(e)}") from e
 
-    async def translate_entry_bilingual(
-        self, question_patterns: list[str], answer: str
-    ) -> dict:
-        """Detect language and translate a knowledge entry to both EN and ZH-CN.
-
-        Returns dict with keys:
-            question_patterns_en, answer_en, question_patterns_zh, answer_zh
-        """
+    async def translate_entry_bilingual(self, question_patterns: list[str], answer: str) -> dict:
+        """Translate a knowledge entry to both EN and ZH-CN."""
         questions_block = "\n".join(f"- {q}" for q in question_patterns)
-        prompt = f"""You are a bilingual translation engine for a knowledge base.
+        prompt = f"""You are a bilingual translation engine.
 
 INPUT:
 QUESTIONS:
@@ -645,11 +574,7 @@ QUESTIONS:
 ANSWER:
 {answer}
 
-TASK:
-1. Detect the primary language of the input (English or Chinese).
-2. If the input is primarily English, translate it to Simplified Chinese.
-   If the input is primarily Chinese, translate it to English.
-3. Output BOTH versions in the exact JSON format below. No extra text.
+TASK: Detect language and translate to both English and Chinese.
 
 OUTPUT FORMAT (strict JSON):
 {{
@@ -660,19 +585,15 @@ OUTPUT FORMAT (strict JSON):
 }}
 
 RULES:
-- Keep technical terms (e.g. MAXHUB, Pivot Plus, CMS, DMS, API) unchanged in both languages.
-- Maintain the same number of question patterns in both languages.
-- Translations must be natural and professional, not word-for-word.
-- Output ONLY the JSON object, nothing else."""
+- Keep technical terms (MAXHUB, Pivot Plus, CMS, DMS, API) unchanged.
+- Maintain the same number of question patterns.
+- Output ONLY the JSON object."""
 
         try:
-            resp = self._chat(
-                [{"role": "user", "content": prompt}], max_tokens=4096
-            )
+            resp = self._chat([{"role": "user", "content": prompt}], max_tokens=4096)
             result = _parse_json_object(resp)
             if result and "question_patterns_en" in result and "answer_en" in result:
                 return result
-            # Fallback: treat input as-is for the detected language
             return {
                 "question_patterns_en": question_patterns,
                 "answer_en": answer,

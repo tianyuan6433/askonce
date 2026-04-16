@@ -8,10 +8,10 @@ class Settings(BaseSettings):
     # Database - SQLite for MVP
     database_url: str = "sqlite+aiosqlite:///./askonce.db"
     
-    # Claude API
+    # AI API (OpenAI-compatible: DashScope, Claude proxy, etc.)
     claude_api_key: str = ""
-    claude_api_base: str = "https://api.anthropic.com"
-    claude_model: str = "claude-sonnet-4-20250514"
+    claude_api_base: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    claude_model: str = "qwen-plus"
     
     # Knowledge Engine
     confidence_auto_reply: float = 0.90

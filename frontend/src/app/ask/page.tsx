@@ -232,7 +232,7 @@ export default function AskPage() {
   // Add to history when a result comes in
   const addToHistory = useCallback((query: string, reply: string, elapsed: number) => {
     setHistory((prev) => [{
-      id: crypto.randomUUID(),
+      id: Math.random().toString(36).slice(2) + Date.now().toString(36),
       query,
       reply,
       timestamp: new Date(),

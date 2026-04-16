@@ -1,14 +1,10 @@
 function getApiBase(): string {
-  // Use env var if set (for production/Railway deployment)
+  // Use env var if explicitly set (e.g., direct backend access)
   if (process.env.NEXT_PUBLIC_API_URL) {
     return process.env.NEXT_PUBLIC_API_URL;
   }
-  // In browser: use current hostname so LAN access works automatically
-  if (typeof window !== "undefined") {
-    return `http://${window.location.hostname}:8000`;
-  }
-  // Server-side fallback
-  return "http://localhost:8000";
+  // Default: use relative path — Next.js rewrites proxy /api/* to backend
+  return "";
 }
 
 const API_BASE = getApiBase();
