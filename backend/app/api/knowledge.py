@@ -228,6 +228,47 @@ async def create_knowledge(request: CreateKnowledgeRequest, db: AsyncSession = D
     return KnowledgeEntryResponse.from_orm_entry(entry)
 
 
+@router.post("/batch", response_model=list[KnowledgeEntryResponse])
+async def create_knowledge_batch(requests: list[CreateKnowledgeRequest], db: AsyncSession = Depends(get_db)):
+    """Create multiple knowledge entries in one batch with a single log entry."""
+    entries = await knowledge_service.create_entries_batch(
+        db, [r.model_dump() for r in requests], method="auto"
+    )
+    # Auto-categorize
+    for entry in entries:
+        if not entry.category:
+            entry.category = auto_categorize(entry.answer or "", _parse_json_list(entry.tags))
+    await db.commit()
+
+    # Fire-and-forget background translations for entries missing Chinese
+    import concurrent.futures
+    _executor = concurrent.futures.ThreadPoolExecutor(max_workers=4)
+    for entry in entries:
+        if not getattr(entry, "answer_zh", None):
+            def _sync_translate(entry_id: str, qp: list[str], answer: str):
+                import asyncio as _aio
+                async def _run():
+                    try:
+                        from app.services.claude_service import ClaudeService
+                        from app.db.database import async_session
+                        ai = ClaudeService()
+                        result = await ai.translate_entry_bilingual(qp, answer)
+                        async with async_session() as bg_db:
+                            from app.models.knowledge import KnowledgeEntry as KE
+                            stmt = select(KE).where(KE.id == entry_id)
+                            row = (await bg_db.execute(stmt)).scalar_one_or_none()
+                            if row:
+                                row.question_patterns_zh = result.get("question_patterns_zh", [])
+                                row.answer_zh = result.get("answer_zh", "")
+                                await bg_db.commit()
+                    except Exception:
+                        pass
+                _aio.run(_run())
+            _executor.submit(_sync_translate, entry.id, _parse_json_list(entry.question_patterns), entry.answer or "")
+
+    return [KnowledgeEntryResponse.from_orm_entry(e) for e in entries]
+
+
 class ExtractResponse(BaseModel):
     status: str
     entries: list[dict]
@@ -447,16 +488,34 @@ async def import_document(
 async def get_knowledge_logs(
     page: int = Query(1, ge=1),
     page_size: int = Query(50, ge=1, le=200),
+    action: str | None = Query(None, description="Filter by action type"),
+    search: str | None = Query(None, description="Search in details/source_filename"),
     db: AsyncSession = Depends(get_db),
 ):
-    """Get knowledge growth log entries."""
+    """Get knowledge growth log entries with optional filters."""
     from app.models.knowledge import KnowledgeLog
-    from sqlalchemy import select, func
+    from sqlalchemy import select, func, or_
 
-    count_q = await db.execute(select(func.count()).select_from(KnowledgeLog))
-    total = count_q.scalar() or 0
+    filters = []
+    if action:
+        filters.append(KnowledgeLog.action == action)
+    if search:
+        term = f"%{search}%"
+        filters.append(
+            or_(
+                KnowledgeLog.details.ilike(term),
+                KnowledgeLog.source_filename.ilike(term),
+            )
+        )
+
+    count_q = select(func.count()).select_from(KnowledgeLog)
+    if filters:
+        count_q = count_q.where(*filters)
+    total = (await db.execute(count_q)).scalar() or 0
 
     q = select(KnowledgeLog).order_by(KnowledgeLog.created_at.desc())
+    if filters:
+        q = q.where(*filters)
     q = q.offset((page - 1) * page_size).limit(page_size)
     result = await db.execute(q)
     logs = result.scalars().all()

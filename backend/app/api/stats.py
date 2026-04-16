@@ -47,6 +47,10 @@ async def get_stats_overview(db: AsyncSession = Depends(get_db)):
                 (Interaction.edit_ratio.isnot(None), Interaction.edit_ratio),
             )).label("avg_edit_ratio"),
             func.count(case((Interaction.edit_ratio.isnot(None), 1))).label("adopted"),
+            # Response time
+            func.avg(case(
+                (Interaction.elapsed_ms.isnot(None), Interaction.elapsed_ms),
+            )).label("avg_ms"),
         ).select_from(Interaction)
     )
     row = result.one()
@@ -58,6 +62,7 @@ async def get_stats_overview(db: AsyncSession = Depends(get_db)):
     low_conf = row.low_conf or 0
     avg_edit_ratio = float(row.avg_edit_ratio or 0)
     adopted = row.adopted or 0
+    avg_ms = int(row.avg_ms or 0)
     # adoption_rate = average similarity (edit_ratio) * 100
     adoption_rate = round(avg_edit_ratio * 100, 1) if adopted > 0 else 0.0
 
@@ -71,6 +76,7 @@ async def get_stats_overview(db: AsyncSession = Depends(get_db)):
         draft_reply_count=max(0, draft_count),
         low_confidence_count=low_conf,
         confirmed_count=confirmed,
+        avg_response_ms=avg_ms,
     )
 
 

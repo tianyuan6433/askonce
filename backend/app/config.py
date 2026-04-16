@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     confidence_auto_reply: float = 0.90
     confidence_draft_min: float = 0.60
     knowledge_stale_days: int = 90
+    max_clarification_rounds: int = 3
     
     # Upload
     max_upload_size_mb: int = 10

@@ -13,11 +13,15 @@ from app.services.retrieval_service import RetrievalService
 from app.services.image_service import ImageService
 from app.config import settings
 from app.models.interaction import Interaction
+from sse_starlette.sse import EventSourceResponse
+from app.services.conversation_manager import ConversationManager
+from app.services.rule_engine import evaluate_rules
 
 router = APIRouter()
 
 retrieval_service = RetrievalService()
 image_service = ImageService()
+conversation_mgr = ConversationManager(ttl_seconds=1800)
 
 
 def get_claude_service() -> ClaudeService:
@@ -32,6 +36,14 @@ class AskRequest(BaseModel):
     channel: str = "manual"
     reply_lang: str = "en"  # "en" or "zh"
     reply_format: str = "chat"  # "chat", "email", "other"
+
+
+class StreamAskRequest(BaseModel):
+    query: str
+    channel: str = "manual"
+    reply_lang: str = "en"
+    reply_format: str = "chat"
+    session_id: str | None = None
 
 
 class ClarificationQuestion(BaseModel):
@@ -134,6 +146,7 @@ async def ask_question(request: AskRequest, db: AsyncSession = Depends(get_db)):
         draft_reply=reply_en,
         confidence=confidence,
         status="pending",
+        elapsed_ms=elapsed_ms,
         matched_knowledge_id=results[0]["id"] if results else None,
     )
     db.add(interaction)
@@ -150,6 +163,226 @@ async def ask_question(request: AskRequest, db: AsyncSession = Depends(get_db)):
         status=status,
         elapsed_ms=elapsed_ms,
     )
+
+
+@router.post("/stream")
+async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_db)):
+    """SSE streaming endpoint for ask with multi-turn support."""
+    import time
+    start_time = time.time()
+    claude_service = get_claude_service()
+
+    # Retrieve knowledge — cross-language: merge results from both original
+    # query and extracted English keywords for better bilingual coverage
+    results = await retrieval_service.retrieve(db, request.query, top_k=10)
+
+    import re
+    seen_ids = {r["id"] for r in results}
+
+    def _merge_results(extra_results):
+        for er in extra_results:
+            if er["id"] not in seen_ids:
+                results.append(er)
+                seen_ids.add(er["id"])
+
+    # If query contains CJK characters, also search with key English terms
+    has_cjk = bool(re.search(r'[\u4e00-\u9fff]', request.query))
+    if has_cjk:
+        en_terms = re.findall(r'[A-Za-z]{2,}', request.query)
+        if en_terms:
+            en_query = " ".join(en_terms) + " price cost"
+            _merge_results(await retrieval_service.retrieve(db, en_query, top_k=5))
+
+    # If query mentions device types + pricing/license, also fetch device
+    # classification knowledge (主设备 vs 外设) for accurate calculations
+    device_keywords = re.findall(r'(?:CMB|CMA|IFP|FP|LED|MTR|麦克风|摄像头|喇叭|外设|主设备)', request.query, re.IGNORECASE)
+    price_keywords = re.findall(r'(?:license|价格|多少钱|收费|price|cost|报价)', request.query, re.IGNORECASE)
+    if device_keywords and price_keywords:
+        _merge_results(await retrieval_service.retrieve(db, "主设备 外设 设备分类 device peripheral", top_k=3))
+
+    confidence = retrieval_service.compute_confidence(results)
+
+    # Read settings for max rounds
+    from app.api.settings import _read_settings
+    current_settings = _read_settings()
+    max_rounds = current_settings.get("max_clarification_rounds", 3)
+    confidence_threshold = current_settings.get("confidence_draft_min", 0.60)
+
+    # Session management
+    if request.session_id:
+        session = conversation_mgr.get_session(request.session_id)
+        if not session:
+            session_id = conversation_mgr.create_session(knowledge_context=results)
+            conversation_mgr.get_session(session_id).original_query = request.query
+        else:
+            session_id = request.session_id
+            # Merge stored knowledge context from previous rounds so follow-up
+            # queries retain device classification, pricing, etc.
+            stored_ids = {r["id"] for r in session.knowledge_context}
+            for r in results:
+                if r["id"] not in stored_ids:
+                    session.knowledge_context.append(r)
+                    stored_ids.add(r["id"])
+            # Use the richer merged context for this round
+            results = session.knowledge_context
+    else:
+        session_id = conversation_mgr.create_session(knowledge_context=results)
+        conversation_mgr.get_session(session_id).original_query = request.query
+
+    session = conversation_mgr.get_session(session_id)
+    # Use the original first query for history display
+    display_query = session.original_query or request.query
+
+    # Forced multi-turn: always clarify until max_rounds, then force answer
+    force_clarification = session.round_count < max_rounds
+    force_direct_answer = session.round_count >= max_rounds
+
+    async def event_generator():
+        yield {"event": "thinking", "data": json.dumps({"status": "analyzing"})}
+        yield {"event": "session", "data": json.dumps({"session_id": session_id, "round": session.round_count, "max_rounds": max_rounds})}
+
+        # Add user message to conversation
+        conversation_mgr.add_user_message(session_id, request.query)
+
+        # Check if summarization needed
+        if conversation_mgr.should_summarize(session_id):
+            yield {"event": "thinking", "data": json.dumps({"status": "summarizing"})}
+            summary_text = claude_service._chat(
+                [{"role": "user", "content": "Summarize this conversation in one sentence: " + str(session.messages[:-2])}],
+                max_tokens=200,
+            )
+            conversation_mgr.compress_messages(session_id, summary_text)
+
+        # Get messages for Claude
+        messages = conversation_mgr.get_messages_for_claude(session_id)
+
+        # Build knowledge context text
+        context_text = "\n\n".join([
+            f"Q: {', '.join(e.get('question_patterns', []))}\nA: {e.get('answer', '')}"
+            for e in results
+        ])
+
+        # Stream reply
+        full_text = ""
+        is_clarification = False
+        clarification_data = None
+
+        async for event in claude_service.generate_reply_stream(
+            messages=messages,
+            knowledge_context=context_text if context_text.strip() else "(No matching knowledge entries found)",
+            force_direct_answer=force_direct_answer,
+            force_clarification=force_clarification,
+            reply_lang=request.reply_lang,
+            reply_format=request.reply_format,
+        ):
+            if event["type"] == "token":
+                full_text += event["text"]
+                yield {"event": "token", "data": json.dumps({"text": event["text"]})}
+            elif event["type"] == "clarification":
+                is_clarification = True
+                clarification_data = event["questions"]
+            elif event["type"] == "done":
+                full_text = event["full_text"]
+
+        if is_clarification:
+            conversation_mgr.add_assistant_message(session_id, full_text)
+            conversation_mgr.increment_round(session_id)
+
+            interaction = Interaction(
+                id=str(uuid.uuid4()),
+                query_text=display_query,
+                channel=request.channel,
+                confidence=confidence,
+                status="pending",
+                matched_knowledge_id=results[0]["id"] if results else None,
+            )
+            db.add(interaction)
+            await db.commit()
+
+            yield {
+                "event": "clarification",
+                "data": json.dumps({
+                    "questions": clarification_data,
+                    "round": session.round_count,
+                    "interaction_id": interaction.id,
+                }),
+            }
+        else:
+            # Got a direct answer — translate for bilingual
+            conversation_mgr.add_assistant_message(session_id, full_text)
+            yield {"event": "translating", "data": json.dumps({"status": "translating"})}
+
+            # Detect actual language of the streamed text
+            import re as _re
+            cjk_chars = len(_re.findall(r'[\u4e00-\u9fff]', full_text))
+            total_chars = max(len(full_text.strip()), 1)
+            actual_is_chinese = (cjk_chars / total_chars) > 0.3
+
+            # Translate to the OTHER language based on actual content language
+            if actual_is_chinese:
+                # Streamed text is Chinese — translate to English
+                reply_zh = full_text
+                try:
+                    reply_en = claude_service._chat([{
+                        "role": "user",
+                        "content": f"Translate this customer service reply to English. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
+                    }], max_tokens=2048)
+                except Exception:
+                    reply_en = full_text
+            else:
+                # Streamed text is English — translate to Chinese
+                reply_en = full_text
+                try:
+                    reply_zh = claude_service._chat([{
+                        "role": "user",
+                        "content": f"Translate this customer service reply to Simplified Chinese. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
+                    }], max_tokens=2048)
+                except Exception:
+                    reply_zh = ""
+
+            elapsed_ms = int((time.time() - start_time) * 1000)
+
+            if confidence >= current_settings.get("confidence_auto_reply", 0.90):
+                status = "auto_reply"
+            elif confidence >= confidence_threshold:
+                status = "draft"
+            else:
+                status = "low_confidence"
+
+            # Build conversation log from session messages
+            conv_log = json.dumps(session.messages) if session.messages else None
+
+            interaction = Interaction(
+                id=str(uuid.uuid4()),
+                query_text=display_query,
+                channel=request.channel,
+                draft_reply=reply_en,
+                confidence=confidence,
+                status=status,
+                elapsed_ms=elapsed_ms,
+                conversation_log=conv_log,
+                matched_knowledge_id=results[0]["id"] if results else None,
+            )
+            db.add(interaction)
+            await db.commit()
+
+            yield {
+                "event": "complete",
+                "data": json.dumps({
+                    "id": interaction.id,
+                    "query": display_query,
+                    "reply_en": reply_en,
+                    "reply_zh": reply_zh,
+                    "confidence": confidence,
+                    "status": status,
+                    "sources": results[:3],
+                    "elapsed_ms": elapsed_ms,
+                    "session_id": session_id,
+                    "conversation_log": session.messages,
+                }),
+            }
+
+    return EventSourceResponse(event_generator())
 
 
 class ImageAskResponse(BaseModel):
@@ -282,8 +515,10 @@ async def ask_followup(request: FollowupRequest, db: AsyncSession = Depends(get_
     ]
 
     try:
-        reply_data = await claude_service.generate_reply(
-            augmented_query, results, followup_context=followup_context
+        reply_data = await claude_service.generate_bilingual_reply(
+            request.original_query, results,
+            reply_format=request.reply_format,
+            followup_context=followup_context,
         )
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Claude API error: {str(e)}")
@@ -318,7 +553,7 @@ async def ask_followup(request: FollowupRequest, db: AsyncSession = Depends(get_
     )
     interaction = result.scalar_one_or_none()
     if interaction:
-        interaction.draft_reply = reply_data.get("reply", "")
+        interaction.draft_reply = reply_data.get("reply_en") or reply_data.get("reply", "")
     else:
         # Create new if somehow missing
         interaction = Interaction(
@@ -343,7 +578,9 @@ async def ask_followup(request: FollowupRequest, db: AsyncSession = Depends(get_
     return AskResponse(
         id=interaction.id,
         query=request.original_query,
-        draft_reply=reply_data.get("reply", ""),
+        draft_reply=reply_data.get("reply_en") or reply_data.get("reply", ""),
+        draft_reply_en=reply_data.get("reply_en"),
+        draft_reply_zh=reply_data.get("reply_zh"),
         confidence=confidence,
         sources=results[:3],
         status=status,
@@ -450,13 +687,39 @@ async def confirm_reply(request: ConfirmReplyRequest, db: AsyncSession = Depends
 async def get_history(
     limit: int = 5,
     offset: int = 0,
+    search: str | None = None,
+    status: str | None = None,
     db: AsyncSession = Depends(get_db),
 ):
-    """Get recent query history with replies and adoption data."""
-    from sqlalchemy import select, desc, func as sqlfunc
+    """Get recent query history with replies and adoption data.
+    
+    Optional filters:
+      - search: keyword search in query_text and draft_reply
+      - status: filter by interaction status (pending, confirmed, edited, etc.)
+    """
+    from sqlalchemy import select, desc, func as sqlfunc, or_
+    base_filter = [
+        Interaction.query_text.isnot(None),
+        or_(
+            Interaction.draft_reply.isnot(None),
+            Interaction.final_reply.isnot(None),
+        ),
+    ]
+    if search:
+        search_term = f"%{search}%"
+        base_filter.append(
+            or_(
+                Interaction.query_text.ilike(search_term),
+                Interaction.draft_reply.ilike(search_term),
+                Interaction.final_reply.ilike(search_term),
+            )
+        )
+    if status:
+        base_filter.append(Interaction.status == status)
+
     result = await db.execute(
         select(Interaction)
-        .where(Interaction.query_text.isnot(None))
+        .where(*base_filter)
         .order_by(desc(Interaction.created_at))
         .offset(offset)
         .limit(limit)
@@ -464,12 +727,19 @@ async def get_history(
     interactions = result.scalars().all()
 
     total_result = await db.execute(
-        select(sqlfunc.count()).select_from(Interaction).where(Interaction.query_text.isnot(None))
+        select(sqlfunc.count()).select_from(Interaction)
+        .where(*base_filter)
     )
     total = total_result.scalar() or 0
 
     items = []
     for i in interactions:
+        conv_log = None
+        if i.conversation_log:
+            try:
+                conv_log = json.loads(i.conversation_log)
+            except (json.JSONDecodeError, TypeError):
+                pass
         items.append({
             "id": i.id,
             "query": i.query_text,
@@ -481,6 +751,7 @@ async def get_history(
             "channel": i.channel,
             "created_at": i.created_at.isoformat() if i.created_at else None,
             "resolved_at": i.resolved_at.isoformat() if i.resolved_at else None,
+            "conversation_log": conv_log,
         })
 
     return {"items": items, "total": total}

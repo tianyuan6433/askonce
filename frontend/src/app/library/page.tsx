@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import {
   listKnowledge,
   createKnowledge,
+  createKnowledgeBatch,
   deleteKnowledge,
   updateKnowledge,
   extractKnowledge,
@@ -26,6 +27,7 @@ const ACTION_ICON: Record<string, string> = {
   deleted: "delete",
   extracted: "auto_awesome",
   imported: "upload_file",
+  learned: "psychology",
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -53,6 +55,13 @@ export default function LibraryPage() {
 
   const methodLabel = (m: string) =>
     t(`library.method${m.charAt(0).toUpperCase() + m.slice(1)}` as never) || m;
+
+  function formatLogTime(iso: string): string {
+    const d = new Date(iso + "Z"); // UTC
+    return d.toLocaleString(locale === "zh-CN" ? "zh-CN" : "en-US", {
+      month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
+    });
+  }
 
   function relativeTime(iso: string): string {
     const d = new Date(iso);
@@ -142,6 +151,22 @@ export default function LibraryPage() {
   const [logOpen, setLogOpen] = useState(false);
   const [logs, setLogs] = useState<KnowledgeLogEntry[]>([]);
   const [logsTotal, setLogsTotal] = useState(0);
+  const [logActionFilter, setLogActionFilter] = useState<string | null>(null);
+  const [logPage, setLogPage] = useState(1);
+  const [expandedLogIds, setExpandedLogIds] = useState<Set<string>>(new Set());
+  const logDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close growth log dropdown on click outside
+  useEffect(() => {
+    if (!logOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (logDropdownRef.current && !logDropdownRef.current.contains(e.target as Node)) {
+        setLogOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [logOpen]);
 
   /* --- debounced search --- */
   useEffect(() => {
@@ -332,26 +357,20 @@ export default function LibraryPage() {
   const [confirmAllDone, setConfirmAllDone] = useState(0);
   const [confirmAllTotal, setConfirmAllTotal] = useState(0);
   const confirmAll = async () => {
-    // Snapshot all pending entries at start
-    const pendingEntries = [...previewEntries.filter((e) => !e.confirmed)];
+    const pendingEntries = previewEntries.filter((e) => !e.confirmed);
     if (pendingEntries.length === 0) return;
     setConfirmingAll(true);
     setConfirmAllDone(0);
     setConfirmAllTotal(pendingEntries.length);
-    let done = 0;
-    for (const e of pendingEntries) {
-      try {
-        await createKnowledge({
-          question_patterns: e.question_patterns,
-          answer: e.answer,
-          tags: e.tags,
-        });
-      } catch { /* skip failed */ }
-      // Remove this entry from preview
-      setPreviewEntries((prev) => prev.filter((p) => p !== e));
-      done++;
-      setConfirmAllDone(done);
-    }
+    try {
+      await createKnowledgeBatch(pendingEntries.map((e) => ({
+        question_patterns: e.question_patterns,
+        answer: e.answer,
+        tags: e.tags,
+      })));
+      setPreviewEntries([]);
+      setConfirmAllDone(pendingEntries.length);
+    } catch { /* skip failed */ }
     // Refresh list once at end
     try {
       const data = await listKnowledge({ page: 1, page_size: PAGE_SIZE, search: debouncedSearch || undefined, locale: locale !== "en" ? locale : undefined });
@@ -410,13 +429,23 @@ export default function LibraryPage() {
 
   /* --- fetch logs --- */
   useEffect(() => {
-    if (logOpen && logs.length === 0) {
-      getKnowledgeLogs(1, 30).then((res) => {
+    if (logOpen) {
+      setLogs([]);
+      setLogPage(1);
+      getKnowledgeLogs(1, 30, logActionFilter || undefined).then((res) => {
         setLogs(res.items);
         setLogsTotal(res.total);
       }).catch(console.error);
     }
-  }, [logOpen, logs.length]);
+  }, [logOpen, logActionFilter]);
+
+  const loadMoreLogs = () => {
+    const nextPage = logPage + 1;
+    getKnowledgeLogs(nextPage, 30, logActionFilter || undefined).then((res) => {
+      setLogs((prev) => [...prev, ...res.items]);
+      setLogPage(nextPage);
+    }).catch(console.error);
+  };
 
   /* --- drag/drop --- */
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -643,18 +672,122 @@ export default function LibraryPage() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button
-            onClick={handleExportJson}
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-surface-container-low text-on-surface font-semibold rounded-full hover:bg-surface-container transition-colors text-sm border border-outline-variant/15"
-          >
-            <span className="material-symbols-outlined text-lg">download</span>
-            {t("library.exportJson")}
-          </button>
+          {/* Growth Log dropdown toggle */}
+          <div className="relative" ref={logDropdownRef}>
+            <button
+              onClick={() => setLogOpen(!logOpen)}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-colors border ${
+                logOpen
+                  ? "bg-primary/10 text-primary border-primary/30"
+                  : "bg-surface-container-low text-on-surface-variant border-outline-variant/15 hover:bg-surface-container"
+              }`}
+            >
+              <span className="material-symbols-outlined text-base">timeline</span>
+              {logsTotal > 0 && (
+                <span className="text-xs bg-primary/15 text-primary px-1.5 py-0.5 rounded-full font-semibold">{logsTotal}</span>
+              )}
+            </button>
+            {logOpen && (
+              <div className="absolute right-0 top-full mt-2 w-[380px] bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/15 z-50 overflow-hidden">
+                <div className="p-3 border-b border-outline-variant/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-semibold text-on-surface">{t("library.growthLog")}</span>
+                    <button onClick={() => setLogOpen(false)} className="text-on-surface-variant hover:text-on-surface">
+                      <span className="material-symbols-outlined text-base">close</span>
+                    </button>
+                  </div>
+                  {/* Action filter chips */}
+                  <div className="flex gap-1 flex-wrap">
+                    {["All", "Created", "Extracted", "Updated", "Deleted", "Imported", "Learned"].map((a) => (
+                      <button
+                        key={a}
+                        onClick={() => setLogActionFilter(a === "All" ? null : a.toLowerCase())}
+                        className={`px-2 py-0.5 text-[11px] rounded-full border transition-colors ${
+                          (a === "All" && !logActionFilter) || logActionFilter === a.toLowerCase()
+                            ? "bg-primary text-white border-primary"
+                            : "bg-white text-on-surface-variant border-outline-variant/30 hover:bg-surface-container"
+                        }`}
+                      >
+                        {a}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="max-h-[320px] overflow-y-auto p-3 space-y-0">
+                  {logs.length === 0 ? (
+                    <p className="text-xs text-on-surface-variant/40 py-4 text-center">{t("library.noLogs")}</p>
+                  ) : (
+                    <div className="border-l-2 border-primary/15 space-y-0">
+                      {logs.map((log) => {
+                        const details = log.details ? (() => { try { return JSON.parse(log.details); } catch { return null; } })() : null;
+                        const entryNames: string[] = details?.entries || [];
+                        return (
+                        <div key={log.id} className="relative pl-5 py-2">
+                          <div className="absolute -left-[5px] top-3 w-2.5 h-2.5 rounded-full bg-primary/20 border-2 border-primary" />
+                          <div className="flex items-start gap-2">
+                            <span className="material-symbols-outlined text-sm text-primary/60 mt-0.5">
+                              {ACTION_ICON[log.action] || "info"}
+                            </span>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-xs text-on-surface leading-tight">
+                                {t("library.logVia")} <span className="font-semibold">{methodLabel(log.method)}</span>
+                                {log.action === "created" && ` ${t("library.logCreated", { n: log.count })}`}
+                                {log.action === "extracted" && ` ${t("library.logExtracted", { n: log.count })}`}
+                                {log.action === "updated" && ` ${t("library.logUpdated", { n: log.count })}`}
+                                {log.action === "deleted" && ` ${t("library.logDeleted", { n: log.count })}`}
+                                {log.action === "imported" && ` ${t("library.logImported", { n: log.count })}`}
+                                {log.action === "learned" && ` 🧠 learned ${log.count} entr${log.count === 1 ? "y" : "ies"}`}
+                              </p>
+                              {entryNames.length > 0 && (
+                                <div className="mt-1 space-y-0.5">
+                                  {entryNames.slice(0, expandedLogIds.has(log.id) ? entryNames.length : 3).map((name, idx) => (
+                                    <p key={idx} className="text-[10px] text-on-surface-variant/70 truncate leading-tight">
+                                      • {name}
+                                    </p>
+                                  ))}
+                                  {entryNames.length > 3 && (
+                                    <button
+                                      onClick={() => setExpandedLogIds(prev => {
+                                        const next = new Set(prev);
+                                        if (next.has(log.id)) next.delete(log.id); else next.add(log.id);
+                                        return next;
+                                      })}
+                                      className="text-[10px] text-primary hover:text-primary/70 font-medium cursor-pointer"
+                                    >
+                                      {expandedLogIds.has(log.id) ? "Show less" : `+${entryNames.length - 3} more`}
+                                    </button>
+                                  )}
+                                </div>
+                              )}
+                              <div className="flex items-center gap-2 mt-0.5">
+                                <span className="text-[10px] text-on-surface-variant/50">{formatLogTime(log.created_at)}</span>
+                                {log.source_filename && (
+                                  <span className="text-[10px] text-on-surface-variant/40 truncate max-w-[140px]">📄 {log.source_filename}</span>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                  {logs.length < logsTotal && (
+                    <div className="pt-2 text-center">
+                      <button onClick={loadMoreLogs} className="text-[11px] font-semibold text-primary hover:text-primary/80">
+                        Load more ({logs.length} / {logsTotal})
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
           <button
             onClick={handleExportExcel}
             className="flex items-center gap-1.5 px-4 py-2.5 bg-surface-container-low text-on-surface font-semibold rounded-full hover:bg-surface-container transition-colors text-sm border border-outline-variant/15"
           >
-            <span className="material-symbols-outlined text-lg">table_view</span>
+            <span className="material-symbols-outlined text-lg">download</span>
             {t("library.exportExcel")}
           </button>
           <button
@@ -1220,62 +1353,6 @@ export default function LibraryPage() {
         )}
       </section>
 
-      {/* ═══ GROWTH LOG TIMELINE (collapsible) ═══ */}
-      <section className="border-t border-outline-variant/10 pt-6">
-        <button
-          onClick={() => setLogOpen(!logOpen)}
-          className="flex items-center gap-2 text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors"
-        >
-          <span className="material-symbols-outlined text-lg">
-            {logOpen ? "expand_less" : "expand_more"}
-          </span>
-          <span className="material-symbols-outlined text-lg text-primary">timeline</span>
-          {t("library.growthLog")}
-          {logsTotal > 0 && (
-            <span className="text-xs font-normal text-on-surface-variant/50">({logsTotal})</span>
-          )}
-        </button>
-
-        {logOpen && (
-          <div className="mt-4 ml-4 border-l-2 border-primary/15 space-y-0">
-            {logs.length === 0 ? (
-              <p className="pl-6 text-xs text-on-surface-variant/40 py-4">{t("library.noLogs")}</p>
-            ) : (
-              logs.map((log) => (
-                <div key={log.id} className="relative pl-6 py-3">
-                  {/* dot */}
-                  <div className="absolute -left-[7px] top-4 w-3 h-3 rounded-full bg-primary/20 border-2 border-primary" />
-                  <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-base text-primary/60 mt-0.5">
-                      {ACTION_ICON[log.action] || "info"}
-                    </span>
-                    <div className="flex-1">
-                      <p className="text-sm text-on-surface">
-                        {t("library.logVia")}<span className="font-semibold">{methodLabel(log.method)}</span>
-                        {log.action === "created" && t("library.logCreated", { n: log.count })}
-                        {log.action === "extracted" && t("library.logExtracted", { n: log.count })}
-                        {log.action === "updated" && t("library.logUpdated", { n: log.count })}
-                        {log.action === "deleted" && t("library.logDeleted", { n: log.count })}
-                        {log.action === "imported" && t("library.logImported", { n: log.count })}
-                      </p>
-                      <div className="flex items-center gap-3 mt-0.5">
-                        <span className="text-[11px] text-on-surface-variant/50">
-                          {relativeTime(log.created_at)}
-                        </span>
-                        {log.source_filename && (
-                          <span className="text-[11px] text-on-surface-variant/40 truncate max-w-[200px]">
-                            📄 {log.source_filename}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        )}
-      </section>
     </div>
   );
 }

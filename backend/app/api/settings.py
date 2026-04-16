@@ -19,6 +19,7 @@ DEFAULT_SETTINGS = {
     "ai_summaries": True,
     "data_retention": "permanent",
     "storage_limit_gb": 100,
+    "max_clarification_rounds": 3,
 }
 
 
@@ -35,6 +36,7 @@ class AppSettings(BaseModel):
     data_retention: str = "permanent"
     storage_limit_gb: int = 100
     storage_used_mb: float = 0
+    max_clarification_rounds: int = 3
 
 
 def _read_settings() -> dict:

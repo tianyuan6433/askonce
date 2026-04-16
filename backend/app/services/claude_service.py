@@ -93,7 +93,7 @@ def _parse_json_object(text: str) -> dict | None:
 SYSTEM_PROMPT = """You are AskOnce, an AI assistant for the MAXHUB Pivot Plus product line. You generate accurate, professional replies based on the provided knowledge base entries.
 
 RULES:
-1. Use information from the provided knowledge sources when available. If NO knowledge source matches, use your general knowledge about MAXHUB Pivot Plus to help.
+1. Use information ONLY from the provided knowledge sources. If NO knowledge source is relevant to the user's question, respond with: "I'm sorry, I don't have information about that in my knowledge base. Please contact the MAXHUB Pivot Plus support team for further assistance."
 2. NEVER include source citations, reference IDs, or internal metadata in the reply.
 3. Length guide:
    - Simple factual queries: 2-4 sentences.
@@ -185,6 +185,112 @@ class ClaudeService:
             return block.text if hasattr(block, "text") else str(block)
         return ""
 
+    def _chat_stream(self, messages: list[dict], system: str = "", max_tokens: int = 2048):
+        """Stream a Claude response, yielding text chunks.
+        Falls back to non-streaming for proxies that don't support it."""
+        kwargs = {
+            "model": self.model,
+            "max_tokens": max_tokens,
+            "messages": messages,
+        }
+        if system:
+            kwargs["system"] = system
+
+        try:
+            with self.client.messages.stream(**kwargs) as stream:
+                for text in stream.text_stream:
+                    yield text
+        except Exception:
+            # Fallback: non-streaming call, yield entire response at once
+            full_text = self._chat(messages, system=system, max_tokens=max_tokens)
+            yield full_text
+
+    async def generate_reply_stream(
+        self,
+        messages: list[dict],
+        knowledge_context: str,
+        force_direct_answer: bool = False,
+        force_clarification: bool = False,
+        reply_lang: str = "en",
+        reply_format: str = "chat",
+    ):
+        """Generate a streaming reply using full conversation history.
+        
+        Yields dicts with keys:
+          {"type": "token", "text": "..."}
+          {"type": "clarification", "questions": [...]}
+          {"type": "done", "full_text": "..."}
+        """
+        format_hints = {
+            "email": "[Format: formal email reply, sign off as Yuan]",
+            "chat": "[Format: short casual chat message, no greeting/sign-off needed]",
+            "other": "[Format: neutral professional reply]",
+        }
+        lang_hint = "[请用中文回复]" if reply_lang == "zh" else "[Reply in English]"
+        format_hint = format_hints.get(reply_format, format_hints["chat"])
+
+        system_suffix = ""
+        if force_direct_answer:
+            system_suffix = "\n\nIMPORTANT: Do NOT ask for clarification. Give your best answer with the information available."
+
+        # Inject knowledge context into the latest user message
+        last_user_msg = messages[-1]["content"] if messages else ""
+        context_block = (
+            f"\n\nKnowledge sources:\n{knowledge_context}\n\n"
+            f"{lang_hint}\n{format_hint}\n\n"
+        )
+        if force_clarification:
+            # Forced multi-turn: MUST ask clarification questions
+            context_block += (
+                "MANDATORY CLARIFICATION:\n"
+                "You MUST ask clarification questions before answering. Do NOT give a direct answer yet.\n"
+                "Analyze the user's question and the knowledge sources, then ask 1-3 targeted questions "
+                "to better understand their specific situation (e.g., region, device model, use case, timeline).\n\n"
+                "If the knowledge sources contain region-specific, tier-specific, or conditional data, "
+                "ask which scenario applies to the user.\n\n"
+                'Respond ONLY with this exact JSON (nothing else):\n'
+                '{"type":"clarification","questions":[{"id":"q1","text":"Your question","options":["Option A","Option B"]}]}\n\n'
+                "Rules: 1-3 questions, 2-5 options each. Questions should be specific and actionable. "
+                "Use ALL the knowledge sources provided.\n\n"
+            )
+        elif not force_direct_answer:
+            context_block += (
+                "CLARIFICATION PROTOCOL:\n"
+                "Answer directly when you can. Ask for clarification ONLY when:\n"
+                "1. The answer would be COMPLETELY DIFFERENT depending on a missing detail "
+                "(e.g., pricing varies by region/country, features differ by product model)\n"
+                "2. You literally cannot give ANY useful answer without that info\n"
+                "3. The knowledge sources provide different answers for different scenarios "
+                "(different regions, tiers, device types, etc.) — ASK which scenario applies\n\n"
+                'If you DO need clarification, respond ONLY with this exact JSON (nothing else):\n'
+                '{"type":"clarification","questions":[{"id":"q1","text":"Your question","options":["Option A","Option B"]}]}\n\n'
+                "Rules: Max 3 questions, 2-5 options each. Use ALL the knowledge sources provided — "
+                "never say you don't have information that IS present in the sources above.\n\n"
+            )
+        context_block += "Otherwise, output ONLY the final reply text — no JSON, no analysis, no metadata."
+
+        augmented_messages = list(messages)
+        augmented_messages[-1] = {
+            "role": "user",
+            "content": last_user_msg + context_block,
+        }
+
+        full_text = ""
+        for chunk in self._chat_stream(
+            augmented_messages,
+            system=SYSTEM_PROMPT + system_suffix,
+            max_tokens=2048,
+        ):
+            full_text += chunk
+            yield {"type": "token", "text": chunk}
+
+        # Check if the full response is a clarification JSON
+        clarification = _parse_json_object(full_text)
+        if clarification and clarification.get("type") == "clarification" and clarification.get("questions"):
+            yield {"type": "clarification", "questions": clarification["questions"]}
+        else:
+            yield {"type": "done", "full_text": full_text}
+
     async def generate_reply(self, query: str, context_entries: list[dict], followup_context: list[dict] | None = None) -> dict:
         """Generate a reply using RAG context from knowledge base.
         
@@ -220,13 +326,18 @@ class ClaudeService:
             f"{context_text if context_text.strip() else '(No matching knowledge entries found)'}\n\n"
             f"{clarify_section}"
             f"CLARIFICATION PROTOCOL:\n"
-            f"Most of the time, just answer the question directly. Only ask for clarification if:\n"
-            f"1. The answer would be COMPLETELY DIFFERENT depending on a missing detail (e.g., new vs existing customer, region, plan tier)\n"
+            f"Answer directly when you can. Ask for clarification ONLY when:\n"
+            f"1. The answer would be COMPLETELY DIFFERENT depending on a missing detail "
+            f"(e.g., pricing varies by region/country, features differ by product model)\n"
             f"2. You literally cannot give ANY useful answer without that info\n"
-            f"3. The knowledge sources provide multiple conflicting answers for different scenarios\n\n"
+            f"3. The knowledge sources provide different answers for different scenarios "
+            f"(different regions, tiers, device types, etc.) — ASK which scenario applies\n\n"
+            f"IMPORTANT: If you see region-specific, country-specific, or tier-specific data "
+            f"in the knowledge sources, you MUST ask which applies before answering.\n\n"
             f"If you DO need clarification, respond ONLY with this exact JSON (nothing else):\n"
             f'{{"type":"clarification","questions":[{{"id":"q1","text":"Your question","options":["Option A","Option B"]}}]}}\n\n'
-            f"Rules: Max 3 questions, 2-5 options each. Prefer giving a general answer over asking.\n\n"
+            f"Rules: Max 3 questions, 2-5 options each. Use ALL knowledge sources provided — "
+            f"never say you don't have information that IS in the sources above.\n\n"
             f"Otherwise, output ONLY the final reply text — no JSON, no analysis, no metadata. "
             f"Plain text only, absolutely no markdown formatting."
         )

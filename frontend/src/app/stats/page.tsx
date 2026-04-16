@@ -183,12 +183,12 @@ export default function StatsPage() {
 
   /* ── header with period selector ──────────────────────────────── */
   const header = (
-    <div className="mb-10 flex items-end justify-between">
+    <div className="mb-6 flex items-end justify-between">
       <div>
-        <h2 className="text-3xl font-extrabold text-on-surface tracking-tight mb-2">
+        <h2 className="text-2xl font-extrabold text-on-surface tracking-tight mb-1">
           {t("stats.title")}
         </h2>
-        <p className="text-on-surface-variant text-lg">
+        <p className="text-on-surface-variant text-sm">
           {t("stats.subtitle")}
         </p>
       </div>
@@ -215,18 +215,30 @@ export default function StatsPage() {
     return (
       <div>
         {header}
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-12 gap-4">
           <div className="col-span-4">
-            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full">
-              <Skeleton className="h-4 w-24 mb-6" />
-              <Skeleton className="h-12 w-32 mb-4" />
+            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full">
+              <Skeleton className="h-4 w-24 mb-4" />
+              <Skeleton className="h-10 w-32 mb-3" />
               <Skeleton className="h-3 w-40" />
             </div>
           </div>
-          <div className="col-span-8">
-            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full">
-              <Skeleton className="h-4 w-48 mb-8" />
-              <div className="flex items-end gap-3 h-40">
+          <div className="col-span-4">
+            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full">
+              <Skeleton className="h-4 w-24 mb-4" />
+              <Skeleton className="h-10 w-32 mb-3" />
+              <Skeleton className="h-3 w-40" />
+            </div>
+          </div>
+          <div className="col-span-4">
+            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full flex flex-col items-center justify-center">
+              <Skeleton className="h-32 w-32 rounded-full" />
+            </div>
+          </div>
+          <div className="col-span-7">
+            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full">
+              <Skeleton className="h-4 w-48 mb-6" />
+              <div className="flex items-end gap-3 h-32">
                 {Array.from({ length: 7 }).map((_, i) => (
                   <Skeleton
                     key={i}
@@ -237,16 +249,11 @@ export default function StatsPage() {
               </div>
             </div>
           </div>
-          <div className="col-span-4">
-            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full flex flex-col items-center justify-center">
-              <Skeleton className="h-40 w-40 rounded-full" />
-            </div>
-          </div>
-          <div className="col-span-8">
-            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full">
-              <Skeleton className="h-4 w-36 mb-6" />
+          <div className="col-span-5">
+            <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full">
+              <Skeleton className="h-4 w-36 mb-4" />
               {Array.from({ length: 4 }).map((_, i) => (
-                <Skeleton key={i} className="h-14 w-full mb-3" />
+                <Skeleton key={i} className="h-12 w-full mb-2" />
               ))}
             </div>
           </div>
@@ -313,12 +320,14 @@ export default function StatsPage() {
     <div>
       {header}
 
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-4">
+        {/* ─── Row 1: Three summary cards ─────────────────────────── */}
+
         {/* ─── Time Recovery ─────────────────────────────────────── */}
         <div className="col-span-12 md:col-span-4">
-          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full flex flex-col justify-between">
+          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-2 mb-4">
                 <span className="material-symbols-outlined text-primary text-xl">
                   schedule
                 </span>
@@ -326,15 +335,15 @@ export default function StatsPage() {
                   {t("stats.timeRecovery")}
                 </span>
               </div>
-              <p className="text-5xl font-extrabold text-on-surface tracking-tight leading-none mb-2">
+              <p className="text-4xl font-extrabold text-on-surface tracking-tight leading-none mb-1">
                 {fmtHours(timeSaved)}
               </p>
-              <p className="text-on-surface-variant text-sm">
+              <p className="text-on-surface-variant text-xs">
                 {t("stats.savedThisPeriod")}
               </p>
             </div>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs text-on-surface-variant">{t("stats.adoptionRate")}</span>
                 <span className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-lg bg-primary-container text-on-primary-container font-semibold text-xs">
@@ -363,10 +372,81 @@ export default function StatsPage() {
           </div>
         </div>
 
+        {/* ─── Avg Response Time ───────────────────────────────── */}
+        <div className="col-span-12 md:col-span-4">
+          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="material-symbols-outlined text-primary text-xl">
+                  speed
+                </span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                  Avg Response Time
+                </span>
+              </div>
+              <p className="text-4xl font-extrabold text-on-surface tracking-tight leading-none mb-1">
+                {stats.avg_response_ms != null
+                  ? stats.avg_response_ms < 1000
+                    ? "< 1s"
+                    : `${(stats.avg_response_ms / 1000).toFixed(1)}s`
+                  : "—"}
+              </p>
+              <p className="text-on-surface-variant text-xs">
+                Average time to generate a reply
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Resolution Rate & Adoption Gauge ────────────────── */}
+        <div className="col-span-12 md:col-span-4">
+          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full flex flex-col items-center justify-center">
+            <div className="flex items-center gap-2 mb-4 self-start">
+              <span className="material-symbols-outlined text-primary text-xl">
+                donut_large
+              </span>
+              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                {t("stats.adoptionOverview")}
+              </span>
+            </div>
+
+            <CircularGauge percent={stats.adoption_rate} coverageLabel={t("stats.adoptionRate")} />
+
+            <div className="mt-4 grid grid-cols-3 gap-x-4 gap-y-1 text-center w-full">
+              <div>
+                <p className="text-lg font-extrabold text-on-surface">
+                  {stats.adopted_count}
+                </p>
+                <p className="text-[11px] text-on-surface-variant">
+                  {t("stats.adopted")}
+                </p>
+              </div>
+              <div>
+                <p className="text-lg font-extrabold text-on-surface">
+                  {stats.total_knowledge_entries}
+                </p>
+                <p className="text-[11px] text-on-surface-variant">
+                  {t("stats.entries")}
+                </p>
+              </div>
+              <div>
+                <p className="text-lg font-extrabold text-on-surface">
+                  {stats.total_interactions}
+                </p>
+                <p className="text-[11px] text-on-surface-variant">
+                  {t("stats.queries")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Row 2: Chart + Activity Log side by side ────────── */}
+
         {/* ─── Interaction Volume ───────────────────────────────── */}
-        <div className="col-span-12 md:col-span-8">
-          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full flex flex-col">
-            <div className="flex items-center justify-between mb-8">
+        <div className="col-span-12 md:col-span-7">
+          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full flex flex-col">
+            <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary text-xl">
                   bar_chart
@@ -418,53 +498,10 @@ export default function StatsPage() {
           </div>
         </div>
 
-        {/* ─── Resolution Rate & Adoption Gauge ────────────────── */}
-        <div className="col-span-12 md:col-span-4">
-          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full flex flex-col items-center justify-center">
-            <div className="flex items-center gap-2 mb-6 self-start">
-              <span className="material-symbols-outlined text-primary text-xl">
-                donut_large
-              </span>
-              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
-                {t("stats.adoptionOverview")}
-              </span>
-            </div>
-
-            <CircularGauge percent={stats.adoption_rate} coverageLabel={t("stats.adoptionRate")} />
-
-            <div className="mt-6 grid grid-cols-3 gap-x-4 gap-y-2 text-center w-full">
-              <div>
-                <p className="text-xl font-extrabold text-on-surface">
-                  {stats.adopted_count}
-                </p>
-                <p className="text-[11px] text-on-surface-variant">
-                  {t("stats.adopted")}
-                </p>
-              </div>
-              <div>
-                <p className="text-xl font-extrabold text-on-surface">
-                  {stats.total_knowledge_entries}
-                </p>
-                <p className="text-[11px] text-on-surface-variant">
-                  {t("stats.entries")}
-                </p>
-              </div>
-              <div>
-                <p className="text-xl font-extrabold text-on-surface">
-                  {stats.total_interactions}
-                </p>
-                <p className="text-[11px] text-on-surface-variant">
-                  {t("stats.queries")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* ─── Recent Activity Log ──────────────────────────────── */}
-        <div className="col-span-12 md:col-span-8">
-          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-8 h-full flex flex-col">
-            <div className="flex items-center gap-2 mb-6">
+        <div className="col-span-12 md:col-span-5">
+          <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,72,68,0.04)] p-6 h-full flex flex-col">
+            <div className="flex items-center gap-2 mb-4">
               <span className="material-symbols-outlined text-primary text-xl">
                 history
               </span>
@@ -473,32 +510,32 @@ export default function StatsPage() {
               </span>
             </div>
 
-            <div className="flex-1 flex flex-col gap-3">
+            <div className="flex-1 flex flex-col gap-2 max-h-[220px] overflow-y-auto">
               {activityLog.map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 rounded-xl bg-surface-container-lowest p-4 hover:bg-surface-container-low transition-colors"
+                  className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3 hover:bg-surface-container-low transition-colors"
                 >
                   <div
-                    className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${item.color}`}
+                    className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${item.color}`}
                   >
-                    <span className="material-symbols-outlined text-xl">
+                    <span className="material-symbols-outlined text-lg">
                       {item.icon}
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-on-surface truncate">
+                    <p className="text-xs font-bold text-on-surface truncate">
                       {item.label}
                     </p>
-                    <p className="text-xs text-on-surface-variant truncate">
+                    <p className="text-[11px] text-on-surface-variant truncate">
                       {item.detail}
                     </p>
                   </div>
                   <div className="flex-shrink-0 text-right">
-                    <p className="text-sm font-extrabold text-primary tabular-nums">
+                    <p className="text-xs font-extrabold text-primary tabular-nums">
                       {item.timeSaved}
                     </p>
-                    <p className="text-[11px] text-on-surface-variant">
+                    <p className="text-[10px] text-on-surface-variant">
                       {t("stats.saved")}
                     </p>
                   </div>

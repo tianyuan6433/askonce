@@ -67,6 +67,7 @@ export default function SettingsPage() {
         claude_api_base: draft.claude_api_base,
         confidence_auto_reply: draft.confidence_auto_reply,
         confidence_draft_min: draft.confidence_draft_min,
+        max_clarification_rounds: draft.max_clarification_rounds,
       });
       setSettings(updated);
       setDraft((d) => ({ ...d, ...updated }));
@@ -267,6 +268,36 @@ export default function SettingsPage() {
                   <span>0.00</span>
                   <span>1.00</span>
                 </div>
+              </div>
+
+              {/* Max Clarification Rounds */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                    Max Clarification Rounds
+                  </label>
+                  <span className="text-sm font-extrabold text-primary tabular-nums">
+                    {draft.max_clarification_rounds ?? 3}
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={10}
+                  step={1}
+                  value={draft.max_clarification_rounds ?? 3}
+                  onChange={(e) =>
+                    setDraft({ ...draft, max_clarification_rounds: parseInt(e.target.value) })
+                  }
+                  className="w-full h-2 rounded-full appearance-none cursor-pointer bg-surface-container-high accent-primary"
+                />
+                <div className="flex justify-between text-[10px] text-on-surface-variant/60 mt-1">
+                  <span>1</span>
+                  <span>10</span>
+                </div>
+                <p className="text-[10px] text-on-surface-variant/50 mt-1">
+                  Maximum number of clarification rounds before forcing a direct answer
+                </p>
               </div>
             </div>
 

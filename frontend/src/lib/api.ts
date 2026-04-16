@@ -136,13 +136,22 @@ export interface HistoryItem {
   channel: string;
   created_at: string | null;
   resolved_at: string | null;
+  conversation_log?: Array<{role: string; content: string}> | null;
 }
 
-export async function getHistory(limit: number = 5, offset: number = 0): Promise<{
+export async function getHistory(
+  limit: number = 5,
+  offset: number = 0,
+  search?: string,
+  status?: string,
+): Promise<{
   items: HistoryItem[];
   total: number;
 }> {
-  return fetchAPI(`/api/ask/history?limit=${limit}&offset=${offset}`);
+  const params = new URLSearchParams({ limit: String(limit), offset: String(offset) });
+  if (search) params.set("search", search);
+  if (status) params.set("status", status);
+  return fetchAPI(`/api/ask/history?${params}`);
 }
 
 export interface LearningSuggestion {
@@ -264,6 +273,18 @@ export async function createKnowledge(data: {
   return fetchAPI<KnowledgeEntry>("/api/knowledge/", {
     method: "POST",
     body: JSON.stringify(data),
+  });
+}
+
+export async function createKnowledgeBatch(entries: {
+  question_patterns: string[];
+  answer: string;
+  conditions?: string;
+  tags?: string[];
+}[]): Promise<KnowledgeEntry[]> {
+  return fetchAPI<KnowledgeEntry[]>("/api/knowledge/batch", {
+    method: "POST",
+    body: JSON.stringify(entries),
   });
 }
 
@@ -407,6 +428,7 @@ export interface StatsOverview {
   draft_reply_count: number;
   low_confidence_count: number;
   confirmed_count: number;
+  avg_response_ms?: number;
 }
 
 export interface TrendDataPoint {
@@ -448,6 +470,7 @@ export interface AppSettings {
   dark_mode: boolean;
   smart_notifications: boolean;
   ai_summaries: boolean;
+  max_clarification_rounds: number;
   storage_limit_gb: number;
   storage_used_mb: number;
 }
@@ -481,6 +504,130 @@ export interface KnowledgeLogsResponse {
   page_size: number;
 }
 
-export async function getKnowledgeLogs(page = 1, pageSize = 50): Promise<KnowledgeLogsResponse> {
-  return fetchAPI<KnowledgeLogsResponse>(`/api/knowledge/logs?page=${page}&page_size=${pageSize}`);
+export async function getKnowledgeLogs(page = 1, pageSize = 50, action?: string): Promise<KnowledgeLogsResponse> {
+  const params = new URLSearchParams({ page: String(page), page_size: String(pageSize) });
+  if (action) params.set("action", action);
+  return fetchAPI<KnowledgeLogsResponse>(`/api/knowledge/logs?${params}`);
+}
+
+// SSE Streaming Ask
+export interface StreamCompleteData {
+  id: string;
+  query: string;
+  reply_en: string;
+  reply_zh: string;
+  confidence: number;
+  status: string;
+  sources: Array<Record<string, unknown>>;
+  elapsed_ms: number;
+  session_id: string;
+  conversation_log?: Array<{role: string; content: string}>;
+}
+
+export interface StreamClarificationData {
+  questions: ClarificationQuestion[];
+  round: number;
+  interaction_id: string;
+  reason?: string;
+}
+
+export interface StreamCallbacks {
+  onThinking?: (status: string) => void;
+  onSession?: (sessionId: string) => void;
+  onToken?: (text: string) => void;
+  onClarification?: (data: StreamClarificationData) => void;
+  onTranslating?: () => void;
+  onComplete?: (data: StreamCompleteData) => void;
+  onError?: (error: Error) => void;
+}
+
+export async function streamAsk(
+  query: string,
+  callbacks: StreamCallbacks,
+  options?: {
+    channel?: string;
+    reply_lang?: string;
+    reply_format?: string;
+    session_id?: string;
+  }
+): Promise<void> {
+  const apiBase = getApiBase();
+  const body = {
+    query,
+    channel: options?.channel || "manual",
+    reply_lang: options?.reply_lang || "en",
+    reply_format: options?.reply_format || "chat",
+    session_id: options?.session_id || null,
+  };
+
+  const response = await fetch(`${apiBase}/api/ask/stream`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const err = new Error(`Stream API error: ${response.status}`);
+    callbacks.onError?.(err);
+    throw err;
+  }
+
+  const reader = response.body?.getReader();
+  if (!reader) {
+    const err = new Error("No response body for streaming");
+    callbacks.onError?.(err);
+    throw err;
+  }
+
+  const decoder = new TextDecoder();
+  let buffer = "";
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop() || "";
+
+      let currentEvent = "";
+      for (const line of lines) {
+        if (line.startsWith("event:")) {
+          currentEvent = line.slice(6).trim();
+        } else if (line.startsWith("data:")) {
+          const raw = line.slice(5).trim();
+          if (!raw) continue;
+          try {
+            const data = JSON.parse(raw);
+            switch (currentEvent) {
+              case "thinking":
+                callbacks.onThinking?.(data.status);
+                break;
+              case "session":
+                callbacks.onSession?.(data.session_id);
+                break;
+              case "token":
+                callbacks.onToken?.(data.text);
+                break;
+              case "clarification":
+                callbacks.onClarification?.(data as StreamClarificationData);
+                break;
+              case "translating":
+                callbacks.onTranslating?.();
+                break;
+              case "complete":
+                callbacks.onComplete?.(data as StreamCompleteData);
+                break;
+            }
+          } catch {
+            // Skip malformed JSON lines
+          }
+          currentEvent = "";
+        }
+      }
+    }
+  } finally {
+    reader.releaseLock();
+  }
 }

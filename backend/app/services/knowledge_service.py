@@ -94,6 +94,44 @@ class KnowledgeService:
         # Translation is handled as fire-and-forget in the API layer
         return entry
 
+    async def create_entries_batch(self, db: AsyncSession, items: list[dict], method: str = "auto") -> list[KnowledgeEntry]:
+        """Create multiple entries in one transaction with a single log action."""
+        entries = []
+        for data in items:
+            qp = data.get("question_patterns", [])
+            if isinstance(qp, str):
+                try:
+                    qp = json.loads(qp)
+                except (json.JSONDecodeError, TypeError):
+                    qp = [qp]
+            tags = data.get("tags", [])
+            if isinstance(tags, str):
+                try:
+                    tags = json.loads(tags)
+                except (json.JSONDecodeError, TypeError):
+                    tags = [tags]
+            entry = KnowledgeEntry(
+                id=str(uuid.uuid4()),
+                question_patterns=qp,
+                answer=data["answer"],
+                conditions=data.get("conditions"),
+                tags=tags,
+                confidence=data.get("confidence", 1.0),
+                source_type=data.get("source_type", "manual"),
+                source_ref=data.get("source_ref"),
+                status=data.get("status", "active"),
+            )
+            db.add(entry)
+            entries.append(entry)
+        # Single log entry for entire batch
+        await _log_action(db, action="created", method=method, count=len(entries), details={
+            "batch": True, "count": len(entries),
+        })
+        await db.commit()
+        for e in entries:
+            await db.refresh(e)
+        return entries
+
     async def get_entry(self, db: AsyncSession, entry_id: str) -> KnowledgeEntry | None:
         result = await db.execute(
             select(KnowledgeEntry).where(KnowledgeEntry.id == entry_id)

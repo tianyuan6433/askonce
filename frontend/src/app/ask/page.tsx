@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { askQuestion, askWithImage, askFollowup, getHistory } from "@/lib/api";
-import type { ClarificationQuestion, FollowupAnswer, HistoryItem } from "@/lib/api";
+import { askQuestion, askWithImage, askFollowup, getHistory, streamAsk } from "@/lib/api";
+import type { ClarificationQuestion, FollowupAnswer, HistoryItem, StreamCompleteData, StreamClarificationData } from "@/lib/api";
 import { useI18n } from "@/lib/i18n";
 
 type InputTab = "text" | "image" | "file";
@@ -76,7 +76,16 @@ export default function AskPage() {
   // Conversation messages for clarification flow
   const [chatMessages, setChatMessages] = useState<Array<{ role: "user" | "ai"; text: string }>>([]);
   const [followupInput, setFollowupInput] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set());
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const clarifyRef = useRef<HTMLDivElement>(null);
+  // Streaming state
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [streamingText, setStreamingText] = useState("");
+  const [thinkingStatus, setThinkingStatus] = useState<string | null>(null);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [clarificationRound, setClarificationRound] = useState(0);
+  const [originalQuery, setOriginalQuery] = useState("");
   const [learningSuggestions, setLearningSuggestions] = useState<Array<{
     action: string;
     reason: string;
@@ -94,6 +103,8 @@ export default function AskPage() {
   const [showHistoryPanel, setShowHistoryPanel] = useState(false);
   const [selectedHistoryItem, setSelectedHistoryItem] = useState<HistoryItem | null>(null);
   const [allHistory, setAllHistory] = useState<HistoryItem[]>([]);
+  const [historySearch, setHistorySearch] = useState("");
+  const [historyStatusFilter, setHistoryStatusFilter] = useState<string | null>(null);
 
   // Fetch recent history on mount
   useEffect(() => {
@@ -115,13 +126,22 @@ export default function AskPage() {
   const openHistoryPanel = useCallback(async () => {
     setShowHistoryPanel(true);
     try {
-      const res = await getHistory(100, 0);
+      const res = await getHistory(100, 0, historySearch || undefined, historyStatusFilter || undefined);
       setAllHistory(res.items);
       if (res.items.length > 0 && !selectedHistoryItem) {
         setSelectedHistoryItem(res.items[0]);
       }
     } catch { /* ignore */ }
-  }, [selectedHistoryItem]);
+  }, [selectedHistoryItem, historySearch, historyStatusFilter]);
+
+  // Re-fetch history when search/filter changes
+  useEffect(() => {
+    if (showHistoryPanel) {
+      getHistory(100, 0, historySearch || undefined, historyStatusFilter || undefined)
+        .then((res) => { setAllHistory(res.items); })
+        .catch(() => {});
+    }
+  }, [historySearch, historyStatusFilter, showHistoryPanel]);
 
   // Keep editedReply in sync with draftReply
   const updateDraft = (replyEn: string | null, replyZh: string | null) => {
@@ -147,7 +167,13 @@ export default function AskPage() {
   // Auto-scroll conversation to bottom
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chatMessages]);
+  }, [chatMessages, thinkingStatus, streamingText]);
+
+  // Auto-scroll to clarification options
+  useEffect(() => {
+    if (state.clarificationQuestions.length > 0)
+      clarifyRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [state.clarificationQuestions]);
 
   // Simulated progress bar for loading state
   const startProgress = useCallback(() => {
@@ -229,78 +255,110 @@ export default function AskPage() {
   const handleTextSubmit = useCallback(async () => {
     const text = queryText.trim();
     if (!text) return;
+    setOriginalQuery(text);
     setState((prev) => ({
       ...prev,
       isProcessing: true,
       error: null,
       detectedQuestion: null,
       draftReply: null,
+      draftReplyEn: null,
+      draftReplyZh: null,
       imagePreviewUrl: null,
       clarificationQuestions: [],
       followupHistory: [],
     }));
     setClarifyAnswers({});
-    startProgress();
+    setSelectedOptions(new Set());
+    setStreamingText("");
+    setIsStreaming(true);
+    setThinkingStatus("analyzing");
+
+    // Add user message to chat
+    setChatMessages((prev) => [...prev, { role: "user" as const, text }]);
 
     try {
-      const response = await askQuestion(text, {
+      await streamAsk(text, {
+        onThinking: (status) => {
+          setThinkingStatus(status);
+        },
+        onSession: (sid) => {
+          setSessionId(sid);
+        },
+        onToken: (token) => {
+          setThinkingStatus(null);
+          setStreamingText((prev) => prev + token);
+        },
+        onTranslating: () => {
+          setThinkingStatus("translating");
+        },
+        onClarification: (data: StreamClarificationData) => {
+          setIsStreaming(false);
+          setThinkingStatus(null);
+          setClarificationRound(data.round);
+          const aiText = data.questions.map((q) => q.text).join("\n");
+          setChatMessages((prev) => [...prev, { role: "ai" as const, text: aiText }]);
+          setState((prev) => ({
+            ...prev,
+            isProcessing: false,
+            interactionId: data.interaction_id,
+            detectedQuestion: text,
+            confidence: 0,
+            sources: [],
+            status: "clarification",
+            clarificationQuestions: data.questions,
+          }));
+        },
+        onComplete: (data: StreamCompleteData) => {
+          setIsStreaming(false);
+          setStreamingText("");
+          setThinkingStatus(null);
+          setChatMessages((prev) => [...prev, { role: "ai" as const, text: data.reply_en || data.reply_zh }]);
+          setState({
+            isProcessing: false,
+            interactionId: data.id,
+            detectedQuestion: data.query,
+            tags: [],
+            imagePreviewUrl: null,
+            draftReply: data.reply_en,
+            draftReplyEn: data.reply_en,
+            draftReplyZh: data.reply_zh,
+            confidence: data.confidence,
+            sources: (data.sources || []) as AskState["sources"],
+            status: data.status,
+            error: null,
+            clarificationQuestions: [],
+            followupHistory: [],
+          });
+          updateDraft(data.reply_en, data.reply_zh);
+          addToHistory(originalQuery || text, data.reply_en, data.elapsed_ms || 0);
+        },
+        onError: (err) => {
+          setIsStreaming(false);
+          setStreamingText("");
+          setThinkingStatus(null);
+          setState((prev) => ({
+            ...prev,
+            isProcessing: false,
+            error: err.message,
+          }));
+        },
+      }, {
         reply_lang: replyLang,
         reply_format: replyFormat,
+        session_id: sessionId || undefined,
       });
-      stopProgress();
-
-      if (response.status === "clarification" && response.clarification_questions?.length) {
-        // AI needs more info — show as conversation
-        const aiText = response.clarification_questions.map((q) => q.text).join("\n");
-        setChatMessages([
-          { role: "user", text },
-          { role: "ai", text: aiText },
-        ]);
-        setState({
-          isProcessing: false,
-          interactionId: response.id,
-          detectedQuestion: response.query,
-          tags: [],
-          imagePreviewUrl: null,
-          draftReply: null,
-          draftReplyEn: null,
-          draftReplyZh: null,
-          confidence: response.confidence,
-          sources: response.sources || [],
-          status: "clarification",
-          error: null,
-          clarificationQuestions: response.clarification_questions,
-          followupHistory: [],
-        });
-      } else {
-        setState({
-          isProcessing: false,
-          interactionId: response.id,
-          detectedQuestion: response.query,
-          tags: [],
-          imagePreviewUrl: null,
-          draftReply: response.draft_reply,
-          draftReplyEn: response.draft_reply_en || response.draft_reply,
-          draftReplyZh: response.draft_reply_zh || "",
-          confidence: response.confidence,
-          sources: response.sources || [],
-          status: response.status,
-          error: null,
-          clarificationQuestions: [],
-          followupHistory: [],
-        });
-        updateDraft(response.draft_reply_en || response.draft_reply || "", response.draft_reply_zh || "");
-        addToHistory(text, response.draft_reply || "", response.elapsed_ms || 0);
-      }
     } catch (err) {
-      stopProgress();
+      setIsStreaming(false);
+      setStreamingText("");
+      setThinkingStatus(null);
       setState((prev) => ({
         ...prev,
         isProcessing: false,
         error: err instanceof Error ? err.message : t("ask.failedProcessQuery"),
       }));
     }
-  }, [queryText, replyLang, replyFormat, t, startProgress, stopProgress, addToHistory]);
+  }, [queryText, replyLang, replyFormat, sessionId, t, addToHistory]);
 
   const handleReset = useCallback(() => {
     setState(INITIAL_STATE);
@@ -311,6 +369,14 @@ export default function AskPage() {
     setChatMessages([]);
     setFollowupInput("");
     setImagePreview(null);
+    setIsStreaming(false);
+    setStreamingText("");
+    setThinkingStatus(null);
+    setSessionId(null);
+    setClarificationRound(0);
+    setOriginalQuery("");
+    setHistorySearch("");
+    setHistoryStatusFilter(null);
   }, []);
 
   const handleCopy = async (lang?: "en" | "zh") => {
@@ -365,6 +431,7 @@ export default function AskPage() {
           followupHistory: [...prev.followupHistory, ...answers],
         }));
         setClarifyAnswers({});
+        setSelectedOptions(new Set());
       } else {
         // Got final reply
         setState((prev) => ({
@@ -393,63 +460,80 @@ export default function AskPage() {
   // Conversational follow-up: user types a free-text reply to AI's clarification
   const handleConversationSend = useCallback(async () => {
     const text = followupInput.trim();
-    if (!text || !state.interactionId) return;
+    if (!text) return;
 
-    // Add user message to chat
-    setChatMessages((prev) => [...prev, { role: "user", text }]);
+    setChatMessages((prev) => [...prev, { role: "user" as const, text }]);
     setFollowupInput("");
-
-    // Build a single answer covering all questions
-    const answers: FollowupAnswer[] = state.clarificationQuestions.map((q, i) => ({
-      question_id: q.id,
-      question_text: q.text,
-      answer: i === 0 ? text : text, // Use user's free-text for all questions
-    }));
-
+    setSelectedOptions(new Set());
+    setStreamingText("");
+    setIsStreaming(true);
+    setThinkingStatus("analyzing");
     setState((prev) => ({ ...prev, isProcessing: true, error: null }));
-    startProgress();
 
     try {
-      const response = await askFollowup(
-        state.interactionId,
-        queryText.trim(),
-        answers,
-        { reply_lang: replyLang, reply_format: replyFormat }
-      );
-      stopProgress();
-
-      if (response.status === "clarification" && response.clarification_questions?.length) {
-        // Another round — add AI message to conversation
-        const aiText = response.clarification_questions.map((q) => q.text).join("\n");
-        setChatMessages((prev) => [...prev, { role: "ai", text: aiText }]);
-        setState((prev) => ({
-          ...prev,
-          isProcessing: false,
-          clarificationQuestions: response.clarification_questions || [],
-          followupHistory: [...prev.followupHistory, ...answers],
-        }));
-      } else {
-        // Got final reply — clear conversation, show bilingual result
-        setChatMessages([]);
-        setState((prev) => ({
-          ...prev,
-          isProcessing: false,
-          draftReply: response.draft_reply,
-          draftReplyEn: response.draft_reply_en || response.draft_reply,
-          draftReplyZh: response.draft_reply_zh || "",
-          status: response.status,
-          clarificationQuestions: [],
-          followupHistory: [...prev.followupHistory, ...answers],
-        }));
-        updateDraft(response.draft_reply_en || response.draft_reply || "", response.draft_reply_zh || "");
-        addToHistory(queryText.trim(), response.draft_reply || "", response.elapsed_ms || 0);
-      }
+      await streamAsk(text, {
+        onThinking: (status) => setThinkingStatus(status),
+        onSession: (sid) => setSessionId(sid),
+        onToken: (token) => {
+          setThinkingStatus(null);
+          setStreamingText((prev) => prev + token);
+        },
+        onTranslating: () => setThinkingStatus("translating"),
+        onClarification: (data: StreamClarificationData) => {
+          setIsStreaming(false);
+          setThinkingStatus(null);
+          setClarificationRound(data.round);
+          const aiText = data.questions.map((q) => q.text).join("\n");
+          setChatMessages((prev) => [...prev, { role: "ai" as const, text: aiText }]);
+          setState((prev) => ({
+            ...prev,
+            isProcessing: false,
+            interactionId: data.interaction_id,
+            clarificationQuestions: data.questions,
+          }));
+        },
+        onComplete: (data: StreamCompleteData) => {
+          setIsStreaming(false);
+          setStreamingText("");
+          setThinkingStatus(null);
+          setChatMessages((prev) => [...prev, { role: "ai" as const, text: data.reply_en || data.reply_zh }]);
+          setState({
+            isProcessing: false,
+            interactionId: data.id,
+            detectedQuestion: data.query,
+            tags: [],
+            imagePreviewUrl: null,
+            draftReply: data.reply_en,
+            draftReplyEn: data.reply_en,
+            draftReplyZh: data.reply_zh,
+            confidence: data.confidence,
+            sources: (data.sources || []) as AskState["sources"],
+            status: data.status,
+            error: null,
+            clarificationQuestions: [],
+            followupHistory: [],
+          });
+          updateDraft(data.reply_en, data.reply_zh);
+          addToHistory(originalQuery || queryText.trim(), data.reply_en, data.elapsed_ms || 0);
+        },
+        onError: () => {
+          setIsStreaming(false);
+          setStreamingText("");
+          setThinkingStatus(null);
+          setState((prev) => ({ ...prev, isProcessing: false }));
+          setChatMessages((prev) => [...prev, { role: "ai" as const, text: "Failed to process. Please try again." }]);
+        },
+      }, {
+        reply_lang: replyLang,
+        reply_format: replyFormat,
+        session_id: sessionId || undefined,
+      });
     } catch {
-      stopProgress();
+      setIsStreaming(false);
       setState((prev) => ({ ...prev, isProcessing: false }));
-      setChatMessages((prev) => [...prev, { role: "ai", text: "Failed to process. Please try again." }]);
+      setChatMessages((prev) => [...prev, { role: "ai" as const, text: "Failed to process. Please try again." }]);
     }
-  }, [followupInput, state.interactionId, state.clarificationQuestions, queryText, replyLang, replyFormat, startProgress, stopProgress, addToHistory, updateDraft]);
+  }, [followupInput, queryText, replyLang, replyFormat, sessionId, addToHistory]);
 
   const hasClarification = state.status === "clarification" && state.clarificationQuestions.length > 0;
   const hasResult = !!state.draftReply && !state.isProcessing;
@@ -700,12 +784,45 @@ export default function AskPage() {
                     <div className="flex items-center gap-1.5 mb-1.5">
                       <span className="material-symbols-outlined text-amber-600 text-sm">smart_toy</span>
                       <span className="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Need more info</span>
+                      {clarificationRound > 0 && (
+                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-2">
+                          Round {clarificationRound}
+                        </span>
+                      )}
                     </div>
                   )}
                   <p className="whitespace-pre-wrap">{msg.text}</p>
                 </div>
               </div>
             ))}
+            {/* Thinking animation */}
+            {thinkingStatus && (
+              <div className="flex items-start gap-2">
+                <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-xs">🤖</div>
+                <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm text-gray-600">
+                  <span className="inline-flex items-center gap-1">
+                    {thinkingStatus === "analyzing" ? "Analyzing your question" :
+                     thinkingStatus === "summarizing" ? "Summarizing conversation" :
+                     thinkingStatus === "translating" ? "Translating reply" : "Thinking"}
+                    <span className="inline-flex gap-0.5">
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: "0ms"}} />
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: "150ms"}} />
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: "300ms"}} />
+                    </span>
+                  </span>
+                </div>
+              </div>
+            )}
+            {/* Streaming text bubble */}
+            {isStreaming && streamingText && (
+              <div className="flex items-start gap-2">
+                <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-xs">🤖</div>
+                <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm text-gray-800 max-w-[85%]">
+                  {streamingText}
+                  <span className="inline-block w-0.5 h-4 bg-blue-500 ml-0.5 animate-pulse" />
+                </div>
+              </div>
+            )}
             {state.isProcessing && (
               <div className="flex justify-start">
                 <div className="bg-surface-container rounded-2xl rounded-bl-md px-4 py-3">
@@ -723,22 +840,37 @@ export default function AskPage() {
             <div ref={chatEndRef} />
           </div>
 
-          {/* Quick option buttons (if AI provides options) */}
+          {/* Quick option buttons (multi-select) */}
           {!state.isProcessing && state.clarificationQuestions.some((q) => q.options?.length > 0) && (
-            <div className="px-4 pb-2">
+            <div ref={clarifyRef} className="px-4 pb-2">
+              <p className="text-[10px] text-on-surface-variant/60 mb-1.5">Select one or more options:</p>
               <div className="flex flex-wrap gap-1.5">
                 {state.clarificationQuestions.flatMap((q) =>
-                  (q.options || []).map((opt) => (
-                    <button
-                      key={`${q.id}-${opt}`}
-                      onClick={() => {
-                        setFollowupInput(opt);
-                      }}
-                      className="px-3 py-1.5 text-xs font-medium bg-surface-container rounded-full border border-outline-variant/20 hover:border-primary/40 hover:bg-primary/5 transition-colors"
-                    >
-                      {opt}
-                    </button>
-                  ))
+                  (q.options || []).map((opt) => {
+                    const isSelected = selectedOptions.has(opt);
+                    return (
+                      <button
+                        key={`${q.id}-${opt}`}
+                        onClick={() => {
+                          setSelectedOptions(prev => {
+                            const next = new Set(prev);
+                            if (next.has(opt)) next.delete(opt); else next.add(opt);
+                            const joined = Array.from(next).join(", ");
+                            setFollowupInput(joined);
+                            return next;
+                          });
+                        }}
+                        className={`px-3 py-1.5 text-xs font-medium rounded-full border transition-colors ${
+                          isSelected
+                            ? "bg-primary text-on-primary border-primary"
+                            : "bg-surface-container border-outline-variant/20 hover:border-primary/40 hover:bg-primary/5"
+                        }`}
+                      >
+                        {isSelected && <span className="mr-1">✓</span>}
+                        {opt}
+                      </button>
+                    );
+                  })
                 )}
               </div>
             </div>
@@ -957,7 +1089,7 @@ export default function AskPage() {
                   setSelectedHistoryItem(item);
                   setShowHistoryPanel(true);
                   // Also load all history
-                  getHistory(100, 0).then((res) => setAllHistory(res.items)).catch(() => {});
+                  getHistory(100, 0, historySearch || undefined, historyStatusFilter || undefined).then((res) => setAllHistory(res.items)).catch(() => {});
                 }}
               >
                 <div className="flex items-center justify-between mb-1">
@@ -976,7 +1108,7 @@ export default function AskPage() {
                     )}
                   </div>
                 </div>
-                <p className="text-xs text-on-surface-variant line-clamp-1">{item.draft_reply || item.final_reply}</p>
+                <p className="text-xs text-on-surface-variant line-clamp-1">{item.draft_reply || item.final_reply || "⏳ Clarification in progress"}</p>
               </div>
             ))}
           </div>
@@ -1005,6 +1137,31 @@ export default function AskPage() {
             <div className="flex flex-1 overflow-hidden">
               {/* Left sidebar: questions list */}
               <div className="w-[340px] border-r border-outline-variant/10 overflow-y-auto">
+                {/* Search and filters */}
+                <div className="p-3 border-b border-gray-200 space-y-2">
+                  <input
+                    type="text"
+                    placeholder="Search queries..."
+                    value={historySearch}
+                    onChange={(e) => setHistorySearch(e.target.value)}
+                    className="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
+                  />
+                  <div className="flex gap-1 flex-wrap">
+                    {["all", "pending", "confirmed", "edited"].map((s) => (
+                      <button
+                        key={s}
+                        onClick={() => setHistoryStatusFilter(s === "all" ? null : s)}
+                        className={`px-2 py-0.5 text-xs rounded-full border ${
+                          (s === "all" && !historyStatusFilter) || historyStatusFilter === s
+                            ? "bg-blue-500 text-white border-blue-500"
+                            : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50"
+                        }`}
+                      >
+                        {s === "all" ? "All" : s.charAt(0).toUpperCase() + s.slice(1)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 {allHistory.map((item) => (
                   <div
                     key={item.id}
@@ -1075,11 +1232,26 @@ export default function AskPage() {
                         </span>
                       )}
                     </div>
+                    {/* Conversation log */}
+                    {selectedHistoryItem?.conversation_log && selectedHistoryItem.conversation_log.length > 0 && (
+                      <div className="space-y-2 mb-4">
+                        <h4 className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Conversation</h4>
+                        {selectedHistoryItem.conversation_log.map((msg, i) => (
+                          <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                            <div className={`max-w-[80%] px-3 py-2 rounded-lg text-sm ${
+                              msg.role === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-800'
+                            }`}>
+                              {msg.content}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     {/* Draft reply */}
                     <div className="mb-4">
                       <h4 className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">AI Draft Reply</h4>
                       <div className="bg-surface-container rounded-xl p-4 text-sm leading-relaxed text-on-surface whitespace-pre-wrap">
-                        {selectedHistoryItem.draft_reply || "—"}
+                        {selectedHistoryItem.draft_reply || selectedHistoryItem.final_reply || "⏳ Clarification in progress — no reply generated yet"}
                       </div>
                     </div>
                     {/* Final reply (if different) */}
