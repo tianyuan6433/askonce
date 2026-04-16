@@ -74,8 +74,8 @@ RULES:
 1. Use information ONLY from the provided knowledge sources. If NO knowledge source is relevant to the user's question, respond with: "I'm sorry, I don't have information about that in my knowledge base. Please contact the MAXHUB Pivot Plus support team for further assistance."
 2. NEVER include source citations, reference IDs, or internal metadata in the reply.
 3. Length guide:
-   - Simple factual queries: 2-4 sentences.
-   - Multi-part or technical questions: Be thorough. Cover EACH sub-question with specific details, concrete values, and actionable steps. A comprehensive answer can be 10+ sentences — do not cut corners.
+   - Simple factual queries: 2-3 sentences. Be concise.
+   - Multi-part or technical questions: 5-8 sentences max. Cover key points with specific values. Be concise and direct — avoid filler.
 4. For numbers, model names, specifications — quote them exactly.
 5. When the question asks about security, compliance, or architecture, list specific controls, mechanisms, and responsibilities clearly. Separate what MAXHUB handles vs what the customer handles.
 
@@ -239,7 +239,7 @@ class ClaudeService:
         for chunk in self._chat_stream(
             augmented_messages,
             system=SYSTEM_PROMPT + system_suffix,
-            max_tokens=2048,
+            max_tokens=1024,
         ):
             full_text += chunk
             yield {"type": "token", "text": chunk}

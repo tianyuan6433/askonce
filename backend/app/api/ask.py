@@ -252,9 +252,9 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
     # Use the original first query for history display
     display_query = session.original_query or request.query
 
-    # Forced multi-turn: always clarify until max_rounds, then force answer
-    force_clarification = session.round_count < max_rounds
-    force_direct_answer = session.round_count >= max_rounds
+    # AI-recommended multi-turn: let AI decide when to clarify vs answer directly
+    force_clarification = False  # Let AI decide based on context
+    force_direct_answer = session.round_count >= max_rounds  # Only force answer at max rounds
 
     async def event_generator():
         yield {"event": "thinking", "data": json.dumps({"status": "analyzing"})}
@@ -398,22 +398,7 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
             except Exception as e:
                 logger.warning(f"[stream] Failed to persist interaction: {e}")
 
-            # Now translate in background and send translation event
-            try:
-                if actual_is_chinese:
-                    translated = claude_service._chat([{
-                        "role": "user",
-                        "content": f"Translate this customer service reply to English. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
-                    }], max_tokens=2048)
-                    yield {"event": "translation", "data": json.dumps({"reply_en": translated, "reply_zh": reply_zh})}
-                else:
-                    translated = claude_service._chat([{
-                        "role": "user",
-                        "content": f"Translate this customer service reply to Simplified Chinese. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
-                    }], max_tokens=2048)
-                    yield {"event": "translation", "data": json.dumps({"reply_en": reply_en, "reply_zh": translated})}
-            except Exception:
-                pass  # Translation failed — user can use sync button
+            # Translation is now lazy — frontend calls /api/ask/translate on demand
 
         # Signal end of stream
         yield {"event": "done", "data": json.dumps({"status": "finished"})}

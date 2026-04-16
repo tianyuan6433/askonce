@@ -306,6 +306,7 @@ export default function AskPage() {
     setStreamingText("");
     setIsStreaming(true);
     setThinkingStatus("analyzing");
+    startProgress();
 
     // Add user message to chat
     setChatMessages((prev) => [...prev, { role: "user" as const, text }]);
@@ -320,12 +321,21 @@ export default function AskPage() {
         },
         onToken: (token) => {
           setThinkingStatus(null);
-          setStreamingText((prev) => prev + token);
+          setStreamingText((prev) => {
+            const next = prev + token;
+            // Suppress raw JSON tokens for clarification responses
+            if (next.trimStart().startsWith('{"type":"clarification"') || next.trimStart().startsWith('{\"type\":\"clarification\"')) {
+              return ""; // Don't show raw JSON to user
+            }
+            return next;
+          });
         },
         onTranslating: () => {
           setThinkingStatus("translating");
         },
         onClarification: (data: StreamClarificationData) => {
+          setStreamingText("");
+          stopProgress();
           setIsStreaming(false);
           setThinkingStatus(null);
           setClarificationRound(data.round);
@@ -343,6 +353,7 @@ export default function AskPage() {
           }));
         },
         onComplete: (data: StreamCompleteData) => {
+          stopProgress();
           setIsStreaming(false);
           setStreamingText("");
           setThinkingStatus(null);
@@ -365,12 +376,28 @@ export default function AskPage() {
           });
           updateDraft(data.reply_en, data.reply_zh);
           addToHistory(originalQuery || text, data.reply_en, data.elapsed_ms || 0);
+
+          // Lazy translation: trigger in background after answer is shown
+          const replyText = data.reply_en || data.reply_zh;
+          if (replyText) {
+            const cjkCount = (replyText.match(/[\u4e00-\u9fff]/g) || []).length;
+            const isChinese = cjkCount / Math.max(replyText.length, 1) > 0.3;
+            const targetLang = isChinese ? "en" : "zh";
+            translateText(replyText, targetLang).then((res) => {
+              if (isChinese) {
+                updateDraft(res.translated, replyText);
+              } else {
+                updateDraft(replyText, res.translated);
+              }
+            }).catch(() => { /* Translation failed — user can trigger manually */ });
+          }
         },
         onTranslation: (data: { reply_en: string; reply_zh: string }) => {
           // Update bilingual columns when translation arrives
           updateDraft(data.reply_en, data.reply_zh);
         },
         onError: (err) => {
+          stopProgress();
           setIsStreaming(false);
           setStreamingText("");
           setThinkingStatus(null);
@@ -386,6 +413,7 @@ export default function AskPage() {
         session_id: sessionId || undefined,
       });
     } catch (err) {
+      stopProgress();
       setIsStreaming(false);
       setStreamingText("");
       setThinkingStatus(null);
@@ -395,7 +423,7 @@ export default function AskPage() {
         error: err instanceof Error ? err.message : t("ask.failedProcessQuery"),
       }));
     }
-  }, [queryText, replyLang, replyFormat, sessionId, t, addToHistory]);
+  }, [queryText, replyLang, replyFormat, sessionId, t, addToHistory, startProgress, stopProgress]);
 
   const handleReset = useCallback(() => {
     setState(INITIAL_STATE);
