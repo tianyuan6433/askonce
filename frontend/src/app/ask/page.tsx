@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { askQuestion, askWithImage, askFollowup, getHistory, streamAsk } from "@/lib/api";
+import { askQuestion, askWithImage, askFollowup, getHistory, streamAsk, translateText } from "@/lib/api";
 import type { ClarificationQuestion, FollowupAnswer, HistoryItem, StreamCompleteData, StreamClarificationData } from "@/lib/api";
 import { useI18n } from "@/lib/i18n";
 
@@ -60,6 +60,8 @@ export default function AskPage() {
   const [editedReplyEn, setEditedReplyEn] = useState("");
   const [editedReplyZh, setEditedReplyZh] = useState("");
   const [editedReply, setEditedReply] = useState(""); // backward compat alias
+  const [isRetranslating, setIsRetranslating] = useState(false);
+  const retranslateTimerRef = useRef<NodeJS.Timeout | null>(null);
   const [copied, setCopied] = useState(false);
   const [copiedLang, setCopiedLang] = useState<"en" | "zh" | null>(null);
   const [replyLang, setReplyLang] = useState<"en" | "zh">(locale.startsWith("zh") ? "zh" : "en");
@@ -148,6 +150,37 @@ export default function AskPage() {
     if (replyEn !== null) { setEditedReplyEn(replyEn); setEditedReply(replyEn); }
     if (replyZh !== null) setEditedReplyZh(replyZh);
   };
+
+  // Auto-translate: when user edits Chinese, debounce and re-translate to English (and vice versa)
+  const handleZhEdit = useCallback((newText: string) => {
+    setEditedReplyZh(newText);
+    if (retranslateTimerRef.current) clearTimeout(retranslateTimerRef.current);
+    retranslateTimerRef.current = setTimeout(async () => {
+      if (!newText.trim()) return;
+      setIsRetranslating(true);
+      try {
+        const result = await translateText(newText, "en");
+        setEditedReplyEn(result.translated);
+        setEditedReply(result.translated);
+      } catch { /* ignore */ }
+      setIsRetranslating(false);
+    }, 1200);
+  }, []);
+
+  const handleEnEdit = useCallback((newText: string) => {
+    setEditedReplyEn(newText);
+    setEditedReply(newText);
+    if (retranslateTimerRef.current) clearTimeout(retranslateTimerRef.current);
+    retranslateTimerRef.current = setTimeout(async () => {
+      if (!newText.trim()) return;
+      setIsRetranslating(true);
+      try {
+        const result = await translateText(newText, "zh");
+        setEditedReplyZh(result.translated);
+      } catch { /* ignore */ }
+      setIsRetranslating(false);
+    }, 1200);
+  }, []);
 
   // Auto-resize both textareas when content changes
   const replyZhTextareaRef = useRef<HTMLTextAreaElement>(null);
@@ -333,6 +366,10 @@ export default function AskPage() {
           updateDraft(data.reply_en, data.reply_zh);
           addToHistory(originalQuery || text, data.reply_en, data.elapsed_ms || 0);
         },
+        onTranslation: (data: { reply_en: string; reply_zh: string }) => {
+          // Update bilingual columns when translation arrives
+          updateDraft(data.reply_en, data.reply_zh);
+        },
         onError: (err) => {
           setIsStreaming(false);
           setStreamingText("");
@@ -515,6 +552,9 @@ export default function AskPage() {
           });
           updateDraft(data.reply_en, data.reply_zh);
           addToHistory(originalQuery || queryText.trim(), data.reply_en, data.elapsed_ms || 0);
+        },
+        onTranslation: (data: { reply_en: string; reply_zh: string }) => {
+          updateDraft(data.reply_en, data.reply_zh);
         },
         onError: () => {
           setIsStreaming(false);
@@ -976,11 +1016,29 @@ export default function AskPage() {
                   <div className="flex items-center gap-2 mb-2 pb-2 border-b border-outline-variant/10">
                     <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded">EN</span>
                     <span className="text-[11px] text-on-surface-variant">English</span>
+                    {isRetranslating && <span className="text-[10px] text-primary animate-pulse">syncing...</span>}
+                    <button
+                      onClick={async () => {
+                        if (!editedReplyZh.trim()) return;
+                        setIsRetranslating(true);
+                        try {
+                          const result = await translateText(editedReplyZh, "en");
+                          setEditedReplyEn(result.translated);
+                          setEditedReply(result.translated);
+                        } catch { /* ignore */ }
+                        setIsRetranslating(false);
+                      }}
+                      disabled={isRetranslating || !editedReplyZh.trim()}
+                      className="ml-auto text-[10px] text-primary hover:text-primary/70 font-medium disabled:opacity-30"
+                      title="Translate from Chinese"
+                    >
+                      ← {t("ask.syncFromZh") || "Sync from 中文"}
+                    </button>
                   </div>
                   <textarea
                     ref={replyTextareaRef}
                     value={editedReplyEn}
-                    onChange={(e) => { setEditedReplyEn(e.target.value); setEditedReply(e.target.value); }}
+                    onChange={(e) => handleEnEdit(e.target.value)}
                     className="w-full bg-transparent border-none focus:ring-0 text-sm leading-relaxed text-on-surface resize-none outline-none"
                     rows={4}
                     placeholder="English reply..."
@@ -991,11 +1049,28 @@ export default function AskPage() {
                   <div className="flex items-center gap-2 mb-2 pb-2 border-b border-outline-variant/10">
                     <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest bg-tertiary/10 px-2 py-0.5 rounded">中文</span>
                     <span className="text-[11px] text-on-surface-variant">Chinese</span>
+                    {isRetranslating && <span className="text-[10px] text-tertiary animate-pulse">syncing...</span>}
+                    <button
+                      onClick={async () => {
+                        if (!editedReplyEn.trim()) return;
+                        setIsRetranslating(true);
+                        try {
+                          const result = await translateText(editedReplyEn, "zh");
+                          setEditedReplyZh(result.translated);
+                        } catch { /* ignore */ }
+                        setIsRetranslating(false);
+                      }}
+                      disabled={isRetranslating || !editedReplyEn.trim()}
+                      className="ml-auto text-[10px] text-primary hover:text-primary/70 font-medium disabled:opacity-30"
+                      title="Translate from English"
+                    >
+                      ← {t("ask.syncFromEn") || "Sync from EN"}
+                    </button>
                   </div>
                   <textarea
                     ref={replyZhTextareaRef}
                     value={editedReplyZh}
-                    onChange={(e) => setEditedReplyZh(e.target.value)}
+                    onChange={(e) => handleZhEdit(e.target.value)}
                     className="w-full bg-transparent border-none focus:ring-0 text-sm leading-relaxed text-on-surface resize-none outline-none"
                     rows={4}
                     placeholder="中文回复..."

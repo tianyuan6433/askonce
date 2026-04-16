@@ -46,6 +46,22 @@ class StreamAskRequest(BaseModel):
     session_id: str | None = None
 
 
+class TranslateTextRequest(BaseModel):
+    text: str
+    target_lang: str = "en"  # "en" or "zh"
+
+
+@router.post("/translate")
+async def translate_text(request: TranslateTextRequest):
+    """Translate freeform text to the target language."""
+    claude_service = get_claude_service()
+    try:
+        translated = await claude_service.translate_text(request.text, request.target_lang)
+        return {"translated": translated}
+    except ClaudeServiceError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+
+
 class ClarificationQuestion(BaseModel):
     id: str
     text: str
@@ -308,9 +324,8 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
                 }),
             }
         else:
-            # Got a direct answer — translate for bilingual
+            # Got a direct answer — send immediately, translate in background
             conversation_mgr.add_assistant_message(session_id, full_text)
-            yield {"event": "translating", "data": json.dumps({"status": "translating"})}
 
             # Detect actual language of the streamed text
             import re as _re
@@ -318,27 +333,13 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
             total_chars = max(len(full_text.strip()), 1)
             actual_is_chinese = (cjk_chars / total_chars) > 0.3
 
-            # Translate to the OTHER language based on actual content language
+            # Set primary reply immediately
             if actual_is_chinese:
-                # Streamed text is Chinese — translate to English
                 reply_zh = full_text
-                try:
-                    reply_en = claude_service._chat([{
-                        "role": "user",
-                        "content": f"Translate this customer service reply to English. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
-                    }], max_tokens=2048)
-                except Exception:
-                    reply_en = full_text
+                reply_en = full_text  # Temporary — will be replaced by translation
             else:
-                # Streamed text is English — translate to Chinese
                 reply_en = full_text
-                try:
-                    reply_zh = claude_service._chat([{
-                        "role": "user",
-                        "content": f"Translate this customer service reply to Simplified Chinese. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
-                    }], max_tokens=2048)
-                except Exception:
-                    reply_zh = ""
+                reply_zh = ""  # Temporary — will be replaced by translation
 
             elapsed_ms = int((time.time() - start_time) * 1000)
 
@@ -366,6 +367,7 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
             db.add(interaction)
             await db.commit()
 
+            # Send complete event immediately (with primary language)
             yield {
                 "event": "complete",
                 "data": json.dumps({
@@ -381,6 +383,23 @@ async def ask_stream(request: StreamAskRequest, db: AsyncSession = Depends(get_d
                     "conversation_log": session.messages,
                 }),
             }
+
+            # Now translate in background and send translation event
+            try:
+                if actual_is_chinese:
+                    translated = claude_service._chat([{
+                        "role": "user",
+                        "content": f"Translate this customer service reply to English. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
+                    }], max_tokens=2048)
+                    yield {"event": "translation", "data": json.dumps({"reply_en": translated, "reply_zh": reply_zh})}
+                else:
+                    translated = claude_service._chat([{
+                        "role": "user",
+                        "content": f"Translate this customer service reply to Simplified Chinese. Keep the same tone and format. Output ONLY the translation.\n\n{full_text}",
+                    }], max_tokens=2048)
+                    yield {"event": "translation", "data": json.dumps({"reply_en": reply_en, "reply_zh": translated})}
+            except Exception:
+                pass  # Translation failed — user can use sync button
 
     return EventSourceResponse(event_generator())
 

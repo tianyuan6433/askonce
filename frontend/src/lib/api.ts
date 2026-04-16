@@ -264,6 +264,13 @@ export async function translateKnowledge(entryIds: string[], locale: string): Pr
   });
 }
 
+export async function translateText(text: string, targetLang: string): Promise<{ translated: string }> {
+  return fetchAPI<{ translated: string }>("/api/ask/translate", {
+    method: "POST",
+    body: JSON.stringify({ text, target_lang: targetLang }),
+  });
+}
+
 export async function createKnowledge(data: {
   question_patterns: string[];
   answer: string;
@@ -538,6 +545,7 @@ export interface StreamCallbacks {
   onClarification?: (data: StreamClarificationData) => void;
   onTranslating?: () => void;
   onComplete?: (data: StreamCompleteData) => void;
+  onTranslation?: (data: { reply_en: string; reply_zh: string }) => void;
   onError?: (error: Error) => void;
 }
 
@@ -618,6 +626,9 @@ export async function streamAsk(
                 break;
               case "complete":
                 callbacks.onComplete?.(data as StreamCompleteData);
+                break;
+              case "translation":
+                callbacks.onTranslation?.(data as { reply_en: string; reply_zh: string });
                 break;
             }
           } catch {
