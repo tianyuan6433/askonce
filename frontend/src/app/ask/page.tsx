@@ -88,6 +88,34 @@ export default function AskPage() {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [clarificationRound, setClarificationRound] = useState(0);
   const [originalQuery, setOriginalQuery] = useState("");
+
+  // Typewriter buffer: tokens arrive in chunks, we render char-by-char
+  const tokenBufferRef = useRef("");
+  const typewriterTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startTypewriter = useCallback(() => {
+    if (typewriterTimerRef.current) return; // already running
+    typewriterTimerRef.current = setInterval(() => {
+      if (tokenBufferRef.current.length === 0) return;
+      // Drain up to 3 chars per tick for natural speed
+      const chars = tokenBufferRef.current.slice(0, 3);
+      tokenBufferRef.current = tokenBufferRef.current.slice(3);
+      setStreamingText((prev) => prev + chars);
+    }, 20);
+  }, []);
+
+  const stopTypewriter = useCallback((flush?: boolean) => {
+    if (typewriterTimerRef.current) {
+      clearInterval(typewriterTimerRef.current);
+      typewriterTimerRef.current = null;
+    }
+    if (flush && tokenBufferRef.current.length > 0) {
+      // Flush remaining buffer
+      const remaining = tokenBufferRef.current;
+      tokenBufferRef.current = "";
+      setStreamingText((prev) => prev + remaining);
+    }
+  }, []);
   const [learningSuggestions, setLearningSuggestions] = useState<Array<{
     action: string;
     reason: string;
@@ -303,6 +331,8 @@ export default function AskPage() {
     }));
     setClarifyAnswers({});
     setSelectedOptions(new Set());
+    stopTypewriter();
+    tokenBufferRef.current = "";
     setStreamingText("");
     setIsStreaming(true);
     setThinkingStatus("analyzing");
@@ -321,19 +351,21 @@ export default function AskPage() {
         },
         onToken: (token) => {
           setThinkingStatus(null);
-          setStreamingText((prev) => {
-            const next = prev + token;
-            // Suppress raw JSON tokens for clarification responses
-            if (next.trimStart().startsWith('{"type":"clarification"') || next.trimStart().startsWith('{\"type\":\"clarification\"')) {
-              return ""; // Don't show raw JSON to user
-            }
-            return next;
-          });
+          // Check for raw JSON clarification tokens
+          const testBuf = tokenBufferRef.current + token;
+          if (testBuf.trimStart().startsWith('{"type":"clarification"') || testBuf.trimStart().startsWith('{\"type\":\"clarification\"')) {
+            tokenBufferRef.current = "";
+            return; // Don't show raw JSON to user
+          }
+          tokenBufferRef.current += token;
+          startTypewriter();
         },
         onTranslating: () => {
           setThinkingStatus("translating");
         },
         onClarification: (data: StreamClarificationData) => {
+          stopTypewriter();
+          tokenBufferRef.current = "";
           setStreamingText("");
           stopProgress();
           setIsStreaming(false);
@@ -353,6 +385,8 @@ export default function AskPage() {
           }));
         },
         onComplete: (data: StreamCompleteData) => {
+          stopTypewriter(true); // flush remaining buffer
+          tokenBufferRef.current = "";
           stopProgress();
           setIsStreaming(false);
           setStreamingText("");
@@ -541,10 +575,18 @@ export default function AskPage() {
         onSession: (sid) => setSessionId(sid),
         onToken: (token) => {
           setThinkingStatus(null);
-          setStreamingText((prev) => prev + token);
+          const testBuf = tokenBufferRef.current + token;
+          if (testBuf.trimStart().startsWith('{"type":"clarification"') || testBuf.trimStart().startsWith('{\"type\":\"clarification\"')) {
+            tokenBufferRef.current = "";
+            return;
+          }
+          tokenBufferRef.current += token;
+          startTypewriter();
         },
         onTranslating: () => setThinkingStatus("translating"),
         onClarification: (data: StreamClarificationData) => {
+          stopTypewriter();
+          tokenBufferRef.current = "";
           setIsStreaming(false);
           setThinkingStatus(null);
           setClarificationRound(data.round);
@@ -558,6 +600,8 @@ export default function AskPage() {
           }));
         },
         onComplete: (data: StreamCompleteData) => {
+          stopTypewriter(true);
+          tokenBufferRef.current = "";
           setIsStreaming(false);
           setStreamingText("");
           setThinkingStatus(null);
@@ -585,6 +629,8 @@ export default function AskPage() {
           updateDraft(data.reply_en, data.reply_zh);
         },
         onError: () => {
+          stopTypewriter();
+          tokenBufferRef.current = "";
           setIsStreaming(false);
           setStreamingText("");
           setThinkingStatus(null);
