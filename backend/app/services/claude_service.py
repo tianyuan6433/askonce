@@ -99,6 +99,12 @@ MAXHUB TERMINOLOGY (always use these exact terms):
 - "CMS" / "DMS" — keep acronyms as-is
 - "R&D team" (not "R & D" or "development team")
 
+DEVICE & LICENSING KNOWLEDGE:
+- Pivot Plus licenses are per-device, per-year (365 credits per license)
+- Licenses apply to managed devices: IFP (Interactive Flat Panel), DS (Digital Signage), MTR rooms, etc.
+- Peripherals (microphones, cameras, speakers, USB dongles) do NOT require separate licenses — they are accessories managed through the parent device
+- If a user mentions peripherals, clarify that they only need licenses for the main display/device units
+
 QUALITY:
 - Cut every unnecessary word
 - Sound like a real person — read it aloud; if it sounds robotic, rewrite
@@ -239,7 +245,7 @@ class ClaudeService:
         for chunk in self._chat_stream(
             augmented_messages,
             system=SYSTEM_PROMPT + system_suffix,
-            max_tokens=1024,
+            max_tokens=2048,
         ):
             full_text += chunk
             yield {"type": "token", "text": chunk}

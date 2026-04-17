@@ -1,6 +1,9 @@
 """Document parsing service for extracting text from docx, pdf, xlsx files."""
 import io
+import logging
 from typing import Optional
+
+logger = logging.getLogger(__name__)
 
 
 class DocumentService:
@@ -13,7 +16,11 @@ class DocumentService:
         if ext == "docx":
             return self._parse_docx(content)
         elif ext == "pdf":
-            return self._parse_pdf(content)
+            text = self._parse_pdf(content)
+            if not text.strip():
+                logger.warning("[parse] PyPDF2 extracted 0 chars from %s, falling back to OCR", filename)
+                text = await self._parse_pdf_ocr(content)
+            return text
         elif ext in ("xlsx", "xls"):
             return self._parse_xlsx(content)
         elif ext == "txt":
@@ -66,6 +73,40 @@ class DocumentService:
             if text and text.strip():
                 texts.append(f"--- Page {i+1} ---\n{text.strip()}")
 
+        return "\n\n".join(texts)
+
+    async def _parse_pdf_ocr(self, content: bytes) -> str:
+        """Fallback: render PDF pages to images and use AI vision to extract text."""
+        import fitz  # pymupdf
+        from app.services.claude_service import ClaudeService
+
+        doc = fitz.open(stream=content, filetype="pdf")
+        claude = ClaudeService()
+        texts = []
+
+        # Process up to 20 pages to stay within reasonable limits
+        max_pages = min(len(doc), 20)
+        logger.info("[OCR] Processing %d/%d pages via AI vision", max_pages, len(doc))
+
+        for i in range(max_pages):
+            page = doc[i]
+            # Render at 150 DPI — good balance of quality vs size
+            pix = page.get_pixmap(dpi=150)
+            img_bytes = pix.tobytes("png")
+
+            try:
+                result = await claude.extract_from_image(img_bytes, "image/png")
+                page_text = result.get("extracted_text", "")
+                if page_text and page_text.strip():
+                    texts.append(f"--- Page {i+1} ---\n{page_text.strip()}")
+                    logger.info("[OCR] Page %d: %d chars extracted", i+1, len(page_text))
+                else:
+                    logger.warning("[OCR] Page %d: no text extracted", i+1)
+            except Exception as e:
+                logger.error("[OCR] Page %d failed: %s", i+1, e)
+                continue
+
+        doc.close()
         return "\n\n".join(texts)
 
     def _parse_xlsx(self, content: bytes) -> str:

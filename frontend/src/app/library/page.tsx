@@ -368,9 +368,13 @@ export default function LibraryPage() {
         answer: e.answer,
         tags: e.tags,
       })));
-      setPreviewEntries([]);
       setConfirmAllDone(pendingEntries.length);
-    } catch { /* skip failed */ }
+    } catch (err) {
+      console.error("Batch import failed:", err);
+    }
+    // Always clear preview entries after attempt (success or partial)
+    setPreviewEntries([]);
+    setExtractError(null);
     // Refresh list once at end
     try {
       const data = await listKnowledge({ page: 1, page_size: PAGE_SIZE, search: debouncedSearch || undefined, locale: locale !== "en" ? locale : undefined });
@@ -380,6 +384,10 @@ export default function LibraryPage() {
       setHasMore(data.items.length === PAGE_SIZE);
     } catch { /* ignore */ }
     setConfirmingAll(false);
+    // Reset file upload state
+    setUploadedFile(null);
+    setUploadedFiles([]);
+    setFileQueue([]);
   };
 
   /* --- edit preview entry --- */
