@@ -116,6 +116,67 @@ export default function AskPage() {
       setStreamingText((prev) => prev + remaining);
     }
   }, []);
+
+  // Textarea typewriter: types text into EN/ZH textareas char-by-char
+  const textareaTypewriterRef = useRef<{ en: string; zh: string; timer: ReturnType<typeof setInterval> | null }>({ en: "", zh: "", timer: null });
+  const [isTranslating, setIsTranslating] = useState(false);
+
+  const startTextareaTypewriter = useCallback((enText: string, zhText: string) => {
+    // Stop any running textarea typewriter
+    if (textareaTypewriterRef.current.timer) {
+      clearInterval(textareaTypewriterRef.current.timer);
+    }
+    textareaTypewriterRef.current = { en: enText, zh: zhText, timer: null };
+    setEditedReplyEn("");
+    setEditedReplyZh("");
+    setEditedReply("");
+    const charsPerTick = 5;
+    let enPos = 0;
+    let zhPos = 0;
+    textareaTypewriterRef.current.timer = setInterval(() => {
+      const buf = textareaTypewriterRef.current;
+      let enDone = enPos >= buf.en.length;
+      let zhDone = zhPos >= buf.zh.length;
+      if (!enDone) {
+        const nextEn = Math.min(enPos + charsPerTick, buf.en.length);
+        const enSlice = buf.en.slice(0, nextEn);
+        enPos = nextEn;
+        setEditedReplyEn(enSlice);
+        setEditedReply(enSlice);
+        enDone = enPos >= buf.en.length;
+      }
+      if (!zhDone) {
+        const nextZh = Math.min(zhPos + charsPerTick, buf.zh.length);
+        zhPos = nextZh;
+        setEditedReplyZh(buf.zh.slice(0, nextZh));
+        zhDone = zhPos >= buf.zh.length;
+      }
+      if (enDone && zhDone) {
+        clearInterval(buf.timer!);
+        buf.timer = null;
+      }
+    }, 15);
+  }, []);
+
+  const appendTranslation = useCallback((zhText: string) => {
+    // When translation arrives, typewriter it into ZH
+    setIsTranslating(false);
+    const buf = textareaTypewriterRef.current;
+    buf.zh = zhText;
+    // If timer already stopped (EN finished), start new one for ZH
+    if (!buf.timer) {
+      let zhPos = 0;
+      buf.timer = setInterval(() => {
+        const nextZh = Math.min(zhPos + 5, buf.zh.length);
+        zhPos = nextZh;
+        setEditedReplyZh(buf.zh.slice(0, nextZh));
+        if (zhPos >= buf.zh.length) {
+          clearInterval(buf.timer!);
+          buf.timer = null;
+        }
+      }, 15);
+    }
+  }, []);
   const [learningSuggestions, setLearningSuggestions] = useState<Array<{
     action: string;
     reason: string;
@@ -408,22 +469,36 @@ export default function AskPage() {
             clarificationQuestions: [],
             followupHistory: [],
           });
-          updateDraft(data.reply_en, data.reply_zh);
           addToHistory(originalQuery || text, data.reply_en, data.elapsed_ms || 0);
 
-          // Lazy translation: trigger in background after answer is shown
+          // Typewriter for bilingual textareas
           const replyText = data.reply_en || data.reply_zh;
-          if (replyText) {
-            const cjkCount = (replyText.match(/[\u4e00-\u9fff]/g) || []).length;
-            const isChinese = cjkCount / Math.max(replyText.length, 1) > 0.3;
+          const cjkCount = (replyText || "").match(/[\u4e00-\u9fff]/g)?.length || 0;
+          const isChinese = cjkCount / Math.max((replyText || "").length, 1) > 0.3;
+
+          if (data.reply_zh && data.reply_en) {
+            // Both available — typewriter both
+            startTextareaTypewriter(data.reply_en, data.reply_zh);
+          } else if (replyText) {
+            // Only one language — typewriter it, lazy-translate the other
+            setIsTranslating(true);
+            if (isChinese) {
+              startTextareaTypewriter("", replyText);
+            } else {
+              startTextareaTypewriter(replyText, "");
+            }
             const targetLang = isChinese ? "en" : "zh";
             translateText(replyText, targetLang).then((res) => {
               if (isChinese) {
-                updateDraft(res.translated, replyText);
+                appendTranslation(""); // EN side
+                setEditedReplyEn(res.translated);
+                setEditedReply(res.translated);
+                setState((prev) => ({ ...prev, draftReplyEn: res.translated }));
               } else {
-                updateDraft(replyText, res.translated);
+                appendTranslation(res.translated);
+                setState((prev) => ({ ...prev, draftReplyZh: res.translated }));
               }
-            }).catch(() => { /* Translation failed — user can trigger manually */ });
+            }).catch(() => { setIsTranslating(false); });
           }
         },
         onTranslation: (data: { reply_en: string; reply_zh: string }) => {
@@ -622,8 +697,33 @@ export default function AskPage() {
             clarificationQuestions: [],
             followupHistory: [],
           });
-          updateDraft(data.reply_en, data.reply_zh);
           addToHistory(originalQuery || queryText.trim(), data.reply_en, data.elapsed_ms || 0);
+
+          // Typewriter for bilingual textareas (same as initial ask)
+          const replyText = data.reply_en || data.reply_zh;
+          const cjkCount = (replyText || "").match(/[\u4e00-\u9fff]/g)?.length || 0;
+          const isChinese = cjkCount / Math.max((replyText || "").length, 1) > 0.3;
+
+          if (data.reply_zh && data.reply_en) {
+            startTextareaTypewriter(data.reply_en, data.reply_zh);
+          } else if (replyText) {
+            setIsTranslating(true);
+            if (isChinese) {
+              startTextareaTypewriter("", replyText);
+            } else {
+              startTextareaTypewriter(replyText, "");
+            }
+            const targetLang = isChinese ? "en" : "zh";
+            translateText(replyText, targetLang).then((res) => {
+              if (isChinese) {
+                appendTranslation("");
+                setEditedReplyEn(res.translated);
+                setEditedReply(res.translated);
+              } else {
+                appendTranslation(res.translated);
+              }
+            }).catch(() => { setIsTranslating(false); });
+          }
         },
         onTranslation: (data: { reply_en: string; reply_zh: string }) => {
           updateDraft(data.reply_en, data.reply_zh);
@@ -1123,7 +1223,7 @@ export default function AskPage() {
                   <div className="flex items-center gap-2 mb-2 pb-2 border-b border-outline-variant/10">
                     <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest bg-tertiary/10 px-2 py-0.5 rounded">中文</span>
                     <span className="text-[11px] text-on-surface-variant">Chinese</span>
-                    {isRetranslating && <span className="text-[10px] text-tertiary animate-pulse">syncing...</span>}
+                    {(isRetranslating || isTranslating) && <span className="text-[10px] text-tertiary animate-pulse">{isTranslating ? "Translating..." : "syncing..."}</span>}
                     <button
                       onClick={async () => {
                         if (!editedReplyEn.trim()) return;
