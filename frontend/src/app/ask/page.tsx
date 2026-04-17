@@ -97,11 +97,11 @@ export default function AskPage() {
     if (typewriterTimerRef.current) return; // already running
     typewriterTimerRef.current = setInterval(() => {
       if (tokenBufferRef.current.length === 0) return;
-      // Drain up to 3 chars per tick for natural speed
-      const chars = tokenBufferRef.current.slice(0, 3);
-      tokenBufferRef.current = tokenBufferRef.current.slice(3);
+      // Drain 2 chars per tick for natural reading speed
+      const chars = tokenBufferRef.current.slice(0, 2);
+      tokenBufferRef.current = tokenBufferRef.current.slice(2);
       setStreamingText((prev) => prev + chars);
-    }, 20);
+    }, 30);
   }, []);
 
   const stopTypewriter = useCallback((flush?: boolean) => {
@@ -130,7 +130,7 @@ export default function AskPage() {
     setEditedReplyEn("");
     setEditedReplyZh("");
     setEditedReply("");
-    const charsPerTick = 5;
+    const charsPerTick = 2;
     let enPos = 0;
     let zhPos = 0;
     textareaTypewriterRef.current.timer = setInterval(() => {
@@ -155,7 +155,7 @@ export default function AskPage() {
         clearInterval(buf.timer!);
         buf.timer = null;
       }
-    }, 15);
+    }, 30);
   }, []);
 
   const appendTranslation = useCallback((zhText: string) => {
@@ -167,14 +167,14 @@ export default function AskPage() {
     if (!buf.timer) {
       let zhPos = 0;
       buf.timer = setInterval(() => {
-        const nextZh = Math.min(zhPos + 5, buf.zh.length);
+        const nextZh = Math.min(zhPos + 2, buf.zh.length);
         zhPos = nextZh;
         setEditedReplyZh(buf.zh.slice(0, nextZh));
         if (zhPos >= buf.zh.length) {
           clearInterval(buf.timer!);
           buf.timer = null;
         }
-      }, 15);
+      }, 30);
     }
   }, []);
   const [learningSuggestions, setLearningSuggestions] = useState<Array<{
