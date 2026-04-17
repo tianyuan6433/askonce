@@ -239,6 +239,26 @@ async def create_knowledge_batch(requests: list[CreateKnowledgeRequest], db: Asy
         if not entry.category:
             entry.category = auto_categorize(entry.answer or "", _parse_json_list(entry.tags))
     await db.commit()
+    # Refresh entries after categorization commit to reload server-set columns
+    for e in entries:
+        await db.refresh(e)
+
+    # Build response dicts while still in async context (avoid lazy-load after bg tasks)
+    response_data = []
+    for e in entries:
+        response_data.append({
+            "id": e.id,
+            "question_patterns": _parse_json_list(e.question_patterns),
+            "answer": e.answer or "",
+            "conditions": e.conditions,
+            "tags": _parse_json_list(e.tags),
+            "category": getattr(e, "category", None),
+            "confidence": e.confidence or 1.0,
+            "source_type": e.source_type or "manual",
+            "source_ref": e.source_ref,
+            "status": e.status or "active",
+            "updated_at": e.updated_at.isoformat() if hasattr(e, "updated_at") and e.updated_at and hasattr(e.updated_at, "isoformat") else None,
+        })
 
     # Fire-and-forget background translations for entries missing Chinese
     import concurrent.futures
@@ -266,7 +286,7 @@ async def create_knowledge_batch(requests: list[CreateKnowledgeRequest], db: Asy
                 _aio.run(_run())
             _executor.submit(_sync_translate, entry.id, _parse_json_list(entry.question_patterns), entry.answer or "")
 
-    return [KnowledgeEntryResponse.from_orm_entry(e) for e in entries]
+    return [KnowledgeEntryResponse(**d) for d in response_data]
 
 
 class ExtractResponse(BaseModel):
